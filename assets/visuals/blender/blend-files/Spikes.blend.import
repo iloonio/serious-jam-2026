@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4jp1eg7a3au7"
-path="res://.godot/imported/placeholder.blend-9a706e63cce2ce04388c07c2609e1a11.scn"
+uid="uid://blkabbo6mx1r2"
+path="res://.godot/imported/Spikes.blend-64727212c589151b439e2f901f2795c7.scn"
 
 [deps]
 
-source_file="res://assets/visuals/blender/placeholder.blend"
-dest_files=["res://.godot/imported/placeholder.blend-9a706e63cce2ce04388c07c2609e1a11.scn"]
+source_file="res://assets/visuals/blender/blend-files/Spikes.blend"
+dest_files=["res://.godot/imported/Spikes.blend-64727212c589151b439e2f901f2795c7.scn"]
 
 [params]
 
