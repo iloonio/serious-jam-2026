@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dwt324n8g5gp3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mw1ty"]
+albedo_color = Color(0, 0.38039216, 0.13333334, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uu7nu"]
+material = SubResource("StandardMaterial3D_mw1ty")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8swg8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5ava"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4bxy"]
+material = SubResource("StandardMaterial3D_b5ava")
+size = Vector3(0.3, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivqdy"]
+size = Vector3(0.3, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8swg8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mw1ty"]
+material = SubResource("StandardMaterial3D_8swg8")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4bxy"]
+
+[node name="MeshLibrary" type="Node3D" unique_id=1911610966]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1107483530]
+mesh = SubResource("BoxMesh_uu7nu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=2055676429]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1956987554]
+shape = SubResource("BoxShape3D_8swg8")
+
+[node name="Fence" type="MeshInstance3D" parent="." unique_id=562829861]
+mesh = SubResource("BoxMesh_l4bxy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Fence" unique_id=243945556]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fence/StaticBody3D" unique_id=1170546791]
+shape = SubResource("BoxShape3D_ivqdy")
+
+[node name="FenceCorner" type="MeshInstance3D" parent="." unique_id=132444646]
+mesh = SubResource("BoxMesh_mw1ty")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FenceCorner" unique_id=1590560844]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FenceCorner/StaticBody3D" unique_id=1679103814]
+shape = SubResource("BoxShape3D_l4bxy")
