@@ -12,25 +12,28 @@ shape = SubResource("CapsuleShape3D_fl1yc")
 
 [node name="Spikes" parent="." unique_id=37204610 instance=ExtResource("1_ecs2a")]
 
-[node name="Skeleton3D" parent="Spikes/SpikesRig" parent_id_path=PackedInt32Array(37204610, 1679736472) index="0" unique_id=2125454426]
-bones/0/position = Vector3(-0.0023173036, 0.7827744, -0.03241696)
+[node name="Skeleton3D" parent="Spikes/SpikesRig" parent_id_path=PackedInt32Array(37204610, 1236650996) index="0" unique_id=792220240]
+bones/0/position = Vector3(-0.002317301, 0.7274427, -0.03241697)
 bones/1/rotation = Quaternion(-0.05740563, 3.462022e-10, -1.4359592e-08, 0.9983509)
 bones/2/rotation = Quaternion(-0.1674721, 0.002298142, -0.00863077, 0.98583645)
 bones/3/rotation = Quaternion(0.074387856, 0.0011690026, 0.0005304155, 0.99722856)
 bones/5/rotation = Quaternion(-0.1866396, -7.576477e-08, -6.437335e-08, 0.98242843)
 bones/6/rotation = Quaternion(0.009325803, 0.0004726135, 0.0011122029, 0.99995583)
 bones/7/rotation = Quaternion(-0.5379906, -0.43115473, -0.4314944, 0.581794)
-bones/8/position = Vector3(0.023178903, 0.1836587, -0.031838916)
-bones/8/rotation = Quaternion(-0.24844413, 0.4880347, -0.6348954, 0.54498214)
-bones/12/position = Vector3(-0.041773092, 0.18669459, -0.01775496)
-bones/12/rotation = Quaternion(-0.13129851, -0.4203836, 0.7169491, 0.54039097)
+bones/8/position = Vector3(0.02137219, 0.18449074, -0.016019017)
+bones/8/rotation = Quaternion(-0.47804862, 0.81326103, -0.28282157, 0.17345919)
+bones/12/position = Vector3(-0.043533627, 0.18598078, -0.03358575)
+bones/12/rotation = Quaternion(-0.44406226, -0.76282823, 0.43009, 0.18953754)
 bones/17/rotation = Quaternion(0.2772825, 0.66762775, 0.48702285, -0.49009833)
 bones/19/rotation = Quaternion(0.98807317, 0.011866289, -0.0029798248, 0.15349862)
-bones/20/position = Vector3(-2.9074614e-05, 0.2440457, -0.00039737677)
-bones/20/rotation = Quaternion(0.21931691, 0.003964884, 0.010838564, 0.97558546)
+bones/20/position = Vector3(-5.0230256e-09, 0.2428889, 2.084846e-08)
+bones/20/rotation = Quaternion(0.097577214, 0.0024035885, 0.011195613, 0.99516207)
 bones/24/rotation = Quaternion(0.9907051, 0.0018747945, -0.00096426404, 0.13601138)
-bones/25/position = Vector3(5.164264e-06, 0.24679913, 0.00043803896)
-bones/25/rotation = Quaternion(0.19865078, -0.0013133872, 0.0102797, 0.9800156)
-bones/28/rotation = Quaternion(-0.7064498, 0.7064498, -0.03047544, -0.03047365)
+bones/25/position = Vector3(1.2856496e-08, 0.24794157, -3.1684522e-10)
+bones/25/rotation = Quaternion(0.076516755, -0.0004836563, 0.010629401, 0.9970115)
+bones/28/rotation = Quaternion(-0.7064498, 0.7064498, -0.030475447, -0.030473657)
+
+[node name="AnimationPlayer" parent="Spikes" index="1" unique_id=2062825170]
+autoplay = &"Idle"
 
 [editable path="Spikes"]
