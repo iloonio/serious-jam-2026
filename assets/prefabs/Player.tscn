@@ -71,6 +71,14 @@ _data = {
 &"spin": SubResource("Animation_6l5ol")
 }
 
+[sub_resource type="Curve3D" id="Curve3D_nuc4o"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector3Array(-0.009962808, -1.4305115e-05, -0.011363082, 0.009962808, 1.4305115e-05, 0.011363082, -0.04026641, 0.0016646385, -0.006313801, -2.1131976, -5.6743622e-05, -2.4795532e-05, 2.1131976, 5.6743622e-05, 2.4795532e-05, 0.03327896, 0.2738719, 3.0864065),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [node name="Player" type="RigidBody3D" unique_id=276706031]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1473696831]
@@ -93,3 +101,7 @@ mesh = SubResource("CapsuleMesh_nuc4o")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
 libraries/ = SubResource("AnimationLibrary_ilqrk")
 autoplay = &"spin"
+speed_scale = 0.55
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2117925584]
+curve = SubResource("Curve3D_nuc4o")
