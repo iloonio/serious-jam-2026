@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bcg6mlomee8q3"]
+
+[ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/Player.tscn" id="1_cf6l3"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_63gcn"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pts5s"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="Environment" id="Environment_r84c7"]
+fog_enabled = true
+fog_light_color = Color(0.67967325, 0.5141041, 0.33061033, 1)
+fog_light_energy = 1.74
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cf6l3"]
+albedo_color = Color(0.33271712, 0.12230285, 0.19148016, 1)
+
+[node name="InfiniteFlatStage" type="Node3D" unique_id=106520490]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1589511451]
+transform = Transform3D(1, 0, 0, 0, 0.49975878, 0.8661647, 0, -0.8661647, 0.49975878, 3.1659832, 10.086355, 8.657341)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=830800561]
+transform = Transform3D(128, 0, 0, 0, 128, 0, 0, 0, 128, 0, 0, 0)
+mesh = SubResource("PlaneMesh_63gcn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=521622619]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1325787889]
+shape = SubResource("ConcavePolygonShape3D_pts5s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1667886343]
+transform = Transform3D(1, 0, 0, 0, 0.50300246, 0.86428505, 0, -0.86428505, 0.50300246, 0, 9.694194, 4.6261787)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1145762797]
+environment = SubResource("Environment_r84c7")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=120569267]
+transform = Transform3D(27.83659, 0, 0, 0, 2.6452658, 0, 0, 0, 24.70947, 4.7015486, 0.072170034, 0)
+material_override = SubResource("StandardMaterial3D_cf6l3")
+use_collision = true
+size = Vector3(1, 1.0545654, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=347747399]
+transform = Transform3D(0.8655658, 0, 0, 0, 1.1485789, 0, 0, 0, 0.73509073, 0, 0, 0)
+operation = 2
+
+[node name="Player" parent="." unique_id=935310202 instance=ExtResource("1_cf6l3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.353353, 0, -2.7165813)

@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://dxq2w3jw57v6n"]
 
+[ext_resource type="Script" uid="uid://hwgtvlqym4bf" path="res://assets/scripts/player/PlayerMovement.gd" id="1_6l5ol"]
+[ext_resource type="PackedScene" uid="uid://crxkmydcqxp28" path="res://assets/visuals/imported-models/arrow.glb" id="2_6l5ol"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
+bounce = 1.0
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gubh5"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xmh61"]
@@ -71,15 +77,34 @@ _data = {
 &"spin": SubResource("Animation_6l5ol")
 }
 
-[sub_resource type="Curve3D" id="Curve3D_nuc4o"]
-bake_interval = 0.01
-_data = {
-"points": PackedVector3Array(-0.009962808, -1.4305115e-05, -0.011363082, 0.009962808, 1.4305115e-05, 0.011363082, -0.04026641, 0.0016646385, -0.006313801, -2.1131976, -5.6743622e-05, -2.4795532e-05, 2.1131976, 5.6743622e-05, 2.4795532e-05, 0.03327896, 0.2738719, 3.0864065),
-"tilts": PackedFloat32Array(0, 0)
-}
-point_count = 2
+[node name="Player" type="RigidBody3D" unique_id=935310202 node_paths=PackedStringArray("directionGizmo")]
+axis_lock_linear_y = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_cf6l3")
+linear_damp = 1.0
+angular_damp = 10.0
+script = ExtResource("1_6l5ol")
+directionGizmo = NodePath("debugMeshes/dirVecArrow")
+maxTorque = 0.2
+torqueAcceleration = 0.1
+torqueSlowDown = 1.0
+maxImpulse = 12.0
+maxChargeUpImpulse = 8.0
+minChargeUpImpulse = 4.0
+ChargeUpRate = 0.009999999999999998
+perfectChargeMinThreshold = 0.4
+perfectChargeMaxThreshold = 0.8
 
-[node name="Player" type="RigidBody3D" unique_id=276706031]
+[node name="debugMeshes" type="Node3D" parent="." unique_id=570032537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2318163, 0)
+
+[node name="dirVecArrow" parent="debugMeshes" unique_id=767105425 instance=ExtResource("2_6l5ol")]
+transform = Transform3D(0.5840622, 1.8782417e-07, 4.499964e-08, -5.106034e-08, 2.148458, 0, -5.1060333e-08, -1.5265712e-14, 0.51473594, 0, 0, 0)
+visible = false
+
+[node name="forwardArrow" parent="debugMeshes" unique_id=1479652990 instance=ExtResource("2_6l5ol")]
+transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1473696831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -99,9 +124,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 
 mesh = SubResource("CapsuleMesh_nuc4o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
+active = false
 libraries/ = SubResource("AnimationLibrary_ilqrk")
 autoplay = &"spin"
 speed_scale = 0.55
-
-[node name="Path3D" type="Path3D" parent="." unique_id=2117925584]
-curve = SubResource("Curve3D_nuc4o")
