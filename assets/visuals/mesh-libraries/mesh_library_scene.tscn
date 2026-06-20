@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwt324n8g5gp3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mw1ty"]
-albedo_color = Color(0, 0.38039216, 0.13333334, 1)
+albedo_color = Color(0.3372549, 0.38039216, 0.13333334, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uu7nu"]
 material = SubResource("StandardMaterial3D_mw1ty")
@@ -26,12 +26,12 @@ material = SubResource("StandardMaterial3D_8swg8")
 
 [node name="MeshLibrary" type="Node3D" unique_id=1911610966]
 
-[node name="Floor" type="MeshInstance3D" parent="." unique_id=1107483530]
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1107483530]
 mesh = SubResource("BoxMesh_uu7nu")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=2055676429]
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=2055676429]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1956987554]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1956987554]
 shape = SubResource("BoxShape3D_8swg8")
 
 [node name="Fence" type="MeshInstance3D" parent="." unique_id=562829861]
