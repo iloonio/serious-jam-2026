@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/scripts/player/PlayerAnimator.gd" id="3_ilqrk"]
 [ext_resource type="Shape3D" uid="uid://ba7pv8qsvi5vd" path="res://assets/prefabs/player/playerCapsuleShape3d.tres" id="3_mv535"]
 [ext_resource type="Script" uid="uid://cbbp5t06dg3hx" path="res://assets/scripts/player/PlayerBounce.gd" id="3_pj06c"]
+[ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/prefabs/PlayerAnimator.gd" id="3_ilqrk"]
+[ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 2.1
@@ -154,11 +156,18 @@ mesh = SubResource("CapsuleMesh_uu7nu")
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
 mesh = SubResource("CapsuleMesh_nuc4o")
 
+[node name="SpinSFX" type="AudioStreamPlayer" parent="CollisionShape3D/KeepRotationStatic" unique_id=109432352]
+unique_name_in_owner = true
+stream = ExtResource("4_af3jp")
+volume_db = 3.0
+bus = &"PlayerSpin"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
 libraries/ = SubResource("AnimationLibrary_ilqrk")
 autoplay = &"spin"
 speed_scale = 0.594
 script = ExtResource("3_ilqrk")
 
+[connection signal="isSpinning" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
 [connection signal="collisionNormals" from="ShapeCast3D" to="." method="_on_shape_cast_3d_collision_normals"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xg7xg03fl7t0"]
 
-[ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/ProgressManager.gd" id="1_tmtuv"]
+[ext_resource type="Script" path="res://assets/scripts/ProgressManager.gd" id="1_tmtuv"]
 [ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/player/Player.tscn" id="2_su8ma"]
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="3_0mgw1"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="4_8xe4b"]
@@ -77,9 +77,6 @@ script = ExtResource("1_tmtuv")
 
 [node name="Player" parent="Map" unique_id=935310202 instance=ExtResource("2_su8ma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 6)
-enableDebugPrints = true
-enableDirVecPrints = true
-enableCollisionPrints = true
 
 [node name="WallGridMap" type="GridMap" parent="Map" unique_id=1572374016]
 mesh_library = ExtResource("3_0mgw1")

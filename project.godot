@@ -11,9 +11,24 @@ config_version=5
 [application]
 
 config/name="serious-jam-2026"
-run/main_scene="uid://bo5oqho3sp34i"
+run/main_scene="uid://etj2kl2stkal"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/visuals/ui/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://byn6n3gq2xnur"
+
+[autoload]
+
+SceneManager="*uid://ds0afpywsbg5p"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [dotnet]
 

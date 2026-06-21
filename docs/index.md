@@ -5,3 +5,7 @@ welcome to the docs page of this project. this is an index page that lists all o
 [player movement](player-mechanics.md)
 
 ## Shaders & Meshes
+
+
+# Scene Manager
+[scene manager](scene-manager.md)

@@ -1,14 +1,16 @@
 [gd_scene format=3 uid="uid://bo5oqho3sp34i"]
 
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="1_8ewy0"]
-[ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/ProgressManager.gd" id="1_st3xd"]
+[ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/runnable-classes/ProgressManager.gd" id="1_st3xd"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="2_66m15"]
 [ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/player/Player.tscn" id="2_st3xd"]
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="3_yj0vm"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/prefabs/GrassMesh.tres" id="4_yj0vm"]
 [ext_resource type="PackedScene" uid="uid://8jdsn1v0ksrf" path="res://assets/prefabs/interactables/MovingObstacle.tscn" id="6_va0co"]
+[ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="7_5luqu"]
 [ext_resource type="PackedScene" uid="uid://ct42r63pb3ltf" path="res://assets/prefabs/interactables/BreakableObstacle.tscn" id="7_13huw"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="8_qtusf"]
+[ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_lnct0"]
 
 [sub_resource type="Gradient" id="Gradient_8uhu2"]
 colors = PackedColorArray(0, 0.6901961, 0.92156863, 1, 1, 1, 1, 1)
@@ -96,6 +98,13 @@ script = ExtResource("3_yj0vm")
 grassMesh = ExtResource("4_yj0vm")
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
+[node name="GrassCutSFX" type="AudioStreamPlayer" parent="Map/GrassGridMap" unique_id=1694761090]
+unique_name_in_owner = true
+stream = ExtResource("7_5luqu")
+volume_db = -36.0
+max_polyphony = 4
+bus = &"SFX"
+
 [node name="Interactables" type="Node3D" parent="Map" unique_id=423109894]
 
 [node name="BreakableObstacle" parent="Map/Interactables" unique_id=1163499174 instance=ExtResource("7_13huw")]
@@ -122,13 +131,13 @@ transform = Transform3D(0.6804246, -0.07364283, 0.7291085, 0, 0.9949379, 0.10049
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1307144088]
 transform = Transform3D(1, 2.1920765e-07, -3.6482277e-07, 0, 0.8571673, 0.51503813, 4.2561442e-07, -0.51503813, 0.8571673, -5.357702, 7.556552, 13.385548)
 
-[node name="TempUI" type="Control" parent="Camera3D" unique_id=1372041648]
+[node name="UI" type="Control" parent="Camera3D" unique_id=1372041648]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="GrassProgressLabel" type="Label" parent="Camera3D/TempUI" unique_id=447594228]
+[node name="GrassProgressLabel" type="Label" parent="Camera3D/UI" unique_id=447594228]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
@@ -136,6 +145,36 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "dsdadasdad"
+
+[node name="ScoreLabel" type="Label" parent="Camera3D/UI" unique_id=907534449]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 45.0
+offset_right = 121.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+
+[node name="TimeLabel" type="Label" parent="Camera3D/UI" unique_id=1404475977]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 91.0
+offset_right = 139.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Time: 0:0"
+
+[node name="Timer" type="Timer" parent="Camera3D/UI/TimeLabel" unique_id=1228988590]
+
+[node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=723377874]
+stream = ExtResource("11_lnct0")
+volume_db = -25.0
+autoplay = true
+bus = &"BGM"
+
+[connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 
 [editable path="Map/Interactables/BreakableObstacle"]
 [editable path="Map/Interactables/MovingObstacle"]
