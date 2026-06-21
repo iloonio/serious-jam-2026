@@ -95,7 +95,7 @@ torqueSlowDown = 1.0
 maxImpulse = 24.0
 maxChargeUpImpulse = 10.0
 minChargeUpImpulse = 5.0
-ChargeUpRate = 0.009999999999999998
+ChargeUpRate = 0.00999999999999999
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
 
