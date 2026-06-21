@@ -12,7 +12,7 @@ var grassParticleFX: PackedScene = preload("res://assets/prefabs/particle-fx/Gra
 
 
 signal updatedGrassDic
-
+signal addScore(score: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,6 +44,7 @@ func cut_grass_on_cell(cell, index, worldPos) -> void:
 	
 	updatedGrassDic.emit(grassDic.size())
 	
+	addScore.emit(5)
 
 
 func convert_gridmap_to_multimesh() -> void:
@@ -87,7 +88,7 @@ func convert_gridmap_to_multimesh() -> void:
 		var trans = Transform3D(cellBasis, scenePos)
 		trans = trans.translated(Vector3(0, -0.5, 0))
 		multimeshInstance.multimesh.set_instance_transform(i, trans)
-		
+
 
 		# for player to check close coordinate positions
 		grassDic[cell] = i

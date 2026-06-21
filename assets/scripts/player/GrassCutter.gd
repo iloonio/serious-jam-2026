@@ -45,12 +45,6 @@ func spinSFX() -> void:
 	bandpassFilter.cutoff_hz = targetCutoff
 	
 	
-	#print("PLAYER ROT: ", playerRot)
-	print("NORM ROT: ", normalizedRot)
-	# smooth out frequency changes
-	#bandpassFilter.cutoff_hz = lerp(bandpassFilter.cutoff_hz, targetCutoff, 0.1)
-
-
 
 
 func _ready() -> void:
