@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2oyl6t4kjsil"
-path.s3tc="res://.godot/imported/Water_PS1_64px.png-861ca2da2362a8607887c93d870a1521.s3tc.ctex"
+uid="uid://bwfvt0w7iovfx"
+path.s3tc="res://.godot/imported/Grass_GrassTexture.png-b809b590b0f4d4e0b343a6375aee9505.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "30c53e6d8d76889f02aa179085fd737e"
+}
 
 [deps]
 
-source_file="res://assets/visuals/blender/blend-files/textures/Water_PS1_64px.png"
-dest_files=["res://.godot/imported/Water_PS1_64px.png-861ca2da2362a8607887c93d870a1521.s3tc.ctex"]
+source_file="res://assets/visuals/blender/blend-files/Grass_GrassTexture.png"
+dest_files=["res://.godot/imported/Grass_GrassTexture.png-b809b590b0f4d4e0b343a6375aee9505.s3tc.ctex"]
 
 [params]
 
