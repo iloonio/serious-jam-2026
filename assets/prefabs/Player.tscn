@@ -85,6 +85,9 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_cf6l3")
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 4
 linear_damp_mode = 1
 linear_damp = 1.0
 angular_damp = 10.0
@@ -100,7 +103,8 @@ ChargeUpRate = 0.00999999999999999
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1509044585]
+[node name="RemoteMeshTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]
+editor_description = "set remote path to the character mesh to ensure that its transform is aligned with the player's rotation. "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 remote_path = NodePath("../CollisionShape3D/KeepRotationStatic/CharacterMesh")
 update_rotation = false

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="serious-jam-2026"
-run/main_scene="uid://bcg6mlomee8q3"
+run/main_scene="uid://bo5oqho3sp34i"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/visuals/ui/icon.svg"
 
