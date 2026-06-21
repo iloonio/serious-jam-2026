@@ -35,6 +35,8 @@ func cut_grass_on_cell(cell, index, worldPos) -> void:
 	# remove grass from dictionary 
 	grassDic.erase(cell)
 	
+	play_cut_sfx()
+	
 	# spawn grass cut particles
 	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
 	particleInstance.global_position = worldPos + Vector3(0, 0.5, 0)
@@ -97,3 +99,12 @@ func particle_warmup() -> void:
 	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
 	particleInstance.global_position = Vector3(1000, -1000, 1000)
 	get_parent().add_child.call_deferred(particleInstance)
+
+
+
+func play_cut_sfx() -> void:
+	var pitches = [0.5, 0.7, 1.0, 1.3, 1.5]
+	var randPitch = pitches[randi_range(0, pitches.size() - 1)] * 3
+	
+	%GrassCutSFX.pitch_scale = randPitch
+	%GrassCutSFX.play()

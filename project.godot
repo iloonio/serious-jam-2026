@@ -15,6 +15,10 @@ run/main_scene="uid://bcg6mlomee8q3"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/visuals/ui/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://byn6n3gq2xnur"
+
 [dotnet]
 
 project/assembly_name="serious-jam-2026"
