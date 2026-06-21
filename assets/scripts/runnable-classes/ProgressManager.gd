@@ -1,4 +1,4 @@
-class_name PlayableLevel extends Node3D
+class_name ProgressManager extends RunnableScene
 
 var grassManager : GrassManager
 
@@ -23,6 +23,8 @@ func get_elapsed_time() -> int:
 
 
 func _ready() -> void:
+	super._ready()
+	
 	grassManager = get_tree().get_first_node_in_group("GrassManager")
 	grassManager.updatedGrassDic.connect(update_progress)
 	
@@ -58,7 +60,7 @@ func format_time_nums(num) -> String:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Restart Level"):
-		get_tree().change_scene_to_file("res://assets/play-scenes/GrassTestStage.tscn")
+		SceneManager.reload_scene()
 
 
 

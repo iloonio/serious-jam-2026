@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bo5oqho3sp34i"]
 
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="1_8ewy0"]
-[ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/ProgressManager.gd" id="1_st3xd"]
+[ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/runnable-classes/ProgressManager.gd" id="1_st3xd"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="2_66m15"]
 [ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/Player.tscn" id="2_st3xd"]
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="3_yj0vm"]
