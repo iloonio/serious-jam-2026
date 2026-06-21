@@ -20,8 +20,17 @@ func _physics_process(delta: float) -> void:
 	cut_grass_in_radius()
 	
 	template_movement(delta)
+	
+	check_breakable_collision()
 
 
+func check_breakable_collision() -> void:
+	for col in get_slide_collision_count():
+		var hitObject = get_slide_collision(col).get_collider()
+		if hitObject is BreakableObstacle:
+			hitObject.take_hit()
+			
+		
 
 func cut_grass_in_radius():
 	var cellPos = get_current_cellpos()
@@ -54,12 +63,7 @@ func cut_grass_in_radius():
 
 
 func cut_grass_tile(cell, index, worldPos):
-	# pass color value to shader, which "cuts" the grass if the x value is 1.0
-	grassManager.multimeshInstance.multimesh.set_instance_custom_data(index, Color(1.0, 0.0, 0.0, 0.0) )
-	
-	# remove grass from dictionary 
-	grassManager.grassDic.erase(cell)
-	
+	grassManager.cut_grass_on_cell(cell, index, worldPos)
 	# spawn_drop(worldPos)
 
 

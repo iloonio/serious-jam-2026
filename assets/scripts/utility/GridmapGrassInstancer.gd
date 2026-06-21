@@ -8,6 +8,12 @@ var grassDic: Dictionary = {}
 
 var multimeshInstance: MultiMeshInstance3D
 
+var grassParticleFX: PackedScene = preload("res://assets/prefabs/particle-fx/GrassParticles.tscn")
+
+
+signal updatedGrassDic
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	grassID = mesh_library.find_item_by_name("GrassFull")
@@ -16,9 +22,26 @@ func _ready() -> void:
 		push_error("Grass mesh not found in ", self)
 	
 	convert_gridmap_to_multimesh()
+	
+	particle_warmup() 
 
 
 
+
+func cut_grass_on_cell(cell, index, worldPos) -> void:
+	# pass color value to shader, which "cuts" the grass if the x value is 1.0
+	multimeshInstance.multimesh.set_instance_custom_data(index, Color(1.0, 0.0, 0.0, 0.0) )
+	
+	# remove grass from dictionary 
+	grassDic.erase(cell)
+	
+	# spawn grass cut particles
+	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
+	particleInstance.global_position = worldPos + Vector3(0, 0.5, 0)
+	get_parent().add_child(particleInstance)
+	
+	updatedGrassDic.emit(grassDic.size())
+	
 
 
 func convert_gridmap_to_multimesh() -> void:
@@ -68,3 +91,9 @@ func convert_gridmap_to_multimesh() -> void:
 		grassDic[cell] = i
 		
 		set_cell_item(cell, GridMap.INVALID_CELL_ITEM)
+
+
+func particle_warmup() -> void:
+	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
+	particleInstance.global_position = Vector3(1000, -1000, 1000)
+	get_parent().add_child.call_deferred(particleInstance)

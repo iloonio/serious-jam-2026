@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dar4rbqr1gt4d"]
 
-[ext_resource type="Shader" uid="uid://cvovlp73jjkg" path="res://assets/visuals/shaders/GrassShader.gdshader" id="1_a3m65"]
+[ext_resource type="Shader" uid="uid://cvovlp73jjkg" path="res://assets/scripts/shaders/GrassShader.gdshader" id="1_a3m65"]
 [ext_resource type="Texture2D" uid="uid://bwfvt0w7iovfx" path="res://assets/visuals/blender/blend-files/Grass_GrassTexture.png" id="1_jgk46"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a3m65"]
@@ -20,6 +20,9 @@ shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_direction = Vector2(1, 0.5)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5uvyf"]
 _surfaces = [{
