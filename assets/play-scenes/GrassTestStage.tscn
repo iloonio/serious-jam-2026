@@ -3,21 +3,12 @@
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="1_8ewy0"]
 [ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/ProgressManager.gd" id="1_st3xd"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="2_66m15"]
-[ext_resource type="Script" uid="uid://ca2olkx45y7tx" path="res://assets/scripts/player/GrassCutter.gd" id="3_5r7jd"]
+[ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/Player.tscn" id="2_st3xd"]
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="3_yj0vm"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/prefabs/GrassMesh.tres" id="4_yj0vm"]
 [ext_resource type="PackedScene" uid="uid://8jdsn1v0ksrf" path="res://assets/prefabs/interactables/MovingObstacle.tscn" id="6_va0co"]
 [ext_resource type="PackedScene" uid="uid://ct42r63pb3ltf" path="res://assets/prefabs/interactables/BreakableObstacle.tscn" id="7_13huw"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="8_qtusf"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_gubh5"]
-height = 1.0
-radius = 1.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_uu7nu"]
-top_radius = 1.0
-bottom_radius = 1.0
-height = 1.0
 
 [sub_resource type="Gradient" id="Gradient_8uhu2"]
 colors = PackedColorArray(0, 0.6901961, 0.92156863, 1, 1, 1, 1, 1)
@@ -84,15 +75,8 @@ script = ExtResource("1_st3xd")
 
 [node name="Map" type="Node3D" parent="." unique_id=1649906345]
 
-[node name="TestPlayer" type="CharacterBody3D" parent="Map" unique_id=1766021279]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.231626, 2.3905492, 7.758389)
-script = ExtResource("3_5r7jd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/TestPlayer" unique_id=2010783867]
-shape = SubResource("CylinderShape3D_gubh5")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Map/TestPlayer/CollisionShape3D" unique_id=1581332253]
-mesh = SubResource("CylinderMesh_uu7nu")
+[node name="Player" parent="Map" unique_id=935310202 instance=ExtResource("2_st3xd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 6)
 
 [node name="LayoutGridMap" type="GridMap" parent="Map" unique_id=1572374016]
 mesh_library = ExtResource("1_8ewy0")

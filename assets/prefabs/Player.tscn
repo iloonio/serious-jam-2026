@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hwgtvlqym4bf" path="res://assets/scripts/player/PlayerMovement.gd" id="1_6l5ol"]
 [ext_resource type="PackedScene" uid="uid://crxkmydcqxp28" path="res://assets/visuals/imported-models/arrow.glb" id="2_6l5ol"]
+[ext_resource type="Script" uid="uid://ca2olkx45y7tx" path="res://assets/scripts/player/GrassCutter.gd" id="3_0ph0n"]
 [ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/prefabs/PlayerAnimator.gd" id="3_ilqrk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
@@ -122,6 +123,7 @@ shape = SubResource("CapsuleShape3D_gubh5")
 
 [node name="CharacterMesh" type="Node3D" parent="CollisionShape3D/KeepRotationStatic" unique_id=1781405758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("3_0ph0n")
 
 [node name="Body" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=101751559]
 mesh = SubResource("CapsuleMesh_gubh5")
