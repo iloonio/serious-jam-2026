@@ -1,22 +1,24 @@
 # player mechanics
 
 ## Movement
-The player should be able to hold a button to charge up their movement. 
+This part is a summary of the [PlayerMovement.gd](assets/scripts/player/PlayerMovement.gd) script, which controls how forces & impulses are applied to the player during gameplay. 
 
-### Bezier Curves
-player movement direction is given by a quadratic bezier curve.
-- Movement is handled by having p1 extend outwards when player holds the forward button.
-- turning is handled by having the handle for p1 move along the x axis (-x for turning left, +x for turning right)
-- player character moves along that path ig? its a bit unclear to me right now, but i currently imagine that it will attempt to move the body along that curve.
+**Forces** are gentle movements which are intended to be applied every physics frame. these can be used to maintain velocity, or add a sliding effect to movement.
 
-The player can steer the bezier curve's endpoint's handlepoint (simply called, `b1` from here on out) by using left & right input (by default this is mapped to A and D respectively). the endpoint (`p1` from here on out) will lerp towards `b1` over time, allowing them to turn in a direction!
+**Impulses** are instant bursts of power that are applied to rigidbodies. they are explosive, and should not be applied every single physics frame. For this reason, impulses should be gated behind a cooldown of some sort. 
 
+### Direction Vector (dirVec)
+the player has a dirVec which is a unit vector pointing in any direction parallel to the XZ plane. dirVec is used when both forces & impulses are applied to the player.
 
-when a player turns with A or D, `b1` is shifted in some direction. after that, the player character will rotate while `b1` lerps towards (0,0,0).
+dirVec is calculated by using _velocity factor_ as its x-value, and the forward vector of the player as its z-value. Since velocity factor can have a much longer length than the forward vector, its value is clamped so as to not influence it too much, which is determined by the `maxTorque` property.
 
+### Torque Factor
+Torque is the spin power of a rigidbody. we use torque to rotate the player character when they press Left or Right. Torque Factor is a float in the code of PlayerMovement that also determines the x-position of the direction vector. This means that player movement is a bit curvy in a less predictable way, since torque impacts the player's immediate rotation as well as the orientation of their direction vector.
 
-b0 also needs to be lerped towards the general direction of p1, so we can use a normalized version of it so that it doesnt go absolutely insane.
+### Charging & Velocity Factor
+When the player holds spacebar, they will briefly slow down while incrementing `chargeGauge`. Letting go of spacebar will send an impulse in the direction of the forward vector based on the chargeGauge's value. If spacebar is released at perfect time, the players velocity factor will gain additional velocity factor. 
 
+### Collisions
+Current player controller is a rigidbody3D, with contact monitor enabled so we can check what it is we're colliding with. 
 
-now that we have that system setup, how do we keep going from here?
-- now its time to rotate the player character themselves. we do this towards p1 iff player forward vector dot product is not equal to 0.001
+Since the direction vector is constantly applying force to the player in a steerable direction, it means that movement will naturally gravitate towards walls until all velocity factor is consumed. This yields unsatisfying gameplay, so the fix to this is to have the direction vector be reflected off of walls.
