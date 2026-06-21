@@ -41,6 +41,7 @@ var torqueFactor: float = 0 #incremented while turning, decremented when not.
 var velocityFactor: float = 0 #depends on chargeGauge
 var chargeGauge: float = 0 #incremented while charging
 var isCharging: bool = false
+signal isSpinning(flag: bool, speed: float)
 
 ## DirVec is the direction of our movement.
 ## DirVec is reduced overtime by being lerped towards the unit vection pointing forward
@@ -90,6 +91,10 @@ func _physics_process(delta: float) -> void:
 	if(velocityFactor > 1):
 		print("current dirVec: ",dirVec)
 		apply_force(dirVec*velocityFactor)
+		isSpinning.emit(true, remap(velocityFactor, 0, maxImpulse, 0.5, 4))
+	else:
+		isSpinning.emit(false, 0.5)
+
 
 
 	## 4. reduce velocityFactor gently.

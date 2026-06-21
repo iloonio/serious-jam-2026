@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hwgtvlqym4bf" path="res://assets/scripts/player/PlayerMovement.gd" id="1_6l5ol"]
 [ext_resource type="PackedScene" uid="uid://crxkmydcqxp28" path="res://assets/visuals/imported-models/arrow.glb" id="2_6l5ol"]
+[ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/prefabs/PlayerAnimator.gd" id="3_ilqrk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
@@ -43,7 +44,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/CharacterMesh:rotation")
+tracks/0/path = NodePath("CollisionShape3D/KeepRotationStatic/CharacterMesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +62,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/CharacterMesh:rotation")
+tracks/0/path = NodePath("CollisionShape3D/KeepRotationStatic/CharacterMesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -81,7 +82,9 @@ _data = {
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_cf6l3")
+linear_damp_mode = 1
 linear_damp = 1.0
 angular_damp = 10.0
 script = ExtResource("1_6l5ol")
@@ -89,12 +92,17 @@ directionGizmo = NodePath("debugMeshes/dirVecArrow")
 maxTorque = 0.2
 torqueAcceleration = 0.1
 torqueSlowDown = 1.0
-maxImpulse = 12.0
-maxChargeUpImpulse = 8.0
-minChargeUpImpulse = 4.0
+maxImpulse = 24.0
+maxChargeUpImpulse = 10.0
+minChargeUpImpulse = 5.0
 ChargeUpRate = 0.009999999999999998
-perfectChargeMinThreshold = 0.4
-perfectChargeMaxThreshold = 0.8
+perfectChargeMinThreshold = 0.7
+perfectChargeMaxThreshold = 0.9
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=1509044585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+remote_path = NodePath("../CollisionShape3D/KeepRotationStatic/CharacterMesh")
+update_rotation = false
 
 [node name="debugMeshes" type="Node3D" parent="." unique_id=570032537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2318163, 0)
@@ -110,21 +118,26 @@ transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_gubh5")
 
-[node name="CharacterMesh" type="Node3D" parent="CollisionShape3D" unique_id=1781405758]
+[node name="KeepRotationStatic" type="Node" parent="CollisionShape3D" unique_id=1835112467]
 
-[node name="Body" type="MeshInstance3D" parent="CollisionShape3D/CharacterMesh" unique_id=101751559]
+[node name="CharacterMesh" type="Node3D" parent="CollisionShape3D/KeepRotationStatic" unique_id=1781405758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Body" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=101751559]
 mesh = SubResource("CapsuleMesh_gubh5")
 
-[node name="Scythe" type="MeshInstance3D" parent="CollisionShape3D/CharacterMesh" unique_id=1002046919]
+[node name="Scythe" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=1002046919]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.50874084, 0, 1)
 mesh = SubResource("CapsuleMesh_uu7nu")
 
-[node name="Scythe2" type="MeshInstance3D" parent="CollisionShape3D/CharacterMesh" unique_id=1683390812]
+[node name="Scythe2" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=1683390812]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
 mesh = SubResource("CapsuleMesh_nuc4o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
-active = false
 libraries/ = SubResource("AnimationLibrary_ilqrk")
 autoplay = &"spin"
-speed_scale = 0.55
+speed_scale = 0.594
+script = ExtResource("3_ilqrk")
+
+[connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
