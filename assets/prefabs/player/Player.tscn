@@ -123,9 +123,6 @@ max_contacts_reported = 16
 linear_damp = 4.333
 angular_damp = 16.0
 script = ExtResource("1_6l5ol")
-directionGizmo = NodePath("debugMeshes/dirVecArrow")
-enableDebugPrints = true
-enableChargeGaugePrints = true
 maxTorque = 8.0
 torqueAcceleration = 4.0
 torqueSlowDown = 0.55
@@ -139,6 +136,9 @@ perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
 bounceStrength = 1.0
 spinningForwardForceFactor = 2.0
+directionGizmo = NodePath("debugMeshes/dirVecArrow")
+enableDebugPrints = true
+enableChargeGaugePrints = true
 
 [node name="RemoteMeshTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]
 editor_description = "set remote path to the character mesh to ensure that its transform is aligned with the player's rotation. "
