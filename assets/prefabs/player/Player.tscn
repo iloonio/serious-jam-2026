@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://lh5cqj6vjkvf" path="res://assets/prefabs/player/ScytheParticleLogic.gd" id="9_wwvms"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
-bounce = 2.1
+bounce = 1.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xmh61"]
 
@@ -120,8 +120,8 @@ physics_material_override = SubResource("PhysicsMaterial_cf6l3")
 freeze_mode = 1
 continuous_cd = true
 max_contacts_reported = 16
-linear_damp = 5.73
-angular_damp = 9.805
+linear_damp = 4.333
+angular_damp = 16.0
 script = ExtResource("1_6l5ol")
 directionGizmo = NodePath("debugMeshes/dirVecArrow")
 enableDebugPrints = true
@@ -131,12 +131,13 @@ torqueAcceleration = 4.0
 torqueSlowDown = 0.55
 turnSpeed = 10.0
 maxImpulse = 30.0
+minLinearVelocity = 3.0
 maxChargeUpImpulse = 20.0
 minChargeUpImpulse = 10.0
 ChargeUpRate = 0.022
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
-bounceStrength = 0.4
+bounceStrength = 1.0
 spinningForwardForceFactor = 2.0
 
 [node name="RemoteMeshTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]

@@ -34,7 +34,7 @@ extends RigidBody3D
 @export_category("Impulse/Speed Settings")
 ## maxImpulse caps the length of the vector that is fed into the force Applier.
 @export_range(1, 128, 1) var maxImpulse
-
+@export_range(1,16, 0.1) var minLinearVelocity
 ## the limit of how high impulseFactor can be incremented before
 @export_range(1, 64, 1) var maxChargeUpImpulse
 @export_range(1, 64, 1) var minChargeUpImpulse
@@ -158,17 +158,22 @@ func _on_shape_cast_3d_collision_normals(colliderNormals: Array[Vector3]) -> voi
 
 	var b = Basis(dirVec, dirVec.signed_angle_to(sumNormal, Vector3.UP))
 
-	apply_torque_impulse(b.y*0.5)
-
-	# apply_central_impulse(dirVec*bounceStrength*velocityFactor)
+	apply_impulse(dirVec*bounceStrength*velocityFactor)
 
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
-	if state.linear_velocity.length() > maxImpulse:
+	var linLength: float = state.linear_velocity.length() or 0
+	
+	if linLength > maxImpulse:
 		state.linear_velocity = state.linear_velocity.normalized() * maxImpulse
+	
+	#if linLength <= minLinearVelocity:
+	#	state.linear_velocity = state.linear_velocity.lerp(Vector3(0,0,0), 0.1)
+		
 	
 	if state.angular_velocity.length() > maxTorque:
 		state.angular_velocity = state.angular_velocity.normalized() * maxTorque
+
 
 	velocity.emit(remap(state.linear_velocity.length(),0, maxImpulse, 0, 1))
