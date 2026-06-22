@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/scripts/player/PlayerAnimator.gd" id="3_ilqrk"]
 [ext_resource type="Shape3D" uid="uid://ba7pv8qsvi5vd" path="res://assets/prefabs/player/playerCapsuleShape3d.tres" id="3_mv535"]
 [ext_resource type="Script" uid="uid://cbbp5t06dg3hx" path="res://assets/scripts/player/PlayerBounce.gd" id="3_pj06c"]
-[ext_resource type="Script" uid="uid://dqmfprtr2qxqk" path="res://assets/prefabs/PlayerAnimator.gd" id="3_ilqrk"]
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
+[ext_resource type="Texture2D" uid="uid://r534asrmfegh" path="res://assets/visuals/materials/scytheSlashTexture.png" id="8_oc0eq"]
+[ext_resource type="Script" uid="uid://lh5cqj6vjkvf" path="res://assets/prefabs/player/ScytheParticleLogic.gd" id="9_wwvms"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 2.1
@@ -32,6 +33,33 @@ albedo_color = Color(0.28764445, 0.17344847, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uu7nu"]
 material = SubResource("StandardMaterial3D_kf7ld")
 radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r84c7"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("8_oc0eq")
+disable_receive_shadows = true
+grow_amount = 1.159
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l7cap"]
+size = Vector2(2.705, 1.125)
+
+[sub_resource type="Curve" id="Curve_n8wo2"]
+_limits = [0.0, 25.0, 0.0, 1.0]
+bake_resolution = 300
+_data = [Vector2(0, 0), 0.0, 6.306931, 0, 1, Vector2(0.822695, 5.1886806), 0.0, 0.0, 0, 0, Vector2(1, 11.320755), -2.7146747, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_cenje"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0.56603765), 0.0, 2.96442, 0, 1, Vector2(0.4964539, 2.0377357), 0.0, 0.0, 0, 0, Vector2(1, 1.9622641), -0.14988029, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_5t1r3"]
+offsets = PackedFloat32Array(0, 0.5078125, 1)
+colors = PackedColorArray(1, 1, 1, 0.95384616, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bddyk"]
 albedo_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
@@ -98,14 +126,14 @@ script = ExtResource("1_6l5ol")
 directionGizmo = NodePath("debugMeshes/dirVecArrow")
 enableDebugPrints = true
 enableChargeGaugePrints = true
-maxTorque = 0.15000000000000002
-torqueAcceleration = 0.1
+maxTorque = 8.0
+torqueAcceleration = 4.0
 torqueSlowDown = 0.55
 turnSpeed = 10.0
 maxImpulse = 30.0
 maxChargeUpImpulse = 20.0
 minChargeUpImpulse = 10.0
-ChargeUpRate = 0.022000000000000002
+ChargeUpRate = 0.022
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
 bounceStrength = 0.4
@@ -152,6 +180,29 @@ mesh = SubResource("CapsuleMesh_gubh5")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.50874084, 0, 1)
 mesh = SubResource("CapsuleMesh_uu7nu")
 
+[node name="CPUParticles3D" type="CPUParticles3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh/Scythe" unique_id=1995963474]
+transform = Transform3D(0.5516759, 0, -0.83405876, 0.83405876, -4.3711385e-08, 0.5516759, -3.6457855e-08, -1, -2.4114522e-08, 0.50874084, -1, 0)
+material_override = SubResource("StandardMaterial3D_r84c7")
+amount = 4
+lifetime = 0.77
+local_coords = true
+mesh = SubResource("PlaneMesh_l7cap")
+particle_flag_rotate_y = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+damping_min = 5.0
+damping_max = 5.0
+damping_curve = SubResource("Curve_n8wo2")
+angle_min = 180.0
+angle_max = 180.0
+scale_amount_curve = SubResource("Curve_cenje")
+color_ramp = SubResource("Gradient_5t1r3")
+script = ExtResource("9_wwvms")
+
 [node name="Scythe2" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=1683390812]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
 mesh = SubResource("CapsuleMesh_nuc4o")
@@ -160,7 +211,6 @@ mesh = SubResource("CapsuleMesh_nuc4o")
 unique_name_in_owner = true
 stream = ExtResource("4_af3jp")
 volume_db = 3.0
-bus = &"PlayerSpin"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
 libraries/ = SubResource("AnimationLibrary_ilqrk")
@@ -170,4 +220,5 @@ script = ExtResource("3_ilqrk")
 
 [connection signal="isSpinning" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
+[connection signal="velocity" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh/Scythe/CPUParticles3D" method="_on_player_velocity"]
 [connection signal="collisionNormals" from="ShapeCast3D" to="." method="_on_shape_cast_3d_collision_normals"]

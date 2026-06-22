@@ -16,7 +16,7 @@ extends RigidBody3D
 ## maxTorque caps the amount of force that will be applied around the y axis
 ## when the player rotates their character. The max value might not neccesarily
 ## be reached, but its there nonetheless.
-@export_range(0.01, 1, 0.01) var maxTorque
+@export_range(0.5, 24, 0.1) var maxTorque
 
 ## torqueAcceleration controls how fast player rotation speeds up towards maxTorque.
 ## it grows linearly but impacts rotations/sec exponentially!
@@ -65,6 +65,7 @@ enum dir {
 #endregion
 #region Signals
 signal isSpinning(flag: bool, speed: float)
+signal velocity(currentVelocity: float)
 #endregion
 
 func _input(event: InputEvent) -> void:
@@ -125,8 +126,8 @@ func _physics_process(delta: float) -> void:
 
 func turnPlayer(direction: int):
 	torqueFactor += torqueAcceleration/10
-	apply_torque_impulse((Vector3(0, torqueFactor*direction, 0)))
-	apply_force(dirVec)
+	apply_torque((Vector3(0, torqueFactor*direction, 0)))
+	# apply_force(dirVec)
 
 
 func calculateDirVec() -> void:
@@ -155,14 +156,19 @@ func _on_shape_cast_3d_collision_normals(colliderNormals: Array[Vector3]) -> voi
 	dirVec = dirVec - (2*dirVec.dot(sumNormal)*sumNormal)
 
 
-	# var b = Basis(dirVec, dirVec.signed_angle_to(sumNormal, Vector3.UP))
+	var b = Basis(dirVec, dirVec.signed_angle_to(sumNormal, Vector3.UP))
 
-	# apply_torque_impulse(b.y*0.5)
+	apply_torque_impulse(b.y*0.5)
 
-	apply_central_impulse(dirVec*bounceStrength*velocityFactor)
+	# apply_central_impulse(dirVec*bounceStrength*velocityFactor)
 
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if state.linear_velocity.length() > maxImpulse:
 		state.linear_velocity = state.linear_velocity.normalized() * maxImpulse
+	
+	if state.angular_velocity.length() > maxTorque:
+		state.angular_velocity = state.angular_velocity.normalized() * maxTorque
+
+	velocity.emit(remap(state.linear_velocity.length(),0, maxImpulse, 0, 1))
