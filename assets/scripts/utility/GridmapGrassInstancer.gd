@@ -107,5 +107,7 @@ func play_cut_sfx() -> void:
 	var pitches = [0.5, 0.7, 1.0, 1.3, 1.5]
 	var randPitch = pitches[randi_range(0, pitches.size() - 1)] * 3
 	
+	if !%GrassCutSFX:
+		push_warning("No GrassCutSFX found as a child of ", self)
 	%GrassCutSFX.pitch_scale = randPitch
 	%GrassCutSFX.play()

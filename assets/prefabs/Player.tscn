@@ -80,7 +80,7 @@ _data = {
 &"spin": SubResource("Animation_6l5ol")
 }
 
-[node name="Player" type="RigidBody3D" unique_id=935310202 node_paths=PackedStringArray("directionGizmo")]
+[node name="Player" type="RigidBody3D" unique_id=935310202 node_paths=PackedStringArray("directionGizmo") groups=["Player"]]
 axis_lock_linear_y = true
 axis_lock_angular_x = true
 axis_lock_angular_z = true

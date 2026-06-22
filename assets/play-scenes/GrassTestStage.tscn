@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="7_5luqu"]
 [ext_resource type="PackedScene" uid="uid://ct42r63pb3ltf" path="res://assets/prefabs/interactables/BreakableObstacle.tscn" id="7_13huw"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="8_qtusf"]
+[ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="11_dhjvc"]
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_lnct0"]
 
 [sub_resource type="Gradient" id="Gradient_8uhu2"]
@@ -72,7 +73,7 @@ _data = {
 &"move_sky": SubResource("Animation_qtusf")
 }
 
-[node name="GrassTestStage" type="Node3D" unique_id=978790333]
+[node name="GrassTestStage" type="Node3D" unique_id=978790333 groups=["ProgressManager"]]
 script = ExtResource("1_st3xd")
 
 [node name="Map" type="Node3D" parent="." unique_id=1649906345]
@@ -128,45 +129,8 @@ autoplay = &"move_sky"
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualEffects" unique_id=450125435]
 transform = Transform3D(0.6804246, -0.07364283, 0.7291085, 0, 0.9949379, 0.100492634, -0.7328182, -0.06837766, 0.67698014, 4.830099, 7.467118, 5.0430355)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1307144088]
-transform = Transform3D(1, 2.1920765e-07, -3.6482277e-07, 0, 0.8571673, 0.51503813, 4.2561442e-07, -0.51503813, 0.8571673, -5.357702, 7.556552, 13.385548)
-
-[node name="UI" type="Control" parent="Camera3D" unique_id=1372041648]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GrassProgressLabel" type="Label" parent="Camera3D/UI" unique_id=447594228]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "dsdadasdad"
-
-[node name="ScoreLabel" type="Label" parent="Camera3D/UI" unique_id=907534449]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 45.0
-offset_right = 121.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Score: 0"
-
-[node name="TimeLabel" type="Label" parent="Camera3D/UI" unique_id=1404475977]
-unique_name_in_owner = true
-layout_mode = 0
-offset_top = 91.0
-offset_right = 139.0
-offset_bottom = 136.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Time: 0:0"
-
-[node name="Timer" type="Timer" parent="Camera3D/UI/TimeLabel" unique_id=1228988590]
+[node name="CameraPivot" parent="." unique_id=2124213654 instance=ExtResource("11_dhjvc")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 7.556552, 13.385548)
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=723377874]
 stream = ExtResource("11_lnct0")

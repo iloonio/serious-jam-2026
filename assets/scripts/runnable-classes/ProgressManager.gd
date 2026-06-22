@@ -9,10 +9,15 @@ var startTime: float
 
 var levelCleared: bool = false
 
-var playerScore: int = 0:
-	set(newScore):
-		playerScore = newScore  
-		_on_score_changed(playerScore) 
+var playerScore: int = 0
+
+
+
+signal updateGrassCount
+signal updateScore
+signal updateTime
+signal updateRanking
+
 
 
 ## Returns elapsed time in seconds
@@ -37,11 +42,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	@warning_ignore("integer_division")
-	
 	if levelCleared:
 		return
 	
+	@warning_ignore("integer_division")
 	var mins = int(get_elapsed_time() / 60)
 	mins = format_time_nums(mins)
 	
@@ -49,8 +53,9 @@ func _process(delta: float) -> void:
 	secs = format_time_nums(secs)
 	
 	
-	%TimeLabel.text = "TIME: %s:%s" % [mins, secs]
-	
+	updateTime.emit(secs, mins)
+
+
 func format_time_nums(num) -> String:
 	if num < 10:
 		num = "0" + str(num)
@@ -58,16 +63,12 @@ func format_time_nums(num) -> String:
 	return str(num)
 
 
-func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("Restart Level"):
-		SceneManager.reload_scene()
-
 
 
 func update_progress(newGrassAmount) -> void:
 	grassLeft = newGrassAmount
 	
-	%GrassProgressLabel.text = "Grass left: " + str(grassLeft) + "/" + str(grassTotal)
+	updateGrassCount.emit(grassLeft, grassTotal)
 	
 	if grassLeft <= 0: 
 		level_clear()
@@ -76,15 +77,13 @@ func update_progress(newGrassAmount) -> void:
 func level_clear() -> void:
 	levelCleared = true
 	
-	%GrassProgressLabel.text = "YOU WON, PRESS [R] TO RETRY"
-	
 	var timeBonus = int(30000 / get_elapsed_time()) # 10 sec = 3000 points, 50 sec = 600 points
 	
 	var totScore: int = playerScore + timeBonus
 	
 	var rank: String = calculate_rank(totScore)
 	
-	%ScoreLabel.text = "Total Score: %d [Score: (%d) + Time Bonus: (%d)], <RANK: %s>" % [totScore, playerScore, timeBonus, rank] 
+	updateRanking.emit(totScore, playerScore, timeBonus, rank)
 	
 
 
@@ -105,12 +104,11 @@ func calculate_rank(score : int) -> String:
 	return rank
 
 
-func _on_score_changed(score: int) -> void:
-	if levelCleared:
-		return
-
-	%ScoreLabel.text = "Score: %d" % score
-
 
 func _on_grass_grid_map_add_score(score: int) -> void:
 	playerScore += score
+
+	if levelCleared:
+		return
+
+	updateScore.emit(playerScore)

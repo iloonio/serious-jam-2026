@@ -6,6 +6,10 @@ func _ready() -> void:
 		call_deferred("bootstrap_into_game")
 	
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("Restart Level"):
+		SceneManager.reload_scene()
+
 
 	## Returns true if running the game via GameScene
 func is_inside_game() -> bool: 
