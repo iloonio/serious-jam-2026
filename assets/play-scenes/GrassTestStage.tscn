@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="11_dhjvc"]
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_lnct0"]
 [ext_resource type="PackedScene" uid="uid://bjst1vjbcni6p" path="res://assets/visuals/blender/blend-files/Barrel.blend" id="13_1xts5"]
+[ext_resource type="PackedScene" uid="uid://bobmmxog1oq0k" path="res://assets/visuals/blender/blend-files/Volleyball.blend" id="14_c15vs"]
 
 [sub_resource type="Curve3D" id="Curve3D_7pdsd"]
 _data = {
@@ -117,6 +118,9 @@ transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.984
 
 [node name="Barrel2" parent="." unique_id=2014445760 instance=ExtResource("13_1xts5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 7)
+
+[node name="Volleyball" parent="." unique_id=1815758155 instance=ExtResource("14_c15vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 7)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 [connection signal="timeout" from="Map/Interactables/MovingObstacle/Path3D/CooldownTimer" to="Map/Interactables/MovingObstacle" method="_on_cooldown_timer_timeout"]
