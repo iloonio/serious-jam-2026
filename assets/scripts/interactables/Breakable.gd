@@ -9,11 +9,20 @@ func on_interact():
 	HP -= 1
 
 	if(HP <= 0):
-		var ParticleInstance: CPUParticles3D = breakEffect.instantiate()
-		ParticleInstance.global_position = parent.global_position
-		ParticleInstance.one_shot = true # particles should always be destroyed after theyre done
+		var particleInstance: CPUParticles3D = breakEffect.instantiate()
+		particleInstance.position = parent.position + Vector3(0,0,0)
+		particleInstance.finished.connect(particleInstance.queue_free)
 
-		ParticleInstance.finished.connect(ParticleInstance.queue_free)
-		get_parent().add_child(ParticleInstance)
+		# propagate the call to all children in case of layered particles
+		particleInstance.propagate_call("set", ["one_shot", true])
+		particleInstance.propagate_call("set", ["emitting", true])
 
+		get_parent().get_parent().add_child(particleInstance)
+
+
+
+		# await get_tree().create_timer(0.5).timeout
 		parent.queue_free()
+
+	# on_interact() shouldnt be callable on its instance for some duration.
+	# TODO: turn the timeout time into an exported value inside of obstacleCollider.gd

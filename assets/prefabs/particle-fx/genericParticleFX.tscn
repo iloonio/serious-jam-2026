@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cnmbrubldx08x"]
+
+[ext_resource type="Texture2D" uid="uid://mj7rc3eyya7m" path="res://assets/visuals/materials/basicParticleTexture.png" id="1_iufjc"]
+[ext_resource type="Texture2D" uid="uid://cywk6rqa2771t" path="res://assets/visuals/materials/genericParticle_small.png" id="1_l7y4n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sd5g6"]
+transparency = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_l7y4n")
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_aqyc4"]
+material = SubResource("StandardMaterial3D_sd5g6")
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_l7cap"]
+offsets = PackedFloat32Array(0, 0.53409094, 0.9886364)
+colors = PackedColorArray(0.53, 0.53, 0.53, 1, 0.47, 0.47, 0.47, 1, 0.51, 0.51, 0.51, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7y4n"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_iufjc")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_r84c7"]
+material = SubResource("StandardMaterial3D_l7y4n")
+
+[sub_resource type="Gradient" id="Gradient_706kr"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="GenericParticleFx" type="CPUParticles3D" unique_id=1555598157]
+amount = 12
+explosiveness = 1.0
+mesh = SubResource("PlaneMesh_aqyc4")
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+color_ramp = SubResource("Gradient_l7cap")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1943620758]
+explosiveness = 1.0
+mesh = SubResource("QuadMesh_r84c7")
+direction = Vector3(0, 1, 0)
+spread = 21.32
+gravity = Vector3(0, -9, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+color_ramp = SubResource("Gradient_706kr")

@@ -9,7 +9,8 @@ vertex_color_use_as_albedo = true
 material = SubResource("StandardMaterial3D_aqyc4")
 
 [sub_resource type="Curve" id="Curve_l7cap"]
-_data = [Vector2(0, 0), 0.0, 2.8, 0, 0, Vector2(0.65862066, 1), 0.0, 0.0, 0, 0]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 2.8, 0, 0, Vector2(0.73448277, 4), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_63gcn"]
@@ -27,18 +28,18 @@ radius = 0.25
 height = 0.5
 
 [sub_resource type="Curve" id="Curve_stt0w"]
-_limits = [0.0, 0.73636365, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.73636365, 0, 1, Vector2(1, 0.73636365), -0.025211914, 0.0, 0, 0]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 9.227274, 0, 0, Vector2(0.7620689, 3), -0.025211914, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_pwd0r"]
-offsets = PackedFloat32Array(0.5719697, 1)
+offsets = PackedFloat32Array(0.25757575, 0.57575756)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Curve" id="Curve_itqay"]
-_limits = [0.0, 3.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 2.3454545, 0, 1, Vector2(1, 2.3454545), -0.025211914, 0.0, 0, 0]
-point_count = 2
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 3.5151541, 0, 0, Vector2(0.15862069, 0.32727337), 0.0, 0.0, 0, 0, Vector2(0.8827586, 9.49091), 4.162675, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_guptf"]
 offsets = PackedFloat32Array(0.25757575, 1)
@@ -54,6 +55,7 @@ _data = [Vector2(0.0034482777, 0.990909), 0.0, 0.053803645, 0, 0, Vector2(0.9896
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_56qq3"]
+offsets = PackedFloat32Array(0.530303, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [node name="ExplosionFx" type="CPUParticles3D" unique_id=1907303957]
@@ -64,7 +66,7 @@ gravity = Vector3(0, 0, 0)
 scale_amount_curve = SubResource("Curve_l7cap")
 color_ramp = SubResource("Gradient_63gcn")
 
-[node name="CPUParticles3D3" type="CPUParticles3D" parent="." unique_id=1773274936]
+[node name="InnerCore" type="CPUParticles3D" parent="." unique_id=1773274936]
 amount = 1
 lifetime = 0.85
 draw_order = 1
@@ -74,7 +76,7 @@ scale_amount_curve = SubResource("Curve_stt0w")
 color = Color(1, 1, 1, 0.76862746)
 color_ramp = SubResource("Gradient_pwd0r")
 
-[node name="CPUParticles3D2" type="CPUParticles3D" parent="." unique_id=1521547284]
+[node name="OuterCore" type="CPUParticles3D" parent="." unique_id=1521547284]
 amount = 1
 lifetime = 0.85
 draw_order = 1
@@ -84,26 +86,22 @@ scale_amount_curve = SubResource("Curve_itqay")
 color = Color(1, 1, 1, 0.20392157)
 color_ramp = SubResource("Gradient_guptf")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=916126767]
-visible = false
-amount = 6
+[node name="Burst" type="CPUParticles3D" parent="." unique_id=916126767]
+amount = 12
 lifetime = 0.85
 explosiveness = 1.0
-randomness = 0.5
 mesh = SubResource("SphereMesh_itqay")
-emission_shape = 1
-emission_sphere_radius = 0.3
 direction = Vector3(0, 1, 0)
 spread = 180.0
 flatness = 0.31
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 4.0
-initial_velocity_max = 4.0
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
 linear_accel_min = 1.0
 linear_accel_max = 2.0
-damping_min = 16.0
-damping_max = 16.0
-scale_amount_min = 0.5
-scale_amount_max = 2.0
+damping_min = 14.0
+damping_max = 14.0
+scale_amount_min = 3.0
+scale_amount_max = 6.0
 scale_amount_curve = SubResource("Curve_guptf")
 color_ramp = SubResource("Gradient_56qq3")
