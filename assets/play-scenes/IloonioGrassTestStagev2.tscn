@@ -124,17 +124,14 @@ bus = &"SFX"
 
 [node name="Interactables" type="Node" parent="Map" unique_id=692324907]
 
-[node name="BreakableObject" parent="Map/Interactables" unique_id=1026180073 instance=ExtResource("11_bkl3n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15881252, 1.5, 9.8966)
-
 [node name="MovingObject" parent="Map/Interactables" unique_id=1041034083 instance=ExtResource("12_aqf58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.594212, 1.4999895, -0.4101894)
 curve = SubResource("Curve3D_aqf58")
 progressIncrement = 0.5
 
 [node name="PathFollow3D" parent="Map/Interactables/MovingObject" index="0" unique_id=1687061993]
-transform = Transform3D(-0.9750787, 0, -0.22177568, 0, 0.9999791, 0, 0.22177623, 0, -0.97507626, -1.0269096, 0, 6.097909)
-progress = 10.386974
+transform = Transform3D(-0.81174666, 0, 0.58397675, 0, 0.9999791, 0, -0.58397824, 0, -0.81174463, -2.2654848, 0, -0.20622583)
+progress = 3.8794758
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
@@ -199,6 +196,12 @@ bus = &"BGM"
 
 [node name="GenericParticleFx" parent="." unique_id=1555598157 instance=ExtResource("13_kgvgn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1610274, 1.641417, 2.8788414)
+
+[node name="BreakableObject" parent="." unique_id=1026180073 instance=ExtResource("11_bkl3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7970265, 1.5, 10.010254)
+
+[node name="BreakableObject2" parent="." unique_id=476048578 instance=ExtResource("11_bkl3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1869466, 1.5, 11.279453)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 
