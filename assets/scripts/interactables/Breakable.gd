@@ -19,9 +19,6 @@ func on_interact():
 
 		get_parent().get_parent().add_child(particleInstance)
 
-
-
-		# await get_tree().create_timer(0.5).timeout
 		parent.queue_free()
 
 	# on_interact() shouldnt be callable on its instance for some duration.
