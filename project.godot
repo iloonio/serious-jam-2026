@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="serious-jam-2026"
-run/main_scene="uid://etj2kl2stkal"
+run/main_scene="uid://xjfi0vkt1fyn"
 config/features=PackedStringArray("4.7")
 config/icon="res://assets/visuals/ui/icon.svg"
 
@@ -44,6 +44,10 @@ folder_colors={
 "res://assets/visuals/": "yellow",
 "res://docs/": "gray"
 }
+
+[global_group]
+
+interactableComponents="these are components that the player can interact with"
 
 [input]
 
@@ -82,7 +86,7 @@ charge={
 
 3d_physics/layer_2="wall"
 3d_physics/layer_3="Grass"
-3d_physics/layer_4="Breakable"
+3d_physics/layer_4="Interactable"
 
 [rendering]
 

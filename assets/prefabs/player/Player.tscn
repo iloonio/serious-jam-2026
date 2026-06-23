@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
 [ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
 [ext_resource type="Texture2D" uid="uid://r534asrmfegh" path="res://assets/visuals/materials/scytheSlashTexture.png" id="8_oc0eq"]
+[ext_resource type="Script" uid="uid://cc7j154l53s2q" path="res://assets/scripts/player/obstacleCollider.gd" id="10_xkygm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
@@ -109,6 +110,10 @@ _data = {
 &"spin": SubResource("Animation_6l5ol")
 }
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_r84c7"]
+height = 0.6819092
+radius = 2.0
+
 [node name="Player" type="RigidBody3D" unique_id=935310202 node_paths=PackedStringArray("directionGizmo")]
 collision_mask = 3
 input_ray_pickable = false
@@ -140,13 +145,14 @@ directionGizmo = NodePath("debugMeshes/dirVecArrow")
 enableDebugPrints = true
 enableChargeGaugePrints = true
 
-[node name="RemoteMeshTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]
+[node name="CharacterMeshRemoteTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]
 editor_description = "set remote path to the character mesh to ensure that its transform is aligned with the player's rotation. "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 remote_path = NodePath("../PlayerCollider/KeepRotationStatic/CharacterMesh")
 update_rotation = false
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=1570744685]
+[node name="WallBounceShapeCast" type="ShapeCast3D" parent="." unique_id=1570744685]
+editor_description = "a shapecast that looks to see if we are hitting a wall or not. if we do, we send a signal to bounce off it. "
 shape = ExtResource("3_mv535")
 target_position = Vector3(0, 1, 0)
 margin = 0.25
@@ -219,7 +225,16 @@ autoplay = &"spin"
 speed_scale = 0.594
 script = ExtResource("3_ilqrk")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=403514280]
+collision_mask = 8
+script = ExtResource("10_xkygm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2137416286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80281985, 0)
+shape = SubResource("CylinderShape3D_r84c7")
+debug_color = Color(0.99999994, 0.0075927703, 0.17087543, 1)
+
 [connection signal="isSpinning" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
 [connection signal="velocity" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh/Scythe/CPUParticles3D" method="_on_player_velocity"]
-[connection signal="collisionNormals" from="ShapeCast3D" to="." method="_on_shape_cast_3d_collision_normals"]
+[connection signal="collisionNormals" from="WallBounceShapeCast" to="." method="_on_shape_cast_3d_collision_normals"]

@@ -5,6 +5,7 @@ class_name Breakable extends Interactable
 @export_range(1,5,1) var HP: int
 
 func on_interact():
+	print("breakable object got interacted")
 	HP -= 1
 
 	if(HP <= 0):

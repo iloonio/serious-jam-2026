@@ -7,15 +7,18 @@
 material = ExtResource("1_gmtvf")
 height = 1.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_bnv8u"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aqf58"]
+height = 1.0024414
 
 [node name="BreakableObject" type="RigidBody3D" unique_id=1026180073]
+collision_layer = 9
 
-[node name="BreakableComponent" parent="." unique_id=101191030 instance=ExtResource("1_u21ea")]
+[node name="BreakableComponent" parent="." unique_id=101191030 groups=["interactableComponents"] instance=ExtResource("1_u21ea")]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1141679026]
 mesh = SubResource("CylinderMesh_r84c7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1263385775]
-shape = SubResource("SphereShape3D_bnv8u")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010498047, 0)
+shape = SubResource("CylinderShape3D_aqf58")
 debug_color = Color(0, 0.5950001, 0.7, 1)
