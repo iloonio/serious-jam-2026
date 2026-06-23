@@ -7,8 +7,8 @@
 [ext_resource type="Shape3D" uid="uid://ba7pv8qsvi5vd" path="res://assets/prefabs/player/playerCapsuleShape3d.tres" id="3_mv535"]
 [ext_resource type="Script" uid="uid://cbbp5t06dg3hx" path="res://assets/scripts/player/PlayerBounce.gd" id="3_pj06c"]
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
+[ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
 [ext_resource type="Texture2D" uid="uid://r534asrmfegh" path="res://assets/visuals/materials/scytheSlashTexture.png" id="8_oc0eq"]
-[ext_resource type="Script" uid="uid://lh5cqj6vjkvf" path="res://assets/prefabs/player/ScytheParticleLogic.gd" id="9_wwvms"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
@@ -75,7 +75,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/KeepRotationStatic/CharacterMesh:rotation")
+tracks/0/path = NodePath("PlayerCollider/KeepRotationStatic/CharacterMesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -93,7 +93,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D/KeepRotationStatic/CharacterMesh:rotation")
+tracks/0/path = NodePath("PlayerCollider/KeepRotationStatic/CharacterMesh:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -143,7 +143,7 @@ enableChargeGaugePrints = true
 [node name="RemoteMeshTranslator" type="RemoteTransform3D" parent="." unique_id=1509044585]
 editor_description = "set remote path to the character mesh to ensure that its transform is aligned with the player's rotation. "
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-remote_path = NodePath("../CollisionShape3D/KeepRotationStatic/CharacterMesh")
+remote_path = NodePath("../PlayerCollider/KeepRotationStatic/CharacterMesh")
 update_rotation = false
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="." unique_id=1570744685]
@@ -164,24 +164,24 @@ visible = false
 [node name="forwardArrow" parent="debugMeshes" unique_id=1479652990 instance=ExtResource("2_6l5ol")]
 transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8.742278e-08, -1, 4.371139e-08, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1473696831]
+[node name="PlayerCollider" type="CollisionShape3D" parent="." unique_id=1473696831]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("3_mv535")
 
-[node name="KeepRotationStatic" type="Node" parent="CollisionShape3D" unique_id=1835112467]
+[node name="KeepRotationStatic" type="Node" parent="PlayerCollider" unique_id=1835112467]
 
-[node name="CharacterMesh" type="Node3D" parent="CollisionShape3D/KeepRotationStatic" unique_id=1781405758]
+[node name="CharacterMesh" type="Node3D" parent="PlayerCollider/KeepRotationStatic" unique_id=1781405758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("3_0ph0n")
 
-[node name="Body" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=101751559]
+[node name="Body" type="MeshInstance3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=101751559]
 mesh = SubResource("CapsuleMesh_gubh5")
 
-[node name="Scythe" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=1002046919]
+[node name="Scythe" type="MeshInstance3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=1002046919]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.50874084, 0, 1)
 mesh = SubResource("CapsuleMesh_uu7nu")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh/Scythe" unique_id=1995963474]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh/Scythe" unique_id=1995963474]
 transform = Transform3D(0.5516759, 0, -0.83405876, 0.83405876, -4.3711385e-08, 0.5516759, -3.6457855e-08, -1, -2.4114522e-08, 0.50874084, -1, 0)
 material_override = SubResource("StandardMaterial3D_r84c7")
 amount = 4
@@ -202,13 +202,13 @@ angle_min = 180.0
 angle_max = 180.0
 scale_amount_curve = SubResource("Curve_cenje")
 color_ramp = SubResource("Gradient_5t1r3")
-script = ExtResource("9_wwvms")
+script = ExtResource("7_jbgpd")
 
-[node name="Scythe2" type="MeshInstance3D" parent="CollisionShape3D/KeepRotationStatic/CharacterMesh" unique_id=1683390812]
+[node name="Scythe2" type="MeshInstance3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=1683390812]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
 mesh = SubResource("CapsuleMesh_nuc4o")
 
-[node name="SpinSFX" type="AudioStreamPlayer" parent="CollisionShape3D/KeepRotationStatic" unique_id=109432352]
+[node name="SpinSFX" type="AudioStreamPlayer" parent="PlayerCollider/KeepRotationStatic" unique_id=109432352]
 unique_name_in_owner = true
 stream = ExtResource("4_af3jp")
 volume_db = 3.0
@@ -219,7 +219,7 @@ autoplay = &"spin"
 speed_scale = 0.594
 script = ExtResource("3_ilqrk")
 
-[connection signal="isSpinning" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
+[connection signal="isSpinning" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
-[connection signal="velocity" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh/Scythe/CPUParticles3D" method="_on_player_velocity"]
+[connection signal="velocity" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh/Scythe/CPUParticles3D" method="_on_player_velocity"]
 [connection signal="collisionNormals" from="ShapeCast3D" to="." method="_on_shape_cast_3d_collision_normals"]

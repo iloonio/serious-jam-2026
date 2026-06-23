@@ -42,10 +42,8 @@ extends RigidBody3D
 @export_group("Debugging")
 ## mesh to some sort of shape that can be used a direction indicator.
 @export var directionGizmo: Node3D
-
 ## when enabled, various print statements will go off. you can disable specific print logs with other exports
 @export var enableDebugPrints: bool = false
-
 @export var enableChargeGaugePrints: bool = false
 @export var enableDirVecPrints: bool = false
 #endregion

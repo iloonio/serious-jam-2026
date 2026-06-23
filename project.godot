@@ -81,6 +81,8 @@ charge={
 [layer_names]
 
 3d_physics/layer_2="wall"
+3d_physics/layer_3="Grass"
+3d_physics/layer_4="Breakable"
 
 [rendering]
 
