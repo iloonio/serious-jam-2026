@@ -7,13 +7,43 @@
 [ext_resource type="Shape3D" uid="uid://ba7pv8qsvi5vd" path="res://assets/prefabs/player/playerCapsuleShape3d.tres" id="3_mv535"]
 [ext_resource type="Script" uid="uid://cbbp5t06dg3hx" path="res://assets/scripts/player/PlayerBounce.gd" id="3_pj06c"]
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
+[ext_resource type="Texture2D" uid="uid://bxv0nfj28jgxi" path="res://assets/visuals/materials/scytheSlash2_stretched.png" id="5_jbgpd"]
 [ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
-[ext_resource type="Texture2D" uid="uid://r534asrmfegh" path="res://assets/visuals/materials/scytheSlashTexture.png" id="8_oc0eq"]
 [ext_resource type="Script" uid="uid://cc7j154l53s2q" path="res://assets/scripts/player/obstacleCollider.gd" id="10_jbgpd"]
 [ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/prefabs/player/TrailParticleLogic.gd" id="10_xkygm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mywad"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("5_jbgpd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jbgpd"]
+material = SubResource("StandardMaterial3D_mywad")
+size = Vector2(2.2, 2)
+
+[sub_resource type="Curve" id="Curve_n8wo2"]
+_limits = [0.0, 25.0, 0.0, 1.0]
+bake_resolution = 300
+_data = [Vector2(0, 0), 0.0, 7.7059374, 0, 1, Vector2(0.75197893, 5.7947025), 0.0, 0.0, 0, 0, Vector2(1, 24.668877), -2.7146747, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_wax3n"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1.9745222), 0.0, -1.9745221, 0, 1, Vector2(1, 0), -1.9745221, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_jbgpd"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 2.754014, 0, 1, Vector2(0.7493404, 2.063694), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_5t1r3"]
+offsets = PackedFloat32Array(0.72521245, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xmh61"]
 
@@ -35,33 +65,6 @@ albedo_color = Color(0.28764445, 0.17344847, 0, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_uu7nu"]
 material = SubResource("StandardMaterial3D_kf7ld")
 radius = 0.1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r84c7"]
-transparency = 1
-shading_mode = 0
-diffuse_mode = 3
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("8_oc0eq")
-disable_receive_shadows = true
-grow_amount = 1.159
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_l7cap"]
-size = Vector2(2.705, 1.125)
-
-[sub_resource type="Curve" id="Curve_n8wo2"]
-_limits = [0.0, 25.0, 0.0, 1.0]
-bake_resolution = 300
-_data = [Vector2(0, 0), 0.0, 6.306931, 0, 1, Vector2(0.822695, 5.1886806), 0.0, 0.0, 0, 0, Vector2(1, 11.320755), -2.7146747, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_cenje"]
-_limits = [0.0, 4.0, 0.0, 1.0]
-_data = [Vector2(0, 0.56603765), 0.0, 2.96442, 0, 1, Vector2(0.4964539, 2.0377357), 0.0, 0.0, 0, 0, Vector2(1, 1.9622641), -0.14988029, 0.0, 1, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_5t1r3"]
-offsets = PackedFloat32Array(0, 0.5078125, 1)
-colors = PackedColorArray(1, 1, 1, 0.95384616, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bddyk"]
 albedo_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
@@ -102,7 +105,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+"values": [Vector3(0, 6.2831855, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ilqrk"]
@@ -195,6 +198,27 @@ transform = Transform3D(-1, -8.742278e-08, 3.821371e-15, 0, -4.371139e-08, -1, 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = ExtResource("3_mv535")
 
+[node name="CPUParticles3D" type="CPUParticles3D" parent="PlayerCollider" unique_id=1995963474]
+transform = Transform3D(0.9980999, 3.5527137e-15, 0.06161818, -1.0658141e-14, 1, 1.7763568e-15, -0.06161818, 1.7763568e-15, 0.9980999, 0, 0, 0)
+amount = 6
+local_coords = true
+mesh = SubResource("PlaneMesh_jbgpd")
+particle_flag_rotate_y = true
+direction = Vector3(0, 0, 0)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+damping_min = 5.0
+damping_max = 5.0
+damping_curve = SubResource("Curve_n8wo2")
+angle_min = 360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_wax3n")
+scale_amount_curve = SubResource("Curve_jbgpd")
+color = Color(0.99, 0.99, 0.99, 1)
+color_ramp = SubResource("Gradient_5t1r3")
+script = ExtResource("7_jbgpd")
+
 [node name="KeepRotationStatic" type="Node" parent="PlayerCollider" unique_id=1835112467]
 
 [node name="CharacterMesh" type="Node3D" parent="PlayerCollider/KeepRotationStatic" unique_id=1781405758]
@@ -207,29 +231,6 @@ mesh = SubResource("CapsuleMesh_gubh5")
 [node name="Scythe" type="MeshInstance3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=1002046919]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.50874084, 0, 1)
 mesh = SubResource("CapsuleMesh_uu7nu")
-
-[node name="CPUParticles3D" type="CPUParticles3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh/Scythe" unique_id=1995963474]
-transform = Transform3D(0.5516759, 0, -0.83405876, 0.83405876, -4.3711385e-08, 0.5516759, -3.6457855e-08, -1, -2.4114522e-08, 0.50874084, -1, 0)
-material_override = SubResource("StandardMaterial3D_r84c7")
-amount = 4
-lifetime = 0.77
-local_coords = true
-mesh = SubResource("PlaneMesh_l7cap")
-particle_flag_rotate_y = true
-direction = Vector3(0, 0, 0)
-spread = 0.0
-flatness = 1.0
-gravity = Vector3(0, 0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 10.0
-damping_min = 5.0
-damping_max = 5.0
-damping_curve = SubResource("Curve_n8wo2")
-angle_min = 180.0
-angle_max = 180.0
-scale_amount_curve = SubResource("Curve_cenje")
-color_ramp = SubResource("Gradient_5t1r3")
-script = ExtResource("7_jbgpd")
 
 [node name="Scythe2" type="MeshInstance3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=1683390812]
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
