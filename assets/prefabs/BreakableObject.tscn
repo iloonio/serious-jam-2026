@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://q4ipxm4x2tko"]
+
+[ext_resource type="Material" uid="uid://d25d3l6kvq7if" path="res://assets/visuals/materials/standard_brown_material.tres" id="1_gmtvf"]
+[ext_resource type="PackedScene" uid="uid://dajru16aoeg36" path="res://assets/prefabs/interactables/components/BreakableComponent.tscn" id="1_u21ea"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r84c7"]
+material = ExtResource("1_gmtvf")
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_aqf58"]
+height = 1.0024414
+
+[node name="BreakableObject" type="RigidBody3D" unique_id=1026180073]
+collision_layer = 9
+
+[node name="BreakableComponent" parent="." unique_id=101191030 groups=["interactableComponents"] instance=ExtResource("1_u21ea")]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1141679026]
+mesh = SubResource("CylinderMesh_r84c7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1263385775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010498047, 0)
+shape = SubResource("CylinderShape3D_aqf58")
+debug_color = Color(0, 0.5950001, 0.7, 1)

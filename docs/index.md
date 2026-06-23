@@ -4,6 +4,9 @@ welcome to the docs page of this project. this is an index page that lists all o
 ## Player physics
 [player movement](player-mechanics.md)
 
+## Environment
+[interactable](interactable.md)
+
 ## Shaders & Meshes
 
 

@@ -7,10 +7,18 @@
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="5_cd131"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/prefabs/GrassMesh.tres" id="6_283lf"]
 [ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="7_x8kcu"]
-[ext_resource type="PackedScene" uid="uid://ct42r63pb3ltf" path="res://assets/prefabs/interactables/BreakableObstacle.tscn" id="8_44g40"]
-[ext_resource type="PackedScene" uid="uid://8jdsn1v0ksrf" path="res://assets/prefabs/interactables/MovingObstacle.tscn" id="9_1rs8u"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="10_wlq10"]
+[ext_resource type="PackedScene" uid="uid://q4ipxm4x2tko" path="res://assets/prefabs/BreakableObject.tscn" id="11_bkl3n"]
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_t1jpb"]
+[ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="12_aqf58"]
+[ext_resource type="PackedScene" uid="uid://cnmbrubldx08x" path="res://assets/prefabs/particle-fx/genericParticleFX.tscn" id="13_kgvgn"]
+
+[sub_resource type="Curve3D" id="Curve3D_aqf58"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -3.3553157, 0, 0, 0, 0, 0, 0, -2.4138455, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10.612899),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_8uhu2"]
 colors = PackedColorArray(0, 0.6901961, 0.92156863, 1, 1, 1, 1, 1)
@@ -114,13 +122,19 @@ volume_db = -36.0
 max_polyphony = 4
 bus = &"SFX"
 
-[node name="Interactables" type="Node3D" parent="Map" unique_id=423109894]
+[node name="Interactables" type="Node" parent="Map" unique_id=692324907]
 
-[node name="BreakableObstacle" parent="Map/Interactables" unique_id=1163499174 instance=ExtResource("8_44g40")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 7)
+[node name="BreakableObject" parent="Map/Interactables" unique_id=1026180073 instance=ExtResource("11_bkl3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15881252, 1.5, 9.8966)
 
-[node name="MovingObstacle" parent="Map/Interactables" unique_id=2024091348 instance=ExtResource("9_1rs8u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 7)
+[node name="MovingObject" parent="Map/Interactables" unique_id=1041034083 instance=ExtResource("12_aqf58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.594212, 1.4999895, -0.4101894)
+curve = SubResource("Curve3D_aqf58")
+progressIncrement = 0.5
+
+[node name="PathFollow3D" parent="Map/Interactables/MovingObject" index="0" unique_id=1687061993]
+transform = Transform3D(-0.9750787, 0, -0.22177568, 0, 0.9999791, 0, 0.22177623, 0, -0.97507626, -1.0269096, 0, 6.097909)
+progress = 10.386974
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
@@ -183,7 +197,9 @@ volume_db = -25.0
 autoplay = true
 bus = &"BGM"
 
+[node name="GenericParticleFx" parent="." unique_id=1555598157 instance=ExtResource("13_kgvgn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1610274, 1.641417, 2.8788414)
+
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 
-[editable path="Map/Interactables/BreakableObstacle"]
-[editable path="Map/Interactables/MovingObstacle"]
+[editable path="Map/Interactables/MovingObject"]

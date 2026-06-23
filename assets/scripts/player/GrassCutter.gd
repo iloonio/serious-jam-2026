@@ -61,18 +61,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	cut_grass_in_radius()
-	
-	check_breakable_collision()
 
-
-func check_breakable_collision() -> void:
-	pass
-	#for col in get_slide_collision_count():
-	#	var hitObject = get_slide_collision(col).get_collider()
-	#	if hitObject is BreakableObstacle:
-	#		hitObject.take_hit()
-			
-		
 
 func cut_grass_in_radius():
 	if !isSpinning:

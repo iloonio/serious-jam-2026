@@ -1,18 +1,9 @@
 extends RigidBody3D
 
 #region Exports
-@export_category("Debugging")
-## mesh to some sort of shape that can be used a direction indicator.
-@export var directionGizmo: Node3D
+@export_category("Player Settings")
 
-## when enabled, various print statements will go off. you can disable specific print logs with other exports
-@export var enableDebugPrints: bool = false
-
-@export var enableChargeGaugePrints: bool = false
-@export var enableDirVecPrints: bool = false
-
-
-@export_category("Torque/Rotation Settings")
+@export_group("Angular Velocity")
 ## maxTorque caps the amount of force that will be applied around the y axis
 ## when the player rotates their character. The max value might not neccesarily
 ## be reached, but its there nonetheless.
@@ -31,7 +22,7 @@ extends RigidBody3D
 @export_range(0.5, 10, 0.1) var turnSpeed
 
 
-@export_category("Impulse/Speed Settings")
+@export_group("Linear Velocity")
 ## maxImpulse caps the length of the vector that is fed into the force Applier.
 @export_range(1, 128, 1) var maxImpulse
 @export_range(1,16, 0.1) var minLinearVelocity
@@ -47,6 +38,14 @@ extends RigidBody3D
 
 @export_range(0, 1, 0.01) var bounceStrength
 @export_range(1, 20, 0.5) var spinningForwardForceFactor: float
+
+@export_group("Debugging")
+## mesh to some sort of shape that can be used a direction indicator.
+@export var directionGizmo: Node3D
+## when enabled, various print statements will go off. you can disable specific print logs with other exports
+@export var enableDebugPrints: bool = false
+@export var enableChargeGaugePrints: bool = false
+@export var enableDirVecPrints: bool = false
 #endregion
 #region Variables
 var torqueFactor: float = 0 #incremented while turning, decremented when not.

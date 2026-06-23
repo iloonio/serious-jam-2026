@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct42r63pb3ltf"]
 
 [ext_resource type="Script" uid="uid://0470a17le7bt" path="res://assets/scripts/utility/MovingObstacle.gd" id="1_jnidf"]
-[ext_resource type="Script" uid="uid://bd3iuk2537g14" path="res://assets/scripts/utility/BreakableObstacle.gd" id="2_dbacs"]
+[ext_resource type="Script" uid="uid://bd3iuk2537g14" path="res://assets/scripts/interactables/BreakableObstacle.gd" id="2_dbacs"]
 
 [sub_resource type="Curve3D" id="Curve3D_7pdsd"]
 _data = {
