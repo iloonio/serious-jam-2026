@@ -2,42 +2,21 @@
 
 [ext_resource type="Shader" uid="uid://dku0wi2d4r4d0" path="res://assets/scripts/shaders/WindShader.gdshader" id="1_5qb7g"]
 
-[sub_resource type="Curve" id="Curve_hjfbn"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.19014084, 1), 0.0, 0.0, 0, 0, Vector2(0.5352113, 1), 0.0, 0.0, 0, 0, Vector2(0.64788735, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="CurveTexture" id="CurveTexture_xsif8"]
-curve = SubResource("Curve_hjfbn")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uu7nu"]
-emission_shape = 3
-emission_box_extents = Vector3(10, 5, 7)
-use_rotation_3d = true
-rotation_3d_min = Vector3(0, 0, 90)
-rotation_3d_max = Vector3(0, 0, 90)
-inherit_velocity_ratio = 15.0
-direction = Vector3(-1, 0, 0)
-spread = 0.0
-initial_velocity_min = 30.0
-initial_velocity_max = 30.0
-gravity = Vector3(0, 0, 0)
-alpha_curve = SubResource("CurveTexture_xsif8")
-
 [sub_resource type="Curve" id="Curve_nxe21"]
 _data = [Vector2(0, 0), 0.0, 2.0000002, 0, 1, Vector2(0.49999994, 1), 2.0000002, 0.53319705, 1, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qb7g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ageaw"]
 render_priority = 0
 shader = ExtResource("1_5qb7g")
-shader_parameter/albedo = Color(1, 1, 1, 0.7294118)
+shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/albedo_texture_size = Vector2i(0, 0)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
 shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
 shader_parameter/specular = 0.5
 shader_parameter/metallic = 0.0
-shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = Vector3(0, 0, 0)
 shader_parameter/uv2_scale = Vector3(1, 1, 1)
 shader_parameter/uv2_offset = Vector3(0, 0, 0)
@@ -46,18 +25,30 @@ shader_parameter/wind_strength = 0.3
 shader_parameter/wind_direction = Vector2(-0.15, 1)
 
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_5qb7g"]
-material = SubResource("ShaderMaterial_5qb7g")
+material = SubResource("ShaderMaterial_ageaw")
 shape = 0
 size = 0.4
 section_length = 6.0
 curve = SubResource("Curve_nxe21")
 
-[node name="WindParticles" type="GPUParticles3D" unique_id=1091209342]
-transform = Transform3D(1, 0, 0, 0, 1, -5.9604645e-08, 0, 5.9604645e-08, 1, 0, 0, 0)
+[sub_resource type="Gradient" id="Gradient_cd38v"]
+offsets = PackedFloat32Array(0, 0.09440559, 0.85314685, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CPUParticles3D" type="CPUParticles3D" unique_id=156266043]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 0, 0, 0)
 amount = 4
 lifetime = 10.0
 explosiveness = 0.1
-fixed_fps = 60
-trail_lifetime = 0.5
-process_material = SubResource("ParticleProcessMaterial_uu7nu")
-draw_pass_1 = SubResource("RibbonTrailMesh_5qb7g")
+mesh = SubResource("RibbonTrailMesh_5qb7g")
+emission_shape = 3
+emission_box_extents = Vector3(10, 5, 15)
+direction = Vector3(-1, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 30.0
+angle_min = 90.0
+angle_max = 90.0
+color = Color(1, 1, 1, 0.8039216)
+color_ramp = SubResource("Gradient_cd38v")

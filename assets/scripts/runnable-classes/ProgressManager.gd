@@ -12,7 +12,6 @@ var levelCleared: bool = false
 var playerScore: int = 0
 
 
-
 signal updateGrassCount
 signal updateScore
 signal updateTime

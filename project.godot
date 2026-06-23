@@ -13,6 +13,7 @@ config_version=5
 config/name="serious-jam-2026"
 run/main_scene="uid://etj2kl2stkal"
 config/features=PackedStringArray("4.7")
+run/max_fps=60
 config/icon="res://assets/visuals/ui/icon.svg"
 
 [audio]
@@ -25,18 +26,15 @@ SceneManager="*uid://ds0afpywsbg5p"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=2
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
 project/assembly_name="serious-jam-2026"
-
-[global_group]
-
-ProgressManager=""
 
 [file_customization]
 
@@ -48,6 +46,10 @@ folder_colors={
 "res://assets/visuals/": "yellow",
 "res://docs/": "gray"
 }
+
+[global_group]
+
+ProgressManager=""
 
 [input]
 
@@ -90,3 +92,8 @@ charge={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+scaling_3d/max_fps=60
+scaling_3d/vsync/vsync_mode=0
+scaling_3d/positional_shadow/soft_shadow_filter_quality=0

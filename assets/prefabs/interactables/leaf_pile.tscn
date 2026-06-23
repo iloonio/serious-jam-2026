@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cm5dfc72gq4de"]
+
+[ext_resource type="PackedScene" uid="uid://bx6s1hhy8xagp" path="res://assets/visuals/blender/blend-files/LeafPile.blend" id="1_mcfdc"]
+[ext_resource type="Material" uid="uid://bxmle4l6kdb24" path="res://assets/visuals/materials/Material.tres" id="2_51oqu"]
+
+[node name="LeafPile" unique_id=1501318141 instance=ExtResource("1_mcfdc")]
+
+[node name="Plane" parent="." index="0" unique_id=752659382]
+surface_material_override/0 = ExtResource("2_51oqu")

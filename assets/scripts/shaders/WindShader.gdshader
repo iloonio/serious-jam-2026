@@ -1,7 +1,9 @@
 // NOTE: Shader automatically converted from Godot Engine 4.7.stable's StandardMaterial3D.
 
 shader_type spatial;
-render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_schlick_ggx;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_toon, specular_schlick_ggx, depth_test_disabled;
+
+
 
 uniform vec4 albedo : source_color;
 uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
@@ -30,6 +32,25 @@ uniform vec2 wind_direction = vec2(-0.15, 1.0);
 
 void vertex() {
 	UV = UV * uv1_scale.xy + uv1_offset.xy;
+	
+	
+	// Billboard Mode: Particles
+	mat4 mat_world = mat4(
+			normalize(INV_VIEW_MATRIX[0]),
+			normalize(INV_VIEW_MATRIX[1]),
+			normalize(INV_VIEW_MATRIX[2]),
+			MODEL_MATRIX[3]);
+	mat_world = mat_world * mat4(
+			vec4(cos(INSTANCE_CUSTOM.x), -sin(INSTANCE_CUSTOM.x), 0.0, 0.0),
+			vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0),
+			vec4(0.0, 0.0, 1.0, 0.0),
+			vec4(0.0, 0.0, 0.0, 1.0));
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat_world;
+
+	MODELVIEW_NORMAL_MATRIX = mat3(MODELVIEW_MATRIX);
+	
+	
+	
 	
 	// wind logic
 	

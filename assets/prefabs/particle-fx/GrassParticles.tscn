@@ -1,42 +1,5 @@
 [gd_scene format=3 uid="uid://bhqcfg3knpkev"]
 
-[sub_resource type="Curve" id="Curve_dhnqx"]
-_data = [Vector2(0, 0.48314613), 0.0, 0.0, 0, 0, Vector2(0.9718311, 0.5617978), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_6tb32"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_m45it"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_w116s"]
-curve_x = SubResource("Curve_dhnqx")
-curve_y = SubResource("Curve_6tb32")
-curve_z = SubResource("Curve_m45it")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gubh5"]
-emission_shape_scale = Vector3(0.5, 0.5, 0.5)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-use_rotation_3d = true
-rotation_3d_min = Vector3(0, 0, -90)
-rotation_3d_max = Vector3(0, 0, 90)
-velocity_pivot = Vector3(0, -1, 0)
-direction = Vector3(0, 1, 0)
-initial_velocity_max = 3.0
-use_rotation_velocity_3d = true
-rotation_velocity_3d_min = Vector3(0, 0, -900)
-rotation_velocity_3d_max = Vector3(0, 0, 900)
-gravity = Vector3(0, -6, 0)
-radial_accel_min = -2.2351742e-06
-radial_accel_max = 0.49999776
-scale_min = 0.19999999
-scale_max = 1.5
-scale_curve = SubResource("CurveXYZTexture_w116s")
-
 [sub_resource type="Gradient" id="Gradient_dhnqx"]
 colors = PackedColorArray(0, 0.64705884, 0, 1, 0, 1, 0, 1)
 
@@ -44,74 +7,43 @@ colors = PackedColorArray(0, 0.64705884, 0, 1, 0, 1, 0, 1)
 gradient = SubResource("Gradient_dhnqx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dhnqx"]
+transparency = 1
 cull_mode = 2
+shading_mode = 0
 diffuse_mode = 3
+vertex_color_use_as_albedo = true
 albedo_texture = SubResource("GradientTexture1D_6tb32")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_uu7nu"]
 material = SubResource("StandardMaterial3D_dhnqx")
-size = Vector2(1.289, 0.045)
+size = Vector2(0.7, 0.045)
 orientation = 2
 
-[sub_resource type="Animation" id="Animation_dhnqx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
+[sub_resource type="Gradient" id="Gradient_7tq5a"]
+offsets = PackedFloat32Array(0.67832166, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="Animation" id="Animation_6tb32"]
-resource_name = "spawn_particles"
-tracks/0/type = "method"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:emitting")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m45it"]
-_data = {
-&"RESET": SubResource("Animation_dhnqx"),
-&"spawn_particles": SubResource("Animation_6tb32")
-}
-
-[node name="GrassParticles" type="GPUParticles3D" unique_id=1172959123]
-emitting = false
-amount = 20
+[node name="CPUParticles3D" type="CPUParticles3D" unique_id=2140819835]
+amount = 3
+lifetime = 0.7
 explosiveness = 1.0
 randomness = 0.5
-fixed_fps = 60
-process_material = SubResource("ParticleProcessMaterial_gubh5")
-draw_pass_1 = SubResource("PlaneMesh_uu7nu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2114039093]
-libraries/ = SubResource("AnimationLibrary_m45it")
-autoplay = &"spawn_particles"
+mesh = SubResource("PlaneMesh_uu7nu")
+emission_shape = 3
+emission_box_extents = Vector3(0.5, 0.3, 0.5)
+direction = Vector3(0, 1, 0)
+spread = 20.0
+gravity = Vector3(0, -6, 0)
+initial_velocity_min = 1.5
+initial_velocity_max = 3.0
+angular_velocity_min = -469.94
+angular_velocity_max = 323.35
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.2
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_7tq5a")
