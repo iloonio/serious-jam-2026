@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
 [ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
 [ext_resource type="Texture2D" uid="uid://r534asrmfegh" path="res://assets/visuals/materials/scytheSlashTexture.png" id="8_oc0eq"]
-[ext_resource type="Script" uid="uid://lh5cqj6vjkvf" path="res://assets/prefabs/player/ScytheParticleLogic.gd" id="9_wwvms"]
+[ext_resource type="Script" uid="uid://cc7j154l53s2q" path="res://assets/scripts/player/obstacleCollider.gd" id="10_jbgpd"]
 [ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/prefabs/player/TrailParticleLogic.gd" id="10_xkygm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
@@ -111,21 +111,25 @@ _data = {
 &"spin": SubResource("Animation_6l5ol")
 }
 
-[sub_resource type="Curve" id="Curve_p0ld0"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mywad"]
+height = 0.6819092
+radius = 2.0
+
+[sub_resource type="Curve" id="Curve_1j7h0"]
 _data = [Vector2(0.48355263, 1), 0.0, -1.9363058, 0, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn7wv"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wax3n"]
 transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_wwvms"]
-material = SubResource("StandardMaterial3D_sn7wv")
+material = SubResource("StandardMaterial3D_wax3n")
 shape = 0
 size = 0.75
 section_length = 0.3
-curve = SubResource("Curve_p0ld0")
+curve = SubResource("Curve_1j7h0")
 
 [sub_resource type="Gradient" id="Gradient_xkygm"]
 offsets = PackedFloat32Array(0, 0.22727273)
@@ -242,6 +246,15 @@ autoplay = &"spin"
 speed_scale = 0.594
 script = ExtResource("3_ilqrk")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=1149996629]
+collision_mask = 8
+script = ExtResource("10_jbgpd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1189746316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80281985, 0)
+shape = SubResource("CylinderShape3D_mywad")
+debug_color = Color(0.99999994, 0.0075927703, 0.17087543, 1)
+
 [node name="TrailParticles3D" type="CPUParticles3D" parent="." unique_id=670621880]
 transform = Transform3D(-1, 1.509958e-07, 6.600236e-15, 0, -4.371139e-08, 1, 1.509958e-07, 1, 4.371139e-08, 0, 1, 0.9697399)
 amount = 50
@@ -251,8 +264,6 @@ gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("Gradient_xkygm")
 script = ExtResource("10_xkygm")
 
-[connection signal="isSpinning" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
-[connection signal="velocity" from="." to="CollisionShape3D/KeepRotationStatic/CharacterMesh/Scythe/CPUParticles3D" method="_on_player_velocity"]
 [connection signal="velocity" from="." to="TrailParticles3D" method="_on_player_velocity"]
-[connection signal="collisionNormals" from="ShapeCast3D" to="." method="_on_shape_cast_3d_collision_normals"]
+[connection signal="collisionNormals" from="WallBounceShapeCast" to="." method="_on_shape_cast_3d_collision_normals"]
