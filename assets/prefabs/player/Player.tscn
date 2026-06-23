@@ -239,6 +239,7 @@ mesh = SubResource("CapsuleMesh_nuc4o")
 unique_name_in_owner = true
 stream = ExtResource("4_af3jp")
 volume_db = 3.0
+bus = &"PlayerSpin"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
 libraries/ = SubResource("AnimationLibrary_ilqrk")
@@ -264,6 +265,7 @@ gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("Gradient_xkygm")
 script = ExtResource("10_xkygm")
 
+[connection signal="isSpinning" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
 [connection signal="velocity" from="." to="TrailParticles3D" method="_on_player_velocity"]
 [connection signal="collisionNormals" from="WallBounceShapeCast" to="." method="_on_shape_cast_3d_collision_normals"]
