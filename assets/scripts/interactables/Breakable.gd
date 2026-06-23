@@ -10,7 +10,7 @@ func on_interact():
 
 	if(HP <= 0):
 		var particleInstance: CPUParticles3D = breakEffect.instantiate()
-		particleInstance.position = parent.position + Vector3(0,0,0)
+		particleInstance.position = parent.position
 		particleInstance.finished.connect(particleInstance.queue_free)
 
 		# propagate the call to all children in case of layered particles
