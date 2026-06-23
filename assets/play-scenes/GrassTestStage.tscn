@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://0470a17le7bt" path="res://assets/scripts/utility/MovingObstacle.gd" id="9_dhjvc"]
 [ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="11_dhjvc"]
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_lnct0"]
+[ext_resource type="PackedScene" uid="uid://bjst1vjbcni6p" path="res://assets/visuals/blender/blend-files/Barrel.blend" id="13_1xts5"]
 
 [sub_resource type="Curve3D" id="Curve3D_7pdsd"]
 _data = {
@@ -113,6 +114,9 @@ bus = &"BGM"
 
 [node name="CPUParticles3D" parent="." unique_id=156266043 instance=ExtResource("8_qtusf")]
 transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 16, 0, -9)
+
+[node name="Barrel2" parent="." unique_id=2014445760 instance=ExtResource("13_1xts5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 7)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 [connection signal="timeout" from="Map/Interactables/MovingObstacle/Path3D/CooldownTimer" to="Map/Interactables/MovingObstacle" method="_on_cooldown_timer_timeout"]

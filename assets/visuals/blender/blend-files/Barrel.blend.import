@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgttrvhp05r7i"
-valid=false
+uid="uid://bjst1vjbcni6p"
+path="res://.godot/imported/Barrel.blend-9deece846a6aaf8442d95a59693da858.scn"
 
 [deps]
 
-source_file="res://assets/visuals/blender/arrow.blend"
+source_file="res://assets/visuals/blender/blend-files/Barrel.blend"
+dest_files=["res://.godot/imported/Barrel.blend-9deece846a6aaf8442d95a59693da858.scn"]
 
 [params]
 
