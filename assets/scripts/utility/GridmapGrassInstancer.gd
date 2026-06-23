@@ -23,7 +23,8 @@ func _ready() -> void:
 	
 	convert_gridmap_to_multimesh()
 	
-	particle_warmup() 
+	## warm up the particles!
+	spawn_grass_particles(Vector3(1000, 1000, 1000))
 
 
 
@@ -37,10 +38,7 @@ func cut_grass_on_cell(cell, index, worldPos) -> void:
 	
 	play_cut_sfx()
 	
-	# spawn grass cut particles
-	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
-	particleInstance.global_position = worldPos + Vector3(0, 0.5, 0)
-	get_parent().add_child(particleInstance)
+	spawn_grass_particles(worldPos + Vector3(0, 0.5, 0))
 	
 	updatedGrassDic.emit(grassDic.size())
 	
@@ -96,9 +94,11 @@ func convert_gridmap_to_multimesh() -> void:
 		set_cell_item(cell, GridMap.INVALID_CELL_ITEM)
 
 
-func particle_warmup() -> void:
-	var particleInstance : GPUParticles3D = grassParticleFX.instantiate()
-	particleInstance.global_position = Vector3(1000, -1000, 1000)
+func spawn_grass_particles(position: Vector3) -> void:
+	var particleInstance : CPUParticles3D = grassParticleFX.instantiate()
+	particleInstance.position = position
+	particleInstance.finished.connect(particleInstance.queue_free)
+	particleInstance.one_shot = true
 	get_parent().add_child.call_deferred(particleInstance)
 
 
@@ -107,5 +107,7 @@ func play_cut_sfx() -> void:
 	var pitches = [0.5, 0.7, 1.0, 1.3, 1.5]
 	var randPitch = pitches[randi_range(0, pitches.size() - 1)] * 3
 	
+	if !%GrassCutSFX:
+		push_warning("No GrassCutSFX found as a child of ", self)
 	%GrassCutSFX.pitch_scale = randPitch
 	%GrassCutSFX.play()

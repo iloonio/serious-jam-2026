@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://dbre5mt2rsnun"]
+
+[ext_resource type="Script" uid="uid://bemdlxb40esi1" path="res://assets/scripts/utility/PlayerCamera.gd" id="1_tad5m"]
+[ext_resource type="PackedScene" uid="uid://cgcku1yfggjci" path="res://assets/visuals/ui/PlayerUI.tscn" id="2_qqnfk"]
+
+[sub_resource type="Animation" id="Animation_tad5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sky2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(300, 0, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_qqnfk"]
+resource_name = "scroll"
+length = 10.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -100), Vector3(-300, 0, -100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sky2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(300, 0, -100), Vector3(0, 0, -100)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_di4ee"]
+_data = {
+&"RESET": SubResource("Animation_tad5m"),
+&"scroll": SubResource("Animation_qqnfk")
+}
+
+[sub_resource type="Gradient" id="Gradient_l4bxy"]
+colors = PackedColorArray(0, 0.9271791, 0.9345636, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8swg8"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tad5m"]
+noise = SubResource("FastNoiseLite_8swg8")
+color_ramp = SubResource("Gradient_l4bxy")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu7nu"]
+shading_mode = 0
+albedo_texture = SubResource("NoiseTexture2D_tad5m")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qqnfk"]
+material = SubResource("StandardMaterial3D_uu7nu")
+size = Vector2(300, 200)
+orientation = 2
+
+[node name="CameraPivot" type="Node3D" unique_id=937874084]
+script = ExtResource("1_tad5m")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1933844702]
+unique_name_in_owner = true
+collision_mask = 0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=2124213654]
+unique_name_in_owner = true
+
+[node name="UI" parent="SpringArm3D/Camera3D" unique_id=478926171 instance=ExtResource("2_qqnfk")]
+
+[node name="Background2" type="Node3D" parent="SpringArm3D/Camera3D" unique_id=54015750]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpringArm3D/Camera3D/Background2" unique_id=1593071631]
+root_node = NodePath("../Sky1")
+libraries/ = SubResource("AnimationLibrary_di4ee")
+autoplay = &"scroll"
+speed_scale = 0.5
+
+[node name="Sky1" type="MeshInstance3D" parent="SpringArm3D/Camera3D/Background2" unique_id=2007376017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -100)
+mesh = SubResource("PlaneMesh_qqnfk")
+
+[node name="Sky2" type="MeshInstance3D" parent="SpringArm3D/Camera3D/Background2" unique_id=1100414555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 0, -100)
+mesh = SubResource("PlaneMesh_qqnfk")

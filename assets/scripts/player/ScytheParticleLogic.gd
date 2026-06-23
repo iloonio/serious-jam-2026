@@ -7,6 +7,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_player_velocity(currentVelocity: float) -> void:
-	if(currentVelocity < 0.25):
-		hide()
-	else: show()
+	if(currentVelocity < 0.1):
+		emitting = false
+	else: emitting = true
