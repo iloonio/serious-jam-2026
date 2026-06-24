@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dbdxcd3x0l4t4"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r84c7"]
+
+[node name="NpcTemplate" type="Node3D" unique_id=211048706]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=273583065]
+mesh = SubResource("CapsuleMesh_r84c7")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1238598644]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.645, 0)
+pixel_size = 0.02
+billboard = 1
+text = "hello godot!"
