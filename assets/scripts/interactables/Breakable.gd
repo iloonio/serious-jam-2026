@@ -2,27 +2,34 @@ class_name Breakable extends Interactable
 
 @export var breakEffect: PackedScene
 
-@export_range(1,5,1) var HP: int
+@export_range(1,100,1) var HP: int
+
+@export_range(0, 1, 0.05) var cooldown: float = 0.2
+
+var can_be_hit: bool = true
 
 func on_interact():
-	print("breakable object got interacted")
+	if not can_be_hit:
+		return
+	# enter invincibility frames immediately to avoid concurrent hits
+	can_be_hit = false
 	HP -= 1
 
-	if(HP <= 0):
-		var particleInstance: CPUParticles3D = breakEffect.instantiate()
-		particleInstance.position = parent.position + Vector3(0,0,0)
-		particleInstance.finished.connect(particleInstance.queue_free)
 
-		# propagate the call to all children in case of layered particles
-		particleInstance.propagate_call("set", ["one_shot", true])
-		particleInstance.propagate_call("set", ["emitting", true])
+	if HP <= 0:
+		if breakEffect != null:
+			var particleInstance: CPUParticles3D = breakEffect.instantiate()
 
-		get_parent().get_parent().add_child(particleInstance)
+			particleInstance.position = parent.position
+			particleInstance.finished.connect(particleInstance.queue_free)
 
-
-
-		# await get_tree().create_timer(0.5).timeout
+			# propagate the call to all children in case of layered particles
+			particleInstance.propagate_call("set", ["one_shot", true])
+			particleInstance.propagate_call("set", ["emitting", true])
+			get_parent().get_parent().add_child(particleInstance)
 		parent.queue_free()
+		return
 
-	# on_interact() shouldnt be callable on its instance for some duration.
-	# TODO: turn the timeout time into an exported value inside of obstacleCollider.gd
+	# wait for cooldown, then allow being hit again
+	await get_tree().create_timer(cooldown).timeout
+	can_be_hit = true

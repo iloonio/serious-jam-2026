@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://etj2kl2stkal"]
 
 [ext_resource type="Script" uid="uid://dfgauivjm5oik" path="res://assets/scripts/runnable-classes/gameScene.gd" id="1_qfouy"]
-[ext_resource type="PackedScene" uid="uid://bo5oqho3sp34i" path="res://assets/play-scenes/GrassTestStage.tscn" id="2_2vu7p"]
+[ext_resource type="PackedScene" uid="uid://bo5oqho3sp34i" path="res://assets/play-scenes/dev/GrassTestStage.tscn" id="2_2vu7p"]
 
 [sub_resource type="Animation" id="Animation_2vu7p"]
 length = 0.001
