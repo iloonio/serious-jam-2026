@@ -65,6 +65,8 @@ enum dir {
 #region Signals
 signal isSpinning(flag: bool, speed: float)
 signal velocity(currentVelocity: float)
+signal charge(currentCharge: float, minThreshold: float, maxThreshold: float)
+signal chargeRelease(isChargePerfect: bool)
 #endregion
 
 func _input(event: InputEvent) -> void:
@@ -75,9 +77,12 @@ func _input(event: InputEvent) -> void:
 		isCharging = false
 		if(perfectChargeMinThreshold <= chargeGauge and chargeGauge <= perfectChargeMaxThreshold):
 			velocityFactor = maxImpulse
+			chargeRelease.emit(true)
 		else:
 			velocityFactor += maxChargeUpImpulse*clampf(chargeGauge, 0, 1)
-
+			chargeRelease.emit(false)
+			
+		
 		calculateDirVec()
 		apply_impulse(dirVec*max(velocityFactor, minChargeUpImpulse))
 
@@ -86,6 +91,7 @@ func _process(delta: float) -> void:
 	## charging is handled in a seperate process
 	if isCharging:
 		chargeGauge += delta*60*ChargeUpRate
+		charge.emit(chargeGauge, perfectChargeMinThreshold, perfectChargeMaxThreshold)
 		if(enableDebugPrints and enableChargeGaugePrints):
 			print("chargeGauge: ",chargeGauge)
 

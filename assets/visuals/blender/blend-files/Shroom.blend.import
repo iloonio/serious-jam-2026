@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgttrvhp05r7i"
-valid=false
+uid="uid://dt2768d3a2yku"
+path="res://.godot/imported/Shroom.blend-54c51a2c9d8ce1958240a1e68de93a4c.scn"
 
 [deps]
 
-source_file="res://assets/visuals/blender/blend-files/arrow.blend"
+source_file="res://assets/visuals/blender/blend-files/Shroom.blend"
+dest_files=["res://.godot/imported/Shroom.blend-54c51a2c9d8ce1958240a1e68de93a4c.scn"]
 
 [params]
 

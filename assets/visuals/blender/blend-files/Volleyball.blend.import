@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgttrvhp05r7i"
-valid=false
+uid="uid://cwbsu1raud8o0"
+path="res://.godot/imported/Volleyball.blend-4d7abcfe96a72323e6b520b9726c7af6.scn"
 
 [deps]
 
-source_file="res://assets/visuals/blender/blend-files/arrow.blend"
+source_file="res://assets/visuals/blender/blend-files/Volleyball.blend"
+dest_files=["res://.godot/imported/Volleyball.blend-4d7abcfe96a72323e6b520b9726c7af6.scn"]
 
 [params]
 
