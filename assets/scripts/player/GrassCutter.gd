@@ -119,3 +119,11 @@ func _on_player_is_spinning(flag: bool, speed: float) -> void:
 	else:
 		if %SpinSFX.playing == true:
 			%SpinSFX.stop()
+
+
+func _on_player_body_entered(body: Node) -> void:
+	print(body, "BPDY")
+
+
+func _on_player_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	print(body, "BPDY")

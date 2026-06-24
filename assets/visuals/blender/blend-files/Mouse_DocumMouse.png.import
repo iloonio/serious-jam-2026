@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgiog0q7oecfv"
-path.s3tc="res://.godot/imported/Volleyball_Football.png-e7d7f343fcfa1ffa087fc8b208f80b84.s3tc.ctex"
+uid="uid://buice1jcclbop"
+path.s3tc="res://.godot/imported/Mouse_DocumMouse.png-2b9495023180568f9c4feadf2f2230cf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "94eb81e4984776db3b29ac2598ee58d8"
+"md5": "b9d8626d4ff7e79a70985384ad93b2a9"
 }
 
 [deps]
 
-source_file="res://assets/visuals/blender/blend-files/Volleyball_Football.png"
-dest_files=["res://.godot/imported/Volleyball_Football.png-e7d7f343fcfa1ffa087fc8b208f80b84.s3tc.ctex"]
+source_file="res://assets/visuals/blender/blend-files/Mouse_DocumMouse.png"
+dest_files=["res://.godot/imported/Mouse_DocumMouse.png-2b9495023180568f9c4feadf2f2230cf.s3tc.ctex"]
 
 [params]
 
