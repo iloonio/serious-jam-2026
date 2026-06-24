@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cvh1g1t0cuy04"]
+
+[ext_resource type="Texture2D" uid="uid://cja5uf5j6rt31" path="res://assets/visuals/imported-models/player_PlayerTexture.png" id="1_kmr5c"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_kmr5c")
