@@ -5,42 +5,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utcw5"]
 resource_name = "Material.003"
 cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("1_0y1vv")
 metadata/_gltf_primary_texture_coord = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_od7yr"]
-_surfaces = [{
-"aabb": AABB(-0.03236997, -0.9773746, -0.03194703, 0.74959844, 1.8344414, 0.06439653),
-"format": 34896613377,
-"index_count": 264,
-"index_data": PackedByteArray("GgAbABwAHAAdABoAHAAbAB4AHAAfAB0AHgAfABwAIAAdAB8AHgAhAB8AIAAfACEAAgAhAB4AAQAeABsAAgAeAAEAGwAaAAMAAwAgABsAGwAgAAsAGwALAAEAIAAhAAsACwAhAAQAAgAEACEAAwAKACAACgAdACAAIgAKAAMABQAdAAoAGgAdAAUAAwAaAAAAGgAFAAAAAwAAACIAIwAFAAoAIgAjAAoAAAAFACQAIwAkAAUAAAAlACIAAAAkACUAJAAjACYAJQAkACYAJQAmACcAJwAiACUAKAAjACIAIgAnACgAKAApACMAKQAmACMAJwAmACoAKQAqACYAJwAqACsAKwAoACcAKwAqAAcACQApACgACQAoACsACAAqACkACQAIACkAKgAIAAcACQArAAYABgAIAAkAKwAHAAYABgAHAAgAAQANAA4AAQALAA0ADgANAA8ADAANAAsADAAPAA0ADgAPABAAEAAPAAwAEQABAA4AEQAOABAAEAAMABEAEQACAAEABAAMAAsAEQAMACwALAAMAAQAEQAsAC0ALQACABEAEwAsAAQAEgAtACwAEgAsABMAFQAtABIAFQACAC0AEwASABYAFAAEAAIAEwAEABQAFAACABUAEwAWABgAFAATABgAEgAZABYAEgAVABkAGQAYABYAFQAUABcAFQAXABkAFAAYABcAGQAXABgA"),
-"lods": [0.050044328, PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAAAEAAUABgADAAAAAAAFAAYABgAFAAcACAAHAAUABgAHAAgABgAIAAkACQADAAYACQAIAAMACAAFAAoAAwAIAAoABQAEAAoAAwAKAAsACgAEAAsAAwALAAEABAAMAAsAAQALAA0ADAANAAsAAQANAA4ADgANAA8ADAAPAA0ADgAPABAAEAAPAAwAEQAOABAAEQABAA4AEAAMABEAEQACAAEAEQAMABIAEgACABEAEwAMAAQAEgAMABMAFAAEAAIAEwAEABQAFQACABIAFAACABUAEwASABYAFQAUABcAFAATABgAEwAWABgAFAAYABcAEgAZABYAEgAVABkAGQAYABYAFQAXABkAGQAXABgA")],
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 46,
-"vertex_data": PackedByteArray("Gn047AAAAAD3EXT9AAAAALETCesAAAAAK3FH/gAAAACxEwnr/v8AABp9OOz+/wAA///t2gAAAAD//+3a/v8AAH3zp+P+/wAAffOn4wAAAAArcUf+//8AAPcRdP3+/wAAAACG/P7/AAACDf///v8AAAIN//8AAAAAFgW0//7/AAAWBbT/AAAAAAAAhvwAAAAAGAIr0KodAAAYAivQhOkAAHQRKdCE6QAAdBEp0KodAAC8AQEAqh0AABgRAACE6QAAvAEBAITpAAAYEQAAqh0AAEFede0AAAAAXDK7/gAAAAAEP+/tAAAAAEFede3+/wAAfSQW7QAAAAAEP+/t/v8AAFwyu/7+/wAAfSQW7f7/AADgrPL2AAAAAOCs8vb+/wAAgp6J6f7/AACCnonpAAAAAF/C7eT+/wAAX8Lt5AAAAABd09LtAAAAAF3T0u3+/wAA1OCY4P7/AADU4JjgAAAAAAMBluj+/wAA+QBY6QAAAAA=")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_lwbvx"]
-resource_name = "player_Cube_008"
-_surfaces = [{
-"aabb": AABB(-0.03236997, -0.9773746, -0.03194703, 0.74959844, 1.8344414, 0.06439653),
-"attribute_data": PackedByteArray("SLgq/QaBNfqRgyX+qLBf+XL7+f9i9DD+1bwv/R6IKv41tWT5k4U6+u/4Nf7/////SLgq/dW8L/1y+/n//////6iwX/mThTr6BoE1+jW1ZPnp+pvq6fu76Cr85+yo+m/mKvzn7NX7ZuwW/JLw6fu76HL7+f/v+DX+YvQw/v////+RgyX+Hogq/ki4Kv3VvC/9FvyS8Fr6we6b+u3y1ftm7GL0MP7v+DX+qLBf+TW1ZPmb+u3yWvrB7lXldfEh5SPumYF06oWBPe64gZDxZYEh5zblWeoW8s3pVeV18Zv67fLp+pvqKvzn7Bb8kvBa+sHu6fu76Kj6b+bV+2bs1fGh5SHlI+4C5QbnAuUG5xbyzek25Vnq1fGh5SHlI+64gZDxhYE97lXldfEC5QbnhYE97mWBIech5SPuNuVZ6mWBIeeZgXTqAuUG51XldfGZgXTquIGQ8TblWeq2qB39JJG1+QOZOv3Mi5f9Ps+J+kPJg/2n20H+XOM6/FDr+f5DrSL9sZW6+cvTjvqQnT/90M2I/VmQnP004Eb+6ec//N3v/v4+z4n6y9OO+kPJg/004Eb+p9tB/tDNiP2xlbr5JJG1+afbQf7d7/7+UOv5/jTgRv4kkbX5sZW6+VmQnP3Mi5f9UOv5/t3v/v7Mi5f9kJ0//QOZOv1ZkJz9A5k6/UOtIv22qB39kJ0//ennP/xc4zr8tqgd/UOtIv3O8Efua/F48lzjOvzL0476Ps+J+unnP/zQzYj9Q8mD/WvxePIW8s3pzvBH7mvxePLV8aHlzvBH7s7wR+5r8Xjy"),
-"format": 34896613399,
-"index_count": 264,
-"index_data": PackedByteArray("VgBXAFgAWABXAFkAAQBZAFcAAgBZAAEAVwBWAAMAAwBWAAAAAwAAAFoAAABbAFoAXABaAFsAWgBcAF0AXgBdAFwABQBdAF4ABQBeAAQABgBfAAgACABfAGAAYQAGAAgAYABfAGIAYQBjAAYAYABiAGQAYABkAAkACQBkAAcAYwBhAGUAZgBlAGEAZgBnAGUACgBnAGYAZwAKAAsAaAArACoAaABpACsAagBrAGwAagBtAGsAEABuAG8AEAATAG4AcABxAHIAcABzAHEAdAARABIAdAB1ABEAIAB2AHcAIAAhAHYAFAAVABYAFAAXABUAeAAPAA4AeAB5AA8AegB7AHwAegB9AHsAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AfgB/AIAAfgCBAH8AJAAlACYAJAAnACUAKACCAIMAKAApAIIAhAAjACIAhACFACMALACGAIcALAAtAIYAiACJAIoAiACLAIkADACMAI0ADAANAIwAMAAxADIAMAAzADEANACOADYANACPAI4AOwA8AD0AOwA+ADwAPwA7AD0AkAA7AD8ANwA5ADoANwA4ADkANwA1ADgAkQA1ADcAQgBDAEQAQgBFAEMAQACSAEEAQACTAJIALgCUAC8ALgCVAJQARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA"),
-"lods": [0.050044328, PackedByteArray("AAABAAIAAQAAAAMABAADAAAABQADAAQABgAHAAgACAAHAAkACgAGAAgACgALAAYADAANAA4ADgANAA8AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIgAhACMAJAAlACYAJAAnACUAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMAAzADEANAA1ADYANgA1ADcANwA1ADgANwA4ADkANwA5ADoAOwA8AD0AOwA+ADwAPwA7AD0AQAA7AD8AQAA/AEEAQgBDAEQAQgBFAEMARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA")],
-"material": SubResource("StandardMaterial3D_utcw5"),
-"name": "Material.003",
-"primitive": 3,
-"uv_scale": Vector4(2.0132008, 1.9597527, 0, 0),
-"vertex_count": 150,
-"vertex_data": PackedByteArray("Gn047AAAAAD3EXT9AAAAALETCesAAAAAK3FH/gAAAAD//+3aAAAAAH3zp+MAAAAAGn047P7/MoOxEwnr/v8ygytxR/7//zKD9xF0/f7/MoN986fj/v8yg///7dr+/zKDGn047AAA8NIafTjs/v/w0v//7doAAOLM///t2v7/4swrcUf+AADS0fcRdP3+/7/R9xF0/QAAv9ErcUf+///S0fcRdP0AAGL9Ag3///7/Yv0CDf//AABi/fcRdP3+/2L9Ag3//wAAWTEWBbT//v9ZMRYFtP8AAFkxAg3///7/WTH//+3aAADODn3zp+P+/84OffOn4wAAzg7//+3a/v/ODrETCesAAEcksRMJ6/7/RyQafTjsAABGMxp9OOz+/0YzFgW0/wAACSIAAIb8/v8JIgAAhvwAAAkiFgW0//7/CSJ986fjAABGGX3zp+P+/0YZK3FH/gAAOSIrcUf+//85IgAAhvwAAGErAACG/P7/YSsYAivQqh1LKxgCK9CE6UsrGBEAAKodKDO8AQEAhOkoM7wBAQCqHSgzGBEAAITpKDN0ESnQqh2y/rETCesAAP//GAIr0Kodsv4AAIb8AAD///cRdP0AAP//Ag3//wAA//8WBbT/AAD//wAAhvz+/wJAAg3///7/AUD3EXT9/v8CQBYFtP/+/wJAsRMJ6/7/AkAYAivQhOl0P3QRKdCE6XY/dBEp0ITpptKxEwnrAACm0nQRKdCqHabSsRMJ6/7/ptIYAivQhOlJ1bwBAQCqHUnVvAEBAITpSdUYAivQqh1J1XQRKdCE6f//vAEBAITp//8YEQAAhOn//xgCK9CE6f//dBEp0KodqCoYEQAAhOmoKhgRAACqHagqdBEp0ITpqCoYAivQqh0CQBgRAACqHQJAvAEBAKodAkB0ESnQqh0CQEFede0AAAAAXDK7/gAAAAAEP+/tAAAAAH0kFu0AAAAA4Kzy9gAAAACCnonpAAAAAF/C7eQAAAAAXdPS7QAAAADU4JjgAAAAAEFede3+/zKDXDK7/v7/MoPgrPL2/v8ygwQ/7+3+/zKDgp6J6f7/MoN9JBbt/v8yg1/C7eT+/zKDXdPS7f7/MoPU4Jjg/v8yg+Cs8vYAADki4Kzy9v7/OSKCnonpAACLz1/C7eT+/4vPX8Lt5AAAi8+Cnonp/v+Lz1wyu/7+/9LRXDK7/gAA0tFfwu3kAADMztTgmOD+/8zO1OCY4AAAzM5fwu3k/v/Mzlwyu/4AAL/RXDK7/v7/v9F9JBbt/v9HJH0kFu0AAEck1OCY4AAA4szU4Jjg/v/izH0kFu0AAGkqBD/v7f7/aSoEP+/tAABpKn0kFu3+/2kqBD/v7QAAEDFBXnXt/v8QMUFede0AABAxBD/v7f7/EDFd09Lt/v9GGV3T0u0AAEYZQV517QAARjNBXnXt/v9GMwMBluj+/2Er+QBY6QAAYStd09LtAAC9HOCs8vb+/70c4Kzy9gAAvRxd09Lt/v+9HIKeien+//DSgp6J6QAA8NL5AFjpAACy/rETCesAALL+AwGW6P7/AkD5AFjpAAD//7ETCev+/4A/AwGW6P7/fj8DAZbo/v9LK/kAWOkAAEwrKfspeyn7KXsp+yl7Kfspeyn7KXsp+yl7/3//f/9//3//f/9//3//f/9//3//f/9/fzHp2n8x6doAON7cADje3OavoKcPq6OsD6ujrOavoKdDq1qfQ6tan0OrWp9Dq1qfO96iNzveojc73qI3O96iNxi4mY8YuJmPGLiZjxi4mY89IpvQPSKb0MREb2DERG9gy/3busv927rL/du6y/3buvWyl5n1speZYa2Go2GthqOT06rWk9Oq1svTf9bL03/WS9ulNkvbpTZL26U2S9ulNgFAGUEBwPy//z8aQQHA/L8BwPy/AcD8vwHA/L///////////////////////////5UBxf2VAcX9lCx6KpQseiqULHoqlCx6Kq8qqyqvKqsqryqrKq8qqyoBwPy/AcD8vwHA/L8BwPy/X9VL1V/VS9Vf1UvVX9VL1f////////////////////8p+yl7Kfspeyn7KXsp+yl7Kfspeyn7KXsp+yl7Kfspeyn7KXv/f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//39hrYajYa2Go2Y0ZttmNGbbZjRm22Y0Ztvmr6Cn5q+gp041vdtONb3bTjW92041vdsPq6OsD6ujrD0im9A9IpvQADje3AA43tx0J1jSdCdY0nQnWNJ0J1jSGihSzhooUs4aKFLOGihSzvWyl5n1speZxERvYMREb2CT06rWk9Oq1hyxFJ0csRSdHLEUnRyxFJ1/MenafzHp2gZAE0EHQBNB/////wHA/L+VAcX9lQHF/cvTf9bK04DW")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_od7yr")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w0nf6"]
 resource_name = "player_Cube_001"
@@ -187,6 +154,40 @@ _surfaces = [{
 "vertex_data": PackedByteArray("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")
 }]
 blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_od7yr"]
+_surfaces = [{
+"aabb": AABB(-0.03236997, -0.9773746, -0.03194703, 0.74959844, 1.8344414, 0.06439653),
+"format": 34896613377,
+"index_count": 264,
+"index_data": PackedByteArray("GgAbABwAHAAdABoAHAAbAB4AHAAfAB0AHgAfABwAIAAdAB8AHgAhAB8AIAAfACEAAgAhAB4AAQAeABsAAgAeAAEAGwAaAAMAAwAgABsAGwAgAAsAGwALAAEAIAAhAAsACwAhAAQAAgAEACEAAwAKACAACgAdACAAIgAKAAMABQAdAAoAGgAdAAUAAwAaAAAAGgAFAAAAAwAAACIAIwAFAAoAIgAjAAoAAAAFACQAIwAkAAUAAAAlACIAAAAkACUAJAAjACYAJQAkACYAJQAmACcAJwAiACUAKAAjACIAIgAnACgAKAApACMAKQAmACMAJwAmACoAKQAqACYAJwAqACsAKwAoACcAKwAqAAcACQApACgACQAoACsACAAqACkACQAIACkAKgAIAAcACQArAAYABgAIAAkAKwAHAAYABgAHAAgAAQANAA4AAQALAA0ADgANAA8ADAANAAsADAAPAA0ADgAPABAAEAAPAAwAEQABAA4AEQAOABAAEAAMABEAEQACAAEABAAMAAsAEQAMACwALAAMAAQAEQAsAC0ALQACABEAEwAsAAQAEgAtACwAEgAsABMAFQAtABIAFQACAC0AEwASABYAFAAEAAIAEwAEABQAFAACABUAEwAWABgAFAATABgAEgAZABYAEgAVABkAGQAYABYAFQAUABcAFQAXABkAFAAYABcAGQAXABgA"),
+"lods": [0.050044328, PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAAAEAAUABgADAAAAAAAFAAYABgAFAAcACAAHAAUABgAHAAgABgAIAAkACQADAAYACQAIAAMACAAFAAoAAwAIAAoABQAEAAoAAwAKAAsACgAEAAsAAwALAAEABAAMAAsAAQALAA0ADAANAAsAAQANAA4ADgANAA8ADAAPAA0ADgAPABAAEAAPAAwAEQAOABAAEQABAA4AEAAMABEAEQACAAEAEQAMABIAEgACABEAEwAMAAQAEgAMABMAFAAEAAIAEwAEABQAFQACABIAFAACABUAEwASABYAFQAUABcAFAATABgAEwAWABgAFAAYABcAEgAZABYAEgAVABkAGQAYABYAFQAXABkAGQAXABgA")],
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 46,
+"vertex_data": PackedByteArray("Gn047AAAAAD3EXT9AAAAALETCesAAAAAK3FH/gAAAACxEwnr/v8AABp9OOz+/wAA///t2gAAAAD//+3a/v8AAH3zp+P+/wAAffOn4wAAAAArcUf+//8AAPcRdP3+/wAAAACG/P7/AAACDf///v8AAAIN//8AAAAAFgW0//7/AAAWBbT/AAAAAAAAhvwAAAAAGAIr0KodAAAYAivQhOkAAHQRKdCE6QAAdBEp0KodAAC8AQEAqh0AABgRAACE6QAAvAEBAITpAAAYEQAAqh0AAEFede0AAAAAXDK7/gAAAAAEP+/tAAAAAEFede3+/wAAfSQW7QAAAAAEP+/t/v8AAFwyu/7+/wAAfSQW7f7/AADgrPL2AAAAAOCs8vb+/wAAgp6J6f7/AACCnonpAAAAAF/C7eT+/wAAX8Lt5AAAAABd09LtAAAAAF3T0u3+/wAA1OCY4P7/AADU4JjgAAAAAAMBluj+/wAA+QBY6QAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lwbvx"]
+resource_name = "player_Cube_008"
+_surfaces = [{
+"aabb": AABB(-0.03236997, -0.9773746, -0.03194703, 0.74959844, 1.8344414, 0.06439653),
+"attribute_data": PackedByteArray("SLgq/QaBNfqRgyX+qLBf+XL7+f9i9DD+1bwv/R6IKv41tWT5k4U6+u/4Nf7/////SLgq/dW8L/1y+/n//////6iwX/mThTr6BoE1+jW1ZPnp+pvq6fu76Cr85+yo+m/mKvzn7NX7ZuwW/JLw6fu76HL7+f/v+DX+YvQw/v////+RgyX+Hogq/ki4Kv3VvC/9FvyS8Fr6we6b+u3y1ftm7GL0MP7v+DX+qLBf+TW1ZPmb+u3yWvrB7lXldfEh5SPumYF06oWBPe64gZDxZYEh5zblWeoW8s3pVeV18Zv67fLp+pvqKvzn7Bb8kvBa+sHu6fu76Kj6b+bV+2bs1fGh5SHlI+4C5QbnAuUG5xbyzek25Vnq1fGh5SHlI+64gZDxhYE97lXldfEC5QbnhYE97mWBIech5SPuNuVZ6mWBIeeZgXTqAuUG51XldfGZgXTquIGQ8TblWeq2qB39JJG1+QOZOv3Mi5f9Ps+J+kPJg/2n20H+XOM6/FDr+f5DrSL9sZW6+cvTjvqQnT/90M2I/VmQnP004Eb+6ec//N3v/v4+z4n6y9OO+kPJg/004Eb+p9tB/tDNiP2xlbr5JJG1+afbQf7d7/7+UOv5/jTgRv4kkbX5sZW6+VmQnP3Mi5f9UOv5/t3v/v7Mi5f9kJ0//QOZOv1ZkJz9A5k6/UOtIv22qB39kJ0//ennP/xc4zr8tqgd/UOtIv3O8Efua/F48lzjOvzL0476Ps+J+unnP/zQzYj9Q8mD/WvxePIW8s3pzvBH7mvxePLV8aHlzvBH7s7wR+5r8Xjy"),
+"format": 34896613399,
+"index_count": 264,
+"index_data": PackedByteArray("VgBXAFgAWABXAFkAAQBZAFcAAgBZAAEAVwBWAAMAAwBWAAAAAwAAAFoAAABbAFoAXABaAFsAWgBcAF0AXgBdAFwABQBdAF4ABQBeAAQABgBfAAgACABfAGAAYQAGAAgAYABfAGIAYQBjAAYAYABiAGQAYABkAAkACQBkAAcAYwBhAGUAZgBlAGEAZgBnAGUACgBnAGYAZwAKAAsAaAArACoAaABpACsAagBrAGwAagBtAGsAEABuAG8AEAATAG4AcABxAHIAcABzAHEAdAARABIAdAB1ABEAIAB2AHcAIAAhAHYAFAAVABYAFAAXABUAeAAPAA4AeAB5AA8AegB7AHwAegB9AHsAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AfgB/AIAAfgCBAH8AJAAlACYAJAAnACUAKACCAIMAKAApAIIAhAAjACIAhACFACMALACGAIcALAAtAIYAiACJAIoAiACLAIkADACMAI0ADAANAIwAMAAxADIAMAAzADEANACOADYANACPAI4AOwA8AD0AOwA+ADwAPwA7AD0AkAA7AD8ANwA5ADoANwA4ADkANwA1ADgAkQA1ADcAQgBDAEQAQgBFAEMAQACSAEEAQACTAJIALgCUAC8ALgCVAJQARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA"),
+"lods": [0.050044328, PackedByteArray("AAABAAIAAQAAAAMABAADAAAABQADAAQABgAHAAgACAAHAAkACgAGAAgACgALAAYADAANAA4ADgANAA8AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIgAhACMAJAAlACYAJAAnACUAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMAAzADEANAA1ADYANgA1ADcANwA1ADgANwA4ADkANwA5ADoAOwA8AD0AOwA+ADwAPwA7AD0AQAA7AD8AQAA/AEEAQgBDAEQAQgBFAEMARgBHAEgARgBJAEcASgBLAEwASgBNAEsATgBPAFAATgBRAE8AUgBTAFQAUgBVAFMA")],
+"material": SubResource("StandardMaterial3D_utcw5"),
+"name": "Material.003",
+"primitive": 3,
+"uv_scale": Vector4(2.0132008, 1.9597527, 0, 0),
+"vertex_count": 150,
+"vertex_data": PackedByteArray("Gn047AAAAAD3EXT9AAAAALETCesAAAAAK3FH/gAAAAD//+3aAAAAAH3zp+MAAAAAGn047P7/MoOxEwnr/v8ygytxR/7//zKD9xF0/f7/MoN986fj/v8yg///7dr+/zKDGn047AAA8NIafTjs/v/w0v//7doAAOLM///t2v7/4swrcUf+AADS0fcRdP3+/7/R9xF0/QAAv9ErcUf+///S0fcRdP0AAGL9Ag3///7/Yv0CDf//AABi/fcRdP3+/2L9Ag3//wAAWTEWBbT//v9ZMRYFtP8AAFkxAg3///7/WTH//+3aAADODn3zp+P+/84OffOn4wAAzg7//+3a/v/ODrETCesAAEcksRMJ6/7/RyQafTjsAABGMxp9OOz+/0YzFgW0/wAACSIAAIb8/v8JIgAAhvwAAAkiFgW0//7/CSJ986fjAABGGX3zp+P+/0YZK3FH/gAAOSIrcUf+//85IgAAhvwAAGErAACG/P7/YSsYAivQqh1LKxgCK9CE6UsrGBEAAKodKDO8AQEAhOkoM7wBAQCqHSgzGBEAAITpKDN0ESnQqh2y/rETCesAAP//GAIr0Kodsv4AAIb8AAD///cRdP0AAP//Ag3//wAA//8WBbT/AAD//wAAhvz+/wJAAg3///7/AUD3EXT9/v8CQBYFtP/+/wJAsRMJ6/7/AkAYAivQhOl0P3QRKdCE6XY/dBEp0ITpptKxEwnrAACm0nQRKdCqHabSsRMJ6/7/ptIYAivQhOlJ1bwBAQCqHUnVvAEBAITpSdUYAivQqh1J1XQRKdCE6f//vAEBAITp//8YEQAAhOn//xgCK9CE6f//dBEp0KodqCoYEQAAhOmoKhgRAACqHagqdBEp0ITpqCoYAivQqh0CQBgRAACqHQJAvAEBAKodAkB0ESnQqh0CQEFede0AAAAAXDK7/gAAAAAEP+/tAAAAAH0kFu0AAAAA4Kzy9gAAAACCnonpAAAAAF/C7eQAAAAAXdPS7QAAAADU4JjgAAAAAEFede3+/zKDXDK7/v7/MoPgrPL2/v8ygwQ/7+3+/zKDgp6J6f7/MoN9JBbt/v8yg1/C7eT+/zKDXdPS7f7/MoPU4Jjg/v8yg+Cs8vYAADki4Kzy9v7/OSKCnonpAACLz1/C7eT+/4vPX8Lt5AAAi8+Cnonp/v+Lz1wyu/7+/9LRXDK7/gAA0tFfwu3kAADMztTgmOD+/8zO1OCY4AAAzM5fwu3k/v/Mzlwyu/4AAL/RXDK7/v7/v9F9JBbt/v9HJH0kFu0AAEck1OCY4AAA4szU4Jjg/v/izH0kFu0AAGkqBD/v7f7/aSoEP+/tAABpKn0kFu3+/2kqBD/v7QAAEDFBXnXt/v8QMUFede0AABAxBD/v7f7/EDFd09Lt/v9GGV3T0u0AAEYZQV517QAARjNBXnXt/v9GMwMBluj+/2Er+QBY6QAAYStd09LtAAC9HOCs8vb+/70c4Kzy9gAAvRxd09Lt/v+9HIKeien+//DSgp6J6QAA8NL5AFjpAACy/rETCesAALL+AwGW6P7/AkD5AFjpAAD//7ETCev+/4A/AwGW6P7/fj8DAZbo/v9LK/kAWOkAAEwrKfspeyn7KXsp+yl7Kfspeyn7KXsp+yl7/3//f/9//3//f/9//3//f/9//3//f/9/fzHp2n8x6doAON7cADje3OavoKcPq6OsD6ujrOavoKdDq1qfQ6tan0OrWp9Dq1qfO96iNzveojc73qI3O96iNxi4mY8YuJmPGLiZjxi4mY89IpvQPSKb0MREb2DERG9gy/3busv927rL/du6y/3buvWyl5n1speZYa2Go2GthqOT06rWk9Oq1svTf9bL03/WS9ulNkvbpTZL26U2S9ulNgFAGUEBwPy//z8aQQHA/L8BwPy/AcD8vwHA/L///////////////////////////5UBxf2VAcX9lCx6KpQseiqULHoqlCx6Kq8qqyqvKqsqryqrKq8qqyoBwPy/AcD8vwHA/L8BwPy/X9VL1V/VS9Vf1UvVX9VL1f////////////////////8p+yl7Kfspeyn7KXsp+yl7Kfspeyn7KXsp+yl7Kfspeyn7KXv/f/9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9//39hrYajYa2Go2Y0ZttmNGbbZjRm22Y0Ztvmr6Cn5q+gp041vdtONb3bTjW92041vdsPq6OsD6ujrD0im9A9IpvQADje3AA43tx0J1jSdCdY0nQnWNJ0J1jSGihSzhooUs4aKFLOGihSzvWyl5n1speZxERvYMREb2CT06rWk9Oq1hyxFJ0csRSdHLEUnRyxFJ1/MenafzHp2gZAE0EHQBNB/////wHA/L+VAcX9lQHF/cvTf9bK04DW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_od7yr")
 
 [sub_resource type="Animation" id="Animation_ymys0"]
 resource_name = "RestPose"
@@ -446,7 +447,7 @@ tracks/35/keys = PackedFloat32Array(0, 1, 0.15854627, -1.6434951e-09, -1.023483e
 
 [sub_resource type="Animation" id="Animation_y5x1r"]
 resource_name = "Spinning"
-length = 0.6
+length = 0.8
 loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
@@ -461,82 +462,82 @@ tracks/1/enabled = true
 tracks/1/path = NodePath("metarig/Skeleton3D:spine")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, -0.14093007, 0.15920165, 0.015298899, 0.9770156, 0.033333335, 1, -0.13848135, 0.2629118, 0.030302707, 0.95434904, 0.06666667, 1, -0.12520926, 0.51014954, 0.06646808, 0.84832305, 0.1, 1, -0.10425982, 0.70860606, 0.09604808, 0.6912179, 0.13333334, 1, -0.08805432, 0.80748045, 0.11109361, 0.5726082, 0.16666667, 1, -0.06826857, 0.8917545, 0.124236666, 0.42974246, 0.2, 1, -0.046000954, 0.9521415, 0.13408676, 0.2707976, 0.23333333, 1, -0.023255259, 0.9837655, 0.13983756, 0.11004665, 0.26666668, 1, 0.0014850209, -0.9889899, -0.14175029, 0.042471692, 0.3, 1, -0.02083448, -0.96999174, -0.14021866, 0.19753657, 0.36666667, 1, -0.06653852, -0.84803575, -0.12517178, 0.51062715, 0.4, 1, -0.086120725, -0.7530678, -0.11259913, 0.64249015, 0.43333334, 1, -0.1015375, -0.6519481, -0.09892165, 0.7448949, 0.46666667, 1, -0.114528224, -0.5398374, -0.08353827, 0.8297472, 0.5, 1, -0.12576067, -0.4093014, -0.06541863, 0.9013196, 0.53333336, 1, -0.1342522, -0.26735497, -0.04551611, 0.9531138, 0.6017, 1, -0.14070435, -0.067865506, -0.017252428, 0.98757225)
+tracks/1/keys = PackedFloat32Array(0, 1, -0.14168662, 0.08417533, 0.004499043, 0.98631597, 0.033333335, 1, -0.14127392, 0.13427454, 0.01170576, 0.9807523, 0.06666667, 1, -0.13850293, 0.2622307, 0.030203873, 0.95453644, 0.13333334, 1, -0.12516174, 0.5107547, 0.06655739, 0.84795886, 0.16666667, 1, -0.11530942, 0.6179502, 0.08245674, 0.7733319, 0.23333333, 1, -0.091618516, 0.7884429, 0.10817297, 0.5985502, 0.26666668, 1, -0.07657902, 0.86038435, 0.11929378, 0.4895341, 0.33333334, 1, -0.041439585, 0.9607556, 0.1355659, 0.23843944, 0.36666667, 1, -0.023230366, 0.98378503, 0.13984172, 0.10987168, 0.4, 1, 0.005806642, -0.98982507, -0.14163908, 0.012295246, 0.43333334, 1, -0.011705752, -0.98075235, -0.14127395, 0.1342745, 0.46666667, 1, -0.030203845, -0.95453644, -0.13850299, 0.26223055, 0.53333336, 1, -0.06655732, -0.84795904, -0.1251618, 0.5107546, 0.56666666, 1, -0.08245662, -0.7733321, -0.11530935, 0.61794996, 0.6333333, 1, -0.10817301, -0.5985503, -0.09161857, 0.78844285, 0.6666667, 1, -0.119293764, -0.48953426, -0.07657907, 0.8603842, 0.73333335, 1, -0.13556583, -0.2384397, -0.04143962, 0.9607556, 0.76666665, 1, -0.13984174, -0.10987188, -0.023230404, 0.98378503, 0.8, 1, -0.14163907, 0.0122950645, -0.0058066705, 0.989825)
 tracks/2/type = "rotation_3d"
 tracks/2/imported = true
 tracks/2/enabled = true
 tracks/2/path = NodePath("metarig/Skeleton3D:spine.001")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0, 1, -0.11100166, 0.0051169987, 0.011853273, 0.9937364)
+tracks/2/keys = PackedFloat32Array(0, 1, -0.111001655, 0.005117, 0.011853282, 0.9937364)
 tracks/3/type = "rotation_3d"
 tracks/3/imported = true
 tracks/3/enabled = true
 tracks/3/path = NodePath("metarig/Skeleton3D:spine.002")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, 0.0022387663, 0.028483247, 0.00011783818, 0.99959177)
+tracks/3/keys = PackedFloat32Array(0, 1, 0.0022387663, 0.028483251, 0.000117843825, 0.99959177)
 tracks/4/type = "rotation_3d"
 tracks/4/imported = true
 tracks/4/enabled = true
 tracks/4/path = NodePath("metarig/Skeleton3D:spine.003")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.12256552, -0.0021549603, -0.0077395374, 0.99242795)
+tracks/4/keys = PackedFloat32Array(0, 1, 0.12256551, -0.0021549512, -0.0077395476, 0.99242795)
 tracks/5/type = "position_3d"
 tracks/5/imported = true
 tracks/5/enabled = true
 tracks/5/path = NodePath("metarig/Skeleton3D:spine.004")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat32Array(0, 1, 0.012127737, 0.04768093, -0.046064973)
+tracks/5/keys = PackedFloat32Array(0, 1, 0.012127733, 0.047680907, -0.046064954)
 tracks/6/type = "rotation_3d"
 tracks/6/imported = true
 tracks/6/enabled = true
 tracks/6/path = NodePath("metarig/Skeleton3D:spine.004")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0.026659438, -0.14228441, 0.021611486, 0.9892307)
+tracks/6/keys = PackedFloat32Array(0, 1, 0.02665944, -0.14228441, 0.02161149, 0.9892307)
 tracks/7/type = "scale_3d"
 tracks/7/imported = true
 tracks/7/enabled = true
 tracks/7/path = NodePath("metarig/Skeleton3D:spine.004")
-tracks/7/interp = 1
+tracks/7/interp = 0
 tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat32Array(0, 1, 1.1626592, 1.0424839, 1.2026044)
+tracks/7/keys = PackedFloat32Array(0, 1, 1.1626588, 1.0424839, 1.2026043)
 tracks/8/type = "position_3d"
 tracks/8/imported = true
 tracks/8/enabled = true
 tracks/8/path = NodePath("metarig/Skeleton3D:shoulder.L")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat32Array(0, 1, 0.051821105, 0.034786038, 0.0021699672)
+tracks/8/keys = PackedFloat32Array(0, 1, 0.051821087, 0.03478602, 0.0021699662)
 tracks/9/type = "rotation_3d"
 tracks/9/imported = true
 tracks/9/enabled = true
 tracks/9/path = NodePath("metarig/Skeleton3D:shoulder.L")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat32Array(0, 1, -0.30787992, -0.47252017, -0.81708306, 0.11962423)
+tracks/9/keys = PackedFloat32Array(0, 1, -0.30787995, -0.47252023, -0.817083, 0.11962423)
 tracks/10/type = "position_3d"
 tracks/10/imported = true
 tracks/10/enabled = true
 tracks/10/path = NodePath("metarig/Skeleton3D:upper_arm.L")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat32Array(0, 1, 0.01558711, 0.05627574, -0.013143419)
+tracks/10/keys = PackedFloat32Array(0, 1, 0.015587096, 0.05627576, -0.013143416)
 tracks/11/type = "rotation_3d"
 tracks/11/imported = true
 tracks/11/enabled = true
 tracks/11/path = NodePath("metarig/Skeleton3D:upper_arm.L")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
-tracks/11/keys = PackedFloat32Array(0, 1, 0.007335319, 0.21388668, -0.39607707, 0.8929287)
+tracks/11/keys = PackedFloat32Array(0, 1, 0.0073353443, 0.21388668, -0.39607713, 0.89292866)
 tracks/12/type = "scale_3d"
 tracks/12/imported = true
 tracks/12/enabled = true
 tracks/12/path = NodePath("metarig/Skeleton3D:upper_arm.L")
-tracks/12/interp = 0
+tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = PackedFloat32Array(0, 1, 1.0121884, 1.2807798, 1.0149556)
 tracks/13/type = "rotation_3d"
@@ -545,47 +546,47 @@ tracks/13/enabled = true
 tracks/13/path = NodePath("metarig/Skeleton3D:forearm.L")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/keys = PackedFloat32Array(0, 1, 0.004007183, 0.35378268, -0.05235231, 0.9338528)
+tracks/13/keys = PackedFloat32Array(0, 1, 0.004007182, 0.35378265, -0.052352324, 0.9338528)
 tracks/14/type = "scale_3d"
 tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/path = NodePath("metarig/Skeleton3D:forearm.L")
 tracks/14/interp = 0
 tracks/14/loop_wrap = true
-tracks/14/keys = PackedFloat32Array(0, 1, 0.9796007, 0.7188571, 0.9998144)
+tracks/14/keys = PackedFloat32Array(0, 1, 0.97960067, 0.7188571, 0.99981445)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = true
 tracks/15/enabled = true
 tracks/15/path = NodePath("metarig/Skeleton3D:hand.L")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
-tracks/15/keys = PackedFloat32Array(0, 1, -0.3360098, 0.3871642, 0.22978252, 0.8272855, 0.033333335, 1, -0.3516003, 0.38174826, 0.23626, 0.82147837, 0.06666667, 1, -0.39035833, 0.36750597, 0.25222373, 0.80557007, 0.2, 1, -0.5382944, 0.30152178, 0.31107587, 0.7228801, 0.23333333, 1, -0.57219946, 0.28331318, 0.32401177, 0.69809586, 0.26666668, 1, -0.6044571, 0.26467505, 0.33608395, 0.67203146, 0.33333334, 1, -0.60445714, 0.26467502, 0.33608398, 0.67203146, 0.36666667, 1, -0.5721995, 0.28331318, 0.32401183, 0.69809586, 0.5, 1, -0.42867061, 0.3522777, 0.2677981, 0.78767145, 0.53333336, 1, -0.39035836, 0.367506, 0.25222373, 0.8055699, 0.58, 1, -0.3360098, 0.3871642, 0.22978254, 0.8272855)
+tracks/15/keys = PackedFloat32Array(0, 1, -0.3360097, 0.38716406, 0.22978243, 0.82728565, 0.033333335, 1, -0.35160032, 0.38174826, 0.23626, 0.8214785, 0.06666667, 1, -0.39035833, 0.3675059, 0.25222373, 0.80556995, 0.2, 1, -0.5382944, 0.30152178, 0.31107587, 0.7228801, 0.23333333, 1, -0.57219946, 0.28331316, 0.3240118, 0.69809586, 0.26666668, 1, -0.60445714, 0.26467502, 0.33608395, 0.67203146, 0.33333334, 1, -0.6044571, 0.264675, 0.33608392, 0.6720316, 0.36666667, 1, -0.57219946, 0.28331316, 0.32401177, 0.69809586, 0.5, 1, -0.42867061, 0.35227773, 0.2677981, 0.78767145, 0.53333336, 1, -0.39035836, 0.36750603, 0.2522238, 0.8055699, 0.56666666, 1, -0.35160032, 0.3817483, 0.23626001, 0.82147837, 0.6, 1, -0.31265265, 0.3949544, 0.2200203, 0.8353744, 0.8, 1, -0.31265262, 0.3949544, 0.22002025, 0.8353745)
 tracks/16/type = "scale_3d"
 tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/path = NodePath("metarig/Skeleton3D:hand.L")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat32Array(0, 1, 1.0636201, 1.2844493, 1.6356301, 0.033333335, 1, 1.0634184, 1.3353037, 1.6027408, 0.33333334, 1, 1.0598879, 2.2252557, 1.0271765, 0.58, 1, 1.0636201, 1.2844493, 1.6356304)
+tracks/16/keys = PackedFloat32Array(0, 1, 1.0636201, 1.2844496, 1.6356304, 0.033333335, 1, 1.0634183, 1.3353038, 1.6027409, 0.33333334, 1, 1.0598879, 2.225256, 1.0271767, 0.6, 1, 1.0639229, 1.2081678, 1.6849645, 0.8, 1, 1.0639229, 1.2081681, 1.6849645)
 tracks/17/type = "rotation_3d"
 tracks/17/imported = true
 tracks/17/enabled = true
 tracks/17/path = NodePath("metarig/Skeleton3D:hand.L.001")
-tracks/17/interp = 0
+tracks/17/interp = 1
 tracks/17/loop_wrap = true
-tracks/17/keys = PackedFloat32Array(0, 1, 0.4725449, 0.020417435, -0.19182132, 0.85993546)
+tracks/17/keys = PackedFloat32Array(0, 1, 0.4725449, 0.020417439, -0.19182134, 0.85993546)
 tracks/18/type = "position_3d"
 tracks/18/imported = true
 tracks/18/enabled = true
 tracks/18/path = NodePath("metarig/Skeleton3D:shoulder.R")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat32Array(0, 1, -0.051407788, 0.037979797, -0.01912099)
+tracks/18/keys = PackedFloat32Array(0, 1, -0.051407795, 0.037979763, -0.019120984)
 tracks/19/type = "rotation_3d"
 tracks/19/imported = true
 tracks/19/enabled = true
 tracks/19/path = NodePath("metarig/Skeleton3D:shoulder.R")
-tracks/19/interp = 0
+tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = PackedFloat32Array(0, 1, -0.48714703, 0.4270236, 0.69845396, 0.3041394)
 tracks/20/type = "position_3d"
@@ -594,56 +595,56 @@ tracks/20/enabled = true
 tracks/20/path = NodePath("metarig/Skeleton3D:upper_arm.R")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, -0.0013386119, 0.052571077, 0.007866673)
+tracks/20/keys = PackedFloat32Array(0, 1, -0.001338631, 0.052571088, 0.007866662)
 tracks/21/type = "rotation_3d"
 tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/path = NodePath("metarig/Skeleton3D:upper_arm.R")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
-tracks/21/keys = PackedFloat32Array(0, 1, 0.17159086, -0.7227711, 0.41637382, 0.52420557)
+tracks/21/keys = PackedFloat32Array(0, 1, 0.17159086, -0.72277105, 0.41637385, 0.52420557)
 tracks/22/type = "scale_3d"
 tracks/22/imported = true
 tracks/22/enabled = true
 tracks/22/path = NodePath("metarig/Skeleton3D:upper_arm.R")
-tracks/22/interp = 0
+tracks/22/interp = 1
 tracks/22/loop_wrap = true
-tracks/22/keys = PackedFloat32Array(0, 1, 1.0978501, 1.7498583, 1.0024258)
+tracks/22/keys = PackedFloat32Array(0, 1, 1.0978502, 1.7498583, 1.0024258)
 tracks/23/type = "rotation_3d"
 tracks/23/imported = true
 tracks/23/enabled = true
 tracks/23/path = NodePath("metarig/Skeleton3D:forearm.R")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
-tracks/23/keys = PackedFloat32Array(0, 1, 0.3060706, 0.04452356, -0.20550422, 0.9284969)
+tracks/23/keys = PackedFloat32Array(0, 1, 0.30607054, 0.044523567, -0.20550413, 0.92849696)
 tracks/24/type = "scale_3d"
 tracks/24/imported = true
 tracks/24/enabled = true
 tracks/24/path = NodePath("metarig/Skeleton3D:forearm.R")
 tracks/24/interp = 0
 tracks/24/loop_wrap = true
-tracks/24/keys = PackedFloat32Array(0, 1, 0.9755486, 0.8037627, 0.6983821)
+tracks/24/keys = PackedFloat32Array(0, 1, 0.9755486, 0.8037625, 0.69838196)
 tracks/25/type = "rotation_3d"
 tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/path = NodePath("metarig/Skeleton3D:hand.R")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
-tracks/25/keys = PackedFloat32Array(0, 1, 0.10878893, -0.04545276, -0.07193073, 0.9904166)
+tracks/25/keys = PackedFloat32Array(0, 1, 0.108788945, -0.045452762, -0.07193073, 0.9904166)
 tracks/26/type = "scale_3d"
 tracks/26/imported = true
 tracks/26/enabled = true
 tracks/26/path = NodePath("metarig/Skeleton3D:hand.R")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
-tracks/26/keys = PackedFloat32Array(0, 1, 0.97307235, 0.36046565, 0.9390137)
+tracks/26/keys = PackedFloat32Array(0, 1, 0.97307223, 0.3604656, 0.93901354)
 tracks/27/type = "rotation_3d"
 tracks/27/imported = true
 tracks/27/enabled = true
 tracks/27/path = NodePath("metarig/Skeleton3D:hand.R.001")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
-tracks/27/keys = PackedFloat32Array(0, 1, -0.088063374, -0.251739, 0.26026952, 0.9279721)
+tracks/27/keys = PackedFloat32Array(0, 1, -0.08806343, -0.25173908, 0.26026958, 0.927972)
 tracks/28/type = "rotation_3d"
 tracks/28/imported = true
 tracks/28/enabled = true
@@ -664,46 +665,47 @@ tracks/30/enabled = true
 tracks/30/path = NodePath("metarig/Skeleton3D:thigh.L")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
-tracks/30/keys = PackedFloat32Array(0, 1, 0.05792292, -0.004549469, 0.013972143)
+tracks/30/keys = PackedFloat32Array(0, 1, 0.05792293, -0.004549485, 0.013972148)
 tracks/31/type = "rotation_3d"
 tracks/31/imported = true
 tracks/31/enabled = true
 tracks/31/path = NodePath("metarig/Skeleton3D:thigh.L")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
-tracks/31/keys = PackedFloat32Array(0, 1, 0.93358445, -0.15024535, 0.056106616, 0.3204661)
+tracks/31/keys = PackedFloat32Array(0, 1, 0.93358445, -0.15024538, 0.05610664, 0.3204661)
 tracks/32/type = "rotation_3d"
 tracks/32/imported = true
 tracks/32/enabled = true
 tracks/32/path = NodePath("metarig/Skeleton3D:shin.L")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
-tracks/32/keys = PackedFloat32Array(0, 1, 0.00088987075, -0.020813875, 0.0029781873, 0.99977857)
+tracks/32/keys = PackedFloat32Array(0, 1, 0.00088990806, -0.020813879, 0.0029781868, 0.99977857)
 tracks/33/type = "position_3d"
 tracks/33/imported = true
 tracks/33/enabled = true
 tracks/33/path = NodePath("metarig/Skeleton3D:thigh.R")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
-tracks/33/keys = PackedFloat32Array(0, 1, -0.052161623, -0.001674545, 0.009821492)
+tracks/33/keys = PackedFloat32Array(0, 1, -0.05216163, -0.0016745653, 0.009821491)
 tracks/34/type = "rotation_3d"
 tracks/34/imported = true
 tracks/34/enabled = true
 tracks/34/path = NodePath("metarig/Skeleton3D:thigh.R")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
-tracks/34/keys = PackedFloat32Array(0, 1, 0.9474546, 0.14106314, -0.040031374, 0.2843036)
+tracks/34/keys = PackedFloat32Array(0, 1, 0.9474546, 0.14106315, -0.040031377, 0.2843036)
 tracks/35/type = "rotation_3d"
 tracks/35/imported = true
 tracks/35/enabled = true
 tracks/35/path = NodePath("metarig/Skeleton3D:shin.R")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
-tracks/35/keys = PackedFloat32Array(0, 1, 0.23322417, 0.12073075, 0.034418914, 0.9642852)
+tracks/35/keys = PackedFloat32Array(0, 1, 0.23322414, 0.12073074, 0.034418892, 0.9642852)
 
 [sub_resource type="Animation" id="Animation_usdsu"]
 resource_name = "standingIdle"
-length = 0.58
+length = 3.6
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -731,14 +733,14 @@ tracks/3/enabled = true
 tracks/3/path = NodePath("metarig/Skeleton3D:spine.002")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.16677232, 0.028873112, -0.008474886, 0.98553616, 0.033333335, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.06666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 0.1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 0.13333334, 1, -0.16025664, 0.029771864, -0.006183271, 0.98660696, 0.16666667, 1, -0.15712829, 0.030202463, -0.005083896, 0.9871032, 0.2, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 0.26666668, 1, -0.14661628, 0.031645045, -0.0013939184, 0.9886862, 0.3, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 0.33333334, 1, -0.14017464, 0.032525767, 0.00086407934, 0.9895921, 0.36666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 0.4, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 0.43333334, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 0.5, 1, -0.13479719, 0.033259083, 0.0027472165, 0.99031115, 0.53333336, 1, -0.13650393, 0.03302652, 0.0021497083, 0.99008656, 0.56666666, 1, -0.13892913, 0.03269577, 0.0013003991, 0.98976165, 0.58, 1, -0.14005265, 0.03254243, 0.000906832, 0.9896087)
+tracks/3/keys = PackedFloat32Array(0, 1, -0.16677232, 0.028873112, -0.008474886, 0.98553616, 0.033333335, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.06666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 0.1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 0.13333334, 1, -0.16025664, 0.029771864, -0.006183271, 0.98660696, 0.16666667, 1, -0.15712829, 0.030202463, -0.005083896, 0.9871032, 0.2, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 0.26666668, 1, -0.14661628, 0.031645045, -0.0013939184, 0.9886862, 0.3, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 0.33333334, 1, -0.14017464, 0.032525767, 0.00086407934, 0.9895921, 0.36666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 0.4, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 0.43333334, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 0.5, 1, -0.13479719, 0.033259083, 0.0027472165, 0.99031115, 0.53333336, 1, -0.13650393, 0.03302652, 0.0021497083, 0.99008656, 0.56666666, 1, -0.13892913, 0.03269577, 0.0013003991, 0.98976165, 0.6, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 0.6333333, 1, -0.14536205, 0.031816725, -0.0009540791, 0.98886645, 0.6666667, 1, -0.14902158, 0.031315554, -0.0022376743, 0.98833543, 0.7, 1, -0.15275308, 0.030803703, -0.0035472997, 0.9877778, 0.73333335, 1, -0.15637077, 0.030306645, -0.004817773, 0.9872216, 0.76666665, 1, -0.15971427, 0.029846566, -0.005992624, 0.9866938, 0.8, 1, -0.16263583, 0.029443981, -0.0070197694, 0.9862218, 0.8333333, 1, -0.16488953, 0.029133076, -0.0078124404, 0.9858508, 0.8666667, 1, -0.16637765, 0.028927622, -0.008336012, 0.9856025, 0.93333334, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.96666664, 1, -0.16505551, 0.029110188, -0.007870816, 0.98582315, 1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 1.0333333, 1, -0.16025662, 0.029771863, -0.006183271, 0.98660696, 1.0666667, 1, -0.15712827, 0.030202461, -0.005083893, 0.98710316, 1.1, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 1.1666666, 1, -0.14661628, 0.03164504, -0.001393919, 0.9886862, 1.2, 1, -0.14322554, 0.032108944, -0.00020505014, 0.98916906, 1.2333333, 1, -0.14017466, 0.032525767, 0.00086408, 0.9895921, 1.2666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 1.3, 1, -0.13556653, 0.03315427, 0.002477897, 0.9902103, 1.3333334, 1, -0.1343847, 0.033315253, 0.0028915915, 0.99036485, 1.4, 1, -0.13479719, 0.03325909, 0.0027472177, 0.99031115, 1.4333333, 1, -0.13650393, 0.033026528, 0.002149711, 0.99008656, 1.4666667, 1, -0.13892913, 0.03269577, 0.0013003993, 0.98976165, 1.5, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 1.5333333, 1, -0.14536205, 0.03181673, -0.0009540793, 0.98886645, 1.5666667, 1, -0.14902161, 0.031315554, -0.002237678, 0.9883355, 1.6, 1, -0.15275308, 0.030803703, -0.0035473006, 0.9877778, 1.6333333, 1, -0.15637077, 0.030306645, -0.0048177736, 0.9872216, 1.6666666, 1, -0.15971427, 0.029846564, -0.005992626, 0.9866938, 1.7, 1, -0.16263583, 0.029443981, -0.007019769, 0.9862218, 1.7333333, 1, -0.16488954, 0.029133076, -0.0078124404, 0.9858508, 1.7666667, 1, -0.16637765, 0.02892762, -0.008336015, 0.9856025, 1.8333334, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 1.8666667, 1, -0.16505553, 0.029110193, -0.007870816, 0.9858233, 1.9, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 1.9333333, 1, -0.16025662, 0.029771863, -0.0061832736, 0.98660696, 1.9666667, 1, -0.15712829, 0.030202461, -0.0050838953, 0.9871032, 2, 1, -0.15371667, 0.030671371, -0.003885632, 0.9876312, 2.0666666, 1, -0.14661628, 0.03164504, -0.0013939191, 0.9886862, 2.1, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 2.1333334, 1, -0.14017464, 0.032525767, 0.0008640815, 0.9895921, 2.1666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 2.2, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 2.2333333, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 2.3, 1, -0.13479719, 0.03325909, 0.0027472177, 0.99031115, 2.3333333, 1, -0.13650393, 0.033026524, 0.0021497088, 0.99008656, 2.3666666, 1, -0.13892913, 0.03269577, 0.0013004015, 0.9897616, 2.4, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 2.4333334, 1, -0.14536205, 0.03181673, -0.0009540793, 0.98886645, 2.4666667, 1, -0.14902158, 0.031315554, -0.0022376748, 0.98833543, 2.5, 1, -0.15275308, 0.030803703, -0.0035473006, 0.9877778, 2.5333333, 1, -0.15637077, 0.030306645, -0.0048177736, 0.9872216, 2.5666666, 1, -0.15971427, 0.029846564, -0.005992626, 0.9866938, 2.6, 1, -0.16263583, 0.029443981, -0.007019769, 0.9862218, 2.6333334, 1, -0.16488954, 0.029133074, -0.007812442, 0.9858508, 2.6666667, 1, -0.16637765, 0.02892762, -0.008336015, 0.9856025, 2.7333333, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 2.7666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 2.8, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 2.8333333, 1, -0.16025662, 0.029771863, -0.006183272, 0.98660696, 2.8666666, 1, -0.15712829, 0.03020246, -0.0050838985, 0.98710316, 2.9, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 2.9666667, 1, -0.14661628, 0.03164504, -0.0013939181, 0.9886862, 3, 1, -0.14322554, 0.032108944, -0.00020505014, 0.98916906, 3.0333333, 1, -0.14017464, 0.032525767, 0.00086408196, 0.9895921, 3.0666666, 1, -0.13757807, 0.03288007, 0.0017735865, 0.9899435, 3.1, 1, -0.13556653, 0.03315427, 0.002477897, 0.9902103, 3.1333334, 1, -0.13438472, 0.033315256, 0.0028915922, 0.9903649, 3.2, 1, -0.13479719, 0.033259083, 0.002747216, 0.99031115, 3.2333333, 1, -0.13650395, 0.03302652, 0.0021497079, 0.99008656, 3.2666667, 1, -0.13892913, 0.03269577, 0.001300398, 0.98976165, 3.3, 1, -0.14192337, 0.032286916, 0.00025133803, 0.9893509, 3.3333333, 1, -0.14536205, 0.031816725, -0.00095407956, 0.98886645, 3.3666666, 1, -0.14902158, 0.031315554, -0.0022376725, 0.9883355, 3.4, 1, -0.15275308, 0.030803703, -0.0035472997, 0.9877778, 3.4333334, 1, -0.15637074, 0.030306645, -0.0048177713, 0.9872216, 3.4666667, 1, -0.15971427, 0.029846566, -0.005992624, 0.9866938, 3.5, 1, -0.16263583, 0.029443981, -0.0070197666, 0.9862218, 3.5333333, 1, -0.16488953, 0.029133076, -0.0078124404, 0.9858508, 3.5666666, 1, -0.16637765, 0.028927622, -0.008336012, 0.9856025, 3.6, 1, -0.16695304, 0.028848143, -0.008538486, 0.98550576)
 tracks/4/type = "rotation_3d"
 tracks/4/imported = true
 tracks/4/enabled = true
 tracks/4/path = NodePath("metarig/Skeleton3D:spine.003")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.07023548, 0.0005279473, 0.004223989, 0.99752146, 0.06666667, 1, 0.070056334, 0.00077965594, 0.005369728, 0.9975283, 0.1, 1, 0.06983897, 0.0010849016, 0.006759162, 0.9975348, 0.13333334, 1, 0.06955545, 0.0014827184, 0.008569961, 0.99754024, 0.16666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 0.2, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 0.26666668, 1, 0.068130076, 0.0034774584, 0.017649602, 0.99751425, 0.3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 0.33333334, 1, 0.067456, 0.004417755, 0.021929579, 0.99747145, 0.36666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 0.4, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 0.5, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 0.53333336, 1, 0.067071594, 0.0049531334, 0.024366457, 0.9974383, 0.56666666, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 0.58, 1, 0.067443244, 0.0044355607, 0.022010615, 0.99747044)
+tracks/4/keys = PackedFloat32Array(0, 1, 0.07023548, 0.0005279473, 0.004223989, 0.99752146, 0.06666667, 1, 0.070056334, 0.00077965594, 0.005369728, 0.9975283, 0.1, 1, 0.06983897, 0.0010849016, 0.006759162, 0.9975348, 0.13333334, 1, 0.06955545, 0.0014827184, 0.008569961, 0.99754024, 0.16666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 0.2, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 0.26666668, 1, 0.068130076, 0.0034774584, 0.017649602, 0.99751425, 0.3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 0.33333334, 1, 0.067456, 0.004417755, 0.021929579, 0.99747145, 0.36666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 0.4, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 0.5, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 0.53333336, 1, 0.067071594, 0.0049531334, 0.024366457, 0.9974383, 0.56666666, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 0.6, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 0.6333333, 1, 0.06799887, 0.0036606248, 0.018483317, 0.9975075, 0.6666667, 1, 0.06838161, 0.003126083, 0.016050218, 0.9975252, 0.7, 1, 0.06877166, 0.0025806688, 0.01356762, 0.99753684, 0.73333335, 1, 0.069149636, 0.002051515, 0.011159022, 0.9975418, 0.76666665, 1, 0.069498815, 0.0015621383, 0.008931462, 0.99754083, 0.8, 1, 0.06980382, 0.0011342342, 0.0069837263, 0.9975357, 0.8333333, 1, 0.07003903, 0.0008039762, 0.005480434, 0.9975289, 0.8666667, 1, 0.070194304, 0.0005858157, 0.0044873985, 0.99752307, 0.96666664, 1, 0.07005633, 0.0007796554, 0.0053697266, 0.99752825, 1, 1, 0.06983897, 0.0010849017, 0.006759162, 0.9975348, 1.0333333, 1, 0.06955545, 0.0014827183, 0.0085699605, 0.99754024, 1.0666667, 1, 0.06922876, 0.0019406687, 0.01065447, 0.997542, 1.1, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 1.1666666, 1, 0.068130076, 0.0034774567, 0.0176496, 0.99751425, 1.2, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 1.2333333, 1, 0.067456, 0.004417756, 0.021929584, 0.99747145, 1.2666667, 1, 0.0671841, 0.0047964975, 0.023653517, 0.9974487, 1.3, 1, 0.06697339, 0.005089805, 0.024988532, 0.99742883, 1.4, 1, 0.06689282, 0.0052019614, 0.025499044, 0.9974207, 1.4333333, 1, 0.067071594, 0.0049531343, 0.02436646, 0.9974383, 1.4666667, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 1.5, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 1.5333333, 1, 0.06799887, 0.0036606262, 0.018483317, 0.9975075, 1.5666667, 1, 0.068381615, 0.0031260818, 0.016050212, 0.9975252, 1.6, 1, 0.06877166, 0.0025806688, 0.013567619, 0.99753684, 1.6333333, 1, 0.069149636, 0.0020515146, 0.011159021, 0.9975418, 1.6666666, 1, 0.06949882, 0.0015621361, 0.00893146, 0.99754083, 1.7, 1, 0.06980382, 0.0011342342, 0.0069837268, 0.9975357, 1.7333333, 1, 0.07003904, 0.00080397655, 0.0054804324, 0.9975289, 1.7666667, 1, 0.070194304, 0.00058581616, 0.004487393, 0.99752307, 1.8666667, 1, 0.07005633, 0.000779656, 0.005369728, 0.9975283, 1.9, 1, 0.06983897, 0.0010849024, 0.0067591635, 0.9975348, 1.9333333, 1, 0.06955545, 0.001482716, 0.008569957, 0.99754024, 1.9666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 2, 1, 0.06887236, 0.0024397592, 0.0129262265, 0.9975388, 2.0666666, 1, 0.068130076, 0.0034774581, 0.017649598, 0.99751425, 2.1, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 2.1333334, 1, 0.06745601, 0.0044177566, 0.021929588, 0.9974715, 2.1666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 2.2, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 2.3, 1, 0.06689282, 0.0052019614, 0.025499044, 0.9974207, 2.3333333, 1, 0.0670716, 0.0049531334, 0.024366455, 0.9974383, 2.3666666, 1, 0.06732561, 0.004599453, 0.02275662, 0.99746096, 2.4, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 2.4333334, 1, 0.06799887, 0.0036606262, 0.018483317, 0.9975075, 2.4666667, 1, 0.06838161, 0.0031260832, 0.016050218, 0.9975252, 2.5, 1, 0.06877166, 0.0025806688, 0.013567619, 0.99753684, 2.5333333, 1, 0.069149636, 0.0020515146, 0.011159021, 0.9975418, 2.5666666, 1, 0.06949882, 0.0015621361, 0.00893146, 0.99754083, 2.6, 1, 0.06980382, 0.0011342342, 0.0069837268, 0.9975357, 2.6333334, 1, 0.07003904, 0.00080397585, 0.0054804296, 0.997529, 2.6666667, 1, 0.070194304, 0.00058581616, 0.004487393, 0.99752307, 2.7666667, 1, 0.07005633, 0.0007796554, 0.005369727, 0.9975283, 2.8, 1, 0.06983897, 0.0010849019, 0.006759161, 0.9975348, 2.8333333, 1, 0.06955545, 0.0014827182, 0.00856996, 0.99754024, 2.8666666, 1, 0.06922875, 0.0019406662, 0.010654458, 0.997542, 2.9, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 2.9666667, 1, 0.068130076, 0.003477458, 0.0176496, 0.99751425, 3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 3.0333333, 1, 0.067456, 0.004417755, 0.021929584, 0.99747145, 3.0666666, 1, 0.0671841, 0.0047964985, 0.023653518, 0.9974487, 3.1, 1, 0.06697339, 0.005089805, 0.024988532, 0.99742883, 3.2, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 3.2333333, 1, 0.067071594, 0.0049531325, 0.024366453, 0.9974383, 3.2666667, 1, 0.06732561, 0.004599452, 0.022756608, 0.99746096, 3.3, 1, 0.06763908, 0.0041625993, 0.020768154, 0.997485, 3.3333333, 1, 0.06799888, 0.0036606237, 0.018483315, 0.9975075, 3.3666666, 1, 0.068381615, 0.003126082, 0.016050221, 0.9975252, 3.4, 1, 0.06877166, 0.0025806688, 0.01356762, 0.99753684, 3.4333334, 1, 0.06914963, 0.0020515155, 0.011159022, 0.9975418, 3.4666667, 1, 0.069498815, 0.0015621383, 0.008931462, 0.99754083, 3.5, 1, 0.06980382, 0.0011342377, 0.0069837295, 0.9975357, 3.5333333, 1, 0.070039034, 0.00080397655, 0.0054804333, 0.997529, 3.5666666, 1, 0.070194304, 0.0005858157, 0.0044873985, 0.99752307, 3.6, 1, 0.070254356, 0.00050144584, 0.004103356, 0.99752057)
 tracks/5/type = "position_3d"
 tracks/5/imported = true
 tracks/5/enabled = true
@@ -752,7 +754,7 @@ tracks/6/enabled = true
 tracks/6/path = NodePath("metarig/Skeleton3D:spine.004")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat32Array(0, 1, 0.22059686, -0.044235434, 0.013558753, 0.9742671, 0.033333335, 1, 0.22326314, -0.043623745, 0.014701426, 0.9736706, 0.06666667, 1, 0.2330202, -0.041377902, 0.018889269, 0.9714076, 0.1, 1, 0.24612053, -0.03834405, 0.024527835, 0.9681699, 0.13333334, 1, 0.2600057, -0.035105076, 0.030524157, 0.96448594, 0.16666667, 1, 0.27196836, -0.032294996, 0.035706967, 0.96110106, 0.2, 1, 0.27981368, -0.03044219, 0.03911439, 0.95877403, 0.23333333, 1, 0.2812441, -0.03010351, 0.039736405, 0.9583405, 0.58, 1, 0.2812441, -0.030103512, 0.039736405, 0.9583405)
+tracks/6/keys = PackedFloat32Array(0, 1, 0.22059686, -0.044235434, 0.013558753, 0.9742671, 0.033333335, 1, 0.22326314, -0.043623745, 0.014701426, 0.9736706, 0.06666667, 1, 0.2330202, -0.041377902, 0.018889269, 0.9714076, 0.1, 1, 0.24612053, -0.03834405, 0.024527835, 0.9681699, 0.13333334, 1, 0.2600057, -0.035105076, 0.030524157, 0.96448594, 0.16666667, 1, 0.27196836, -0.032294996, 0.035706967, 0.96110106, 0.2, 1, 0.27981368, -0.03044219, 0.03911439, 0.95877403, 0.23333333, 1, 0.2812441, -0.03010351, 0.039736405, 0.9583405, 0.6, 1, 0.2812441, -0.030103512, 0.0397364, 0.9583405, 0.6333333, 1, 0.28141174, -0.04259756, 0.041770667, 0.95773065, 0.6666667, 1, 0.28145576, -0.07383909, 0.046834406, 0.9555821, 0.7, 1, 0.28067732, -0.119113095, 0.054113027, 0.95084393, 0.73333335, 1, 0.27827212, -0.17364286, 0.06278595, 0.94258726, 0.76666665, 1, 0.27391, -0.23017131, 0.07166713, 0.9310523, 0.8, 1, 0.267559, -0.2834174, 0.079930566, 0.91744095, 0.8333333, 1, 0.25941482, -0.32678962, 0.08659617, 0.9046622, 0.8666667, 1, 0.25010365, -0.35647592, 0.09114033, 0.8955817, 0.9, 1, 0.2400653, -0.3687232, 0.09305262, 0.89317024, 0.93333334, 1, 0.22879887, -0.36850163, 0.09299436, 0.89621973, 0.96666664, 1, 0.21593048, -0.36652532, 0.092471585, 0.90026784, 1, 1, 0.20153163, -0.3628636, 0.09147808, 0.9051778, 1.0333333, 1, 0.1855155, -0.35740364, 0.08994786, 0.9109095, 1.0666667, 1, 0.16814905, -0.35040626, 0.08792672, 0.9171752, 1.1, 1, 0.14952101, -0.34193125, 0.085404195, 0.9238142, 1.1333333, 1, 0.12961778, -0.3319071, 0.0823117, 0.93073183, 1.1666666, 1, 0.10871163, -0.3205799, 0.0787001, 0.9376656, 1.2, 1, 0.08693947, -0.30803967, 0.07456538, 0.9444539, 1.2333333, 1, 0.06440368, -0.29430526, 0.06984976, 0.9509772, 1.2666667, 1, 0.041383933, -0.27963188, 0.06461832, 0.957036, 1.3, 1, 0.018071337, -0.26416332, 0.05888198, 0.9625093, 1.4, 1, -0.051268514, -0.21478495, 0.038694963, 0.97454697, 1.4333333, 1, -0.07331041, -0.19810228, 0.031076387, 0.9769419, 1.4666667, 1, -0.09444748, -0.18168099, 0.023094196, 0.978539, 1.5, 1, -0.114476144, -0.16573003, 0.014781879, 0.9793928, 1.5333333, 1, -0.13301852, -0.15058862, 0.0061410144, 0.9795874, 1.5666667, 1, -0.15002598, -0.13638398, -0.0027584524, 0.97922623, 1.6, 1, -0.16533686, -0.12330908, -0.011889098, 0.9784259, 1.6333333, 1, -0.1785526, -0.11175004, -0.021250794, 0.97733283, 1.6666666, 1, -0.18973647, -0.10173406, -0.030796228, 0.97606456, 1.7, 1, -0.19875921, -0.09342819, -0.04051184, 0.9747434, 1.7333333, 1, -0.20518798, -0.08725858, -0.050408058, 0.97352093, 1.7666667, 1, -0.20915577, -0.083168015, -0.06045779, 0.97246176, 1.8, 1, -0.21052824, -0.081312194, -0.070658565, 0.9716345, 1.8333334, 1, -0.21019661, -0.08620411, -0.08126053, 0.97045505, 1.8666667, 1, -0.20953332, -0.099774286, -0.092316836, 0.968307, 1.9, 1, -0.20851174, -0.120744236, -0.10365811, 0.9649864, 1.9333333, 1, -0.20706607, -0.14835317, -0.115071714, 0.9601425, 1.9666667, 1, -0.20520139, -0.18027511, -0.12628053, 0.95364916, 2, 1, -0.20291513, -0.21507752, -0.13704152, 0.945403, 2.0666666, 1, -0.19732174, -0.2868514, -0.15603545, 0.9243557, 2.1, 1, -0.19426766, -0.32050997, -0.16391782, 0.91250443, 2.1333334, 1, -0.19132599, -0.35029897, -0.17038436, 0.9009186, 2.1666667, 1, -0.18868497, -0.3752287, -0.17547408, 0.8903989, 2.2, 1, -0.18655834, -0.3942427, -0.17914365, 0.88185954, 2.2333333, 1, -0.18527922, -0.40528014, -0.18116693, 0.8766973, 2.2666667, 1, -0.18491086, -0.4084826, -0.18174566, 0.87516767, 2.3, 1, -0.1851436, -0.40732077, -0.18163387, 0.87568307, 2.3333333, 1, -0.18573235, -0.4043417, -0.18132706, 0.8770016, 2.3666666, 1, -0.1866067, -0.39983985, -0.18083046, 0.87898034, 2.4, 1, -0.18773939, -0.3938879, -0.1801278, 0.88156694, 2.4333334, 1, -0.18912736, -0.38639987, -0.17917205, 0.8847732, 2.4666667, 1, -0.19070807, -0.37762493, -0.17796937, 0.88845754, 2.5, 1, -0.19245125, -0.3676312, -0.17650044, 0.89255667, 2.5333333, 1, -0.19434069, -0.35636687, -0.1747102, 0.8970567, 2.5666666, 1, -0.19632135, -0.3440569, -0.17261033, 0.9018252, 2.6, 1, -0.1983604, -0.3307812, -0.17018215, 0.9067938, 2.6333334, 1, -0.20042881, -0.31654367, -0.16736794, 0.9119301, 2.6666667, 1, -0.2024807, -0.30155474, -0.1641889, 0.9171196, 2.7, 1, -0.20448318, -0.2859167, -0.16063178, 0.92229915, 2.7333333, 1, -0.20639604, -0.26970494, -0.15664162, 0.92742836, 2.7666667, 1, -0.20818684, -0.25311288, -0.15225261, 0.9324223, 2.9, 1, -0.21347876, -0.18574378, -0.13053124, 0.950204, 2.9333334, 1, -0.21418017, -0.16947836, -0.124057695, 0.9539465, 2.9666667, 1, -0.21459797, -0.15374622, -0.11720822, 0.9573778, 3, 1, -0.21471708, -0.13868897, -0.109996274, 0.9605014, 3.0333333, 1, -0.21449035, -0.12457602, -0.102399506, 0.9633219, 3.0666666, 1, -0.21393687, -0.11145256, -0.094475895, 0.96585906, 3.1, 1, -0.21304867, -0.09944617, -0.0862429, 0.96813375, 3.1333334, 1, -0.21178019, -0.08885661, -0.077686846, 0.9701642, 3.1666667, 1, -0.20934671, -0.0796605, -0.06887797, 0.9721544, 3.2, 1, -0.19873117, -0.071953505, -0.059976194, 0.9755673, 3.2333333, 1, -0.17540428, -0.065757826, -0.05110654, 0.98096764, 3.2666667, 1, -0.1428344, -0.060678814, -0.042306025, 0.98697853, 3.3, 1, -0.10281199, -0.056548204, -0.03364119, 0.9925222, 3.3333333, 1, -0.056969047, -0.053316787, -0.025275204, 0.9966309, 3.3666666, 1, -0.008374967, -0.050737705, -0.017327184, 0.9985266, 3.4, 1, 0.040766407, -0.04871445, -0.00995299, 0.9979308, 3.4333334, 1, 0.08769628, -0.04722579, -0.0034283944, 0.99502134, 3.4666667, 1, 0.13030334, -0.04612126, 0.0021839505, 0.9903985, 3.5, 1, 0.16679077, -0.045347605, 0.0067686704, 0.9849257, 3.5333333, 1, 0.19434658, -0.044886544, 0.010077532, 0.9798536, 3.5666666, 1, 0.21227117, -0.044642843, 0.012159435, 0.9761149, 3.6, 1, 0.21913767, -0.044569824, 0.012933718, 0.97458965)
 tracks/7/type = "scale_3d"
 tracks/7/imported = true
 tracks/7/enabled = true
@@ -801,19 +803,19 @@ tracks/13/enabled = true
 tracks/13/path = NodePath("metarig/Skeleton3D:forearm.L")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/keys = PackedFloat32Array(0, 1, 0.42398894, 0.27553335, -0.28779826, 0.8133185, 0.033333335, 1, 0.42143035, 0.27886203, -0.28837502, 0.8133095, 0.06666667, 1, 0.4119825, 0.29102603, -0.2904457, 0.8131518, 0.1, 1, 0.3990908, 0.30730993, -0.29312566, 0.8126282, 0.13333334, 1, 0.38517308, 0.3244985, -0.29583752, 0.81167895, 0.16666667, 1, 0.37297785, 0.3392387, -0.298065, 0.81053185, 0.2, 1, 0.36487952, 0.34886676, -0.29946977, 0.80961275, 0.23333333, 1, 0.3633945, 0.35061857, -0.29972112, 0.80943084, 0.58, 1, 0.36339456, 0.35061857, -0.2997211, 0.8094309)
+tracks/13/keys = PackedFloat32Array(0, 1, 0.42398894, 0.27553335, -0.28779826, 0.8133185, 0.033333335, 1, 0.42143035, 0.27886203, -0.28837502, 0.8133095, 0.06666667, 1, 0.4119825, 0.29102603, -0.2904457, 0.8131518, 0.1, 1, 0.3990908, 0.30730993, -0.29312566, 0.8126282, 0.13333334, 1, 0.38517308, 0.3244985, -0.29583752, 0.81167895, 0.16666667, 1, 0.37297785, 0.3392387, -0.298065, 0.81053185, 0.2, 1, 0.36487952, 0.34886676, -0.29946977, 0.80961275, 0.23333333, 1, 0.3633945, 0.35061857, -0.29972112, 0.80943084, 0.8, 1, 0.3642071, 0.34966058, -0.29958388, 0.80953085, 0.93333334, 1, 0.36558196, 0.34803656, -0.29935032, 0.80969733, 1.0333333, 1, 0.3669996, 0.34635842, -0.2991077, 0.80986536, 1.1666666, 1, 0.36935085, 0.3435664, -0.29870138, 0.8101356, 1.2, 1, 0.37001264, 0.3427787, -0.29858625, 0.8102097, 1.2666667, 1, 0.371422, 0.3410982, -0.29833943, 0.810365, 1.3, 1, 0.37216413, 0.34021175, -0.29820874, 0.8104452, 1.3333334, 1, 0.37293294, 0.33929244, -0.29807296, 0.8105272, 1.3666667, 1, 0.37372422, 0.33834508, -0.2979326, 0.8106103, 1.4, 1, 0.37453702, 0.33737063, -0.29778785, 0.81069446, 1.4333333, 1, 0.3753727, 0.3363671, -0.29763827, 0.8107799, 1.4666667, 1, 0.3762279, 0.3353391, -0.29748467, 0.8108657, 1.5, 1, 0.3771013, 0.3342875, -0.297327, 0.810952, 1.6666666, 1, 0.38172227, 0.32869935, -0.29648164, 0.8113837, 1.7333333, 1, 0.38366622, 0.32633576, -0.29612017, 0.81155294, 1.7666667, 1, 0.38465452, 0.3251313, -0.2959351, 0.81163603, 1.8, 1, 0.38565183, 0.3239139, -0.29574734, 0.8117179, 1.8333334, 1, 0.38665816, 0.32268324, -0.29555693, 0.8117987, 1.9333333, 1, 0.38971564, 0.31893206, -0.29497263, 0.8120316, 1.9666667, 1, 0.3907445, 0.3176656, -0.29477412, 0.81210566, 2, 1, 0.3917762, 0.31639326, -0.29457396, 0.8121779, 2.0333333, 1, 0.39281017, 0.31511602, -0.29437235, 0.8122482, 2.0666666, 1, 0.3938449, 0.31383535, -0.29416946, 0.8123164, 2.1666667, 1, 0.396945, 0.30998597, -0.29355583, 0.81250745, 2.3, 1, 0.4010299, 0.30488297, -0.2927329, 0.81272924, 2.3333333, 1, 0.40203553, 0.30362165, -0.292528, 0.8127785, 2.4, 1, 0.4040218, 0.30112347, -0.29212013, 0.81286955, 2.5, 1, 0.4069218, 0.29746076, -0.29151738, 0.8129879, 2.5333333, 1, 0.4078631, 0.2962681, -0.29132003, 0.8130226, 2.5666666, 1, 0.40879068, 0.29509094, -0.29112464, 0.81305474, 2.6333334, 1, 0.41059974, 0.2927897, -0.29074106, 0.8131124, 2.7, 1, 0.4123416, 0.29056737, -0.2903687, 0.81316113, 2.7333333, 1, 0.41318345, 0.2894907, -0.29018757, 0.8131826, 2.7666667, 1, 0.4140063, 0.28843704, -0.29000983, 0.8132019, 2.8, 1, 0.4148091, 0.28740752, -0.28983575, 0.81321925, 2.8333333, 1, 0.41558856, 0.2864067, -0.2896662, 0.8132349, 2.9, 1, 0.4170809, 0.28448644, -0.28933957, 0.8132611, 2.9333334, 1, 0.41778934, 0.2835733, -0.28918394, 0.8132718, 3, 1, 0.4191318, 0.2818398, -0.28888723, 0.81328905, 3.0666666, 1, 0.42036256, 0.28024685, -0.28861374, 0.81330144, 3.1333334, 1, 0.42147756, 0.27880082, -0.28836444, 0.8133098, 3.2, 1, 0.42246947, 0.2775118, -0.28814152, 0.813315, 3.3, 1, 0.42370635, 0.2759017, -0.28786227, 0.8133182, 3.3666666, 1, 0.4243524, 0.2750595, -0.28771582, 0.8133185, 3.4666667, 1, 0.42503887, 0.2741632, -0.28755957, 0.8133179, 3.6, 1, 0.42538497, 0.27371112, -0.2874807, 0.8133171)
 tracks/14/type = "scale_3d"
 tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/path = NodePath("metarig/Skeleton3D:forearm.L")
-tracks/14/interp = 0
+tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, 1, 0.99999994, 1)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = true
 tracks/15/enabled = true
 tracks/15/path = NodePath("metarig/Skeleton3D:hand.L")
-tracks/15/interp = 1
+tracks/15/interp = 0
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 0.13981646, 0.382399, -0.16881864, 0.8976207)
 tracks/16/type = "scale_3d"
@@ -827,7 +829,7 @@ tracks/17/type = "rotation_3d"
 tracks/17/imported = true
 tracks/17/enabled = true
 tracks/17/path = NodePath("metarig/Skeleton3D:hand.L.001")
-tracks/17/interp = 1
+tracks/17/interp = 0
 tracks/17/loop_wrap = true
 tracks/17/keys = PackedFloat32Array(0, 1, 0.15574835, -0.010068901, -0.12184813, 0.98020107)
 tracks/18/type = "position_3d"
@@ -850,19 +852,19 @@ tracks/20/enabled = true
 tracks/20/path = NodePath("metarig/Skeleton3D:upper_arm.R")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, -0.018551633, 0.06443944, 0.006279652, 0.1, 1, -0.018249229, 0.06500827, 0.004810695, 0.13333334, 1, -0.018033238, 0.06541456, 0.0037615537, 0.16666667, 1, -0.017784588, 0.065882266, 0.002553751, 0.2, 1, -0.017513612, 0.06639196, 0.0012375682, 0.26666668, 1, -0.016950173, 0.06745179, -0.0014992901, 0.3, 1, -0.016681343, 0.06795745, -0.002805068, 0.33333334, 1, -0.016439572, 0.06841224, -0.0039794995, 0.36666667, 1, -0.016233888, 0.06879912, -0.004978574, 0.43333334, 1, -0.015981019, 0.06927476, -0.0062068626, 0.53333336, 1, -0.016148815, 0.06895913, -0.005391799, 0.56666666, 1, -0.016340906, 0.06859782, -0.004458754, 0.58, 1, -0.016429912, 0.0684304, -0.0040264525)
+tracks/20/keys = PackedFloat32Array(0, 1, -0.018551633, 0.06443944, 0.006279652, 0.1, 1, -0.018249229, 0.06500827, 0.004810695, 0.13333334, 1, -0.018033238, 0.06541456, 0.0037615537, 0.16666667, 1, -0.017784588, 0.065882266, 0.002553751, 0.2, 1, -0.017513612, 0.06639196, 0.0012375682, 0.26666668, 1, -0.016950173, 0.06745179, -0.0014992901, 0.3, 1, -0.016681343, 0.06795745, -0.002805068, 0.33333334, 1, -0.016439572, 0.06841224, -0.0039794995, 0.36666667, 1, -0.016233888, 0.06879912, -0.004978574, 0.43333334, 1, -0.015981019, 0.06927476, -0.0062068626, 0.53333336, 1, -0.016148815, 0.06895913, -0.005391799, 0.56666666, 1, -0.016340906, 0.06859782, -0.004458754, 0.6, 1, -0.016578136, 0.06815159, -0.0033064294, 0.6333333, 1, -0.01685072, 0.06763887, -0.001982402, 0.73333335, 1, -0.017724408, 0.06599547, 0.0022614761, 0.76666665, 1, -0.017990107, 0.06549567, 0.0035520764, 0.8, 1, -0.018222438, 0.06505866, 0.004680565, 0.8666667, 1, -0.01852022, 0.064498544, 0.0061269808, 1, 1, -0.018249229, 0.06500827, 0.004810695, 1.0333333, 1, -0.018033238, 0.06541456, 0.003761554, 1.0666667, 1, -0.017784588, 0.065882266, 0.002553748, 1.1, 1, -0.017513612, 0.06639196, 0.0012375682, 1.1666666, 1, -0.016950173, 0.06745179, -0.0014992892, 1.2, 1, -0.016681349, 0.06795746, -0.0028050663, 1.2333333, 1, -0.016439572, 0.06841224, -0.0039794995, 1.2666667, 1, -0.016233886, 0.06879912, -0.004978574, 1.3333334, 1, -0.015981022, 0.069274776, -0.006206862, 1.4333333, 1, -0.016148815, 0.06895913, -0.0053918012, 1.4666667, 1, -0.016340906, 0.06859782, -0.004458754, 1.5, 1, -0.016578136, 0.06815159, -0.0033064294, 1.5333333, 1, -0.01685072, 0.06763887, -0.001982402, 1.6333333, 1, -0.017724408, 0.06599547, 0.0022614766, 1.6666666, 1, -0.01799011, 0.06549568, 0.0035520743, 1.7, 1, -0.018222438, 0.06505866, 0.004680565, 1.7666667, 1, -0.018520216, 0.064498544, 0.006126989, 1.9, 1, -0.01824923, 0.06500827, 0.0048106974, 1.9333333, 1, -0.018033238, 0.065414555, 0.0037615565, 1.9666667, 1, -0.01778459, 0.065882266, 0.0025537503, 2, 1, -0.017513609, 0.06639195, 0.0012375684, 2.0666666, 1, -0.016950173, 0.06745179, -0.0014992894, 2.1, 1, -0.016681343, 0.06795745, -0.002805068, 2.1333334, 1, -0.016439572, 0.06841224, -0.003979502, 2.1666667, 1, -0.016233888, 0.06879912, -0.004978574, 2.2333333, 1, -0.01598102, 0.06927476, -0.0062068626, 2.3333333, 1, -0.016148815, 0.06895913, -0.0053917994, 2.3666666, 1, -0.016340906, 0.06859782, -0.0044587567, 2.4, 1, -0.016578136, 0.06815159, -0.0033064294, 2.4333334, 1, -0.01685072, 0.06763887, -0.001982402, 2.5333333, 1, -0.017724408, 0.06599547, 0.0022614766, 2.5666666, 1, -0.01799011, 0.06549568, 0.0035520743, 2.6, 1, -0.018222438, 0.06505866, 0.004680565, 2.6666667, 1, -0.018520216, 0.064498544, 0.006126989, 2.8, 1, -0.018249229, 0.065008275, 0.0048106974, 2.8333333, 1, -0.01803324, 0.06541456, 0.0037615534, 2.8666666, 1, -0.01778459, 0.06588226, 0.0025537736, 2.9, 1, -0.017513612, 0.06639196, 0.0012375682, 2.9666667, 1, -0.016950175, 0.06745178, -0.0014992903, 3, 1, -0.016681349, 0.06795746, -0.0028050663, 3.0333333, 1, -0.016439574, 0.06841224, -0.0039794985, 3.0666666, 1, -0.016233884, 0.068799116, -0.0049785753, 3.1333334, 1, -0.015981022, 0.069274776, -0.006206863, 3.2333333, 1, -0.016148817, 0.06895913, -0.0053917984, 3.2666667, 1, -0.016340906, 0.06859784, -0.004458754, 3.3, 1, -0.016578134, 0.0681516, -0.0033064247, 3.3333333, 1, -0.016850714, 0.06763886, -0.001982403, 3.4333334, 1, -0.017724412, 0.065995485, 0.002261457, 3.4666667, 1, -0.017990107, 0.06549567, 0.0035520764, 3.5, 1, -0.018222442, 0.065058656, 0.0046805977, 3.5666666, 1, -0.01852022, 0.064498544, 0.0061269808, 3.6, 1, -0.018566025, 0.064412355, 0.006349529)
 tracks/21/type = "rotation_3d"
 tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/path = NodePath("metarig/Skeleton3D:upper_arm.R")
-tracks/21/interp = 1
+tracks/21/interp = 0
 tracks/21/loop_wrap = true
 tracks/21/keys = PackedFloat32Array(0, 1, -0.064009234, -0.8001932, 0.4339638, 0.40898544)
 tracks/22/type = "scale_3d"
 tracks/22/imported = true
 tracks/22/enabled = true
 tracks/22/path = NodePath("metarig/Skeleton3D:upper_arm.R")
-tracks/22/interp = 1
+tracks/22/interp = 0
 tracks/22/loop_wrap = true
 tracks/22/keys = PackedFloat32Array(0, 1, 0.99999994, 0.9999998, 0.99999994)
 tracks/23/type = "rotation_3d"
@@ -883,14 +885,14 @@ tracks/25/type = "rotation_3d"
 tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/path = NodePath("metarig/Skeleton3D:hand.R")
-tracks/25/interp = 1
+tracks/25/interp = 0
 tracks/25/loop_wrap = true
 tracks/25/keys = PackedFloat32Array(0, 1, -0.17750292, 0.7586413, 0.42641726, 0.45948282)
 tracks/26/type = "scale_3d"
 tracks/26/imported = true
 tracks/26/enabled = true
 tracks/26/path = NodePath("metarig/Skeleton3D:hand.R")
-tracks/26/interp = 0
+tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, 1.0000001, 1, 1.0000001)
 tracks/27/type = "rotation_3d"
@@ -959,7 +961,8 @@ tracks/35/keys = PackedFloat32Array(0, 1, 0.15854627, -1.6434951e-09, -1.023483e
 
 [sub_resource type="Animation" id="Animation_ywrsv"]
 resource_name = "standingIdleVariant"
-length = 0.58
+length = 3.6
+loop_mode = 2
 tracks/0/type = "position_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -987,14 +990,14 @@ tracks/3/enabled = true
 tracks/3/path = NodePath("metarig/Skeleton3D:spine.002")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat32Array(0, 1, -0.16677232, 0.028873112, -0.008474886, 0.98553616, 0.033333335, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.06666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 0.1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 0.13333334, 1, -0.16025664, 0.029771864, -0.006183271, 0.98660696, 0.16666667, 1, -0.15712829, 0.030202463, -0.005083896, 0.9871032, 0.2, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 0.26666668, 1, -0.14661628, 0.031645045, -0.0013939184, 0.9886862, 0.3, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 0.33333334, 1, -0.14017464, 0.032525767, 0.00086407934, 0.9895921, 0.36666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 0.4, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 0.43333334, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 0.5, 1, -0.13479719, 0.033259083, 0.0027472165, 0.99031115, 0.53333336, 1, -0.13650393, 0.03302652, 0.0021497083, 0.99008656, 0.56666666, 1, -0.13892913, 0.03269577, 0.0013003991, 0.98976165, 0.58, 1, -0.14005265, 0.03254243, 0.000906832, 0.9896087)
+tracks/3/keys = PackedFloat32Array(0, 1, -0.16677232, 0.028873112, -0.008474886, 0.98553616, 0.033333335, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.06666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 0.1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 0.13333334, 1, -0.16025664, 0.029771864, -0.006183271, 0.98660696, 0.16666667, 1, -0.15712829, 0.030202463, -0.005083896, 0.9871032, 0.2, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 0.26666668, 1, -0.14661628, 0.031645045, -0.0013939184, 0.9886862, 0.3, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 0.33333334, 1, -0.14017464, 0.032525767, 0.00086407934, 0.9895921, 0.36666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 0.4, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 0.43333334, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 0.5, 1, -0.13479719, 0.033259083, 0.0027472165, 0.99031115, 0.53333336, 1, -0.13650393, 0.03302652, 0.0021497083, 0.99008656, 0.56666666, 1, -0.13892913, 0.03269577, 0.0013003991, 0.98976165, 0.6, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 0.6333333, 1, -0.14536205, 0.031816725, -0.0009540791, 0.98886645, 0.6666667, 1, -0.14902158, 0.031315554, -0.0022376743, 0.98833543, 0.7, 1, -0.15275308, 0.030803703, -0.0035472997, 0.9877778, 0.73333335, 1, -0.15637077, 0.030306645, -0.004817773, 0.9872216, 0.76666665, 1, -0.15971427, 0.029846566, -0.005992624, 0.9866938, 0.8, 1, -0.16263583, 0.029443981, -0.0070197694, 0.9862218, 0.8333333, 1, -0.16488953, 0.029133076, -0.0078124404, 0.9858508, 0.8666667, 1, -0.16637765, 0.028927622, -0.008336012, 0.9856025, 0.93333334, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 0.96666664, 1, -0.16505551, 0.029110188, -0.007870816, 0.98582315, 1, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 1.0333333, 1, -0.16025662, 0.029771863, -0.006183271, 0.98660696, 1.0666667, 1, -0.15712827, 0.030202461, -0.005083893, 0.98710316, 1.1, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 1.1666666, 1, -0.14661628, 0.03164504, -0.001393919, 0.9886862, 1.2, 1, -0.14322554, 0.032108944, -0.00020505014, 0.98916906, 1.2333333, 1, -0.14017466, 0.032525767, 0.00086408, 0.9895921, 1.2666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 1.3, 1, -0.13556653, 0.03315427, 0.002477897, 0.9902103, 1.3333334, 1, -0.1343847, 0.033315253, 0.0028915915, 0.99036485, 1.4, 1, -0.13479719, 0.03325909, 0.0027472177, 0.99031115, 1.4333333, 1, -0.13650393, 0.033026528, 0.002149711, 0.99008656, 1.4666667, 1, -0.13892913, 0.03269577, 0.0013003993, 0.98976165, 1.5, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 1.5333333, 1, -0.14536205, 0.03181673, -0.0009540793, 0.98886645, 1.5666667, 1, -0.14902161, 0.031315554, -0.002237678, 0.9883355, 1.6, 1, -0.15275308, 0.030803703, -0.0035473006, 0.9877778, 1.6333333, 1, -0.15637077, 0.030306645, -0.0048177736, 0.9872216, 1.6666666, 1, -0.15971427, 0.029846564, -0.005992626, 0.9866938, 1.7, 1, -0.16263583, 0.029443981, -0.007019769, 0.9862218, 1.7333333, 1, -0.16488954, 0.029133076, -0.0078124404, 0.9858508, 1.7666667, 1, -0.16637765, 0.02892762, -0.008336015, 0.9856025, 1.8333334, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 1.8666667, 1, -0.16505553, 0.029110193, -0.007870816, 0.9858233, 1.9, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 1.9333333, 1, -0.16025662, 0.029771863, -0.0061832736, 0.98660696, 1.9666667, 1, -0.15712829, 0.030202461, -0.0050838953, 0.9871032, 2, 1, -0.15371667, 0.030671371, -0.003885632, 0.9876312, 2.0666666, 1, -0.14661628, 0.03164504, -0.0013939191, 0.9886862, 2.1, 1, -0.14322554, 0.03210895, -0.00020505201, 0.98916906, 2.1333334, 1, -0.14017464, 0.032525767, 0.0008640815, 0.9895921, 2.1666667, 1, -0.13757807, 0.03288007, 0.0017735857, 0.9899435, 2.2, 1, -0.13556653, 0.03315427, 0.0024778976, 0.9902103, 2.2333333, 1, -0.1343847, 0.033315253, 0.002891591, 0.99036485, 2.3, 1, -0.13479719, 0.03325909, 0.0027472177, 0.99031115, 2.3333333, 1, -0.13650393, 0.033026524, 0.0021497088, 0.99008656, 2.3666666, 1, -0.13892913, 0.03269577, 0.0013004015, 0.9897616, 2.4, 1, -0.14192338, 0.032286916, 0.00025133946, 0.9893509, 2.4333334, 1, -0.14536205, 0.03181673, -0.0009540793, 0.98886645, 2.4666667, 1, -0.14902158, 0.031315554, -0.0022376748, 0.98833543, 2.5, 1, -0.15275308, 0.030803703, -0.0035473006, 0.9877778, 2.5333333, 1, -0.15637077, 0.030306645, -0.0048177736, 0.9872216, 2.5666666, 1, -0.15971427, 0.029846564, -0.005992626, 0.9866938, 2.6, 1, -0.16263583, 0.029443981, -0.007019769, 0.9862218, 2.6333334, 1, -0.16488954, 0.029133074, -0.007812442, 0.9858508, 2.6666667, 1, -0.16637765, 0.02892762, -0.008336015, 0.9856025, 2.7333333, 1, -0.16642524, 0.028921057, -0.00835275, 0.9855945, 2.7666667, 1, -0.16505554, 0.029110193, -0.007870816, 0.9858233, 2.8, 1, -0.16297257, 0.02939755, -0.0071381857, 0.9861667, 2.8333333, 1, -0.16025662, 0.029771863, -0.006183272, 0.98660696, 2.8666666, 1, -0.15712829, 0.03020246, -0.0050838985, 0.98710316, 2.9, 1, -0.1537167, 0.030671371, -0.0038856324, 0.9876312, 2.9666667, 1, -0.14661628, 0.03164504, -0.0013939181, 0.9886862, 3, 1, -0.14322554, 0.032108944, -0.00020505014, 0.98916906, 3.0333333, 1, -0.14017464, 0.032525767, 0.00086408196, 0.9895921, 3.0666666, 1, -0.13757807, 0.03288007, 0.0017735865, 0.9899435, 3.1, 1, -0.13556653, 0.03315427, 0.002477897, 0.9902103, 3.1333334, 1, -0.13438472, 0.033315256, 0.0028915922, 0.9903649, 3.2, 1, -0.13479719, 0.033259083, 0.002747216, 0.99031115, 3.2333333, 1, -0.13650395, 0.03302652, 0.0021497079, 0.99008656, 3.2666667, 1, -0.13892913, 0.03269577, 0.001300398, 0.98976165, 3.3, 1, -0.14192337, 0.032286916, 0.00025133803, 0.9893509, 3.3333333, 1, -0.14536205, 0.031816725, -0.00095407956, 0.98886645, 3.3666666, 1, -0.14902158, 0.031315554, -0.0022376725, 0.9883355, 3.4, 1, -0.15275308, 0.030803703, -0.0035472997, 0.9877778, 3.4333334, 1, -0.15637074, 0.030306645, -0.0048177713, 0.9872216, 3.4666667, 1, -0.15971427, 0.029846566, -0.005992624, 0.9866938, 3.5, 1, -0.16263583, 0.029443981, -0.0070197666, 0.9862218, 3.5333333, 1, -0.16488953, 0.029133076, -0.0078124404, 0.9858508, 3.5666666, 1, -0.16637765, 0.028927622, -0.008336012, 0.9856025, 3.6, 1, -0.16695304, 0.028848143, -0.008538486, 0.98550576)
 tracks/4/type = "rotation_3d"
 tracks/4/imported = true
 tracks/4/enabled = true
 tracks/4/path = NodePath("metarig/Skeleton3D:spine.003")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat32Array(0, 1, 0.07023548, 0.0005279473, 0.004223989, 0.99752146, 0.06666667, 1, 0.070056334, 0.00077965594, 0.005369728, 0.9975283, 0.1, 1, 0.06983897, 0.0010849016, 0.006759162, 0.9975348, 0.13333334, 1, 0.06955545, 0.0014827184, 0.008569961, 0.99754024, 0.16666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 0.2, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 0.26666668, 1, 0.068130076, 0.0034774584, 0.017649602, 0.99751425, 0.3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 0.33333334, 1, 0.067456, 0.004417755, 0.021929579, 0.99747145, 0.36666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 0.4, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 0.5, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 0.53333336, 1, 0.067071594, 0.0049531334, 0.024366457, 0.9974383, 0.56666666, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 0.58, 1, 0.067443244, 0.0044355607, 0.022010615, 0.99747044)
+tracks/4/keys = PackedFloat32Array(0, 1, 0.07023548, 0.0005279473, 0.004223989, 0.99752146, 0.06666667, 1, 0.070056334, 0.00077965594, 0.005369728, 0.9975283, 0.1, 1, 0.06983897, 0.0010849016, 0.006759162, 0.9975348, 0.13333334, 1, 0.06955545, 0.0014827184, 0.008569961, 0.99754024, 0.16666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 0.2, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 0.26666668, 1, 0.068130076, 0.0034774584, 0.017649602, 0.99751425, 0.3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 0.33333334, 1, 0.067456, 0.004417755, 0.021929579, 0.99747145, 0.36666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 0.4, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 0.5, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 0.53333336, 1, 0.067071594, 0.0049531334, 0.024366457, 0.9974383, 0.56666666, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 0.6, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 0.6333333, 1, 0.06799887, 0.0036606248, 0.018483317, 0.9975075, 0.6666667, 1, 0.06838161, 0.003126083, 0.016050218, 0.9975252, 0.7, 1, 0.06877166, 0.0025806688, 0.01356762, 0.99753684, 0.73333335, 1, 0.069149636, 0.002051515, 0.011159022, 0.9975418, 0.76666665, 1, 0.069498815, 0.0015621383, 0.008931462, 0.99754083, 0.8, 1, 0.06980382, 0.0011342342, 0.0069837263, 0.9975357, 0.8333333, 1, 0.07003903, 0.0008039762, 0.005480434, 0.9975289, 0.8666667, 1, 0.070194304, 0.0005858157, 0.0044873985, 0.99752307, 0.96666664, 1, 0.07005633, 0.0007796554, 0.0053697266, 0.99752825, 1, 1, 0.06983897, 0.0010849017, 0.006759162, 0.9975348, 1.0333333, 1, 0.06955545, 0.0014827183, 0.0085699605, 0.99754024, 1.0666667, 1, 0.06922876, 0.0019406687, 0.01065447, 0.997542, 1.1, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 1.1666666, 1, 0.068130076, 0.0034774567, 0.0176496, 0.99751425, 1.2, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 1.2333333, 1, 0.067456, 0.004417756, 0.021929584, 0.99747145, 1.2666667, 1, 0.0671841, 0.0047964975, 0.023653517, 0.9974487, 1.3, 1, 0.06697339, 0.005089805, 0.024988532, 0.99742883, 1.4, 1, 0.06689282, 0.0052019614, 0.025499044, 0.9974207, 1.4333333, 1, 0.067071594, 0.0049531343, 0.02436646, 0.9974383, 1.4666667, 1, 0.06732561, 0.004599452, 0.022756612, 0.99746096, 1.5, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 1.5333333, 1, 0.06799887, 0.0036606262, 0.018483317, 0.9975075, 1.5666667, 1, 0.068381615, 0.0031260818, 0.016050212, 0.9975252, 1.6, 1, 0.06877166, 0.0025806688, 0.013567619, 0.99753684, 1.6333333, 1, 0.069149636, 0.0020515146, 0.011159021, 0.9975418, 1.6666666, 1, 0.06949882, 0.0015621361, 0.00893146, 0.99754083, 1.7, 1, 0.06980382, 0.0011342342, 0.0069837268, 0.9975357, 1.7333333, 1, 0.07003904, 0.00080397655, 0.0054804324, 0.9975289, 1.7666667, 1, 0.070194304, 0.00058581616, 0.004487393, 0.99752307, 1.8666667, 1, 0.07005633, 0.000779656, 0.005369728, 0.9975283, 1.9, 1, 0.06983897, 0.0010849024, 0.0067591635, 0.9975348, 1.9333333, 1, 0.06955545, 0.001482716, 0.008569957, 0.99754024, 1.9666667, 1, 0.06922876, 0.0019406679, 0.010654466, 0.99754214, 2, 1, 0.06887236, 0.0024397592, 0.0129262265, 0.9975388, 2.0666666, 1, 0.068130076, 0.0034774581, 0.017649598, 0.99751425, 2.1, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 2.1333334, 1, 0.06745601, 0.0044177566, 0.021929588, 0.9974715, 2.1666667, 1, 0.0671841, 0.0047964975, 0.023653515, 0.9974487, 2.2, 1, 0.0669734, 0.005089809, 0.024988534, 0.99742883, 2.3, 1, 0.06689282, 0.0052019614, 0.025499044, 0.9974207, 2.3333333, 1, 0.0670716, 0.0049531334, 0.024366455, 0.9974383, 2.3666666, 1, 0.06732561, 0.004599453, 0.02275662, 0.99746096, 2.4, 1, 0.06763908, 0.0041625984, 0.020768158, 0.997485, 2.4333334, 1, 0.06799887, 0.0036606262, 0.018483317, 0.9975075, 2.4666667, 1, 0.06838161, 0.0031260832, 0.016050218, 0.9975252, 2.5, 1, 0.06877166, 0.0025806688, 0.013567619, 0.99753684, 2.5333333, 1, 0.069149636, 0.0020515146, 0.011159021, 0.9975418, 2.5666666, 1, 0.06949882, 0.0015621361, 0.00893146, 0.99754083, 2.6, 1, 0.06980382, 0.0011342342, 0.0069837268, 0.9975357, 2.6333334, 1, 0.07003904, 0.00080397585, 0.0054804296, 0.997529, 2.6666667, 1, 0.070194304, 0.00058581616, 0.004487393, 0.99752307, 2.7666667, 1, 0.07005633, 0.0007796554, 0.005369727, 0.9975283, 2.8, 1, 0.06983897, 0.0010849019, 0.006759161, 0.9975348, 2.8333333, 1, 0.06955545, 0.0014827182, 0.00856996, 0.99754024, 2.8666666, 1, 0.06922875, 0.0019406662, 0.010654458, 0.997542, 2.9, 1, 0.06887236, 0.0024397578, 0.012926222, 0.9975388, 2.9666667, 1, 0.068130076, 0.003477458, 0.0176496, 0.99751425, 3, 1, 0.06777534, 0.0039725406, 0.019903082, 0.99749416, 3.0333333, 1, 0.067456, 0.004417755, 0.021929584, 0.99747145, 3.0666666, 1, 0.0671841, 0.0047964985, 0.023653518, 0.9974487, 3.1, 1, 0.06697339, 0.005089805, 0.024988532, 0.99742883, 3.2, 1, 0.06689282, 0.0052019586, 0.025499044, 0.9974207, 3.2333333, 1, 0.067071594, 0.0049531325, 0.024366453, 0.9974383, 3.2666667, 1, 0.06732561, 0.004599452, 0.022756608, 0.99746096, 3.3, 1, 0.06763908, 0.0041625993, 0.020768154, 0.997485, 3.3333333, 1, 0.06799888, 0.0036606237, 0.018483315, 0.9975075, 3.3666666, 1, 0.068381615, 0.003126082, 0.016050221, 0.9975252, 3.4, 1, 0.06877166, 0.0025806688, 0.01356762, 0.99753684, 3.4333334, 1, 0.06914963, 0.0020515155, 0.011159022, 0.9975418, 3.4666667, 1, 0.069498815, 0.0015621383, 0.008931462, 0.99754083, 3.5, 1, 0.06980382, 0.0011342377, 0.0069837295, 0.9975357, 3.5333333, 1, 0.070039034, 0.00080397655, 0.0054804333, 0.997529, 3.5666666, 1, 0.070194304, 0.0005858157, 0.0044873985, 0.99752307, 3.6, 1, 0.070254356, 0.00050144584, 0.004103356, 0.99752057)
 tracks/5/type = "position_3d"
 tracks/5/imported = true
 tracks/5/enabled = true
@@ -1006,7 +1009,7 @@ tracks/6/type = "rotation_3d"
 tracks/6/imported = true
 tracks/6/enabled = true
 tracks/6/path = NodePath("metarig/Skeleton3D:spine.004")
-tracks/6/interp = 0
+tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = PackedFloat32Array(0, 1, 0.21913767, -0.044569828, 0.012933717, 0.97458965)
 tracks/7/type = "scale_3d"
@@ -1057,19 +1060,19 @@ tracks/13/enabled = true
 tracks/13/path = NodePath("metarig/Skeleton3D:forearm.L")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
-tracks/13/keys = PackedFloat32Array(0, 1, 0.42398894, 0.27553335, -0.28779826, 0.8133185, 0.033333335, 1, 0.42143035, 0.27886203, -0.28837502, 0.8133095, 0.06666667, 1, 0.4119825, 0.29102603, -0.2904457, 0.8131518, 0.1, 1, 0.3990908, 0.30730993, -0.29312566, 0.8126282, 0.13333334, 1, 0.38517308, 0.3244985, -0.29583752, 0.81167895, 0.16666667, 1, 0.37297785, 0.3392387, -0.298065, 0.81053185, 0.2, 1, 0.36487952, 0.34886676, -0.29946977, 0.80961275, 0.23333333, 1, 0.3633945, 0.35061857, -0.29972112, 0.80943084, 0.58, 1, 0.36339456, 0.35061857, -0.2997211, 0.8094309)
+tracks/13/keys = PackedFloat32Array(0, 1, 0.42398894, 0.27553335, -0.28779826, 0.8133185, 0.033333335, 1, 0.42143035, 0.27886203, -0.28837502, 0.8133095, 0.06666667, 1, 0.4119825, 0.29102603, -0.2904457, 0.8131518, 0.1, 1, 0.3990908, 0.30730993, -0.29312566, 0.8126282, 0.13333334, 1, 0.38517308, 0.3244985, -0.29583752, 0.81167895, 0.16666667, 1, 0.37297785, 0.3392387, -0.298065, 0.81053185, 0.2, 1, 0.36487952, 0.34886676, -0.29946977, 0.80961275, 0.23333333, 1, 0.3633945, 0.35061857, -0.29972112, 0.80943084, 0.8, 1, 0.3642071, 0.34966058, -0.29958388, 0.80953085, 0.93333334, 1, 0.36558196, 0.34803656, -0.29935032, 0.80969733, 1.0333333, 1, 0.3669996, 0.34635842, -0.2991077, 0.80986536, 1.1666666, 1, 0.36935085, 0.3435664, -0.29870138, 0.8101356, 1.2, 1, 0.37001264, 0.3427787, -0.29858625, 0.8102097, 1.2666667, 1, 0.371422, 0.3410982, -0.29833943, 0.810365, 1.3, 1, 0.37216413, 0.34021175, -0.29820874, 0.8104452, 1.3333334, 1, 0.37293294, 0.33929244, -0.29807296, 0.8105272, 1.3666667, 1, 0.37372422, 0.33834508, -0.2979326, 0.8106103, 1.4, 1, 0.37453702, 0.33737063, -0.29778785, 0.81069446, 1.4333333, 1, 0.3753727, 0.3363671, -0.29763827, 0.8107799, 1.4666667, 1, 0.3762279, 0.3353391, -0.29748467, 0.8108657, 1.5, 1, 0.3771013, 0.3342875, -0.297327, 0.810952, 1.6666666, 1, 0.38172227, 0.32869935, -0.29648164, 0.8113837, 1.7333333, 1, 0.38366622, 0.32633576, -0.29612017, 0.81155294, 1.7666667, 1, 0.38465452, 0.3251313, -0.2959351, 0.81163603, 1.8, 1, 0.38565183, 0.3239139, -0.29574734, 0.8117179, 1.8333334, 1, 0.38665816, 0.32268324, -0.29555693, 0.8117987, 1.9333333, 1, 0.38971564, 0.31893206, -0.29497263, 0.8120316, 1.9666667, 1, 0.3907445, 0.3176656, -0.29477412, 0.81210566, 2, 1, 0.3917762, 0.31639326, -0.29457396, 0.8121779, 2.0333333, 1, 0.39281017, 0.31511602, -0.29437235, 0.8122482, 2.0666666, 1, 0.3938449, 0.31383535, -0.29416946, 0.8123164, 2.1666667, 1, 0.396945, 0.30998597, -0.29355583, 0.81250745, 2.3, 1, 0.4010299, 0.30488297, -0.2927329, 0.81272924, 2.3333333, 1, 0.40203553, 0.30362165, -0.292528, 0.8127785, 2.4, 1, 0.4040218, 0.30112347, -0.29212013, 0.81286955, 2.5, 1, 0.4069218, 0.29746076, -0.29151738, 0.8129879, 2.5333333, 1, 0.4078631, 0.2962681, -0.29132003, 0.8130226, 2.5666666, 1, 0.40879068, 0.29509094, -0.29112464, 0.81305474, 2.6333334, 1, 0.41059974, 0.2927897, -0.29074106, 0.8131124, 2.7, 1, 0.4123416, 0.29056737, -0.2903687, 0.81316113, 2.7333333, 1, 0.41318345, 0.2894907, -0.29018757, 0.8131826, 2.7666667, 1, 0.4140063, 0.28843704, -0.29000983, 0.8132019, 2.8, 1, 0.4148091, 0.28740752, -0.28983575, 0.81321925, 2.8333333, 1, 0.41558856, 0.2864067, -0.2896662, 0.8132349, 2.9, 1, 0.4170809, 0.28448644, -0.28933957, 0.8132611, 2.9333334, 1, 0.41778934, 0.2835733, -0.28918394, 0.8132718, 3, 1, 0.4191318, 0.2818398, -0.28888723, 0.81328905, 3.0666666, 1, 0.42036256, 0.28024685, -0.28861374, 0.81330144, 3.1333334, 1, 0.42147756, 0.27880082, -0.28836444, 0.8133098, 3.2, 1, 0.42246947, 0.2775118, -0.28814152, 0.813315, 3.3, 1, 0.42370635, 0.2759017, -0.28786227, 0.8133182, 3.3666666, 1, 0.4243524, 0.2750595, -0.28771582, 0.8133185, 3.4666667, 1, 0.42503887, 0.2741632, -0.28755957, 0.8133179, 3.6, 1, 0.42538497, 0.27371112, -0.2874807, 0.8133171)
 tracks/14/type = "scale_3d"
 tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/path = NodePath("metarig/Skeleton3D:forearm.L")
-tracks/14/interp = 0
+tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = PackedFloat32Array(0, 1, 1, 0.99999994, 1)
 tracks/15/type = "rotation_3d"
 tracks/15/imported = true
 tracks/15/enabled = true
 tracks/15/path = NodePath("metarig/Skeleton3D:hand.L")
-tracks/15/interp = 1
+tracks/15/interp = 0
 tracks/15/loop_wrap = true
 tracks/15/keys = PackedFloat32Array(0, 1, 0.13981646, 0.382399, -0.16881864, 0.8976207)
 tracks/16/type = "scale_3d"
@@ -1083,7 +1086,7 @@ tracks/17/type = "rotation_3d"
 tracks/17/imported = true
 tracks/17/enabled = true
 tracks/17/path = NodePath("metarig/Skeleton3D:hand.L.001")
-tracks/17/interp = 1
+tracks/17/interp = 0
 tracks/17/loop_wrap = true
 tracks/17/keys = PackedFloat32Array(0, 1, 0.15574835, -0.010068901, -0.12184813, 0.98020107)
 tracks/18/type = "position_3d"
@@ -1106,19 +1109,19 @@ tracks/20/enabled = true
 tracks/20/path = NodePath("metarig/Skeleton3D:upper_arm.R")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
-tracks/20/keys = PackedFloat32Array(0, 1, -0.018551633, 0.06443944, 0.006279652, 0.1, 1, -0.018249229, 0.06500827, 0.004810695, 0.13333334, 1, -0.018033238, 0.06541456, 0.0037615537, 0.16666667, 1, -0.017784588, 0.065882266, 0.002553751, 0.2, 1, -0.017513612, 0.06639196, 0.0012375682, 0.26666668, 1, -0.016950173, 0.06745179, -0.0014992901, 0.3, 1, -0.016681343, 0.06795745, -0.002805068, 0.33333334, 1, -0.016439572, 0.06841224, -0.0039794995, 0.36666667, 1, -0.016233888, 0.06879912, -0.004978574, 0.43333334, 1, -0.015981019, 0.06927476, -0.0062068626, 0.53333336, 1, -0.016148815, 0.06895913, -0.005391799, 0.56666666, 1, -0.016340906, 0.06859782, -0.004458754, 0.58, 1, -0.016429912, 0.0684304, -0.0040264525)
+tracks/20/keys = PackedFloat32Array(0, 1, -0.018551633, 0.06443944, 0.006279652, 0.1, 1, -0.018249229, 0.06500827, 0.004810695, 0.13333334, 1, -0.018033238, 0.06541456, 0.0037615537, 0.16666667, 1, -0.017784588, 0.065882266, 0.002553751, 0.2, 1, -0.017513612, 0.06639196, 0.0012375682, 0.26666668, 1, -0.016950173, 0.06745179, -0.0014992901, 0.3, 1, -0.016681343, 0.06795745, -0.002805068, 0.33333334, 1, -0.016439572, 0.06841224, -0.0039794995, 0.36666667, 1, -0.016233888, 0.06879912, -0.004978574, 0.43333334, 1, -0.015981019, 0.06927476, -0.0062068626, 0.53333336, 1, -0.016148815, 0.06895913, -0.005391799, 0.56666666, 1, -0.016340906, 0.06859782, -0.004458754, 0.6, 1, -0.016578136, 0.06815159, -0.0033064294, 0.6333333, 1, -0.01685072, 0.06763887, -0.001982402, 0.73333335, 1, -0.017724408, 0.06599547, 0.0022614761, 0.76666665, 1, -0.017990107, 0.06549567, 0.0035520764, 0.8, 1, -0.018222438, 0.06505866, 0.004680565, 0.8666667, 1, -0.01852022, 0.064498544, 0.0061269808, 1, 1, -0.018249229, 0.06500827, 0.004810695, 1.0333333, 1, -0.018033238, 0.06541456, 0.003761554, 1.0666667, 1, -0.017784588, 0.065882266, 0.002553748, 1.1, 1, -0.017513612, 0.06639196, 0.0012375682, 1.1666666, 1, -0.016950173, 0.06745179, -0.0014992892, 1.2, 1, -0.016681349, 0.06795746, -0.0028050663, 1.2333333, 1, -0.016439572, 0.06841224, -0.0039794995, 1.2666667, 1, -0.016233886, 0.06879912, -0.004978574, 1.3333334, 1, -0.015981022, 0.069274776, -0.006206862, 1.4333333, 1, -0.016148815, 0.06895913, -0.0053918012, 1.4666667, 1, -0.016340906, 0.06859782, -0.004458754, 1.5, 1, -0.016578136, 0.06815159, -0.0033064294, 1.5333333, 1, -0.01685072, 0.06763887, -0.001982402, 1.6333333, 1, -0.017724408, 0.06599547, 0.0022614766, 1.6666666, 1, -0.01799011, 0.06549568, 0.0035520743, 1.7, 1, -0.018222438, 0.06505866, 0.004680565, 1.7666667, 1, -0.018520216, 0.064498544, 0.006126989, 1.9, 1, -0.01824923, 0.06500827, 0.0048106974, 1.9333333, 1, -0.018033238, 0.065414555, 0.0037615565, 1.9666667, 1, -0.01778459, 0.065882266, 0.0025537503, 2, 1, -0.017513609, 0.06639195, 0.0012375684, 2.0666666, 1, -0.016950173, 0.06745179, -0.0014992894, 2.1, 1, -0.016681343, 0.06795745, -0.002805068, 2.1333334, 1, -0.016439572, 0.06841224, -0.003979502, 2.1666667, 1, -0.016233888, 0.06879912, -0.004978574, 2.2333333, 1, -0.01598102, 0.06927476, -0.0062068626, 2.3333333, 1, -0.016148815, 0.06895913, -0.0053917994, 2.3666666, 1, -0.016340906, 0.06859782, -0.0044587567, 2.4, 1, -0.016578136, 0.06815159, -0.0033064294, 2.4333334, 1, -0.01685072, 0.06763887, -0.001982402, 2.5333333, 1, -0.017724408, 0.06599547, 0.0022614766, 2.5666666, 1, -0.01799011, 0.06549568, 0.0035520743, 2.6, 1, -0.018222438, 0.06505866, 0.004680565, 2.6666667, 1, -0.018520216, 0.064498544, 0.006126989, 2.8, 1, -0.018249229, 0.065008275, 0.0048106974, 2.8333333, 1, -0.01803324, 0.06541456, 0.0037615534, 2.8666666, 1, -0.01778459, 0.06588226, 0.0025537736, 2.9, 1, -0.017513612, 0.06639196, 0.0012375682, 2.9666667, 1, -0.016950175, 0.06745178, -0.0014992903, 3, 1, -0.016681349, 0.06795746, -0.0028050663, 3.0333333, 1, -0.016439574, 0.06841224, -0.0039794985, 3.0666666, 1, -0.016233884, 0.068799116, -0.0049785753, 3.1333334, 1, -0.015981022, 0.069274776, -0.006206863, 3.2333333, 1, -0.016148817, 0.06895913, -0.0053917984, 3.2666667, 1, -0.016340906, 0.06859784, -0.004458754, 3.3, 1, -0.016578134, 0.0681516, -0.0033064247, 3.3333333, 1, -0.016850714, 0.06763886, -0.001982403, 3.4333334, 1, -0.017724412, 0.065995485, 0.002261457, 3.4666667, 1, -0.017990107, 0.06549567, 0.0035520764, 3.5, 1, -0.018222442, 0.065058656, 0.0046805977, 3.5666666, 1, -0.01852022, 0.064498544, 0.0061269808, 3.6, 1, -0.018566025, 0.064412355, 0.006349529)
 tracks/21/type = "rotation_3d"
 tracks/21/imported = true
 tracks/21/enabled = true
 tracks/21/path = NodePath("metarig/Skeleton3D:upper_arm.R")
-tracks/21/interp = 1
+tracks/21/interp = 0
 tracks/21/loop_wrap = true
 tracks/21/keys = PackedFloat32Array(0, 1, -0.064009234, -0.8001932, 0.4339638, 0.40898544)
 tracks/22/type = "scale_3d"
 tracks/22/imported = true
 tracks/22/enabled = true
 tracks/22/path = NodePath("metarig/Skeleton3D:upper_arm.R")
-tracks/22/interp = 1
+tracks/22/interp = 0
 tracks/22/loop_wrap = true
 tracks/22/keys = PackedFloat32Array(0, 1, 0.99999994, 0.9999998, 0.99999994)
 tracks/23/type = "rotation_3d"
@@ -1139,14 +1142,14 @@ tracks/25/type = "rotation_3d"
 tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/path = NodePath("metarig/Skeleton3D:hand.R")
-tracks/25/interp = 1
+tracks/25/interp = 0
 tracks/25/loop_wrap = true
 tracks/25/keys = PackedFloat32Array(0, 1, -0.17750292, 0.7586413, 0.42641726, 0.45948282)
 tracks/26/type = "scale_3d"
 tracks/26/imported = true
 tracks/26/enabled = true
 tracks/26/path = NodePath("metarig/Skeleton3D:hand.R")
-tracks/26/interp = 0
+tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = PackedFloat32Array(0, 1, 1.0000001, 1, 1.0000001)
 tracks/27/type = "rotation_3d"
@@ -1221,119 +1224,119 @@ _data = {
 &"standingIdleVariant": SubResource("Animation_ywrsv")
 }
 
-[node name="player" type="Node3D" unique_id=1065915242]
+[node name="player" type="Node3D" unique_id=417085135]
 
-[node name="ref" type="Node3D" parent="." unique_id=427477564]
+[node name="ref" type="Node3D" parent="." unique_id=64095744]
 transform = Transform3D(1.3227857, 0, 0, 0, 0, -1.3227857, 0, 1.3227857, 0, 0, 0.75, -0.042647198)
 
-[node name="metarig" type="Node3D" parent="." unique_id=101923011]
+[node name="metarig" type="Node3D" parent="." unique_id=1841901262]
 transform = Transform3D(3.089053, 0, 0, 0, 3.089053, 0, 0, 0, 3.089053, 0.0020603691, -0.0024340786, -0.0473369)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="metarig" unique_id=223582553]
+[node name="Skeleton3D" type="Skeleton3D" parent="metarig" unique_id=2125404904]
 bones/0/name = "spine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 1.4210855e-14, 2.3841866e-07, 1.0162704e-07, 0.90460324, -0.4262547, -2.1567429e-07, 0.42625463, 0.90460336, -1.4551915e-09, 0.14253521, -0.0138)
 bones/0/enabled = true
 bones/0/position = Vector3(-0.005311808, 0.107175864, -0.025646592)
-bones/0/rotation = Quaternion(-0.13827178, -0.16634665, -0.031245472, 0.97582453)
+bones/0/rotation = Quaternion(-0.035041057, 0.970874, 0.13735895, 0.1931538)
 bones/0/scale = Vector3(1, 1, 1.0000001)
 bones/1/name = "spine.001"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.126191e-07, -4.9146473e-07, 6.929698e-08, 0.9347875, 0.35520738, 4.9941826e-07, -0.35520738, 0.9347875, 2.2944757e-11, 0.022287155, 1.590226e-10)
 bones/1/enabled = true
 bones/1/position = Vector3(2.2944757e-11, 0.022287155, 1.590226e-10)
-bones/1/rotation = Quaternion(-0.11100167, 0.005116999, 0.011853275, 0.99373645)
+bones/1/rotation = Quaternion(-0.11100166, 0.0051169996, 0.011853283, 0.99373645)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "spine.002"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, -5.710265e-08, 2.6393573e-07, 2.7931023e-08, 0.99401623, 0.10923093, -2.6859388e-07, -0.10923093, 0.99401623, 1.3136159e-11, 0.054449502, 7.5217294e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(1.3136159e-11, 0.054449502, 7.5217294e-10)
-bones/2/rotation = Quaternion(0.002238765, 0.028483247, 0.000117838244, 0.99959177)
+bones/2/rotation = Quaternion(0.002238765, 0.02848325, 0.000117844065, 0.99959177)
 bones/2/scale = Vector3(1, 0.9999998, 0.9999998)
 bones/3/name = "spine.003"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, 3.552695e-15, -1.1716063e-17, -3.5527145e-15, 0.9999946, -0.0032971206, 2.3351309e-21, 0.0032971206, 0.9999946, 5.8208584e-11, 0.04266032, 1.8626451e-09)
 bones/3/enabled = true
 bones/3/position = Vector3(5.8208584e-11, 0.04266032, 1.8626451e-09)
-bones/3/rotation = Quaternion(0.12256553, -0.0021549603, -0.007739538, 0.992428)
+bones/3/rotation = Quaternion(0.122565515, -0.0021549512, -0.007739548, 0.992428)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "spine.004"
 bones/4/parent = 3
 bones/4/rest = Transform3D(1, 1.7763568e-15, 2.3841856e-07, 2.194708e-08, 0.9957541, -0.092052735, -2.374063e-07, 0.092052735, 0.995754, 5.820766e-11, 0.047519047, -5.551115e-17)
 bones/4/enabled = true
-bones/4/position = Vector3(0.012127737, 0.04768093, -0.046064973)
-bones/4/rotation = Quaternion(0.026659438, -0.14228441, 0.021611486, 0.9892307)
-bones/4/scale = Vector3(1.1626592, 1.0424839, 1.2026044)
+bones/4/position = Vector3(0.012127733, 0.047680907, -0.046064954)
+bones/4/rotation = Quaternion(0.02665944, -0.14228441, 0.02161149, 0.9892307)
+bones/4/scale = Vector3(1.1626588, 1.0424839, 1.2026043)
 bones/5/name = "shoulder.L"
 bones/5/parent = 3
 bones/5/rest = Transform3D(0.481829, 0.85853344, 0.17538813, 0.0005329549, -0.20044123, 0.9797056, 0.8762649, -0.47195712, -0.09703597, 0.004575, 0.03384491, 0.019562514)
 bones/5/enabled = true
-bones/5/position = Vector3(0.051821105, 0.034786038, 0.0021699667)
-bones/5/rotation = Quaternion(-0.30787992, -0.47252014, -0.817083, 0.11962423)
+bones/5/position = Vector3(0.051821087, 0.03478602, 0.0021699667)
+bones/5/rotation = Quaternion(-0.30787998, -0.47252023, -0.81708306, 0.11962421)
 bones/5/scale = Vector3(0.9999998, 0.99999994, 1)
 bones/6/name = "upper_arm.L"
 bones/6/parent = 5
 bones/6/rest = Transform3D(-0.17097162, 0.4393424, 0.8818997, 0.08030372, 0.8983148, -0.4319516, -0.9819979, -0.0030316354, -0.18886715, 0.017806109, 0.052775785, -0.0034432805)
 bones/6/enabled = true
-bones/6/position = Vector3(0.01558711, 0.05627574, -0.013143419)
-bones/6/rotation = Quaternion(0.0073352978, 0.2138867, -0.39607704, 0.8929287)
+bones/6/position = Vector3(0.015587096, 0.05627576, -0.013143416)
+bones/6/rotation = Quaternion(0.0073353434, 0.21388675, -0.39607722, 0.8929287)
 bones/6/scale = Vector3(1.0121884, 1.2807798, 1.0149556)
 bones/7/name = "forearm.L"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.9919343, -0.07431986, -0.10267866, 0.07630448, 0.99696344, 0.01553226, 0.101212524, -0.023241822, 0.9945933, -5.500624e-08, 0.07025009, 4.656613e-10)
 bones/7/enabled = true
 bones/7/position = Vector3(-5.500624e-08, 0.07025009, 4.656613e-10)
-bones/7/rotation = Quaternion(0.004007185, 0.35378268, -0.052352317, 0.9338528)
-bones/7/scale = Vector3(0.9796007, 0.7188571, 0.9998144)
+bones/7/rotation = Quaternion(0.0040071867, 0.35378265, -0.052352328, 0.9338528)
+bones/7/scale = Vector3(0.97960067, 0.7188571, 0.99981445)
 bones/8/name = "hand.L"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.99887437, 0.04352031, -0.018869117, -0.04417303, 0.99838656, -0.035677597, 0.017285975, 0.036470935, 0.9991852, 7.654307e-09, 0.06688828, -1.3969839e-09)
 bones/8/enabled = true
 bones/8/position = Vector3(7.654307e-09, 0.06688828, -1.3969839e-09)
-bones/8/rotation = Quaternion(-0.37186134, 0.37444422, 0.24463041, 0.81342894)
-bones/8/scale = Vector3(1.0631566, 1.4012785, 1.5600727)
+bones/8/rotation = Quaternion(-0.593154, 0.27136147, 0.33188164, 0.68145865)
+bones/8/scale = Vector3(1.0600669, 2.1801178, 1.0563692)
 bones/9/name = "hand.L.001"
 bones/9/parent = 8
 bones/9/rest = Transform3D(0.9958128, 0.09141397, -0.0003983771, -0.091413975, 0.9957749, -0.008692678, -0.00039793836, 0.008692699, 0.9999621, -2.8463546e-08, 0.027716627, 2.7939677e-09)
 bones/9/enabled = true
 bones/9/position = Vector3(-2.8463546e-08, 0.027716627, 2.7939677e-09)
-bones/9/rotation = Quaternion(0.47254494, 0.020417437, -0.19182134, 0.85993546)
+bones/9/rotation = Quaternion(0.47254494, 0.020417437, -0.19182135, 0.85993546)
 bones/9/scale = Vector3(0.9999999, 0.9999999, 0.99999994)
 bones/10/name = "shoulder.R"
 bones/10/parent = 3
 bones/10/rest = Transform3D(0.46690422, -0.86189, -0.19785282, 0.020371282, -0.21319495, 0.9767972, -0.8840729, -0.46010137, -0.08198386, -0.0057507176, 0.034125205, 0.018400926)
 bones/10/enabled = true
-bones/10/position = Vector3(-0.051407784, 0.037979797, -0.019120988)
+bones/10/position = Vector3(-0.05140779, 0.037979763, -0.019120984)
 bones/10/rotation = Quaternion(-0.487147, 0.42702353, 0.69845396, 0.3041394)
 bones/10/scale = Vector3(0.9999997, 0.9999999, 0.99999994)
 bones/11/name = "upper_arm.R"
 bones/11/parent = 10
 bones/11/rest = Transform3D(-0.16059208, -0.4421663, -0.8824393, -0.081593305, 0.89693034, -0.43457848, 0.9836425, 0.00221127, -0.18011774, -0.013689449, 0.0463616, -6.445439e-05)
 bones/11/enabled = true
-bones/11/position = Vector3(-0.0013386123, 0.052571077, 0.007866673)
-bones/11/rotation = Quaternion(0.17159082, -0.72277105, 0.4163738, 0.52420557)
-bones/11/scale = Vector3(1.0978501, 1.7498583, 1.0024258)
+bones/11/position = Vector3(-0.0013386309, 0.052571088, 0.007866662)
+bones/11/rotation = Quaternion(0.17159082, -0.72277105, 0.41637385, 0.52420557)
+bones/11/scale = Vector3(1.0978502, 1.7498583, 1.0024258)
 bones/12/name = "forearm.R"
 bones/12/parent = 11
 bones/12/rest = Transform3D(0.9918342, 0.063970536, 0.11032942, -0.066533856, 0.99758947, 0.019706672, -0.108802825, -0.026886392, 0.99369967, -3.6729034e-08, 0.08050595, -9.0221874e-10)
 bones/12/enabled = true
 bones/12/position = Vector3(-3.6729034e-08, 0.08050595, -9.0221874e-10)
-bones/12/rotation = Quaternion(0.3060706, 0.044523552, -0.20550422, 0.9284969)
-bones/12/scale = Vector3(0.9755486, 0.8037627, 0.6983821)
+bones/12/rotation = Quaternion(0.30607054, 0.044523567, -0.20550413, 0.92849696)
+bones/12/scale = Vector3(0.9755486, 0.8037625, 0.69838196)
 bones/13/name = "hand.R"
 bones/13/parent = 12
 bones/13/rest = Transform3D(0.99993974, -0.0021699993, 0.010775825, 0.0027780829, 0.99838513, -0.05673995, -0.010635299, 0.056766458, 0.99833083, -2.9976945e-08, 0.06581773, 3.259629e-09)
 bones/13/enabled = true
 bones/13/position = Vector3(-2.9976945e-08, 0.06581773, 3.259629e-09)
-bones/13/rotation = Quaternion(0.10878893, -0.04545276, -0.07193072, 0.9904166)
-bones/13/scale = Vector3(0.97307235, 0.36046565, 0.9390137)
+bones/13/rotation = Quaternion(0.108788945, -0.045452762, -0.07193072, 0.9904166)
+bones/13/scale = Vector3(0.97307223, 0.3604656, 0.93901354)
 bones/14/name = "hand.R.001"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.9816643, -0.19059964, -0.0026186963, 0.19059962, 0.9812904, 0.027220666, -0.0026185475, -0.02722068, 0.99962604, 7.450581e-09, 0.044903643, 1.1641532e-10)
 bones/14/enabled = true
 bones/14/position = Vector3(7.450581e-09, 0.044903643, 1.1641532e-10)
-bones/14/rotation = Quaternion(-0.08806338, -0.25173897, 0.2602695, 0.927972)
+bones/14/rotation = Quaternion(-0.08806342, -0.25173905, 0.26026955, 0.92797196)
 bones/14/scale = Vector3(0.9999999, 1, 1)
 bones/15/name = "pelvis.L"
 bones/15/parent = 0
@@ -1353,59 +1356,59 @@ bones/17/name = "thigh.L"
 bones/17/parent = 0
 bones/17/rest = Transform3D(1, -1.5130472e-07, 1.9948493e-07, -1.734633e-08, -0.8366997, -0.54766196, 2.497728e-07, 0.5476619, -0.83669984, 0.05117199, 0.012244524, 0.0060587074)
 bones/17/enabled = true
-bones/17/position = Vector3(0.05792292, -0.004549468, 0.013972143)
-bones/17/rotation = Quaternion(0.9335844, -0.15024532, 0.05610661, 0.32046607)
+bones/17/position = Vector3(0.05792293, -0.0045494847, 0.013972148)
+bones/17/rotation = Quaternion(0.9335844, -0.15024535, 0.056106634, 0.32046607)
 bones/17/scale = Vector3(1, 1, 1.0000001)
 bones/18/name = "shin.L"
 bones/18/parent = 17
 bones/18/rest = Transform3D(1, 1.9689612e-08, -6.4908035e-09, -2.0731893e-08, 0.94972616, -0.3130818, 2.6423308e-14, 0.3130818, 0.94972616, -1.6063249e-09, 0.07386334, -1.3969758e-09)
 bones/18/enabled = true
 bones/18/position = Vector3(-1.6063249e-09, 0.07386334, -1.3969758e-09)
-bones/18/rotation = Quaternion(0.0008898673, -0.020813875, 0.0029781878, 0.99977857)
+bones/18/rotation = Quaternion(0.0008898971, -0.020813879, 0.002978187, 0.99977857)
 bones/18/scale = Vector3(1, 1, 1)
 bones/19/name = "thigh.R"
 bones/19/parent = 0
 bones/19/rest = Transform3D(1, -1.5130472e-07, 1.9948493e-07, -1.734633e-08, -0.8366997, -0.54766196, 2.497728e-07, 0.5476619, -0.83669984, -0.051172, 0.012244524, 0.0060586827)
 bones/19/enabled = true
-bones/19/position = Vector3(-0.052161623, -0.001674545, 0.009821492)
-bones/19/rotation = Quaternion(0.94745463, 0.14106314, -0.040031374, 0.28430364)
+bones/19/position = Vector3(-0.05216163, -0.0016745655, 0.009821491)
+bones/19/rotation = Quaternion(0.94745463, 0.14106317, -0.040031385, 0.28430364)
 bones/19/scale = Vector3(1, 1, 1.0000001)
 bones/20/name = "shin.R"
 bones/20/parent = 19
 bones/20/rest = Transform3D(1, 1.9689612e-08, -6.4908035e-09, -2.0731893e-08, 0.94972616, -0.3130818, 2.6423308e-14, 0.3130818, 0.94972616, 2.1189654e-09, 0.07386334, -1.3969919e-09)
 bones/20/enabled = true
 bones/20/position = Vector3(2.1189654e-09, 0.07386334, -1.3969919e-09)
-bones/20/rotation = Quaternion(0.2332242, 0.120730765, 0.034418922, 0.96428525)
+bones/20/rotation = Quaternion(0.23322417, 0.12073075, 0.034418896, 0.96428525)
 bones/20/scale = Vector3(1, 1, 1)
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="metarig/Skeleton3D" unique_id=1054799966]
-transform = Transform3D(0.07019314, 0.36496702, -1.4233536, -1.0631616, -0.08082372, -0.057557583, -0.08222753, 1.3413051, 0.27916783, -0.026929464, 0.1900988, 0.1067511)
-bone_name = "hand.L"
-bone_idx = 8
-
-[node name="scythe" type="MeshInstance3D" parent="metarig/Skeleton3D/BoneAttachment3D" unique_id=1302307595]
-transform = Transform3D(0.034714337, 0.009084914, 0.34732252, 0.3920315, 0.056909416, -0.031076068, -0.045299564, 0.49946585, -0.0027767802, 0.021375448, 0.027482584, 0.06256666)
-mesh = SubResource("ArrayMesh_lwbvx")
-
-[node name="Body" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1249839093]
+[node name="Body" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1748817740]
 mesh = SubResource("ArrayMesh_w0nf6")
 skin = SubResource("Skin_400tc")
 skeleton = NodePath("..")
 
-[node name="cloak" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=618057070]
+[node name="cloak" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1442906911]
 mesh = SubResource("ArrayMesh_87emi")
 skin = SubResource("Skin_400tc")
 skeleton = NodePath("..")
 
-[node name="hat" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1085530894]
+[node name="hat" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=2095507833]
 mesh = SubResource("ArrayMesh_jy8bt")
 skin = SubResource("Skin_400tc")
 skeleton = NodePath("..")
 
-[node name="head" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1420888138]
+[node name="head" type="MeshInstance3D" parent="metarig/Skeleton3D" unique_id=1020155758]
 mesh = SubResource("ArrayMesh_lurbb")
 skin = SubResource("Skin_400tc")
 skeleton = NodePath("..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=732566722]
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="metarig/Skeleton3D" unique_id=540285369]
+transform = Transform3D(-0.034500748, -1.4862225, 0.69275427, -1.0587492, -0.15163177, -0.05114706, 0.10101861, -1.6047388, -0.678129, 0.02356172, 0.1900988, -0.15665343)
+bone_name = "hand.L"
+bone_idx = 8
+
+[node name="scythe" type="MeshInstance3D" parent="metarig/Skeleton3D/BoneAttachment3D" unique_id=304782286]
+transform = Transform3D(0.01235176, -0.00013808266, 0.3234873, 0.32249042, 0.025405556, -0.012302868, -0.025381714, 0.32272518, 0.0011069817, 0.016465902, 0.030354679, 0.10093857)
+mesh = SubResource("ArrayMesh_lwbvx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1413808208]
 libraries/ = SubResource("AnimationLibrary_3fc1e")
