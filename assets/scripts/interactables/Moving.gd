@@ -16,7 +16,6 @@ extends Path3D
 		if(scene != null):
 			get_child(0).get_child(0).queue_free()
 			get_child(0).add_child(scene.instantiate())
-			movingObject = scene
 
 
 ## the path follow 3D!

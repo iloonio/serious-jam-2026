@@ -10,13 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://ct42r63pb3ltf" path="res://assets/prefabs/interactables/BreakableObstacle.tscn" id="7_13huw"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="8_qtusf"]
 [ext_resource type="Script" uid="uid://0470a17le7bt" path="res://assets/scripts/utility/MovingObstacle.gd" id="9_dhjvc"]
-[ext_resource type="AudioStream" uid="uid://b4h8qr6dnknmm" path="res://assets/audio/bgm/ScythingThemeFinal.ogg" id="11_1ag4x"]
 [ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="11_dhjvc"]
+[ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_lnct0"]
 [ext_resource type="PackedScene" uid="uid://bjst1vjbcni6p" path="res://assets/visuals/blender/blend-files/Barrel.blend" id="13_1xts5"]
 [ext_resource type="PackedScene" uid="uid://bobmmxog1oq0k" path="res://assets/visuals/blender/blend-files/Volleyball.blend" id="14_c15vs"]
 [ext_resource type="PackedScene" uid="uid://doq50wlpx1geg" path="res://assets/visuals/blender/blend-files/Shroom.blend" id="15_0gus0"]
-[ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="16_yrt35"]
-[ext_resource type="PackedScene" uid="uid://bvhn5okx48mjo" path="res://assets/visuals/blender/blend-files/Mouse.blend" id="17_1ag4x"]
 
 [sub_resource type="Curve3D" id="Curve3D_7pdsd"]
 _data = {
@@ -34,13 +32,6 @@ backlight = Color(0.052349634, 0.5463018, 0.9999952, 1)
 material = SubResource("StandardMaterial3D_1xts5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gubh5"]
-
-[sub_resource type="Curve3D" id="Curve3D_npikv"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 6.835, 0, 0),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
 
 [node name="GrassTestStage" type="Node3D" unique_id=978790333 groups=["ProgressManager"]]
 script = ExtResource("1_st3xd")
@@ -118,8 +109,8 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 7.556552, 13.385548)
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=723377874]
-stream = ExtResource("11_1ag4x")
-volume_db = -4.0
+stream = ExtResource("11_lnct0")
+volume_db = -25.0
 autoplay = true
 bus = &"BGM"
 
@@ -134,12 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 7)
 
 [node name="Shroom" parent="." unique_id=819082219 instance=ExtResource("15_0gus0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 7)
-
-[node name="MovingObject" parent="." unique_id=1041034083 instance=ExtResource("16_yrt35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 4)
-curve = SubResource("Curve3D_npikv")
-movingObject = ExtResource("17_1ag4x")
-progressIncrement = 0.405
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 [connection signal="timeout" from="Map/Interactables/MovingObstacle/Path3D/CooldownTimer" to="Map/Interactables/MovingObstacle" method="_on_cooldown_timer_timeout"]
