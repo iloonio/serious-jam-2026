@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cbbp5t06dg3hx" path="res://assets/scripts/player/PlayerBounce.gd" id="3_pj06c"]
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
 [ext_resource type="Texture2D" uid="uid://bxv0nfj28jgxi" path="res://assets/visuals/materials/scytheSlash2_stretched.png" id="5_jbgpd"]
+[ext_resource type="PackedScene" uid="uid://cg72uyec1hac8" path="res://assets/prefabs/player/BertilPlayerModel.tscn" id="7_au0ph"]
 [ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
 [ext_resource type="Script" uid="uid://b83yngt3k63ab" path="res://assets/scripts/player/PlayerSfx.gd" id="9_vah8r"]
 [ext_resource type="AudioStream" uid="uid://7gbhlitbr401" path="res://assets/audio/sfx/ChargeSFX-Pulse.wav" id="10_3q40i"]
@@ -99,7 +100,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_6l5ol"]
 resource_name = "spin"
-length = 0.4
+length = 1.6
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -109,7 +110,7 @@ tracks/0/path = NodePath("PlayerCollider/KeepRotationStatic/CharacterMesh:rotati
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 6.2831855, 0), Vector3(0, 0, 0)]
@@ -228,6 +229,9 @@ script = ExtResource("7_jbgpd")
 
 [node name="KeepRotationStatic" type="Node" parent="PlayerCollider" unique_id=1835112467]
 
+[node name="player" parent="PlayerCollider/KeepRotationStatic" unique_id=417085135 instance=ExtResource("7_au0ph")]
+visible = false
+
 [node name="CharacterMesh" type="Node3D" parent="PlayerCollider/KeepRotationStatic" unique_id=1781405758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("3_0ph0n")
@@ -291,7 +295,6 @@ unique_name_in_owner = true
 stream = ExtResource("10_3q40i")
 volume_db = -25.0
 pitch_scale = 2.0
-bus = &"PlayerCharge"
 
 [node name="InThresholdSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=985285429]
 unique_name_in_owner = true
