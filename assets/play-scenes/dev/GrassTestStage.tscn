@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="10_abmek"]
 [ext_resource type="PackedScene" uid="uid://bjst1vjbcni6p" path="res://assets/visuals/blender/blend-files/Barrel.blend" id="11_rqe5g"]
 [ext_resource type="PackedScene" uid="uid://bobmmxog1oq0k" path="res://assets/visuals/blender/blend-files/Volleyball.blend" id="14_c15vs"]
-[ext_resource type="PackedScene" uid="uid://doq50wlpx1geg" path="res://assets/visuals/blender/blend-files/Shroom.blend" id="15_0gus0"]
 
 [node name="GrassTestStage" type="Node3D" unique_id=978790333 groups=["ProgressManager"]]
 script = ExtResource("1_gwcf5")
@@ -70,8 +69,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 7)
 
 [node name="Volleyball" parent="." unique_id=1815758155 instance=ExtResource("14_c15vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 7)
-
-[node name="Shroom" parent="." unique_id=819082219 instance=ExtResource("15_0gus0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 7)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
