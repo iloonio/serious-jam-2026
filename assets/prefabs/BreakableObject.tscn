@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://q4ipxm4x2tko"]
 
 [ext_resource type="Material" uid="uid://d25d3l6kvq7if" path="res://assets/visuals/materials/standard_brown_material.tres" id="1_gmtvf"]
-[ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="1_jl1ok"]
 [ext_resource type="PackedScene" uid="uid://dajru16aoeg36" path="res://assets/prefabs/interactables/components/BreakableComponent.tscn" id="1_u21ea"]
-[ext_resource type="AudioStream" uid="uid://cuf4w1sw7esc4" path="res://assets/audio/sfx/explosion.wav" id="2_3cuqj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_r84c7"]
 material = ExtResource("1_gmtvf")
@@ -15,12 +13,7 @@ height = 1.0024414
 [node name="BreakableObject" type="RigidBody3D" unique_id=1026180073]
 collision_layer = 9
 
-[node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("1_jl1ok")]
-audioStream = ExtResource("2_3cuqj")
-
-[node name="BreakableComponent" parent="." unique_id=101191030 instance=ExtResource("1_u21ea")]
-HP = 4
-cooldown = 0.4
+[node name="BreakableComponent" parent="." unique_id=101191030 groups=["interactableComponents"] instance=ExtResource("1_u21ea")]
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1141679026]
 mesh = SubResource("CylinderMesh_r84c7")

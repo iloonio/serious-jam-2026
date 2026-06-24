@@ -4,12 +4,7 @@
 ## manage its own state.
 extends Area3D
 
-@onready var is_spinning: bool = false
-
 func _physics_process(_delta: float) -> void:
-	if !is_spinning:
-		return
-
 	if get_overlapping_bodies().size() == 0:
 		return
 
@@ -28,7 +23,3 @@ func _physics_process(_delta: float) -> void:
 			if col.is_ancestor_of(componentNode):
 				componentNode.call("on_interact")
 				components.remove_at(components.find(componentNode))
-
-
-func _on_player_is_spinning(flag: bool, speed: float) -> void:
-	is_spinning = flag

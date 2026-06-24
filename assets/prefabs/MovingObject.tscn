@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2df6tde4koqt"]
 
 [ext_resource type="Script" uid="uid://hsjeorjgu5js" path="res://assets/scripts/interactables/Moving.gd" id="1_tqaac"]
-[ext_resource type="PackedScene" uid="uid://dwwsxhl7wlskp" path="res://assets/prefabs/debug/PerfectlyGenericCube.tscn" id="2_0ir0f"]
+[ext_resource type="PackedScene" uid="uid://dwwsxhl7wlskp" path="res://assets/prefabs/PerfectlyGenericCube.tscn" id="2_0ir0f"]
 
 [sub_resource type="Curve3D" id="Curve3D_2ew6r"]
 _data = {
