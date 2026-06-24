@@ -163,16 +163,20 @@ func _on_shape_cast_3d_collision_normals(colliderNormals: Array[Vector3]) -> voi
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	var linLength: float = state.linear_velocity.length() or 0
-	
+
 	if linLength > maxImpulse:
 		state.linear_velocity = state.linear_velocity.normalized() * maxImpulse
-	
+
 	#if linLength <= minLinearVelocity:
 	#	state.linear_velocity = state.linear_velocity.lerp(Vector3(0,0,0), 0.1)
-		
-	
+
+
 	if state.angular_velocity.length() > maxTorque:
 		state.angular_velocity = state.angular_velocity.normalized() * maxTorque
 
 
 	velocity.emit(remap(state.linear_velocity.length(),0, maxImpulse, 0, 1))
+
+
+func _on_is_spinning(flag: bool, speed: float) -> void:
+	pass # Replace with function body.

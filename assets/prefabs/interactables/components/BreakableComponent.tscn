@@ -3,6 +3,6 @@
 [ext_resource type="Script" uid="uid://b1md73adx4bjf" path="res://assets/scripts/interactables/Breakable.gd" id="1_qr50p"]
 [ext_resource type="PackedScene" uid="uid://lgvi5uqioquw" path="res://assets/prefabs/particle-fx/ExplosionFX.tscn" id="2_o1ysm"]
 
-[node name="BreakableComponent" type="Node" unique_id=101191030]
+[node name="BreakableComponent" type="Node" unique_id=101191030 groups=["interactableComponents"]]
 script = ExtResource("1_qr50p")
 breakEffect = ExtResource("2_o1ysm")
