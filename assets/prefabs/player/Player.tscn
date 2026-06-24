@@ -9,8 +9,15 @@
 [ext_resource type="AudioStream" uid="uid://c65o681u6753i" path="res://assets/audio/sfx/SpinSFX.wav" id="4_af3jp"]
 [ext_resource type="Texture2D" uid="uid://bxv0nfj28jgxi" path="res://assets/visuals/materials/scytheSlash2_stretched.png" id="5_jbgpd"]
 [ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="7_jbgpd"]
+[ext_resource type="Script" uid="uid://b83yngt3k63ab" path="res://assets/scripts/player/PlayerSfx.gd" id="9_vah8r"]
+[ext_resource type="AudioStream" uid="uid://7gbhlitbr401" path="res://assets/audio/sfx/ChargeSFX-Pulse.wav" id="10_3q40i"]
 [ext_resource type="Script" uid="uid://cc7j154l53s2q" path="res://assets/scripts/player/obstacleCollider.gd" id="10_jbgpd"]
 [ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/scripts/player/TrailParticleLogic.gd" id="10_xkygm"]
+[ext_resource type="AudioStream" uid="uid://2xj8a0mxhtjb" path="res://assets/audio/sfx/ChargeSFX-In-Threshold.wav" id="11_au0ph"]
+[ext_resource type="AudioStream" uid="uid://dbfj2cesnj5ei" path="res://assets/audio/sfx/ChargeSFX-Overshoot.wav" id="12_5sdpi"]
+[ext_resource type="AudioStream" uid="uid://cegq1jj5sucnw" path="res://assets/audio/sfx/ChargeSFX-Small-Release.wav" id="13_h6bmn"]
+[ext_resource type="AudioStream" uid="uid://bosbm3a5t6q1t" path="res://assets/audio/sfx/ChargeSFX-Big-Release.wav" id="14_2no5y"]
+[ext_resource type="AudioStream" uid="uid://0v3bsanjmfgd" path="res://assets/audio/sfx/BounceSFX.wav" id="18_3q40i"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
@@ -236,11 +243,9 @@ mesh = SubResource("CapsuleMesh_uu7nu")
 transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, -1, 1, -4.371139e-08, -4.371139e-08, -0.1, 0, 2)
 mesh = SubResource("CapsuleMesh_nuc4o")
 
-[node name="SpinSFX" type="AudioStreamPlayer" parent="PlayerCollider/KeepRotationStatic" unique_id=109432352]
-unique_name_in_owner = true
-stream = ExtResource("4_af3jp")
-volume_db = 3.0
-bus = &"PlayerSpin"
+[node name="SFXRemoteTransform3D" type="RemoteTransform3D" parent="PlayerCollider/KeepRotationStatic/CharacterMesh" unique_id=1768352492]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+remote_path = NodePath("../../../../PlayerSFX")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271724101]
 libraries/ = SubResource("AnimationLibrary_ilqrk")
@@ -266,9 +271,62 @@ gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("Gradient_xkygm")
 script = ExtResource("10_xkygm")
 
+[node name="PlayerSFX" type="Node3D" parent="." unique_id=918856913]
+script = ExtResource("9_vah8r")
+
+[node name="BounceSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=909114845]
+unique_name_in_owner = true
+stream = ExtResource("18_3q40i")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="SpinSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=109432352]
+unique_name_in_owner = true
+stream = ExtResource("4_af3jp")
+volume_db = 2.5
+bus = &"PlayerSpin"
+
+[node name="ChargePulseSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=1006701431]
+unique_name_in_owner = true
+stream = ExtResource("10_3q40i")
+volume_db = -25.0
+pitch_scale = 2.0
+bus = &"PlayerCharge"
+
+[node name="InThresholdSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=985285429]
+unique_name_in_owner = true
+stream = ExtResource("11_au0ph")
+volume_db = -30.0
+pitch_scale = 3.28
+bus = &"SFX"
+
+[node name="OvershootSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=721954700]
+unique_name_in_owner = true
+stream = ExtResource("12_5sdpi")
+volume_db = -21.0
+pitch_scale = 2.7
+bus = &"SFX"
+
+[node name="SmallReleaseSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=2065906644]
+unique_name_in_owner = true
+stream = ExtResource("13_h6bmn")
+volume_db = -17.0
+pitch_scale = 1.34
+bus = &"SFX"
+
+[node name="BigReleaseSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=527131285]
+unique_name_in_owner = true
+stream = ExtResource("14_2no5y")
+volume_db = -18.0
+bus = &"SFX"
+
+[connection signal="charge" from="." to="PlayerSFX" method="_on_player_charge"]
+[connection signal="chargeRelease" from="." to="PlayerSFX" method="_on_player_charge_release"]
 [connection signal="isSpinning" from="." to="PlayerCollider/KeepRotationStatic/CharacterMesh" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="AnimationPlayer" method="_on_player_is_spinning"]
 [connection signal="isSpinning" from="." to="Area3D" method="_on_player_is_spinning"]
+[connection signal="isSpinning" from="." to="PlayerSFX" method="_on_player_is_spinning"]
 [connection signal="velocity" from="." to="PlayerCollider/CPUParticles3D" method="_on_player_velocity"]
 [connection signal="velocity" from="." to="TrailParticles3D" method="_on_player_velocity"]
 [connection signal="collisionNormals" from="WallBounceShapeCast" to="." method="_on_shape_cast_3d_collision_normals"]
+[connection signal="collisionNormals" from="WallBounceShapeCast" to="PlayerSFX" method="_on_wall_bounce_shape_cast_collision_normals"]
