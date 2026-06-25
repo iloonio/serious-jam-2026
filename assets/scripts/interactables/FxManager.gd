@@ -24,6 +24,8 @@ class_name FxManager extends Interactable
 			audioPlayer.stream = audio
 			audioStream = audio
 
+@export var animationPlayer: AnimationPlayer
+
 @export_range(0, 1, 0.05) var cooldown: float = 0.2
 
 var can_be_hit: bool = true
@@ -50,7 +52,13 @@ func on_interact():
 	## 2. play audio resource
 	audioPlayer.play(0)
 	audioPlayer.finished.connect(audioPlayer.stop)
-
-	# 3. wait for cooldown, then allow being hit again
+	
+	## 3. play animation if an AnimationPlayer is added as export
+	if animationPlayer:
+		var animations = animationPlayer.get_animation_list()
+		print(animations)
+		animationPlayer.play(animations[0])
+	
+	# 4. wait for cooldown, then allow being hit again
 	await get_tree().create_timer(cooldown).timeout
 	can_be_hit = true

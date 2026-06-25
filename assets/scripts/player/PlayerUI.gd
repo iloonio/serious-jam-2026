@@ -9,9 +9,13 @@ func _ready() -> void:
 		push_warning("Could not ProgressManager in ", self, ". Please Ensure that the node with ProgressManager.gd is also a member of the global group ProgressManager.")
 
 	progressManager.updateGrassCount.connect(update_grass_count_label)
-	progressManager.updateScore.connect(update_score_label)
-	progressManager.updateTime.connect(update_time_label)
-	progressManager.updateRanking.connect(update_ranking_text)
+	#progressManager.updateScore.connect(update_score_label)
+	#progressManager.updateTime.connect(update_time_label)
+	#progressManager.updateRanking.connect(update_ranking_text)
+	
+	GameState.updateTimeLabel.connect(update_time_label)
+	GameState.updateScore.connect(update_score_label)
+	GameState.stageClear.connect(update_ranking_text)
 
 
 

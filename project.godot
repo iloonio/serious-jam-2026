@@ -19,15 +19,17 @@ config/icon="res://assets/visuals/ui/icon.svg"
 [audio]
 
 buses/default_bus_layout="uid://byn6n3gq2xnur"
+general/default_playback_type.web=0
 
 [autoload]
 
 SceneManager="*uid://ds0afpywsbg5p"
+GameState="*uid://bpex52725brlk"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
@@ -90,6 +92,7 @@ charge={
 3d_physics/layer_2="wall"
 3d_physics/layer_3="Grass"
 3d_physics/layer_4="Interactable"
+3d_physics/layer_5="GoalScore"
 
 [rendering]
 
