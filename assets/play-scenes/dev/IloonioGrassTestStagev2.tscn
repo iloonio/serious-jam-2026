@@ -132,8 +132,8 @@ curve = SubResource("Curve3D_6ke3x")
 progressIncrement = 0.5
 
 [node name="PathFollow3D" parent="Map/Interactables/MovingObject" index="0" unique_id=1687061993]
-transform = Transform3D(-0.97507864, 0, -0.22177559, 0, 0.9999791, 0, 0.22177622, 0, -0.9750759, -0.27729005, 0, 9.393744)
-progress = 13.765879
+transform = Transform3D(-0.8117466, 0, 0.58397657, 0, 0.9999791, 0, -0.5839782, 0, -0.81174433, -0.5108613, 0, -2.6452036)
+progress = 0.87601036
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
