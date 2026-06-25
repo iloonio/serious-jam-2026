@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dmlgno2uk0loy"]
+
+[ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/scripts/player/TrailParticleLogic.gd" id="1_3utqn"]
+
+[sub_resource type="Curve" id="Curve_1j7h0"]
+_data = [Vector2(0.48355263, 1), 0.0, -1.9363058, 0, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wax3n"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_vmind"]
+material = SubResource("StandardMaterial3D_wax3n")
+shape = 0
+size = 0.75
+section_length = 0.3
+curve = SubResource("Curve_1j7h0")
+
+[sub_resource type="Gradient" id="Gradient_houq0"]
+offsets = PackedFloat32Array(0, 0.22727273)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[node name="TrailParticles3D" type="CPUParticles3D" unique_id=1132788413]
+transform = Transform3D(-1, 1.509958e-07, 6.600236e-15, 0, -4.371139e-08, 1, 1.509958e-07, 1, 4.371139e-08, 0, 0, 0)
+amount = 50
+draw_order = 1
+mesh = SubResource("RibbonTrailMesh_vmind")
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("Gradient_houq0")
+script = ExtResource("1_3utqn")
