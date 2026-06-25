@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dmlgno2uk0loy"]
 
-[ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/scripts/player/TrailParticleLogic.gd" id="1_3utqn"]
+[ext_resource type="Script" uid="uid://baqh1i1573igg" path="res://assets/scripts/player/TrailParticleLogic.gd" id="1_gknpi"]
 
 [sub_resource type="Curve" id="Curve_1j7h0"]
 _data = [Vector2(0.48355263, 1), 0.0, -1.9363058, 0, 1, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -29,4 +29,4 @@ draw_order = 1
 mesh = SubResource("RibbonTrailMesh_vmind")
 gravity = Vector3(0, 0, 0)
 color_ramp = SubResource("Gradient_houq0")
-script = ExtResource("1_3utqn")
+script = ExtResource("1_gknpi")

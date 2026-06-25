@@ -1,8 +1,6 @@
 extends RigidBody3D
 
 #region Exports
-@export_category("Player Settings")
-
 @export_group("Angular Velocity")
 ## maxTorque caps the amount of force that will be applied around the y axis
 ## when the player rotates their character. The max value might not neccesarily
@@ -52,6 +50,7 @@ var torqueFactor: float = 0 #incremented while turning, decremented when not.
 var velocityFactor: float = 0 #depends on chargeGauge
 var chargeGauge: float = 0 #incremented while charging
 var isCharging: bool = false
+var canBounce: bool = true
 
 ## DirVec is the direction of our movement.
 ## DirVec is reduced overtime by being lerped towards the unnit vection pointing forward
@@ -69,8 +68,10 @@ signal charge(currentCharge: float, minThreshold: float, maxThreshold: float)
 signal chargeRelease(isChargePerfect: bool)
 #endregion
 
+
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("charge")):
+		torqueFactor = 0
 		isCharging = true
 		chargeGauge = 0
 	if(event.is_action_released("charge")):
@@ -81,8 +82,8 @@ func _input(event: InputEvent) -> void:
 		else:
 			velocityFactor += maxChargeUpImpulse*clampf(chargeGauge, 0, 1)
 			chargeRelease.emit(false)
-			
-		
+
+
 		calculateDirVec()
 		apply_impulse(dirVec*max(velocityFactor, minChargeUpImpulse))
 
@@ -118,19 +119,23 @@ func _physics_process(delta: float) -> void:
 
 		apply_force(dirVec*(velocityFactor*spinningForwardForceFactor))
 		isSpinning.emit(true, remap(velocityFactor, 0, maxImpulse, 0.5, 4))
+
 	else:
 		isSpinning.emit(false, 0.5)
+
 
 	## 4. reduce velocityFactor gently.delta
 	## if we are charging, reduce to 0
 	if(isCharging):
 		velocityFactor = lerpf(velocityFactor, 0, 0.75)
 	else:
-		velocityFactor -= delta*2  #idk what to do here, but i dont want torque to slowdown so much lol
+		velocityFactor -= delta  #idk what to do here, but i dont want torque to slowdown so much lol
 
 
 func turnPlayer(direction: int):
-	torqueFactor += torqueAcceleration/10
+
+	if torqueFactor < 5:
+		torqueFactor += torqueAcceleration/10
 	apply_torque((Vector3(0, torqueFactor*direction, 0)))
 	# apply_force(dirVec)
 
@@ -142,29 +147,7 @@ func calculateDirVec() -> void:
 		var target_rotation = Quaternion(Vector3.FORWARD, dirVec)
 		directionGizmo.global_transform.basis = Basis(target_rotation)
 
-
-func _on_shape_cast_3d_collision_normals(colliderNormals: Array[Vector3]) -> void:
-	# here, we want to reflect the dirVec
-	# to simplify things a bit, lets add together all of the normals and normalize them
-	# thereafter, calculate reflection and set dirVec to point in that direction.
-	var sumNormal = Vector3.ZERO
-
-	# sum up all normals
-	for n in colliderNormals:
-		sumNormal += n
-
-	# normalize summation to make it a proper normal vector
-	sumNormal.normalized()
-
-	# Reflection function for when using vector normals.
-	torqueFactor = 0
-	dirVec = dirVec - (2*dirVec.dot(sumNormal)*sumNormal)
-
-
-	var b = Basis(dirVec, dirVec.signed_angle_to(sumNormal, Vector3.UP))
-
-	apply_impulse(dirVec*bounceStrength*velocityFactor)
-
+var hasColliderNormals: bool = false
 
 
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
@@ -172,9 +155,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 
 	if linLength > maxImpulse:
 		state.linear_velocity = state.linear_velocity.normalized() * maxImpulse
-
-	#if linLength <= minLinearVelocity:
-	#	state.linear_velocity = state.linear_velocity.lerp(Vector3(0,0,0), 0.1)
 
 
 	if state.angular_velocity.length() > maxTorque:
@@ -184,5 +164,27 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	velocity.emit(remap(state.linear_velocity.length(),0, maxImpulse, 0, 1))
 
 
-func _on_is_spinning(flag: bool, speed: float) -> void:
-	pass # Replace with function body.
+
+func _on_wall_bounce_shape_cast_collision_normals(colliderNormals: Array[Vector3]) -> void:
+	# here, we want to reflect the dirVec
+	# to simplify things a bit, lets add together all of the normals and normalize them
+	# thereafter, calculate reflection and set dirVec to point in that direction.
+
+	var sumNormal = Vector3.ZERO
+
+	print("on_shape_cast_3d called")
+
+	# sum up all normals
+	for n in colliderNormals:
+		sumNormal += n
+
+	# normalize summation to make it a proper normal vector
+	sumNormal = sumNormal.normalized()
+
+	print(colliderNormals)
+	dirVec = dirVec - (2*dirVec.dot(sumNormal)*sumNormal)
+
+	# linear_velocity = Vector3.ZERO
+	apply_impulse(dirVec*bounceStrength*max(velocityFactor, minLinearVelocity))
+
+	velocityFactor = lerp(velocityFactor, 0.0, 0.2)
