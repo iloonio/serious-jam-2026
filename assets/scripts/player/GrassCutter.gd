@@ -67,7 +67,7 @@ func cut_grass_tile(cell, index, worldPos):
 func get_current_cellpos() -> Vector3i:
 	var cellPos = Vector3i(
 		floor(global_position.x / grassManager.cell_size.x),
-		floor(global_position.y / grassManager.cell_size.y) - 1,
+		floor(global_position.y / grassManager.cell_size.y),
 		floor(global_position.z / grassManager.cell_size.z)
 	)
 	return cellPos
