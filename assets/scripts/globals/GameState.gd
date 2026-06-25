@@ -72,6 +72,8 @@ func add_score(score: int):
 
 	## emit score to display in the end
 func clear_stage(clearedStage: String = "level1"):
+	if get_elapsed_time() == 0:
+		return
 
 	@warning_ignore("integer_division")
 	var timeBonus = int(30000 / get_elapsed_time())

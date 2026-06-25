@@ -87,6 +87,10 @@ orientation = 2
 
 [node name="CameraPivot" type="Node3D" unique_id=937874084]
 script = ExtResource("1_tad5m")
+cameraHeightOffset = 12.0
+cameraPosOffsetZ = 7.735
+marginHorizontal = 4.0
+marginVertical = 1.0
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=1933844702]
 unique_name_in_owner = true
