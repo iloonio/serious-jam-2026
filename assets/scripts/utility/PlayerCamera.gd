@@ -81,9 +81,9 @@ func _physics_process(delta: float) -> void:
 	# here player is outside of margin z
 	if abs(vOffset) > marginVertical:
 		if vOffset > 0:
-			global_position.z = lerp(global_position.z, marginHorizontal + targetPos.z, followSpeed)
+			global_position.z = lerp(global_position.z, marginVertical + targetPos.z, followSpeed)
 		else:
-			global_position.z = lerp(global_position.z, marginHorizontal * -1 + targetPos.z, followSpeed)
+			global_position.z = lerp(global_position.z, marginVertical * -1 + targetPos.z, followSpeed)
 		
 		# store a position slightly ahead of player, so if you turn/bounce suddenly, camera has somewhere to lerp to
 		futurePos.z = global_position.z + (global_position.z - lastPos.z) * player.linear_velocity.z

@@ -22,9 +22,6 @@ func _ready() -> void:
 		push_error("Grass mesh not found in ", self)
 	
 	convert_gridmap_to_multimesh()
-	
-	## warm up the particles!
-	spawn_grass_particles(Vector3(1000, 1000, 1000))
 
 
 
