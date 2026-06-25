@@ -27,7 +27,9 @@ func _physics_process(_delta: float) -> void:
 		for componentNode in components:
 			if col.is_ancestor_of(componentNode):
 				componentNode.call("on_interact")
-				components.remove_at(components.find(componentNode))
+				# TODO: MAKE IT SO THAT WE DONT REVISIT A COMPONENT.
+				# components.remove_at(components.find(componentNode))
+				# THE LINE ABOVE DOESNT WORK.
 
 
 func _on_player_is_spinning(flag: bool, speed: float) -> void:
