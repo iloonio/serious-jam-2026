@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://3d3whi1oxx15"]
+
+[ext_resource type="Texture2D" uid="uid://bxv0nfj28jgxi" path="res://assets/visuals/materials/scytheSlash2_stretched.png" id="1_12pff"]
+[ext_resource type="Script" uid="uid://drne1x0fg0opl" path="res://assets/scripts/player/ScytheParticleLogic.gd" id="2_tdfvk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mywad"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_12pff")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tfxc2"]
+lightmap_size_hint = Vector2i(17, 17)
+material = SubResource("StandardMaterial3D_mywad")
+size = Vector2(3, 3)
+
+[sub_resource type="Curve" id="Curve_5srjt"]
+_limits = [0.0, 25.0, 0.0, 1.0]
+bake_resolution = 300
+_data = [Vector2(0, 0), 0.0, 7.7059374, 0, 1, Vector2(0.75197893, 5.7947025), 0.0, 0.0, 0, 0, Vector2(1, 24.668877), -2.7146747, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_mqwhx"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 1.9775281, 0, 1, Vector2(1, 1.9775282), 1.9775281, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_blkv5"]
+_limits = [0.0, 4.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 2.754014, 0, 1, Vector2(0.7493404, 2.063694), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_smthc"]
+offsets = PackedFloat32Array(0.6976048, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="ScythesParticles3D" type="CPUParticles3D" unique_id=536088986]
+transform = Transform3D(-0.9623874, -3.8484095e-15, -0.27168143, -1.065814e-14, 1, 1.7763568e-15, 0.27168143, -9.833377e-16, -0.9623874, 0, 0, 0)
+local_coords = true
+mesh = SubResource("PlaneMesh_tfxc2")
+particle_flag_rotate_y = true
+direction = Vector3(0, 1, 0)
+spread = 0.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+radial_accel_max = 5.0
+damping_min = 5.0
+damping_max = 5.0
+damping_curve = SubResource("Curve_5srjt")
+angle_min = 360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_mqwhx")
+scale_amount_curve = SubResource("Curve_blkv5")
+color = Color(0.99, 0.99, 0.99, 1)
+color_ramp = SubResource("Gradient_smthc")
+script = ExtResource("2_tdfvk")

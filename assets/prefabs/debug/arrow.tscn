@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bwc750nihhebi"]
+
+[ext_resource type="ArrayMesh" uid="uid://bn34ektawqjti" path="res://assets/prefabs/debug/arrowMesh.tres" id="1_7gdoi"]
+
+[node name="arrow" type="Node3D" unique_id=767105425]
+
+[node name="Cone" type="MeshInstance3D" parent="." unique_id=1495034773]
+transform = Transform3D(1.5684507, 0, 0, 0, 1.5684507, 0, 0, 0, 1.5684507, 0, 1.0884178, 0)
+mesh = ExtResource("1_7gdoi")

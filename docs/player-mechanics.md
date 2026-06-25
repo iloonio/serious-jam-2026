@@ -1,5 +1,39 @@
 # player mechanics
 
+## Summary 
+```bash
+Player                       (rigidbody)
+├── CharacterMesh            (Remote Transform)
+├── GrassCutterPos           (Node3D)
+├── WallBounceShapeCast      (Shapecast3D)
+├── DebugMeshes              (Node3D)
+│   └── ...
+├── PlayerCollider           (CollisionShape3D)
+│   ├── CPUParticles3D       (CPUParticles3D)
+│   └── KeepRotationStatic   (Node)
+│       └── CharacterMesh
+│           ├── ...
+│           └── SFXRemoteTransform3D
+├── AnimationPlayer
+├── InteractCollider         (Area3D)
+├── TrailsParticles3D        (CPUParticles3D)
+└── PlayerSFX
+	└── ...
+```
+
+The player node is fucking huge. There is a lot to get into, so lets get down to it. 
+
+The root node has [PlayerMovement.gd](assets/scripts/player/PlayerMovement.gd) script attached to it. It handles movement, see the Movement chapter for more info. Whats important to note is that the player's rigidbody is rotated using torque and moved using forces/impulses. 
+
+GrassCutterPos is a Node3D with the GrassCutter3D script. it converts the player's world position to its gridmap position in order to cut grass. 
+
+The WallBounceShapeCast checks to see if players collide with walls and it does this with shapecasts. Shapecasts are useful because they let us return normals from a collision. These normals are transmitted as a signal to the PlayerMovement script, where physics processing occurs. 
+
+DebugMeshes contain arrows that point in different directions.
+
+Because the root node is constantly rotating, the animations played while moving around will look bad. Therefore, we keep rotation static using a regular Node which parents the character mesh. To sync translation, a Remote Transform Node is placed as a direct child to root node which is linked to the character mesh. 
+
+
 ## Movement
 This part is a summary of the [PlayerMovement.gd](assets/scripts/player/PlayerMovement.gd) script, which controls how forces & impulses are applied to the player during gameplay. 
 

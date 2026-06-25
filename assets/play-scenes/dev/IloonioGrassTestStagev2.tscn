@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_t1jpb"]
 [ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="12_aqf58"]
 
-[sub_resource type="Curve3D" id="Curve3D_bkl3n"]
+[sub_resource type="Curve3D" id="Curve3D_6ke3x"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -3.3553157, 0, 0, 0, 0, 0, 0, -2.4138455, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10.612899),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -84,9 +84,6 @@ script = ExtResource("1_bkl3n")
 
 [node name="Map" type="Node3D" parent="." unique_id=1649906345]
 
-[node name="Player" parent="Map" unique_id=935310202 instance=ExtResource("2_aqf58")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 6)
-
 [node name="WallGridMap" type="GridMap" parent="Map" unique_id=1572374016]
 mesh_library = ExtResource("3_kgvgn")
 cell_size = Vector3(1, 1, 1)
@@ -131,12 +128,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1869466, 1.5, 11.279453)
 
 [node name="MovingObject" parent="Map/Interactables" unique_id=1041034083 instance=ExtResource("12_aqf58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.594212, 1.4999895, -0.4101894)
-curve = SubResource("Curve3D_bkl3n")
+curve = SubResource("Curve3D_6ke3x")
 progressIncrement = 0.5
 
 [node name="PathFollow3D" parent="Map/Interactables/MovingObject" index="0" unique_id=1687061993]
-transform = Transform3D(-0.8117466, 0, 0.5839767, 0, 0.9999791, 0, -0.5839782, 0, -0.8117446, -2.3387039, 0, -0.108752504)
-progress = 4.0046325
+transform = Transform3D(-0.8117466, 0, 0.58397657, 0, 0.9999791, 0, -0.5839782, 0, -0.81174433, -0.5108613, 0, -2.6452036)
+progress = 0.87601036
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
@@ -198,6 +195,9 @@ stream = ExtResource("11_t1jpb")
 volume_db = -25.0
 autoplay = true
 bus = &"BGM"
+
+[node name="Player" parent="." unique_id=935310202 instance=ExtResource("2_aqf58")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 11)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 
