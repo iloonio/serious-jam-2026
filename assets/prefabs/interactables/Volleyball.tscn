@@ -48,7 +48,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_07sct")
 
 [node name="Volleyball" type="RigidBody3D" unique_id=140884864]
-collision_layer = 9
+collision_layer = 25
 
 [node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("1_22u83")]
 audioStream = ExtResource("2_k7l1s")
