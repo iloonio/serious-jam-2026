@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://daxjfbx1x75y3"]
+
+[ext_resource type="Script" uid="uid://hsjeorjgu5js" path="res://assets/scripts/interactables/Moving.gd" id="1_2ybmk"]
+[ext_resource type="PackedScene" uid="uid://dwwsxhl7wlskp" path="res://assets/prefabs/debug/PerfectlyGenericCube.tscn" id="2_lytkr"]
+[ext_resource type="PackedScene" uid="uid://dwpk2uhpp0twq" path="res://assets/prefabs/interactables/Mouse.tscn" id="3_hitiy"]
+
+[sub_resource type="Curve3D" id="Curve3D_e3e7y"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="MovingMouse" type="Path3D" unique_id=1041034083 node_paths=PackedStringArray("pathFollow")]
+curve = SubResource("Curve3D_e3e7y")
+script = ExtResource("1_2ybmk")
+movingObject = ExtResource("3_hitiy")
+pathFollow = NodePath("PathFollow3D")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="." unique_id=1687061993]
+transform = Transform3D(-0.9999816, 0, -8.742095e-08, 0, 0.9999791, 0, 8.7421164e-08, 0, -0.9999791, 0, 0, 0.92663985)
+progress = 0.9266696
+
+[node name="PerfectlyGenericCube" parent="PathFollow3D" unique_id=1898595896 instance=ExtResource("2_lytkr")]
+transform = Transform3D(1.0000185, 0, -1.748488e-07, 0, 1.000021, 0, 1.7484922e-07, 0, 1.000021, -3.4535998e-07, 0, 3.9504673)
+freeze = true
+freeze_mode = 1

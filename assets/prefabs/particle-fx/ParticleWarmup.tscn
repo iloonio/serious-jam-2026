@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://w4e8vv6lred"]
+
+[ext_resource type="PackedScene" uid="uid://lgvi5uqioquw" path="res://assets/prefabs/particle-fx/ExplosionFX.tscn" id="1_crts8"]
+[ext_resource type="PackedScene" uid="uid://cnmbrubldx08x" path="res://assets/prefabs/particle-fx/genericParticleFX.tscn" id="2_007jv"]
+[ext_resource type="PackedScene" uid="uid://bhqcfg3knpkev" path="res://assets/prefabs/particle-fx/GrassParticles.tscn" id="3_m4qci"]
+[ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="4_xsfcd"]
+
+[node name="ParticleWarmup" type="Node3D" unique_id=1070833792]
+
+[node name="ExplosionFx" parent="." unique_id=1907303957 instance=ExtResource("1_crts8")]
+
+[node name="GenericParticleFx" parent="." unique_id=1555598157 instance=ExtResource("2_007jv")]
+
+[node name="CPUParticles3D" parent="." unique_id=2140819835 instance=ExtResource("3_m4qci")]
+
+[node name="CPUParticles3D2" parent="." unique_id=156266043 instance=ExtResource("4_xsfcd")]
+
+[node name="Timer" type="Timer" parent="." unique_id=163973182]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]
+
+[editable path="ExplosionFx"]
+[editable path="GenericParticleFx"]
+[editable path="CPUParticles3D"]
+[editable path="CPUParticles3D2"]

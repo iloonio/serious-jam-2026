@@ -37,7 +37,8 @@ func _ready() -> void:
 	update_progress(grassTotal)
 	
 	startTime = Time.get_ticks_msec()
-
+	
+	warm_up_particles()
 
 
 func _process(delta: float) -> void:
@@ -111,3 +112,16 @@ func _on_grass_grid_map_add_score(score: int) -> void:
 		return
 
 	updateScore.emit(playerScore)
+
+
+
+
+
+func warm_up_particles():
+	var particle = load("res://assets/prefabs/particle-fx/ParticleWarmup.tscn")
+	var particleInstance = particle.instantiate()
+	particleInstance.position = Vector3(0, -100, 0)
+	add_child(particleInstance)
+		
+
+	

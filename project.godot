@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="serious-jam-2026"
-run/main_scene="uid://xjfi0vkt1fyn"
+run/main_scene="uid://bo5oqho3sp34i"
 config/features=PackedStringArray("4.7")
 run/max_fps=60
 config/icon="res://assets/visuals/ui/icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://assets/visuals/ui/icon.svg"
 [audio]
 
 buses/default_bus_layout="uid://byn6n3gq2xnur"
+general/default_playback_type.web=0
 
 [autoload]
 
@@ -26,8 +27,8 @@ SceneManager="*uid://ds0afpywsbg5p"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0

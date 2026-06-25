@@ -7,13 +7,22 @@
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="5_3kcek"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/visuals/GrassMesh.tres" id="6_b6sd5"]
 [ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="7_ifblx"]
+[ext_resource type="PackedScene" uid="uid://dbdxcd3x0l4t4" path="res://assets/prefabs/NpcTemplate.tscn" id="8_1no2c"]
 [ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="8_fdvan"]
 [ext_resource type="AudioStream" uid="uid://b4h8qr6dnknmm" path="res://assets/audio/bgm/ScythingThemeFinal.ogg" id="9_wc64o"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="10_abmek"]
-[ext_resource type="PackedScene" uid="uid://bjst1vjbcni6p" path="res://assets/visuals/blender/blend-files/Barrel.blend" id="11_rqe5g"]
-[ext_resource type="PackedScene" uid="uid://rff07lg3aryo" path="res://assets/visuals/blender/blend-files/Mouse.blend" id="12_06ajt"]
-[ext_resource type="PackedScene" uid="uid://cwbsu1raud8o0" path="res://assets/visuals/blender/blend-files/Volleyball.blend" id="13_wihoo"]
-[ext_resource type="PackedScene" uid="uid://dt2768d3a2yku" path="res://assets/visuals/blender/blend-files/Shroom.blend" id="14_wc64o"]
+[ext_resource type="PackedScene" uid="uid://0dfj2h5lkl3r" path="res://assets/prefabs/interactables/Shroom.tscn" id="15_1no2c"]
+[ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="15_raocx"]
+[ext_resource type="PackedScene" uid="uid://davu1lyc5a7pb" path="res://assets/prefabs/interactables/Barrel.tscn" id="16_raocx"]
+[ext_resource type="PackedScene" uid="uid://dwpk2uhpp0twq" path="res://assets/prefabs/interactables/Mouse.tscn" id="16_y7gwv"]
+[ext_resource type="PackedScene" uid="uid://ltt17o3wwfcl" path="res://assets/prefabs/interactables/Volleyball.tscn" id="16_yl8lk"]
+
+[sub_resource type="Curve3D" id="Curve3D_raocx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
 
 [node name="GrassTestStage" type="Node3D" unique_id=978790333 groups=["ProgressManager"]]
 script = ExtResource("1_gwcf5")
@@ -21,7 +30,7 @@ script = ExtResource("1_gwcf5")
 [node name="Map" type="Node3D" parent="." unique_id=1649906345]
 
 [node name="Player" parent="Map" unique_id=935310202 instance=ExtResource("2_ac000")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 12)
 
 [node name="LayoutGridMap" type="GridMap" parent="Map" unique_id=1572374016]
 mesh_library = ExtResource("3_7eb68")
@@ -48,34 +57,41 @@ volume_db = -36.0
 max_polyphony = 4
 bus = &"SFX"
 
+[node name="NpcTemplate" parent="Map" unique_id=211048706 instance=ExtResource("8_1no2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -1)
+
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualEffects" unique_id=450125435]
 transform = Transform3D(0.077470705, 0.59787834, -0.7978344, -0.20786636, 0.7923394, 0.57357645, 0.97508454, 0.12140754, 0.18566188, 0, 8, 0)
 sky_mode = 1
 
+[node name="CPUParticles3D" parent="VisualEffects" unique_id=156266043 instance=ExtResource("10_abmek")]
+transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 16, 0, -9)
+
 [node name="CameraPivot" parent="." unique_id=2124213654 instance=ExtResource("8_fdvan")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 7.556552, 13.385548)
+
+[node name="Interactables" type="Node3D" parent="." unique_id=249905142]
+
+[node name="BreakableObject" parent="Interactables" unique_id=1026180073 instance=ExtResource("16_raocx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 7)
+
+[node name="Volleyball" parent="Interactables" unique_id=140884864 instance=ExtResource("16_yl8lk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 7)
+
+[node name="Shroom" parent="Interactables" unique_id=769009071 instance=ExtResource("15_1no2c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 7)
+
+[node name="MovingObject" parent="Interactables" unique_id=1041034083 instance=ExtResource("15_raocx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 4)
+curve = SubResource("Curve3D_raocx")
+movingObject = ExtResource("16_y7gwv")
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=723377874]
 stream = ExtResource("9_wc64o")
 volume_db = -4.0
 autoplay = true
 bus = &"BGM"
-
-[node name="CPUParticles3D" parent="." unique_id=156266043 instance=ExtResource("10_abmek")]
-transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.9848077, 16, 0, -9)
-
-[node name="Barrel2" parent="." unique_id=2014445760 instance=ExtResource("11_rqe5g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 7)
-
-[node name="Mouse" parent="." unique_id=1775832980 instance=ExtResource("12_06ajt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
-
-[node name="Volleyball" parent="." unique_id=497391900 instance=ExtResource("13_wihoo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 7)
-
-[node name="Shroom" parent="." unique_id=1234741585 instance=ExtResource("14_wc64o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 7)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
