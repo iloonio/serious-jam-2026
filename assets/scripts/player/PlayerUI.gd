@@ -12,7 +12,7 @@ func _ready() -> void:
 	#progressManager.updateScore.connect(update_score_label)
 	#progressManager.updateTime.connect(update_time_label)
 	#progressManager.updateRanking.connect(update_ranking_text)
-	
+
 	GameState.updateTimeLabel.connect(update_time_label)
 	GameState.updateScore.connect(update_score_label)
 	GameState.stageClear.connect(update_ranking_text)
@@ -20,11 +20,11 @@ func _ready() -> void:
 
 
 func update_grass_count_label(grassLeft, grassTotal):
-	%GrassCountLabel.text = "Grass left: " + str(grassLeft) + "/" + str(grassTotal)
-	
+	%GrassCountLabel.text = str(grassLeft) + "/" + str(grassTotal)
+
 	if grassLeft <= 0:
 		%GrassCountLabel.text += " YOU WON, PRESS [R] TO RETRY"
-	
+
 
 func update_score_label(score):
 	%ScoreLabel.text = "Score: %d" % score
@@ -33,8 +33,15 @@ func update_score_label(score):
 
 func update_time_label(secs, mins):
 	%TimeLabel.text = "TIME: %s:%s" % [mins, secs]
-	
+
 
 ## runs when a level is cleared
 func update_ranking_text(totScore, playerScore, timeBonus, rank):
-	%ScoreLabel.text = "Total Score: %d [Score: (%d) + Time Bonus: (%d)], RANK: %s" % [totScore, playerScore, timeBonus, rank]
+	return
+
+	## ILOONIO; CHECK OUT THIS ISSUE
+	%Ranklabel.text = "RANK: %s" % rank
+	%FinalScoreLabel.text = "SCORE: %d" % totScore
+	%ScoreBreakdownLabel.text = "%d + %d" % [playerScore, timeBonus]
+
+	# %RankLabel.text = "Total Score: %d [Score: (%d) + Time Bonus: (%d)], RANK: %s" % [totScore, playerScore, timeBonus, rank]
