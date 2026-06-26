@@ -16,3 +16,9 @@ func score_goal():
 	hasScored = true
 	%ScoreLabel3D.text = "+" + str(goalScore)
 	%AnimationPlayer.play("show_score")
+	
+	var fx: PackedScene = load("res://assets/prefabs/particle-fx/ExplosionFX.tscn")
+	var fxInstance: CPUParticles3D = fx.instantiate()
+	fxInstance.propagate_call("set", ["one_shot", true])
+	
+	add_child(fxInstance)

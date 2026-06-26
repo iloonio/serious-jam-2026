@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://bt23ue5jyvr73"]
 
 [ext_resource type="Material" uid="uid://c3dyi4ik32wly" path="res://assets/visuals/materials/Tree_Bark.tres" id="1_dn7q5"]
-[ext_resource type="Shader" uid="uid://y6l5h0sln52i" path="res://assets/scripts/shaders/TreShader.gdshader" id="3_fxwtr"]
 [ext_resource type="Texture2D" uid="uid://dctd87fvb8bkw" path="res://assets/visuals/blender/blend-files/Tree_LeafTexture.png" id="4_rsxdo"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iuud4"]
@@ -36,25 +35,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iuud4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_72j6q"]
-resource_name = "TreeLeaves"
-render_priority = 0
-shader = ExtResource("3_fxwtr")
-shader_parameter/albedo = Color(0.22499166, 0.49, 0.20090002, 1)
-shader_parameter/texture_albedo = ExtResource("4_rsxdo")
-shader_parameter/albedo_texture_size = Vector2i(512, 512)
-shader_parameter/point_size = 1.0
-shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/specular = 0.0
-shader_parameter/metallic = 0.0
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/wind_speed = 0.175
-shader_parameter/wind_strength = 0.3
-shader_parameter/wind_direction = Vector2(-0.04, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cm48s"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.3207417, 0.55, 0.2145, 1)
+albedo_texture = ExtResource("4_rsxdo")
+distance_fade_mode = 2
+distance_fade_max_distance = 11.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_24kvl"]
 _surfaces = [{
@@ -78,7 +65,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 159,
 "index_data": PackedByteArray("AAABAAIAAQAAAAMAAQADAAQABQAGAAcABQAIAAYACQAKAAsACgAJAAwACgAMAA0ADgAPABAADgARAA8AEgATABQAFQAWABcAGAAZABoAGwAcAB0AHgAfACAAIQAiACMAIgAhACQAIgAkACUAJgAnACgAKQAqACsALAAtAC4ALwAwADEAMgAzADQANQA2ADcAOAA5ADoAOwA8AD0AOwA+ADwAPwBAAEEAQgBDAEQARQBGAEcASABJAEoASwBMAE0ATgBPAFAATgBRAE8AUgBTAFQAUwBSAFUAUwBVAFYAVwBYAFkAWgBbAFwAWgBdAFsAXgBfAGAAXgBhAF8AYgBjAGQAZQBmAGcAaABpAGoAaABrAGkAbABtAG4AbwBwAHEAcgBzAHQAdQB2AHcAeAB5AHoAewB8AH0AfgB/AIAA"),
-"material": SubResource("ShaderMaterial_72j6q"),
+"material": SubResource("StandardMaterial3D_cm48s"),
 "name": "TreeLeaves",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -88,25 +75,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_24kvl")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3yv26"]
-resource_name = "TreeLeaves"
-render_priority = 0
-shader = ExtResource("3_fxwtr")
-shader_parameter/albedo = Color(0.33240503, 0.57, 0.2223, 1)
-shader_parameter/texture_albedo = ExtResource("4_rsxdo")
-shader_parameter/albedo_texture_size = Vector2i(512, 512)
-shader_parameter/point_size = 1.0
-shader_parameter/roughness = 1.0
-shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
-shader_parameter/specular = 0.5
-shader_parameter/metallic = 0.0
-shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = Vector3(0, 0, 0)
-shader_parameter/uv2_scale = Vector3(1, 1, 1)
-shader_parameter/uv2_offset = Vector3(0, 0, 0)
-shader_parameter/wind_speed = 0.585
-shader_parameter/wind_strength = 0.03
-shader_parameter/wind_direction = Vector2(-0.15, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmhf0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.32137635, 0.55220747, 0.21440582, 1)
+albedo_texture = ExtResource("4_rsxdo")
+distance_fade_mode = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vduwf"]
 _surfaces = [{
@@ -130,7 +104,7 @@ _surfaces = [{
 "format": 34359742487,
 "index_count": 129,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEwAUABUAFgAXABgAGQAaABsAHAAdAB4AHwAgACEAHwAiACAAIwAkACUAJgAnACgAJgApACcAKgArACwALQAuAC8AMAAxADIAMwA0ADUANgA3ADgAOQA6ADsAOQA8ADoAPQA+AD8AQABBAEIAQwBEAEUARgBHAEgASQBKAEsATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVwBYAFkAVwBaAFgAWwBcAF0AWwBeAFwAXwBgAGEAYgBjAGQAZQBmAGcAZQBoAGYA"),
-"material": SubResource("ShaderMaterial_3yv26"),
+"material": SubResource("StandardMaterial3D_fmhf0"),
 "name": "TreeLeaves",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),

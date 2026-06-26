@@ -7,6 +7,13 @@ var currentSceneNode: Node3D
 var sceneToLoad: String
 
 
+func _ready() -> void:
+	preload("res://assets/play-scenes/levels/Level1.tscn")
+	preload("res://assets/play-scenes/levels/Level2.tscn")
+	preload("res://assets/play-scenes/levels/Level3.tscn")
+
+
+
 	## Starts process of transitioning to a specified scene of class RunnableScene
 func load_scene(newScenePath: String):
 	get_scene_refs()

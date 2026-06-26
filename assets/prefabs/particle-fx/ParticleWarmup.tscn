@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cnmbrubldx08x" path="res://assets/prefabs/particle-fx/genericParticleFX.tscn" id="2_007jv"]
 [ext_resource type="PackedScene" uid="uid://bhqcfg3knpkev" path="res://assets/prefabs/particle-fx/GrassParticles.tscn" id="3_m4qci"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="4_xsfcd"]
+[ext_resource type="PackedScene" uid="uid://cielj7jcoh27d" path="res://assets/prefabs/particle-fx/charge_release_particles.tscn" id="5_tbqyr"]
+[ext_resource type="PackedScene" uid="uid://gj7ewrc5jwas" path="res://assets/prefabs/particle-fx/charge_up_particles.tscn" id="6_cm48s"]
+[ext_resource type="PackedScene" uid="uid://dmlgno2uk0loy" path="res://assets/prefabs/particle-fx/PlayerTrailFX.tscn" id="7_mfxtm"]
+[ext_resource type="PackedScene" uid="uid://3d3whi1oxx15" path="res://assets/prefabs/particle-fx/ScytheSpinVFX.tscn" id="8_5g4cg"]
 
 [node name="ParticleWarmup" type="Node3D" unique_id=1070833792]
 
@@ -11,18 +15,55 @@
 
 [node name="GenericParticleFx" parent="." unique_id=1555598157 instance=ExtResource("2_007jv")]
 
-[node name="CPUParticles3D" parent="." unique_id=2140819835 instance=ExtResource("3_m4qci")]
+[node name="GrassCPUParticles3D" parent="." unique_id=2140819835 instance=ExtResource("3_m4qci")]
 
-[node name="CPUParticles3D2" parent="." unique_id=156266043 instance=ExtResource("4_xsfcd")]
+[node name="WindCPUParticles3D2" parent="." unique_id=156266043 instance=ExtResource("4_xsfcd")]
 
 [node name="Timer" type="Timer" parent="." unique_id=163973182]
 wait_time = 0.5
 one_shot = true
 autostart = true
 
+[node name="ChargeReleaseParticles" parent="." unique_id=1180544380 instance=ExtResource("5_tbqyr")]
+emitting = true
+one_shot = false
+
+[node name="ChargeUpMinor" parent="ChargeReleaseParticles" index="1" unique_id=1334217698]
+emitting = true
+
+[node name="Release" parent="ChargeReleaseParticles" index="2" unique_id=361119353]
+emitting = true
+one_shot = false
+
+[node name="PerfectCore" parent="ChargeReleaseParticles" index="3" unique_id=928751444]
+emitting = true
+one_shot = false
+
+[node name="PerfectWall" parent="ChargeReleaseParticles" index="4" unique_id=983964145]
+emitting = true
+one_shot = false
+
+[node name="PerfectBeacon" parent="ChargeReleaseParticles" index="5" unique_id=1308744151]
+emitting = true
+one_shot = false
+
+[node name="PerfectBlurred" parent="ChargeReleaseParticles" index="6" unique_id=1200797283]
+emitting = true
+one_shot = false
+
+[node name="ChargeUpParticles" parent="." unique_id=1706118025 instance=ExtResource("6_cm48s")]
+
+[node name="TrailParticles3D" parent="." unique_id=1132788413 instance=ExtResource("7_mfxtm")]
+
+[node name="ScythesParticles3D" parent="." unique_id=536088986 instance=ExtResource("8_5g4cg")]
+
 [connection signal="timeout" from="Timer" to="." method="queue_free"]
 
 [editable path="ExplosionFx"]
 [editable path="GenericParticleFx"]
-[editable path="CPUParticles3D"]
-[editable path="CPUParticles3D2"]
+[editable path="GrassCPUParticles3D"]
+[editable path="WindCPUParticles3D2"]
+[editable path="ChargeReleaseParticles"]
+[editable path="ChargeUpParticles"]
+[editable path="TrailParticles3D"]
+[editable path="ScythesParticles3D"]

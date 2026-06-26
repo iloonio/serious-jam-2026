@@ -125,6 +125,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4ci16")
 
 [sub_resource type="SystemFont" id="SystemFont_cqjj7"]
+subpixel_positioning = 0
 
 [sub_resource type="Animation" id="Animation_sp1y1"]
 length = 0.001

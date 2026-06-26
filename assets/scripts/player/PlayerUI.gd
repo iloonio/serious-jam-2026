@@ -41,7 +41,6 @@ func update_time_label(secs, mins):
 ## runs when a level is cleared
 func update_ranking_text(totScore, playerScore, timeBonus, rank):
 	
-	
 	%RankLabel.text = "YOUR RANK"
 	%RankResult.text = rank
 	%FinalScoreLabel.text = "SCORE: %d" % playerScore
