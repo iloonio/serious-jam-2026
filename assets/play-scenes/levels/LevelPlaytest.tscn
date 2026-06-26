@@ -156,7 +156,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 19)
 [node name="VisualEffects" type="Node3D" parent="." unique_id=999409886]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualEffects" unique_id=1490194465]
-transform = Transform3D(0.077470705, 0.59787834, -0.7978344, -0.20786636, 0.7923394, 0.57357645, 0.97508454, 0.12140754, 0.18566188, 0, 8, 0)
+transform = Transform3D(-0.09423838, 0.9843721, -0.14876428, -0.44043434, 0.09278736, 0.8929772, 0.8928252, 0.1496736, 0.42480713, 0, 11.399553, 9.510587)
+light_color = Color(0.98148066, 0.9803255, 0.8464043, 1)
+light_bake_mode = 1
+shadow_opacity = 0.65
 sky_mode = 1
 
 [node name="CPUParticles3D" parent="VisualEffects" unique_id=156266043 instance=ExtResource("8_t508h")]
@@ -175,35 +178,35 @@ bus = &"BGM"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 11)
 curve = SubResource("Curve3D_t508h")
 movingObject = ExtResource("9_fyjbr")
-progressIncrement = 0.11499999999999999
+progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject" parent="." unique_id=1041034083 instance=ExtResource("8_a2uxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 34)
 curve = SubResource("Curve3D_m65cj")
 movingObject = ExtResource("9_fyjbr")
-progressIncrement = 0.11499999999999999
+progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject3" parent="." unique_id=440603547 instance=ExtResource("8_a2uxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 34)
 curve = SubResource("Curve3D_53ur7")
 movingObject = ExtResource("9_fyjbr")
-progressIncrement = 0.11499999999999999
+progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject2" parent="." unique_id=787537865 instance=ExtResource("8_a2uxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, 38)
 curve = SubResource("Curve3D_igjm2")
 movingObject = ExtResource("9_fyjbr")
-progressIncrement = 0.21000000000000002
+progressIncrement = 0.21
 pingPong = false
 
 [node name="MovingObject5" parent="." unique_id=1176311904 instance=ExtResource("8_a2uxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 2, 20)
 curve = SubResource("Curve3D_e15o3")
 movingObject = ExtResource("9_fyjbr")
-progressIncrement = 0.21000000000000002
+progressIncrement = 0.21
 pingPong = false
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
