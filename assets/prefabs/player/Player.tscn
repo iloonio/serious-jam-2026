@@ -1250,7 +1250,7 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_h6bmn"]
 offsets = PackedFloat32Array(0, 0.70958084, 1)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.31764707, 1, 1, 1, 0)
+colors = PackedColorArray(1, 1, 1, 0, 0.75169474, 0.7296281, 0.90575564, 1, 1, 1, 1, 0)
 
 [node name="Player" type="RigidBody3D" unique_id=935310202 node_paths=PackedStringArray("directionGizmo") groups=["Player"]]
 collision_mask = 3
@@ -1571,13 +1571,17 @@ bus = &"SFX"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66619706, 0)
 
 [node name="ScythesParticlesFollow" parent="PlayerVFX" unique_id=536088986 instance=ExtResource("17_3q40i")]
-amount = 6
+visible = false
+amount = 8
 
 [node name="ScythesParticlesTrail" parent="PlayerVFX" unique_id=40596001 instance=ExtResource("17_3q40i")]
-amount = 12
+amount = 16
 lifetime = 0.5
 explosiveness = 0.2
 local_coords = false
+direction = Vector3(2, 2, 2)
+spread = 94.59
+initial_velocity_max = 6.0
 angle_min = 180.0
 angle_curve = SubResource("Curve_5sdpi")
 scale_amount_min = 0.25

@@ -5,11 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://dajru16aoeg36" path="res://assets/prefabs/interactables/components/BreakableComponent.tscn" id="3_7hpey"]
 [ext_resource type="Texture2D" uid="uid://cygil18uj5uf4" path="res://assets/visuals/blender/blend-files/Barrel_Barrel.png" id="4_vpwhu"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpwhu"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.16, 0.07992, 0.0368, 1)
+grow = true
+grow_amount = 0.04
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmq7j"]
 resource_name = "Material.001"
-cull_mode = 2
+next_pass = SubResource("StandardMaterial3D_vpwhu")
+shading_mode = 0
+diffuse_mode = 3
 albedo_texture = ExtResource("4_vpwhu")
-roughness = 0.5
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.16, 0.07992, 0.0368, 1)
+stencil_outline_thickness = 0.04
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_iuwd0"]

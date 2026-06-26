@@ -4,11 +4,30 @@
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="2_a67oo"]
 [ext_resource type="Texture2D" uid="uid://byg3dk01hwnya" path="res://assets/visuals/blender/blend-files/Mouse_DocumMouse.png" id="3_7vsoa"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vsoa"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+grow = true
+grow_amount = 0.026
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8tef"]
 resource_name = "Material.001"
+next_pass = SubResource("StandardMaterial3D_7vsoa")
 cull_mode = 2
 albedo_texture = ExtResource("3_7vsoa")
+rim_enabled = true
+rim = 0.25
 texture_filter = 2
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+stencil_outline_thickness = 0.026
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yafhw"]

@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bx5qvek453cp1"]
+
+[ext_resource type="Texture2D" uid="uid://d34i4hbpgu6tj" path="res://assets/visuals/blender/blend-files/FenceCorner_Fence.png.png" id="1_dbwyr"]
+
+[resource]
+resource_name = "Fence.001"
+cull_mode = 2
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_dbwyr")
+metadata/_gltf_primary_texture_coord = 0

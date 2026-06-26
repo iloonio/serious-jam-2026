@@ -7,10 +7,32 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_gubh5"]
 radius = 0.7
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xlw1"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.0627451, 0.23921569, 0.39607844, 1)
+grow = true
+grow_amount = 0.037
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc8kb"]
 resource_name = "Material.001"
+next_pass = SubResource("StandardMaterial3D_3xlw1")
 cull_mode = 2
+albedo_color = Color(1.6197081, 1.3093711, 0.8101336, 1)
 albedo_texture = ExtResource("3_3xlw1")
+rim_enabled = true
+rim = 0.17
+clearcoat_roughness = 0.82
+backlight = Color(0.3645, 0.683775, 0.81, 1)
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.0627451, 0.23921569, 0.39607844, 1)
+stencil_outline_thickness = 0.037
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_07sct"]

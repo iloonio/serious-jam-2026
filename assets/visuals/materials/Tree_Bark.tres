@@ -2,17 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://kjtfpevgomqf" path="res://assets/visuals/blender/blend-files/Tree_BarkTexture.png" id="1_ss4tk"]
 
-[sub_resource type="Gradient" id="Gradient_ss4tk"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_72j6q"]
-gradient = SubResource("Gradient_ss4tk")
-
 [resource]
 resource_name = "Tree_Bark"
 cull_mode = 2
+shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.7725, 0.35000002, 1)
+albedo_color = Color(0.99265736, 0.87927544, 0.64052105, 1)
 albedo_texture = ExtResource("1_ss4tk")
-backlight = Color(0, 0.41933328, 0.74, 1)
-backlight_texture = SubResource("GradientTexture1D_72j6q")
 metadata/_gltf_primary_texture_coord = 0

@@ -8,6 +8,7 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_12pff")
+stencil_flags = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tfxc2"]
 lightmap_size_hint = Vector2i(17, 17)
@@ -36,6 +37,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="ScythesParticles3D" type="CPUParticles3D" unique_id=536088986]
 transform = Transform3D(-0.9623874, -3.8484095e-15, -0.27168143, -1.065814e-14, 1, 1.7763568e-15, 0.27168143, -9.833377e-16, -0.9623874, 0, 0, 0)
+amount = 12
 local_coords = true
 mesh = SubResource("PlaneMesh_tfxc2")
 particle_flag_rotate_y = true

@@ -3,7 +3,8 @@
 [ext_resource type="Shader" uid="uid://cvovlp73jjkg" path="res://assets/scripts/shaders/GrassShader.gdshader" id="1_a3m65"]
 
 [sub_resource type="Gradient" id="Gradient_c1iyj"]
-colors = PackedColorArray(0.24705882, 0.5803922, 0.22745098, 1, 0.6509804, 0.84313726, 0.34117648, 1)
+offsets = PackedFloat32Array(0, 0.13107823, 0.42071882, 1)
+colors = PackedColorArray(0.6509804, 0.84313726, 0.34117648, 1, 0.52035904, 0.75816995, 0.30439958, 1, 0.24705882, 0.5803922, 0.22745098, 1, 0.6509804, 0.84313726, 0.34117648, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_6uh8x"]
 gradient = SubResource("Gradient_c1iyj")

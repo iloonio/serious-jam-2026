@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dwt324n8g5gp3"]
 
 [ext_resource type="Texture2D" uid="uid://c85hqj655imhr" path="res://assets/visuals/mesh-libraries/textures/GrassTextureFlat.png" id="1_pf7xr"]
-[ext_resource type="Texture2D" uid="uid://d34i4hbpgu6tj" path="res://assets/visuals/blender/blend-files/FenceCorner_Fence.png.png" id="2_ekhmf"]
+[ext_resource type="Material" uid="uid://bx5qvek453cp1" path="res://assets/visuals/materials/Fence.tres" id="2_ekhmf"]
 [ext_resource type="Texture2D" uid="uid://4nb4i130audq" path="res://assets/visuals/blender/blend-files/Fence_Fence.png.png" id="3_wwbyp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6andr"]
@@ -30,13 +30,6 @@ material = SubResource("StandardMaterial3D_8swg8")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l4bxy"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxwmp"]
-resource_name = "Fence.001"
-cull_mode = 2
-albedo_texture = ExtResource("2_ekhmf")
-roughness = 0.5
-metadata/_gltf_primary_texture_coord = 0
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_qhuhw"]
 _surfaces = [{
 "aabb": AABB(-0.19999999, -0.49454403, -0.20000005, 1.7000346, 1.7607312, 1.7000003),
@@ -61,7 +54,7 @@ _surfaces = [{
 "index_count": 324,
 "index_data": PackedByteArray("AAABAAIAAAAYAAEAGAAAABkAGQAAAAMABAAFAAYABABEAAUARAAEAAcARAAHAEUACAAJAAoACABGAAkARgAIAEcARwAIAAsADAANAA4ADQAMAEgASAAMAA8ADQBIAEkAEAARABIAEAATABEASgAXABoASgBLABcATABNAE4ATAAVAE0ATwBQAFEATwBSAFAAFABTAFQAFABVAFMAVgBXAFgAVgBZAFcAWgBbAFwAWgBdAFsAXgBfAGAAXgBhAF8AYgAbABYAYgBjABsAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAHAAdAB4AHAAfAB0AfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAIAAhACIAIAAjACEAiACJAIoAiACLAIkAjACNAI4AjACPAI0AkACRAJIAkACTAJEAlACVAJYAlACXAJUAJAAlACYAJAAnACUAmACZAJoAmACbAJkAnACdAJ4AnACfAJ0AKAApACoAKAArACkALAAtAC4ALAAvAC0AoAChAKIAoACjAKEAMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0ApAClAKYApACnAKUAQABBAEIAQABDAEEAqACpAKoAqACrAKkArACtAK4ArACvAK0AsACxALIAsACzALEAtAC1ALYAtAC3ALUAuAC5ALoAuAC7ALkAvAC9AL4AvAC/AL0AwADBAMIAwADDAMEAxADFAMYAxADHAMUAyADJAMoAyADLAMkAzADNAM4AzADPAM0A"),
 "lods": [0.789454, PackedByteArray("AAABAAIAAAAYAAEAGAAAABkAGQAAAAMABAAFAAYABQAEAAcACAAJAAoACAALAAkADAANAA4ADQAMAA8AEAARABIAEAATABEAGgAVABcAFQAaABsAFAAVABsAFAAbABYAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEA"), 1.184181, PackedByteArray("AAABAAIAAQAAAAMABAAFAAYABQAEAAcACAAJAAoACAALAAkADAANAA4ADQAMAA8AEAARABIAEAATABEAFAAVABYAFQAXABYA")],
-"material": SubResource("StandardMaterial3D_lxwmp"),
+"material": ExtResource("2_ekhmf"),
 "name": "Fence.001",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -80,8 +73,8 @@ size = Vector3(0.4033203, 2, 1.842102)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5ljy"]
 resource_name = "Fence.001"
 cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("3_wwbyp")
-roughness = 0.5
 metadata/_gltf_primary_texture_coord = 0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_78r3d"]
