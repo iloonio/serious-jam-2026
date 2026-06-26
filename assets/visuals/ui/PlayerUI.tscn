@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://cgcku1yfggjci"]
 
 [ext_resource type="Script" uid="uid://c2nplh46c6w4a" path="res://assets/scripts/player/PlayerUI.gd" id="1_00pmc"]
+[ext_resource type="Texture2D" uid="uid://fyrl3gnc3u4p" path="res://assets/visuals/ui/vignette.png" id="2_r4uxb"]
+[ext_resource type="Texture2D" uid="uid://cywk6rqa2771t" path="res://assets/visuals/materials/genericParticle_small.png" id="2_yslq4"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_63gcn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gubh5"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
 bg_color = Color(0.6, 0.6, 0.6, 0.3529412)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
 
 [node name="UI" type="Control" unique_id=478926171]
 layout_mode = 3
@@ -14,37 +27,161 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_00pmc")
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1211883958]
+visible = false
+modulate = Color(0.23, 0.09430001, 0.20059833, 0.5176471)
+layout_mode = 0
+offset_left = 286.0
+offset_top = 476.0
+offset_right = 798.0
+offset_bottom = 988.0
+scale = Vector2(1.4156264, 0.98645276)
+texture = ExtResource("2_yslq4")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1178128073]
+visible = false
+modulate = Color(0.19, 0.132715, 0.062699996, 0.6509804)
+layout_mode = 0
+offset_left = -40.000015
+offset_top = 427.0
+offset_right = 472.0
+offset_bottom = 939.0
+scale = Vector2(2.6971288, 0.99597037)
+texture = ExtResource("2_yslq4")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=163951183]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 518.0
+offset_right = 676.0
+offset_bottom = 558.0
+columns = 3
+
+[node name="GrassCountLabel" type="Label" parent="." unique_id=195331651]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 563.0
+offset_top = 602.0
+offset_right = 765.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.54, 0.21195, 0.1026, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "5446/10000"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1837189773]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 726.0
+offset_top = 647.0
+offset_right = 928.0
+offset_bottom = 692.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.54, 0.21195, 0.1026, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "Score: 0"
+
+[node name="TimeLabel" type="Label" parent="." unique_id=1756172954]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = 287.0
+offset_right = -54.0
+offset_bottom = 332.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.54, 0.21195, 0.1026, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 32
+text = "Time: 0:0"
+horizontal_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=946058635]
+material = SubResource("CanvasItemMaterial_63gcn")
+layout_mode = 0
+offset_left = -1.0
+offset_top = -9.0
+offset_right = 1289.0
+offset_bottom = 736.0
+texture = ExtResource("2_r4uxb")
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1716034490]
+visible = false
 layout_mode = 1
 offset_right = 373.0
 offset_bottom = 272.0
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=2140574913]
-layout_mode = 2
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2140574913]
+visible = false
+layout_mode = 0
+offset_left = 425.0
+offset_top = 89.0
+offset_right = 700.055
+offset_bottom = 272.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_gubh5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer" unique_id=124378945]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=124378945]
 layout_mode = 2
+size_flags_horizontal = 8
 
-[node name="GrassCountLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=195331651]
+[node name="RankLabel" type="Label" parent="." unique_id=840768613]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "dsdadasdads"
+layout_mode = 0
+offset_left = 879.0
+offset_top = 346.0
+offset_right = 1247.0
+offset_bottom = 434.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 64
+text = "YOUR RANK"
+horizontal_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1837189773]
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=1503396598]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Score: 0"
+layout_mode = 0
+offset_left = 884.0
+offset_top = 418.0
+offset_right = 1252.0
+offset_bottom = 506.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 64
+text = "SCORE"
+horizontal_alignment = 1
 
-[node name="TimeLabel" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer" unique_id=1756172954]
+[node name="ScoreBreakdownLabel" type="Label" parent="." unique_id=1608729844]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Time: 0:0"
+layout_mode = 0
+offset_left = 849.0
+offset_top = 502.0
+offset_right = 1276.0
+offset_bottom = 590.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 64
+text = "+555 for time!"
+horizontal_alignment = 1
+
+[node name="decotext" type="Label" parent="." unique_id=998258261]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 580.0
+offset_right = 740.0
+offset_bottom = 608.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.54, 0.21195, 0.1026, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 20
+text = "Grass Remaining"

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dgttrvhp05r7i"
-path="res://.godot/imported/arrow.blend-7174bd7782f00941809df084739d6635.scn"
+uid="uid://dekps6mbdnwxa"
+path="res://.godot/imported/npc.blend-7429608738baab7f273b7bc3a051b0cf.scn"
 
 [deps]
 
-source_file="res://assets/visuals/blender/blend-files/arrow.blend"
-dest_files=["res://.godot/imported/arrow.blend-7174bd7782f00941809df084739d6635.scn"]
+source_file="res://assets/visuals/blender/blend-files/npc.blend"
+dest_files=["res://.godot/imported/npc.blend-7429608738baab7f273b7bc3a051b0cf.scn"]
 
 [params]
 
@@ -19,7 +19,7 @@ nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false
 array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.5
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,7 +39,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"Material.003": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/visuals/materials/Material.003.tres",
+"use_external/path": "uid://bijnpl00vfurr"
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true
