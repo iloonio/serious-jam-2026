@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://4nb4i130audq" path="res://assets/visuals/blender/blend-files/Fence_Fence.png.png" id="3_wwbyp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6andr"]
+albedo_color = Color(0.34780002, 0.58312, 0.74, 1)
 albedo_texture = ExtResource("1_pf7xr")
 uv1_triplanar = true
 
@@ -167,7 +168,6 @@ shape = SubResource("BoxShape3D_wwbyp")
 debug_color = Color(0, 0.5950001, 0.7, 1)
 
 [node name="FenceNew" type="MeshInstance3D" parent="." unique_id=1825367115]
-visible = false
 mesh = SubResource("ArrayMesh_wwbyp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FenceNew" unique_id=564128552]

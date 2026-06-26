@@ -7,12 +7,14 @@
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="5_cd131"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/visuals/GrassMesh.tres" id="6_283lf"]
 [ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="7_x8kcu"]
+[ext_resource type="PackedScene" uid="uid://bt23ue5jyvr73" path="res://assets/prefabs/Tree.tscn" id="10_g1va6"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="10_wlq10"]
 [ext_resource type="PackedScene" uid="uid://q4ipxm4x2tko" path="res://assets/prefabs/interactables/BreakableObject.tscn" id="11_bkl3n"]
 [ext_resource type="AudioStream" uid="uid://cto1sjc0g66x8" path="res://assets/audio/bgm/ScythingTheme.ogg" id="11_t1jpb"]
 [ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="12_aqf58"]
+[ext_resource type="PackedScene" uid="uid://dn8yml04ahwwc" path="res://assets/prefabs/Boulder.tscn" id="13_nxjdo"]
 
-[sub_resource type="Curve3D" id="Curve3D_6ke3x"]
+[sub_resource type="Curve3D" id="Curve3D_nxjdo"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -3.3553157, 0, 0, 0, 0, 0, 0, -2.4138455, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10.612899),
 "tilts": PackedFloat32Array(0, 0, 0)
@@ -128,12 +130,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1869466, 1.5, 11.279453)
 
 [node name="MovingObject" parent="Map/Interactables" unique_id=1041034083 instance=ExtResource("12_aqf58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.594212, 1.4999895, -0.4101894)
-curve = SubResource("Curve3D_6ke3x")
+curve = SubResource("Curve3D_nxjdo")
 progressIncrement = 0.5
 
 [node name="PathFollow3D" parent="Map/Interactables/MovingObject" index="0" unique_id=1687061993]
-transform = Transform3D(-0.8117466, 0, 0.58397657, 0, 0.9999791, 0, -0.5839782, 0, -0.81174433, -0.5108613, 0, -2.6452036)
-progress = 0.87601036
+transform = Transform3D(-0.9750786, 0, -0.22177559, 0, 0.9999791, 0, 0.2217762, 0, -0.9750759, -2.0257277, 0, 1.7064283)
+progress = 5.881796
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=607473775]
 
@@ -146,6 +148,27 @@ environment = SubResource("Environment_uu7nu")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VisualEffects/WorldEnvironment" unique_id=472803683]
 libraries/ = SubResource("AnimationLibrary_st3xd")
 autoplay = &"move_sky"
+
+[node name="tree" parent="VisualEffects/WorldEnvironment" unique_id=981779320 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1, 0, 0, 0, 1.1214631, 0, 0, 0, 1, -12, 1, -9)
+
+[node name="tree2" parent="VisualEffects/WorldEnvironment" unique_id=407722813 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9665365, 1.000001, -2.688881)
+
+[node name="tree3" parent="VisualEffects/WorldEnvironment" unique_id=1363849563 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1.1108644, 0, 0, 0, 1.203096, 0, 0, 0, 1.3347329, -6.251236, 1.000001, -10.602955)
+
+[node name="tree4" parent="VisualEffects/WorldEnvironment" unique_id=1357196858 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1, 0, 0, 0, 0.8681157, 0, 0, 0, 1, -2.42731, 1.000001, -8.187672)
+
+[node name="tree5" parent="VisualEffects/WorldEnvironment" unique_id=1105585508 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2768803, 1.000001, -10.220822)
+
+[node name="tree6" parent="VisualEffects/WorldEnvironment" unique_id=1367613873 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0570984, 1.000001, -4.638237)
+
+[node name="tree7" parent="VisualEffects/WorldEnvironment" unique_id=1510523765 instance=ExtResource("10_g1va6")]
+transform = Transform3D(1.2659366, 0, 0, 0, 1.3173261, 0, 0, 0, 1.3047111, -16.221525, 1.000001, -7.960352)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualEffects" unique_id=450125435]
 transform = Transform3D(0.6804246, -0.07364283, 0.7291085, 0, 0.9949379, 0.100492634, -0.7328182, -0.06837766, 0.67698014, 4.830099, 7.467118, 5.0430355)
@@ -198,6 +221,9 @@ bus = &"BGM"
 
 [node name="Player" parent="." unique_id=935310202 instance=ExtResource("2_aqf58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 11)
+
+[node name="Boulder2" parent="." unique_id=1634847439 instance=ExtResource("13_nxjdo")]
+transform = Transform3D(2.0336268, 0, 0.7176714, 0, 2.1053338, 0, -0.7139497, 0, 2.0442276, -9.620462, 1.0000005, 0.65690804)
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 

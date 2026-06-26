@@ -1,15 +1,22 @@
 [gd_resource type="ArrayMesh" format=4 uid="uid://dar4rbqr1gt4d"]
 
 [ext_resource type="Shader" uid="uid://cvovlp73jjkg" path="res://assets/scripts/shaders/GrassShader.gdshader" id="1_a3m65"]
-[ext_resource type="Texture2D" uid="uid://bwfvt0w7iovfx" path="res://assets/visuals/blender/blend-files/Grass_GrassTexture.png" id="1_jgk46"]
+
+[sub_resource type="Gradient" id="Gradient_c1iyj"]
+colors = PackedColorArray(0.24705882, 0.5803922, 0.22745098, 1, 0.6509804, 0.84313726, 0.34117648, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6uh8x"]
+gradient = SubResource("Gradient_c1iyj")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a3m65"]
 resource_name = "Material.001"
 render_priority = 0
 shader = ExtResource("1_a3m65")
 shader_parameter/hide_factor = 0.55200002622
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/texture_albedo = ExtResource("1_jgk46")
+shader_parameter/albedo = Color(0.78235406, 0.78235406, 0.78235406, 1)
+shader_parameter/texture_albedo = SubResource("GradientTexture2D_6uh8x")
 shader_parameter/albedo_texture_size = Vector2i(64, 64)
 shader_parameter/point_size = 1.0
 shader_parameter/roughness = 1.0
