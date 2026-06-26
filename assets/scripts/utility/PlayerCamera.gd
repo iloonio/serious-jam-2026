@@ -59,9 +59,6 @@ func _ready() -> void:
 
 ## solely for camera shake
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ReturnToLobby"):
-		screen_shake(1)
-	
 	
 	if shakeStrength > 0:
 		shakeStrength = move_toward(shakeStrength, 0.0, 5 * delta)
@@ -76,7 +73,6 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if not player:
 		return
-	
 	
 	if zoomOnPlayer:
 		clear_camera()

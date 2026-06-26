@@ -67,30 +67,49 @@ enum dir {
 signal isSpinning(flag: bool, speed: float)
 signal velocity(currentVelocity: float)
 signal charge(currentCharge: float, minThreshold: float, maxThreshold: float)
-signal chargeRelease(isChargePerfect: bool)
+signal chargeRelease(isChargePerfect: bool, onCooldown: bool)
 #endregion
+
+var bertilMaterial = load("res://assets/visuals/materials/bertil.tres")
 
 
 func _input(event: InputEvent) -> void:
 	if GameState.blockInput:
+		bertilMaterial.albedo_color = Color.WHITE
 		return
 	
+	
+	
 	if(event.is_action_pressed("charge")):
-		if(chargeCooldownRemainder > 0):
-			return
+		#if(chargeCooldownRemainder > 0):
+		#	return
 		torqueFactor = 0
 		isCharging = true
 		chargeGauge = 0
+		print("PRESS")
+		
+
+
+			
+		
+		
 	if(event.is_action_released("charge")):
-		if(chargeCooldownRemainder > 0):
-			return
+		print("RELEASE")
+		bertilMaterial.albedo_color = Color.WHITE
 		isCharging = false
+		
+		if(chargeCooldownRemainder > 0):
+			chargeRelease.emit(false, true)
+			return
 		if(perfectChargeMinThreshold <= chargeGauge and chargeGauge <= perfectChargeMaxThreshold):
 			velocityFactor = maxImpulse
-			chargeRelease.emit(true)
+			chargeRelease.emit(true, false)
+			perfect_dash_score()
 		else:
-			velocityFactor += maxChargeUpImpulse*clampf(chargeGauge, 0, 1)
-			chargeRelease.emit(false)
+			print("RETURN")
+			velocityFactor += maxChargeUpImpulse*clampf(chargeGauge, 0.1, 1)
+			chargeRelease.emit(false, false)
+			
 
 
 		calculateDirVec()
@@ -98,9 +117,28 @@ func _input(event: InputEvent) -> void:
 		chargeCooldownRemainder = ChargeCooldown
 
 
+func perfect_dash_score():
+	var scoreLabel: PackedScene = load("res://assets/prefabs/ScoreLabel.tscn")
+	var scoreLabelInstance: Label3D = scoreLabel.instantiate()
+	
+	GameState.add_score(50)
+	scoreLabelInstance.text = "+" + str(50)
+	Vector3(randf_range(-150, 150), randf_range(-150, 150), randf_range(-150, 150))
+	get_tree().get_first_node_in_group("Player").add_child(scoreLabelInstance)
+
+
+
+
 func _process(delta: float) -> void:
 	## charging is handled in a seperate process
 	if isCharging:
+		
+			## Charge color
+		if(perfectChargeMinThreshold <= chargeGauge and chargeGauge <= perfectChargeMaxThreshold):
+			bertilMaterial.albedo_color = Color(1.949, 1.949, 1.949, 1.0)
+		else:
+			bertilMaterial.albedo_color = Color.WHITE
+		
 		chargeGauge += delta*60*ChargeUpRate
 		charge.emit(chargeGauge, perfectChargeMinThreshold, perfectChargeMaxThreshold)
 		if(enableDebugPrints and enableChargeGaugePrints):
@@ -136,12 +174,12 @@ func _physics_process(delta: float) -> void:
 
 	## 4. reduce velocityFactor gently.delta
 	## if we are charging, reduce to 0
-	if(isCharging):
+	if(isCharging) and !(chargeCooldownRemainder > 0):
 		velocityFactor = lerpf(velocityFactor, 0, 0.75)
 	else:
-		chargeCooldownRemainder -= delta
 		velocityFactor -= delta  #idk what to do here, but i dont want torque to slowdown so much lol
-
+	chargeCooldownRemainder -= delta
+	
 
 func turnPlayer(direction: int):
 
@@ -183,7 +221,7 @@ func _on_wall_bounce_shape_cast_collision_normals(colliderNormals: Array[Vector3
 
 	var sumNormal = Vector3.ZERO
 
-	print("on_shape_cast_3d called")
+	#print("on_shape_cast_3d called")
 
 	# sum up all normals
 	for n in colliderNormals:
@@ -192,7 +230,7 @@ func _on_wall_bounce_shape_cast_collision_normals(colliderNormals: Array[Vector3
 	# normalize summation to make it a proper normal vector
 	sumNormal = sumNormal.normalized()
 
-	print(colliderNormals)
+	#print(colliderNormals)
 	dirVec = dirVec - (2*dirVec.dot(sumNormal)*sumNormal)
 
 	# linear_velocity = Vector3.ZERO

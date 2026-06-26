@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dekps6mbdnwxa"
-path="res://.godot/imported/npc.blend-7429608738baab7f273b7bc3a051b0cf.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/visuals/blender/blend-files/npc.blend"
-dest_files=["res://.godot/imported/npc.blend-7429608738baab7f273b7bc3a051b0cf.scn"]
 
 [params]
 

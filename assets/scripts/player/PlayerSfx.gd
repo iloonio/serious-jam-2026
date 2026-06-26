@@ -125,10 +125,12 @@ func _on_player_charge(currentCharge: float, minThreshold: float, maxThreshold: 
 
 
 
-func _on_player_charge_release(isChargePerfect: bool) -> void:
-	match isChargePerfect:
-		true: %BigReleaseSFX.play()
-		false: %SmallReleaseSFX.play()
+func _on_player_charge_release(isChargePerfect: bool, onCooldown: bool) -> void:
+	
+	if !onCooldown:
+		match isChargePerfect:
+			true: %BigReleaseSFX.play()
+			false: %SmallReleaseSFX.play()
 	
 	
 	## reset variables for next charge

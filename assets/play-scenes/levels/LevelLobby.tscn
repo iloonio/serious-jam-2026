@@ -76,7 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.984
 
 [node name="CameraPivot" parent="." unique_id=937874084 instance=ExtResource("9_1dxhu")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 7.556552, 13.385548)
-visible = false
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=2140033520]
 stream = ExtResource("10_jjsvr")

@@ -2,6 +2,9 @@ extends Control
 
 var progressManager
 
+var canContinue: bool = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progressManager = get_tree().get_first_node_in_group("ProgressManager")
@@ -23,7 +26,7 @@ func update_grass_count_label(grassLeft, grassTotal):
 	%GrassCountLabel.text = str(grassLeft) + "/" + str(grassTotal)
 
 	if grassLeft <= 0:
-		%GrassCountLabel.text += " YOU WON, PRESS [R] TO RETRY"
+		%GrassCountLabel.text
 
 
 func update_score_label(score):
@@ -37,11 +40,25 @@ func update_time_label(secs, mins):
 
 ## runs when a level is cleared
 func update_ranking_text(totScore, playerScore, timeBonus, rank):
-	return
+	
+	
+	%RankLabel.text = "YOUR RANK"
+	%RankResult.text = rank
+	%FinalScoreLabel.text = "SCORE: %d" % playerScore
+	%ScoreBreakdownLabel.text = "TIME BONUS: %d" % timeBonus
 
-	## ILOONIO; CHECK OUT THIS ISSUE
-	%Ranklabel.text = "RANK: %s" % rank
-	%FinalScoreLabel.text = "SCORE: %d" % totScore
-	%ScoreBreakdownLabel.text = "%d + %d" % [playerScore, timeBonus]
+	%AnimationPlayer.play("clear_stage")
 
-	# %RankLabel.text = "Total Score: %d [Score: (%d) + Time Bonus: (%d)], RANK: %s" % [totScore, playerScore, timeBonus, rank]
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "clear_stage":
+		%AnimationPlayer.play("continue")
+		canContinue = true
+
+
+func _input(event: InputEvent) -> void:
+	if !canContinue:
+		return
+	
+	if event.is_action_pressed("charge"):
+		SceneManager.load_scene("res://assets/play-scenes/levels/LevelLobby.tscn")
