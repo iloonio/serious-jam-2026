@@ -48,18 +48,19 @@ func _on_player_charge_release(isChargePerfect: bool) -> void:
 	#
 	print(isChargePerfect)
 
-
-
 	if isChargePerfect:
 		# we want to emit perfectChargeVFX in the case of a perfectCharge
 		for vfx in perfectChargeVFX:
 			if vfx is CPUParticles3D:
 				vfx.emitting = true
 
+	for vfx in chargeReleaseVFX:
+		if vfx is CPUParticles3D:
+			vfx.emitting = true
+
 	# Set chargeUpVFX to OneShot mode so they finish naturally
 	for vfx in chargeUpVFX:
 		if vfx is CPUParticles3D:
 			vfx.one_shot = true
 			# Wait for this particle to finish, then reset OneShot mode
-			await vfx.finished
-			vfx.one_shot = false
+			# vfx.emitting = await vfx.finished.connect(func(): return false)

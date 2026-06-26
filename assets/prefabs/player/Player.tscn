@@ -1275,10 +1275,11 @@ maxImpulse = 30.0
 minLinearVelocity = 5.0
 maxChargeUpImpulse = 30.0
 minChargeUpImpulse = 15.0
+bounceStrength = 0.5
 ChargeUpRate = 0.012
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
-bounceStrength = 0.5
+chargeCooldownDuration = 5.0
 spinningForwardForceFactor = 2.0
 directionGizmo = NodePath("debugMeshes/dirVecArrow")
 

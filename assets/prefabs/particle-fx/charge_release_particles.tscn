@@ -169,7 +169,7 @@ scale_amount_curve = SubResource("Curve_l7cap")
 color_ramp = SubResource("Gradient_706kr")
 
 [node name="ChargeUpMinor" type="CPUParticles3D" parent="." unique_id=1334217698 groups=["ChargeUpVFX"]]
-visible = false
+emitting = false
 amount = 4
 mesh = SubResource("PlaneMesh_63gcn")
 gravity = Vector3(0, 0, 0)
@@ -177,9 +177,10 @@ scale_amount_curve = SubResource("Curve_fbndl")
 color_ramp = SubResource("Gradient_aqyc4")
 
 [node name="Release" type="CPUParticles3D" parent="." unique_id=361119353 groups=["ChargeReleaseVFX"]]
-visible = false
-amount = 4
+emitting = false
+amount = 1
 lifetime = 2.0
+one_shot = true
 explosiveness = 0.96
 mesh = SubResource("PlaneMesh_0qrxq")
 gravity = Vector3(0, 0, 0)

@@ -30,6 +30,7 @@ extends RigidBody3D
 
 ##how quickly we charge up, which is done by lerping. chargeUpRate is the weight
 ## so higher value = faster charge up.
+@export_range(0.1, 5, 0.05) var ChargeCooldown = 0.5
 @export_range(0.001, 0.5, 0.001) var ChargeUpRate
 @export_range(0.4, 1, 0.01) var perfectChargeMinThreshold
 @export_range(0.4, 1, 0.01) var perfectChargeMaxThreshold
@@ -51,6 +52,7 @@ var velocityFactor: float = 0 #depends on chargeGauge
 var chargeGauge: float = 0 #incremented while charging
 var isCharging: bool = false
 var canBounce: bool = true
+var chargeCooldownRemainder: float = 0
 
 ## DirVec is the direction of our movement.
 ## DirVec is reduced overtime by being lerped towards the unnit vection pointing forward
@@ -71,10 +73,14 @@ signal chargeRelease(isChargePerfect: bool)
 
 func _input(event: InputEvent) -> void:
 	if(event.is_action_pressed("charge")):
+		if(chargeCooldownRemainder > 0):
+			return
 		torqueFactor = 0
 		isCharging = true
 		chargeGauge = 0
 	if(event.is_action_released("charge")):
+		if(chargeCooldownRemainder > 0):
+			return
 		isCharging = false
 		if(perfectChargeMinThreshold <= chargeGauge and chargeGauge <= perfectChargeMaxThreshold):
 			velocityFactor = maxImpulse
@@ -86,6 +92,7 @@ func _input(event: InputEvent) -> void:
 
 		calculateDirVec()
 		apply_impulse(dirVec*max(velocityFactor, minChargeUpImpulse))
+		chargeCooldownRemainder = ChargeCooldown
 
 
 func _process(delta: float) -> void:
@@ -129,6 +136,7 @@ func _physics_process(delta: float) -> void:
 	if(isCharging):
 		velocityFactor = lerpf(velocityFactor, 0, 0.75)
 	else:
+		chargeCooldownRemainder -= delta
 		velocityFactor -= delta  #idk what to do here, but i dont want torque to slowdown so much lol
 
 
