@@ -2,9 +2,9 @@ extends Node3D
 
 
 @export_category("Positioning Settings")
-@export var cameraHeightOffset: float = 10.0
+@export var cameraHeightOffset: float = 12.0
 @export var cameraRotationX: float = -55.0
-@export var cameraPosOffsetZ: float = 6.0
+@export var cameraPosOffsetZ: float = 7.735
 
 
 @export_category("Follow Settings")
@@ -13,10 +13,9 @@ extends Node3D
 
 @export_category("Margins")
 ## The horizontal margin for the camera deadzone
-@export var marginHorizontal: float = 5.0 
+@export var marginHorizontal: float = 4.0 
 ## The verical margin for the camera deadzone
-@export var marginVertical: float = 4.0
-
+@export var marginVertical: float = 1.0
 
 
 var player: RigidBody3D
@@ -32,11 +31,25 @@ var lastPos: Vector3
 
 var futurePos
 
+var zoomOnPlayer: bool = false
+
+var shakeStrength: float = 0.0
+var shakeDecay: float = 20.0
+
+
+
 
 func _ready() -> void:
+	GameState.stageClear.connect(set_zoom_on_player.unbind(4))
+	
+	
+	
 	player = get_tree().get_first_node_in_group("Player")
 	if not player:
 		return
+
+	player.chargeRelease.connect(screen_shake)
+	
 	
 	global_position = player.global_position
 	lastPos = global_position
@@ -44,9 +57,26 @@ func _ready() -> void:
 	
 
 
+## solely for camera shake
+func _process(delta: float) -> void:
+	
+	if shakeStrength > 0:
+		shakeStrength = move_toward(shakeStrength, 0.0, 5 * delta)
+		
+		%SpringArm3D.position.x = randf_range(-shakeStrength, shakeStrength)
+		%SpringArm3D.position.z =  randf_range(-shakeStrength, shakeStrength)
+
+	else:
+		%SpringArm3D.position.x = 0
+		%SpringArm3D.position.z = 0
+
 func _physics_process(delta: float) -> void:
 	if not player:
 		return
+	
+	if zoomOnPlayer:
+		clear_camera()
+
 	
 	
 	var targetPos: Vector3 = player.global_position + Vector3(0, cameraHeightOffset, 0)
@@ -95,3 +125,35 @@ func _physics_process(delta: float) -> void:
 	
 	lastPos = global_position
 	
+
+## 
+func clear_camera():
+	var cameraHeightTarget: float = 3.4
+	var rotationXTarget: float = -1
+	var offsetZTager: float = 1.85
+	
+	var SPEED = 0.1
+	
+	
+	marginVertical = lerp(marginVertical, 0.0, SPEED)
+	marginHorizontal = lerp(marginHorizontal, 0.0, SPEED)
+	
+	cameraHeightOffset = lerp(cameraHeightOffset, cameraHeightTarget, SPEED)
+	cameraRotationX = lerp(cameraRotationX, rotationXTarget, SPEED)
+	cameraPosOffsetZ = lerp(cameraPosOffsetZ, offsetZTager, SPEED)
+
+
+
+func screen_shake(perfCharge: bool = false):
+	%SpringArm3D.position.x = 0 
+	%SpringArm3D.position.z = 0
+	
+	if perfCharge:
+		shakeStrength = 1
+	else:
+		shakeStrength = 0.2
+
+
+
+func set_zoom_on_player():
+	zoomOnPlayer = true

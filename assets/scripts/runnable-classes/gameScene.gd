@@ -26,3 +26,5 @@ func _on_scene_transition_player_animation_finished(anim_name: StringName) -> vo
 	
 	elif anim_name == "fade_in":
 		hasFadedIn.emit()
+		GameState.blockInput = false
+		

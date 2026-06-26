@@ -9,6 +9,8 @@ signal stageClear(totScore: int, score: int, timeBonus: int, rank: String)
 
 var trackPlayerStats: bool = false
 
+var blockInput: bool = false
+
 var levelStats: Dictionary = {
 	"level1": {"isCleared": false, "topScore": 0, "topRank": "-"},
 	"level2": {"isCleared": false, "topScore": 0, "topRank": "-"},
@@ -74,6 +76,8 @@ func add_score(score: int):
 func clear_stage(clearedStage: String = "level1"):
 	if get_elapsed_time() == 0:
 		return
+	
+	blockInput = true
 
 	@warning_ignore("integer_division")
 	var timeBonus = int(30000 / get_elapsed_time())

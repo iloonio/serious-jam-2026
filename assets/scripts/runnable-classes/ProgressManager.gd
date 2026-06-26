@@ -11,6 +11,7 @@ var startTime: float
 signal updateGrassCount
 signal updateRanking
 
+var canReturn: bool = false
 
 
 ## Returns elapsed time in seconds
@@ -37,6 +38,9 @@ func _ready() -> void:
 	GameState.enter_stage()
 
 
+
+
+
 func format_time_nums(num) -> String:
 	if num < 10:
 		num = "0" + str(num)
@@ -53,6 +57,7 @@ func update_progress(newGrassAmount) -> void:
 	
 	if grassLeft <= 0: 
 		GameState.clear_stage()
+		canReturn = true
 
 
 

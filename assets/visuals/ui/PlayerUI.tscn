@@ -2,21 +2,426 @@
 
 [ext_resource type="Script" uid="uid://c2nplh46c6w4a" path="res://assets/scripts/player/PlayerUI.gd" id="1_00pmc"]
 [ext_resource type="Texture2D" uid="uid://fyrl3gnc3u4p" path="res://assets/visuals/ui/vignette.png" id="2_r4uxb"]
-[ext_resource type="Texture2D" uid="uid://cywk6rqa2771t" path="res://assets/visuals/materials/genericParticle_small.png" id="2_yslq4"]
+[ext_resource type="AudioStream" uid="uid://cegq1jj5sucnw" path="res://assets/audio/sfx/ChargeSFX-Small-Release.wav" id="3_r0xam"]
+[ext_resource type="AudioStream" uid="uid://bosbm3a5t6q1t" path="res://assets/audio/sfx/ChargeSFX-Big-Release.wav" id="4_6q8fg"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_63gcn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gubh5"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-bg_color = Color(0.6, 0.6, 0.6, 0.3529412)
-border_color = Color(0.8, 0.8, 0.8, 0)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
+[sub_resource type="Animation" id="Animation_r4uxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrassCountLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, 602)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScoreLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(726, 647)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimeLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(384, 647)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("decotext:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(577, 580)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FinalScoreLabel:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, 478)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ScoreBreakdownLabel:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(35, 587)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RankLabel:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(883, 212)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RankResult:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RankLabel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ScoreBreakdownLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("FinalScoreLabel:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RankResult:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("PressContinue:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("PressContinue:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yslq4"]
+resource_name = "clear_stage"
+length = 3.8000000000000003
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GrassCountLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 602), Vector2(563, 803)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScoreLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(726, 647), Vector2(726, 848)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TimeLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(384, 647), Vector2(384, 848)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("decotext:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(577, 580), Vector2(577, 781)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FinalScoreLabel:position")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 478), Vector2(35, 478)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ScoreBreakdownLabel:position")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 587), Vector2(35, 587)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RankLabel:position")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.3, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(883, -200), Vector2(883, 212)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RankResult:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3.0000002, 3.1000001, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("RankLabel:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ScoreBreakdownLabel:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("FinalScoreLabel:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("RankResult:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Small")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 3.1100001,
+"start_offset": 0.0,
+"stream": ExtResource("3_r0xam")
+}],
+"times": PackedFloat32Array(0.8)
+}
+tracks/12/use_blend = true
+tracks/13/type = "audio"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Small2")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"clips": [{
+"end_offset": 3.0799997,
+"start_offset": 0.0,
+"stream": ExtResource("3_r0xam")
+}],
+"times": PackedFloat32Array(1.2)
+}
+tracks/13/use_blend = true
+tracks/14/type = "audio"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Small3")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"clips": [{
+"end_offset": 3.07,
+"start_offset": 0.0,
+"stream": ExtResource("3_r0xam")
+}],
+"times": PackedFloat32Array(1.6)
+}
+tracks/14/use_blend = true
+tracks/15/type = "audio"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Big")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"clips": [{
+"end_offset": 2.99,
+"start_offset": 0.0,
+"stream": ExtResource("4_6q8fg")
+}],
+"times": PackedFloat32Array(3)
+}
+tracks/15/use_blend = true
+
+[sub_resource type="Animation" id="Animation_r0xam"]
+resource_name = "continue"
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressContinue:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PressContinue:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r0xam"]
+_data = {
+&"RESET": SubResource("Animation_r4uxb"),
+&"clear_stage": SubResource("Animation_yslq4"),
+&"continue": SubResource("Animation_r0xam")
+}
 
 [node name="UI" type="Control" unique_id=478926171]
 layout_mode = 3
@@ -26,36 +431,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_00pmc")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1211883958]
-visible = false
-modulate = Color(0.23, 0.09430001, 0.20059833, 0.5176471)
-layout_mode = 0
-offset_left = 286.0
-offset_top = 476.0
-offset_right = 798.0
-offset_bottom = 988.0
-scale = Vector2(1.4156264, 0.98645276)
-texture = ExtResource("2_yslq4")
-
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1178128073]
-visible = false
-modulate = Color(0.19, 0.132715, 0.062699996, 0.6509804)
-layout_mode = 0
-offset_left = -40.000015
-offset_top = 427.0
-offset_right = 472.0
-offset_bottom = 939.0
-scale = Vector2(2.6971288, 0.99597037)
-texture = ExtResource("2_yslq4")
-
-[node name="GridContainer" type="GridContainer" parent="." unique_id=163951183]
-layout_mode = 0
-offset_left = 636.0
-offset_top = 518.0
-offset_right = 676.0
-offset_bottom = 558.0
-columns = 3
 
 [node name="GrassCountLabel" type="Label" parent="." unique_id=195331651]
 unique_name_in_owner = true
@@ -105,75 +480,6 @@ theme_override_font_sizes/font_size = 32
 text = "Time: 0:0"
 horizontal_alignment = 2
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=946058635]
-material = SubResource("CanvasItemMaterial_63gcn")
-layout_mode = 0
-offset_left = -1.0
-offset_top = -9.0
-offset_right = 1289.0
-offset_bottom = 736.0
-texture = ExtResource("2_r4uxb")
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1716034490]
-visible = false
-layout_mode = 1
-offset_right = 373.0
-offset_bottom = 272.0
-
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2140574913]
-visible = false
-layout_mode = 0
-offset_left = 425.0
-offset_top = 89.0
-offset_right = 700.055
-offset_bottom = 272.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_gubh5")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=124378945]
-layout_mode = 2
-size_flags_horizontal = 8
-
-[node name="RankLabel" type="Label" parent="." unique_id=840768613]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 879.0
-offset_top = 346.0
-offset_right = 1247.0
-offset_bottom = 434.0
-theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
-theme_override_constants/outline_size = 29
-theme_override_font_sizes/font_size = 64
-text = "YOUR RANK"
-horizontal_alignment = 1
-
-[node name="FinalScoreLabel" type="Label" parent="." unique_id=1503396598]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 884.0
-offset_top = 418.0
-offset_right = 1252.0
-offset_bottom = 506.0
-theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
-theme_override_constants/outline_size = 29
-theme_override_font_sizes/font_size = 64
-text = "SCORE"
-horizontal_alignment = 1
-
-[node name="ScoreBreakdownLabel" type="Label" parent="." unique_id=1608729844]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 849.0
-offset_top = 502.0
-offset_right = 1276.0
-offset_bottom = 590.0
-theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
-theme_override_constants/outline_size = 29
-theme_override_font_sizes/font_size = 64
-text = "+555 for time!"
-horizontal_alignment = 1
-
 [node name="decotext" type="Label" parent="." unique_id=998258261]
 layout_mode = 0
 offset_left = 577.0
@@ -185,3 +491,108 @@ theme_override_colors/font_outline_color = Color(0.54, 0.21195, 0.1026, 1)
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
 text = "Grass Remaining"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=946058635]
+material = SubResource("CanvasItemMaterial_63gcn")
+layout_mode = 0
+offset_left = -1.0
+offset_top = -9.0
+offset_right = 1289.0
+offset_bottom = 736.0
+texture = ExtResource("2_r4uxb")
+
+[node name="RankLabel" type="Label" parent="." unique_id=840768613]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 883.0
+offset_top = 212.0
+offset_right = 1251.0
+offset_bottom = 300.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 64
+text = "YOUR RANK"
+horizontal_alignment = 1
+
+[node name="RankResult" type="Label" parent="." unique_id=295340091]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 879.0
+offset_top = 303.0
+offset_right = 1247.0
+offset_bottom = 508.0
+scale = Vector2(0.01, 0.01)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 26
+theme_override_constants/shadow_outline_size = 18
+theme_override_font_sizes/font_size = 150
+text = "A"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="." unique_id=1503396598]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 478.0
+offset_right = 403.0
+offset_bottom = 566.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 48
+text = "SCORE:"
+
+[node name="ScoreBreakdownLabel" type="Label" parent="." unique_id=1608729844]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 587.0
+offset_right = 645.0
+offset_bottom = 675.0
+theme_override_colors/font_outline_color = Color(0.30125928, 0.2314702, 0.19468203, 1)
+theme_override_constants/outline_size = 29
+theme_override_font_sizes/font_size = 48
+text = "TIME BONUS: 99999"
+
+[node name="PressContinue" type="Label" parent="." unique_id=1884444734]
+visible = false
+layout_mode = 0
+offset_left = 456.0
+offset_top = 19.0
+offset_right = 851.0
+offset_bottom = 64.0
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 32
+text = "Press [SPACE] to continue"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1033255715]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_r0xam")
+
+[node name="Small" type="AudioStreamPlayer" parent="." unique_id=1080670151]
+volume_db = -9.296
+pitch_scale = 2.0
+bus = &"SFX"
+
+[node name="Small2" type="AudioStreamPlayer" parent="." unique_id=1597547064]
+volume_db = -9.296
+pitch_scale = 2.5
+bus = &"SFX"
+
+[node name="Small3" type="AudioStreamPlayer" parent="." unique_id=63191107]
+volume_db = -9.296
+pitch_scale = 3.0
+bus = &"SFX"
+
+[node name="Big" type="AudioStreamPlayer" parent="." unique_id=135346295]
+volume_db = -5.229
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
