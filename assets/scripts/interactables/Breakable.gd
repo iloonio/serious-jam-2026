@@ -8,6 +8,8 @@ class_name Breakable extends Interactable
 
 var can_be_hit: bool = true
 
+signal onBreak()
+
 func on_interact():
 	if not can_be_hit:
 		return
@@ -17,6 +19,8 @@ func on_interact():
 
 
 	if HP <= 0:
+		onBreak.emit()
+		
 		if breakEffect != null:
 			var particleInstance: CPUParticles3D = breakEffect.instantiate()
 

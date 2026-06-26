@@ -4,6 +4,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r84c7"]
 
+[sub_resource type="SystemFont" id="SystemFont_a7q4t"]
+
 [sub_resource type="Animation" id="Animation_x2ejs"]
 length = 0.001
 tracks/0/type = "value"
@@ -137,19 +139,27 @@ radius = 5.0
 
 [node name="NpcTemplate" type="Node3D" unique_id=211048706]
 script = ExtResource("1_x2ejs")
+preStageText = "What a lovely day to take a spin around the yard!"
+relatedStage = "Level1"
+postStageText = "Thank you for clearing the football field!"
+clearAllText = "YOU ARE A GOD"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=273583065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_r84c7")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1238598644]
+unique_name_in_owner = true
 transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 0, 1.645, 0)
 billboard = 1
 double_sided = false
 no_depth_test = true
+render_priority = 100
+outline_render_priority = 99
 modulate = Color(1, 1, 1, 0)
 outline_modulate = Color(0, 0, 0, 0)
-text = "What a lovely day to take a spin around the yard!"
+text = "Hello Bertil!"
+font = SubResource("SystemFont_a7q4t")
 font_size = 150
 outline_size = 50
 vertical_alignment = 2

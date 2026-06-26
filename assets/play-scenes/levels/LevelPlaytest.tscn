@@ -132,7 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 2, 21)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, 38)
 
 [node name="Shroom4" parent="Map/Interactables" unique_id=1942366060 instance=ExtResource("13_53ur7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, 7)
 
 [node name="Volleyball2" parent="Map/Interactables" unique_id=1463236476 instance=ExtResource("12_m65cj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 2, 21)

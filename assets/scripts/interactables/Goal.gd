@@ -1,5 +1,5 @@
 extends RigidBody3D
-
+@export var goalScore: int = 1000
 
 var hasScored: bool = false
 
@@ -11,6 +11,8 @@ func _on_score_area_3d_body_entered(body: Node3D) -> void:
 func score_goal():
 	if hasScored:
 		return
-	GameState.add_score(1000)
-	hasScored = true
 	
+	GameState.add_score(goalScore)
+	hasScored = true
+	%ScoreLabel3D.text = "+" + str(goalScore)
+	%AnimationPlayer.play("show_score")

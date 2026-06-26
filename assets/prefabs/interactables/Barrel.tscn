@@ -20,6 +20,7 @@ metadata/_stencil_owned = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tmq7j"]
 resource_name = "Material.001"
 next_pass = SubResource("StandardMaterial3D_vpwhu")
+cull_mode = 2
 shading_mode = 0
 diffuse_mode = 3
 albedo_texture = ExtResource("4_vpwhu")
@@ -67,6 +68,8 @@ radius = 1.0
 
 [node name="BreakableObject" type="RigidBody3D" unique_id=1026180073]
 collision_layer = 9
+mass = 2.5
+gravity_scale = 2.0
 
 [node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("1_vpwhu")]
 audioStream = ExtResource("2_pt3yf")
