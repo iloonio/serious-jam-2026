@@ -11,6 +11,7 @@ var startTime: float
 signal updateGrassCount
 signal updateRanking
 
+var canReturn: bool = false
 
 
 ## Returns elapsed time in seconds
@@ -37,6 +38,17 @@ func _ready() -> void:
 	GameState.enter_stage()
 
 
+func _input(event: InputEvent) -> void:
+	if !canReturn:
+		return
+	
+	if event.is_action_pressed("ReturnToLobby"):
+		SceneManager.load_scene("res://assets/play-scenes/levels/LevelLobby.tscn")
+		
+	
+	
+
+
 func format_time_nums(num) -> String:
 	if num < 10:
 		num = "0" + str(num)
@@ -53,6 +65,7 @@ func update_progress(newGrassAmount) -> void:
 	
 	if grassLeft <= 0: 
 		GameState.clear_stage()
+		canReturn = true
 
 
 

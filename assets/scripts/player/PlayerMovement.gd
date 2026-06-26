@@ -70,6 +70,9 @@ signal chargeRelease(isChargePerfect: bool)
 
 
 func _input(event: InputEvent) -> void:
+	if GameState.blockInput:
+		return
+	
 	if(event.is_action_pressed("charge")):
 		torqueFactor = 0
 		isCharging = true

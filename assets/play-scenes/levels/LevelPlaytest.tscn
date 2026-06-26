@@ -432,7 +432,7 @@ autoplay = true
 bus = &"BGM"
 
 [node name="MovingObject6" parent="." unique_id=2136661451 instance=ExtResource("8_a2uxd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 11)
 curve = SubResource("Curve3D_53ur7")
 movingObject = ExtResource("9_fyjbr")
 progressIncrement = 0.115
