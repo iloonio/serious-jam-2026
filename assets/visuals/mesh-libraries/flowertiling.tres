@@ -1,0 +1,10 @@
+[gd_resource type="PlaneMesh" format=3 uid="uid://7dqsdmcor3a3"]
+
+[ext_resource type="Texture2D" uid="uid://cy0m4kur3cp88" path="res://assets/visuals/mesh-libraries/textures/Flower1TextureFlat.png" id="1_3csam"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3csam"]
+transparency = 1
+albedo_texture = ExtResource("1_3csam")
+
+[resource]
+material = SubResource("StandardMaterial3D_3csam")

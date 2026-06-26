@@ -1,0 +1,11 @@
+[gd_resource type="PlaneMesh" format=3 uid="uid://fxiuvfciy6mt"]
+
+[ext_resource type="Texture2D" uid="uid://cxgipbw7nfkf6" path="res://assets/visuals/mesh-libraries/textures/BricksTexture.png" id="1_2gp4t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63gcn"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_2gp4t")
+
+[resource]
+material = SubResource("StandardMaterial3D_63gcn")
