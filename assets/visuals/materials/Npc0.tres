@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bco6dmn1m8sm7"]
+
+[ext_resource type="Texture2D" uid="uid://di6hi2ai4mv0" path="res://assets/visuals/imported-models/Npc0_NpcTexture.png" id="1_12ofp"]
+
+[resource]
+resource_name = "Material.003"
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_12ofp")
+uv1_offset = Vector3(0, -0.02, 0)
