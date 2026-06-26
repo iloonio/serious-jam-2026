@@ -108,6 +108,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_4ci16")
 
 [node name="Goal" type="RigidBody3D" unique_id=539413026]
+collision_layer = 3
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_cqjj7")

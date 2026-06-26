@@ -24,6 +24,8 @@ extends Path3D
 
 @export_range(0.01, 1, 0.005) var progressIncrement: float = 0.05
 
+@export var pingPong: bool = true
+
 var signFactor: int = 1
 
 func _ready() -> void:
@@ -40,6 +42,14 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if !pingPong: 
+		pathFollow.progress_ratio = pathFollow.progress_ratio + progressIncrement*_delta
+		
+		if progressIncrement >= 1:
+			progressIncrement = 0
+		
+		return
+	
 	pathFollow.progress_ratio = clampf(pathFollow.progress_ratio + progressIncrement*signFactor*_delta, 0, 1)
 
 	if(pathFollow.progress_ratio >= 1):
