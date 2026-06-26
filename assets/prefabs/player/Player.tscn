@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://3d3whi1oxx15" path="res://assets/prefabs/particle-fx/ScytheSpinVFX.tscn" id="17_3q40i"]
 [ext_resource type="AudioStream" uid="uid://0v3bsanjmfgd" path="res://assets/audio/sfx/BounceSFX.wav" id="18_3q40i"]
 [ext_resource type="PackedScene" uid="uid://dmlgno2uk0loy" path="res://assets/prefabs/particle-fx/PlayerTrailFX.tscn" id="18_au0ph"]
+[ext_resource type="PackedScene" uid="uid://gj7ewrc5jwas" path="res://assets/prefabs/particle-fx/charge_up_particles.tscn" id="19_au0ph"]
+[ext_resource type="PackedScene" uid="uid://cielj7jcoh27d" path="res://assets/prefabs/particle-fx/charge_release_particles.tscn" id="20_5sdpi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cf6l3"]
 bounce = 1.0
@@ -1575,6 +1577,7 @@ visible = false
 amount = 8
 
 [node name="ScythesParticlesTrail" parent="PlayerVFX" unique_id=40596001 instance=ExtResource("17_3q40i")]
+visible = false
 amount = 16
 lifetime = 0.5
 explosiveness = 0.2
@@ -1590,6 +1593,12 @@ color_ramp = SubResource("Gradient_h6bmn")
 
 [node name="TrailParticles3D" parent="PlayerVFX" unique_id=1132788413 instance=ExtResource("18_au0ph")]
 transform = Transform3D(-1, 1.509958e-07, 6.600236e-15, 0, -4.371139e-08, 1, 1.509958e-07, 1, 4.371139e-08, 0, 0, 0.6499691)
+visible = false
+
+[node name="ChargeUpParticles" parent="PlayerVFX" unique_id=1706118025 instance=ExtResource("19_au0ph")]
+
+[node name="ChargeReleaseParticles" parent="PlayerVFX" unique_id=174171530 instance=ExtResource("20_5sdpi")]
+visible = false
 
 [connection signal="charge" from="." to="PlayerSFX" method="_on_player_charge"]
 [connection signal="chargeRelease" from="." to="PlayerSFX" method="_on_player_charge_release"]

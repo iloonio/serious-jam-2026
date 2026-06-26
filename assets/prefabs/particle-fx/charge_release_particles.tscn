@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://cielj7jcoh27d"]
+
+[ext_resource type="Texture2D" uid="uid://h1up6p5hgy8x" path="res://assets/visuals/materials/sharpCircleParticle.png" id="1_ftxlo"]
+[ext_resource type="Texture2D" uid="uid://c88w6m33qidsu" path="res://assets/visuals/materials/blurryCircleParticle.png" id="2_bjrwy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7cap"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ftxlo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0qrxq"]
+material = SubResource("StandardMaterial3D_l7cap")
+
+[sub_resource type="Curve" id="Curve_dnt24"]
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 13.182853, 0, 0, Vector2(0.39658442, 6.4657536), 3.2085235, 3.2085235, 0, 0, Vector2(1, 11.780822), 17.876059, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_8buyl"]
+offsets = PackedFloat32Array(0.5608782, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="Gradient" id="Gradient_ftxlo"]
+offsets = PackedFloat32Array(0, 0.08817204, 0.54408604, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.9622641, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dnt24"]
+gradient = SubResource("Gradient_ftxlo")
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8qknc"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("GradientTexture2D_dnt24")
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_bjrwy"]
+material = SubResource("StandardMaterial3D_8qknc")
+radial_steps = 16
+sections = 3
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="Curve" id="Curve_ftxlo"]
+_limits = [0.0, 6.082192, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 10.684376, 0, 0, Vector2(1, 6.0281277), -0.749783, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_tenqd"]
+_data = [Vector2(0, 0.963166), 0.0, -1.9226836, 0, 1, Vector2(0.5009488, 0), -1.9226836, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_r84c7"]
+_limits = [0.0, 6.0, 0.0, 1.0]
+_data = [Vector2(0, 0.106666565), 0.0, 6.5125265, 0, 0, Vector2(1, 5.946667), 1.6060791, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_bjrwy"]
+offsets = PackedFloat32Array(0.037924152, 0.093812376, 0.15968063, 0.2754491)
+colors = PackedColorArray(0, 0.98, 0.76766664, 1, 0.9784004, 0.7399116, 3.85046e-07, 1, 0.48020008, 0.14699998, 0.98, 0.84705883, 1, 0.78, 0.120000005, 0)
+
+[sub_resource type="Curve" id="Curve_bjrwy"]
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 16.8, 0, 0, Vector2(1, 12), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_0qrxq"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 8), 0.0, -3653.002, 0, 1, Vector2(1e-05, 7.96347), 0.0, 0.0, 0, 0, Vector2(0.5009488, 0), -15.897092, 0.0, 1, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_8qknc"]
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 16.8, 0, 0, Vector2(1, 12), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8buyl"]
+_data = [Vector2(0, 0.37209302), 0.0, 0.0, 0, 0, Vector2(1, 1), 1.2435507, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_teodh"]
+material = SubResource("StandardMaterial3D_8qknc")
+radial_steps = 16
+cap_top = false
+cap_bottom = false
+curve = SubResource("Curve_8buyl")
+
+[sub_resource type="Curve" id="Curve_w4fv5"]
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5085389, 12), 16.8, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_pl0w2"]
+_limits = [0.0, 8.0, 0.0, 1.0]
+_data = [Vector2(0, 8), 0.0, 0.0, 0, 1, Vector2(1, 8), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_7g3nr"]
+_limits = [0.0, 12.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5047439, 12), 16.8, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_rnd86"]
+offsets = PackedFloat32Array(0.14371258, 0.45908183)
+colors = PackedColorArray(1, 0.7966667, 0.39, 1, 0.98, 0.735, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bjrwy"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_bjrwy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tenqd"]
+material = SubResource("StandardMaterial3D_bjrwy")
+size = Vector2(1.6, 1.6)
+
+[node name="ChargeReleaseParticles" type="Node3D" unique_id=174171530]
+
+[node name="normal" type="CPUParticles3D" parent="." unique_id=361119353]
+visible = false
+amount = 4
+lifetime = 4.0
+explosiveness = 0.5
+mesh = SubResource("PlaneMesh_0qrxq")
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_dnt24")
+color_ramp = SubResource("Gradient_8buyl")
+
+[node name="PerfectCore" type="CPUParticles3D" parent="." unique_id=928751444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9640732, 0)
+amount = 1
+lifetime = 2.0
+mesh = SubResource("TubeTrailMesh_bjrwy")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+split_scale = true
+scale_curve_x = SubResource("Curve_ftxlo")
+scale_curve_y = SubResource("Curve_tenqd")
+scale_curve_z = SubResource("Curve_r84c7")
+color_ramp = SubResource("Gradient_bjrwy")
+
+[node name="PerfectWall" type="CPUParticles3D" parent="." unique_id=983964145]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.793007, 0)
+amount = 1
+lifetime = 2.0
+mesh = SubResource("TubeTrailMesh_bjrwy")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+split_scale = true
+scale_curve_x = SubResource("Curve_bjrwy")
+scale_curve_y = SubResource("Curve_0qrxq")
+scale_curve_z = SubResource("Curve_8qknc")
+color_ramp = SubResource("Gradient_bjrwy")
+
+[node name="PerfectBeacon" type="CPUParticles3D" parent="." unique_id=1308744151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.793007, 0)
+amount = 1
+lifetime = 2.0
+mesh = SubResource("TubeTrailMesh_teodh")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+split_scale = true
+scale_curve_x = SubResource("Curve_w4fv5")
+scale_curve_y = SubResource("Curve_pl0w2")
+scale_curve_z = SubResource("Curve_7g3nr")
+color_ramp = SubResource("Gradient_rnd86")
+
+[node name="PerfectBlurred" type="CPUParticles3D" parent="." unique_id=1200797283]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6130314, 0)
+amount = 1
+lifetime = 2.0
+mesh = SubResource("PlaneMesh_tenqd")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_r84c7")
+color_ramp = SubResource("Gradient_bjrwy")

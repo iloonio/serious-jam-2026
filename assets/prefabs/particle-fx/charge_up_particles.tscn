@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://gj7ewrc5jwas"]
+
+[ext_resource type="Texture2D" uid="uid://c88w6m33qidsu" path="res://assets/visuals/materials/blurryCircleParticle.png" id="1_u25bn"]
+[ext_resource type="Texture2D" uid="uid://h1up6p5hgy8x" path="res://assets/visuals/materials/sharpCircleParticle.png" id="2_lbx7i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63gcn"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_u25bn")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r84c7"]
+material = SubResource("StandardMaterial3D_63gcn")
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_l7cap"]
+_data = [Vector2(0, 1), 0.0, -2.4989464, 0, 0, Vector2(1, 0.20091325), 0.0, 1.4, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_706kr"]
+offsets = PackedFloat32Array(0.00998004, 0.19361277, 0.67465067, 1)
+colors = PackedColorArray(0.19215687, 0.5529412, 0.8666667, 0, 1, 1, 1, 0.91816366, 1, 1, 1, 1, 0.90834665, 0.92, 0.74520004, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7cap"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_lbx7i")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_63gcn"]
+material = SubResource("StandardMaterial3D_l7cap")
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_fbndl"]
+_data = [Vector2(0, 1), 0.0, -0.9954338, 0, 1, Vector2(1, 0.0045661926), -0.9954338, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_aqyc4"]
+offsets = PackedFloat32Array(0, 0.7784431, 1)
+colors = PackedColorArray(0.19049978, 0.55224353, 0.86770153, 0, 1, 1, 1, 0.5058824, 1, 1, 1, 0)
+
+[node name="ChargeUpParticles" type="CPUParticles3D" unique_id=1706118025]
+amount = 2
+mesh = SubResource("PlaneMesh_r84c7")
+gravity = Vector3(0, 4, 0)
+scale_amount_curve = SubResource("Curve_l7cap")
+color_ramp = SubResource("Gradient_706kr")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1334217698]
+amount = 2
+mesh = SubResource("PlaneMesh_63gcn")
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_fbndl")
+color_ramp = SubResource("Gradient_aqyc4")
