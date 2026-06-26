@@ -1,7 +1,26 @@
 [gd_scene format=3 uid="uid://cielj7jcoh27d"]
 
+[ext_resource type="Script" uid="uid://be7opoyf4a0sy" path="res://assets/scripts/player/chargeVFXHandler.gd" id="1_0qrxq"]
 [ext_resource type="Texture2D" uid="uid://h1up6p5hgy8x" path="res://assets/visuals/materials/sharpCircleParticle.png" id="1_ftxlo"]
 [ext_resource type="Texture2D" uid="uid://c88w6m33qidsu" path="res://assets/visuals/materials/blurryCircleParticle.png" id="2_bjrwy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63gcn"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_bjrwy")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r84c7"]
+material = SubResource("StandardMaterial3D_63gcn")
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_l7cap"]
+_data = [Vector2(0, 1), 0.0, -2.4989464, 0, 0, Vector2(1, 0.20091325), 0.0, 1.4, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_706kr"]
+offsets = PackedFloat32Array(0.00998004, 0.19361277, 0.67465067, 1)
+colors = PackedColorArray(0.19215687, 0.5529412, 0.8666667, 0, 1, 1, 1, 0.91816366, 1, 1, 1, 1, 0.90834665, 0.92, 0.74520004, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7cap"]
 transparency = 1
@@ -9,8 +28,26 @@ shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_ftxlo")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_0qrxq"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_63gcn"]
 material = SubResource("StandardMaterial3D_l7cap")
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_fbndl"]
+_data = [Vector2(0, 1), 0.0, -0.9954338, 0, 1, Vector2(1, 0.0045661926), -0.9954338, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_aqyc4"]
+offsets = PackedFloat32Array(0, 0.7784431, 1)
+colors = PackedColorArray(0.19049978, 0.55224353, 0.86770153, 0, 1, 1, 1, 0.5058824, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qrxq"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ftxlo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0qrxq"]
+material = SubResource("StandardMaterial3D_0qrxq")
 
 [sub_resource type="Curve" id="Curve_dnt24"]
 _limits = [0.0, 12.0, 0.0, 1.0]
@@ -19,7 +56,7 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_8buyl"]
 offsets = PackedFloat32Array(0.5608782, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+colors = PackedColorArray(1, 1, 1, 0.2784314, 0, 0, 0, 0)
 
 [sub_resource type="Gradient" id="Gradient_ftxlo"]
 offsets = PackedFloat32Array(0, 0.08817204, 0.54408604, 1)
@@ -117,22 +154,44 @@ albedo_texture = ExtResource("2_bjrwy")
 material = SubResource("StandardMaterial3D_bjrwy")
 size = Vector2(1.6, 1.6)
 
-[node name="ChargeReleaseParticles" type="Node3D" unique_id=174171530]
+[node name="ChargeReleaseParticles" type="CPUParticles3D" unique_id=1180544380]
+emitting = false
+amount = 1
+one_shot = true
+script = ExtResource("1_0qrxq")
 
-[node name="normal" type="CPUParticles3D" parent="." unique_id=361119353]
+[node name="ChargeUpParticles" type="CPUParticles3D" parent="." unique_id=1706118025 groups=["ChargeUpVFX"]]
 visible = false
 amount = 4
-lifetime = 4.0
-explosiveness = 0.5
+mesh = SubResource("PlaneMesh_r84c7")
+gravity = Vector3(0, 4, 0)
+scale_amount_curve = SubResource("Curve_l7cap")
+color_ramp = SubResource("Gradient_706kr")
+
+[node name="ChargeUpMinor" type="CPUParticles3D" parent="." unique_id=1334217698 groups=["ChargeUpVFX"]]
+visible = false
+amount = 4
+mesh = SubResource("PlaneMesh_63gcn")
+gravity = Vector3(0, 0, 0)
+scale_amount_curve = SubResource("Curve_fbndl")
+color_ramp = SubResource("Gradient_aqyc4")
+
+[node name="Release" type="CPUParticles3D" parent="." unique_id=361119353 groups=["ChargeReleaseVFX"]]
+visible = false
+amount = 4
+lifetime = 2.0
+explosiveness = 0.96
 mesh = SubResource("PlaneMesh_0qrxq")
 gravity = Vector3(0, 0, 0)
 scale_amount_curve = SubResource("Curve_dnt24")
 color_ramp = SubResource("Gradient_8buyl")
 
-[node name="PerfectCore" type="CPUParticles3D" parent="." unique_id=928751444]
+[node name="PerfectCore" type="CPUParticles3D" parent="." unique_id=928751444 groups=["PerfectChargeVFX"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9640732, 0)
+emitting = false
 amount = 1
 lifetime = 2.0
+one_shot = true
 mesh = SubResource("TubeTrailMesh_bjrwy")
 gravity = Vector3(0, 0, 0)
 scale_amount_min = 4.0
@@ -143,10 +202,12 @@ scale_curve_y = SubResource("Curve_tenqd")
 scale_curve_z = SubResource("Curve_r84c7")
 color_ramp = SubResource("Gradient_bjrwy")
 
-[node name="PerfectWall" type="CPUParticles3D" parent="." unique_id=983964145]
+[node name="PerfectWall" type="CPUParticles3D" parent="." unique_id=983964145 groups=["PerfectChargeVFX"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.793007, 0)
+emitting = false
 amount = 1
 lifetime = 2.0
+one_shot = true
 mesh = SubResource("TubeTrailMesh_bjrwy")
 gravity = Vector3(0, 0, 0)
 scale_amount_min = 4.0
@@ -157,10 +218,12 @@ scale_curve_y = SubResource("Curve_0qrxq")
 scale_curve_z = SubResource("Curve_8qknc")
 color_ramp = SubResource("Gradient_bjrwy")
 
-[node name="PerfectBeacon" type="CPUParticles3D" parent="." unique_id=1308744151]
+[node name="PerfectBeacon" type="CPUParticles3D" parent="." unique_id=1308744151 groups=["PerfectChargeVFX"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.793007, 0)
+emitting = false
 amount = 1
 lifetime = 2.0
+one_shot = true
 mesh = SubResource("TubeTrailMesh_teodh")
 gravity = Vector3(0, 0, 0)
 scale_amount_min = 4.0
@@ -171,10 +234,12 @@ scale_curve_y = SubResource("Curve_pl0w2")
 scale_curve_z = SubResource("Curve_7g3nr")
 color_ramp = SubResource("Gradient_rnd86")
 
-[node name="PerfectBlurred" type="CPUParticles3D" parent="." unique_id=1200797283]
+[node name="PerfectBlurred" type="CPUParticles3D" parent="." unique_id=1200797283 groups=["PerfectChargeVFX"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6130314, 0)
+emitting = false
 amount = 1
 lifetime = 2.0
+one_shot = true
 mesh = SubResource("PlaneMesh_tenqd")
 gravity = Vector3(0, 0, 0)
 scale_amount_min = 3.0
