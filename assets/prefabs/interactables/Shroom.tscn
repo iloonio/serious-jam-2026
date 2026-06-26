@@ -49,7 +49,7 @@ radius = 1.0
 
 [sub_resource type="Animation" id="Animation_5lp0j"]
 resource_name = "Bounce"
-length = 0.39999999999999997
+length = 0.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -86,7 +86,7 @@ _data = {
 }
 
 [node name="Shroom" type="RigidBody3D" unique_id=662775025]
-collision_layer = 9
+collision_layer = 11
 freeze = true
 freeze_mode = 1
 

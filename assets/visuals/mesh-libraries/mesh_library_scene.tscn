@@ -135,6 +135,7 @@ shape = SubResource("BoxShape3D_8swg8")
 mesh = SubResource("BoxMesh_l4bxy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Fence" unique_id=243945556]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fence/StaticBody3D" unique_id=1170546791]
 shape = SubResource("BoxShape3D_ivqdy")
@@ -143,6 +144,7 @@ shape = SubResource("BoxShape3D_ivqdy")
 mesh = SubResource("BoxMesh_mw1ty")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FenceCorner" unique_id=1590560844]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FenceCorner/StaticBody3D" unique_id=1679103814]
 shape = SubResource("BoxShape3D_l4bxy")
@@ -151,6 +153,7 @@ shape = SubResource("BoxShape3D_l4bxy")
 mesh = SubResource("ArrayMesh_ekhmf")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FenceCornerNew" unique_id=559073310]
+collision_layer = 3
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="FenceCornerNew/StaticBody3D" unique_id=1593418815]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.64941406)
@@ -171,6 +174,7 @@ debug_color = Color(0, 0.5950001, 0.7, 1)
 mesh = SubResource("ArrayMesh_wwbyp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="FenceNew" unique_id=564128552]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FenceNew/StaticBody3D" unique_id=638371681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

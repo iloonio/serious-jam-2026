@@ -33,6 +33,8 @@ func _ready() -> void:
 	startTime = Time.get_ticks_msec()
 	
 	warm_up_particles()
+	
+	GameState.enter_stage()
 
 
 func format_time_nums(num) -> String:

@@ -45,7 +45,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_162by"]
 resource_name = "pop_down"
-length = 0.19999999999999998
+length = 0.2
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -86,7 +86,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_a7q4t"]
 resource_name = "pop_up"
-length = 0.19999999999999998
+length = 0.2
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -149,7 +149,7 @@ double_sided = false
 no_depth_test = true
 modulate = Color(1, 1, 1, 0)
 outline_modulate = Color(0, 0, 0, 0)
-text = "Hello Godot! What a lovely day to cut some grass."
+text = "What a lovely day to take a spin around the yard!"
 font_size = 150
 outline_size = 50
 vertical_alignment = 2

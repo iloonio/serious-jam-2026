@@ -55,6 +55,7 @@ collision_layer = 9
 audioStream = ExtResource("2_pt3yf")
 
 [node name="BreakableComponent" parent="." unique_id=101191030 instance=ExtResource("3_7hpey")]
+HP = 3
 cooldown = 0.4
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1141679026]

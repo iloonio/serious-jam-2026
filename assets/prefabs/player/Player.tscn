@@ -1270,14 +1270,14 @@ maxTorque = 8.0
 torqueAcceleration = 4.0
 torqueSlowDown = 0.55
 turnSpeed = 10.0
-maxImpulse = 45.0
+maxImpulse = 30.0
 minLinearVelocity = 5.0
 maxChargeUpImpulse = 30.0
 minChargeUpImpulse = 15.0
 ChargeUpRate = 0.012
 perfectChargeMinThreshold = 0.7
 perfectChargeMaxThreshold = 0.9
-bounceStrength = 0.25
+bounceStrength = 0.5
 spinningForwardForceFactor = 2.0
 directionGizmo = NodePath("debugMeshes/dirVecArrow")
 
@@ -1289,6 +1289,7 @@ update_rotation = false
 
 [node name="GrassCutterPos" type="Node3D" parent="." unique_id=436109129]
 script = ExtResource("3_0ph0n")
+cutRadius = 2.5
 
 [node name="WallBounceShapeCast" type="ShapeCast3D" parent="." unique_id=1570744685]
 editor_description = "a shapecast that looks to see if we are hitting a wall or not. if we do, we send a signal to bounce off it. "
@@ -1523,7 +1524,7 @@ script = ExtResource("9_vah8r")
 [node name="BounceSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=909114845]
 unique_name_in_owner = true
 stream = ExtResource("18_3q40i")
-volume_db = 10.0
+volume_db = -2.0
 bus = &"SFX"
 
 [node name="SpinSFX" type="AudioStreamPlayer" parent="PlayerSFX" unique_id=109432352]
