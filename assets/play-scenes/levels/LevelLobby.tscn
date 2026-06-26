@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dxq2w3jw57v6n" path="res://assets/prefabs/player/Player.tscn" id="7_t8rg5"]
 [ext_resource type="PackedScene" uid="uid://k0obq8tdea4s" path="res://assets/prefabs/particle-fx/WindParticles.tscn" id="8_eub60"]
 [ext_resource type="PackedScene" uid="uid://dbre5mt2rsnun" path="res://assets/prefabs/PlayerCamera.tscn" id="9_1dxhu"]
-[ext_resource type="AudioStream" uid="uid://b4h8qr6dnknmm" path="res://assets/audio/bgm/ScythingThemeFinal.ogg" id="10_32tm4"]
+[ext_resource type="AudioStream" uid="uid://n5aqbvu8bg2j" path="res://assets/audio/bgm/LobbyTheme.ogg" id="10_jjsvr"]
 [ext_resource type="Script" uid="uid://sl3sftktw1d6" path="res://assets/scripts/utility/HubLoadingZones.gd" id="11_jjsvr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gubh5"]
@@ -79,8 +79,8 @@ transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 
 visible = false
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=2140033520]
-stream = ExtResource("10_32tm4")
-volume_db = -4.0
+stream = ExtResource("10_jjsvr")
+volume_db = -8.0
 autoplay = true
 bus = &"BGM"
 

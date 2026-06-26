@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dwpk2uhpp0twq"]
 
 [ext_resource type="PackedScene" uid="uid://dajru16aoeg36" path="res://assets/prefabs/interactables/components/BreakableComponent.tscn" id="1_7vsoa"]
+[ext_resource type="Script" uid="uid://clu6i83ycnyqf" path="res://assets/scripts/interactables/Mouse.gd" id="1_a67oo"]
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="2_a67oo"]
 [ext_resource type="Texture2D" uid="uid://byg3dk01hwnya" path="res://assets/visuals/blender/blend-files/Mouse_DocumMouse.png" id="3_7vsoa"]
 
@@ -272,6 +273,10 @@ size = Vector3(1.4501953, 2.0332031, 2.3271484)
 
 [node name="Mouse" type="RigidBody3D" unique_id=1258197659]
 collision_layer = 9
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_a67oo")
+slayScore = 200
 
 [node name="BreakableComponent" parent="." unique_id=101191030 instance=ExtResource("1_7vsoa")]
 
@@ -545,3 +550,5 @@ autoplay = &"Move"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1034318044]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0.182)
 shape = SubResource("BoxShape3D_gubh5")
+
+[connection signal="onBreak" from="BreakableComponent" to="." method="_on_breakable_component_on_break"]

@@ -1,8 +1,37 @@
 [gd_scene format=4 uid="uid://ltt17o3wwfcl"]
 
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="1_22u83"]
+[ext_resource type="Script" uid="uid://dl2v1slsuomfv" path="res://assets/scripts/interactables/Volleyball.gd" id="1_qvbef"]
 [ext_resource type="AudioStream" uid="uid://cuf4w1sw7esc4" path="res://assets/audio/sfx/explosion.wav" id="2_k7l1s"]
 [ext_resource type="Texture2D" uid="uid://bc2ykd62xoclp" path="res://assets/visuals/blender/blend-files/Volleyball_Football.png" id="3_3xlw1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x2ejs"]
+bounce = 0.9
+
+[sub_resource type="Curve" id="Curve_1j7h0"]
+_limits = [0.0, 3.0, 0.0, 2.7108762]
+_data = [Vector2(0.044586778, 0.3879311), 0.0, 8.056096, 0, 0, Vector2(0.52612406, 1.3706896), -1.784735, -1.784735, 0, 0, Vector2(0.96307456, 0.25862074), -13.050881, -7.362031, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wax3n"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+stencil_flags = 2
+stencil_color = Color(0.25085342, 0.1748, 0.46, 1)
+stencil_outline_thickness = 0.037
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_vmind"]
+material = SubResource("StandardMaterial3D_wax3n")
+shape = 0
+size = 0.54
+sections = 2
+section_length = 0.385
+curve = SubResource("Curve_1j7h0")
+
+[sub_resource type="Gradient" id="Gradient_houq0"]
+offsets = PackedFloat32Array(0, 0.16566867, 0.81237525, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.8428, 0.92740667, 0.98, 0.39215687, 0.46451074, 0.2503991, 0.62043154, 0.010319918, 0.45706508, 0.24569999, 0.63, 0)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_gubh5"]
 radius = 0.7
@@ -71,12 +100,31 @@ shadow_mesh = SubResource("ArrayMesh_07sct")
 
 [node name="Volleyball" type="RigidBody3D" unique_id=140884864]
 collision_layer = 25
+axis_lock_angular_y = true
+mass = 0.15
+physics_material_override = SubResource("PhysicsMaterial_x2ejs")
+gravity_scale = 2.0
+linear_damp = 2.0
+angular_damp = 1.0
+script = ExtResource("1_qvbef")
 
 [node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("1_22u83")]
 audioStream = ExtResource("2_k7l1s")
 
+[node name="StaticRot" type="Node" parent="." unique_id=709477234]
+
+[node name="TrailParticles3D" type="CPUParticles3D" parent="StaticRot" unique_id=1132788413]
+unique_name_in_owner = true
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371138e-08, 1, 0, -0.9999999, -4.3711385e-08, 0, 2, 0)
+amount = 20
+speed_scale = 2.0
+draw_order = 1
+mesh = SubResource("RibbonTrailMesh_vmind")
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("Gradient_houq0")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=184254904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.721, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.021000028, 0)
 shape = SubResource("SphereShape3D_gubh5")
 
 [node name="Football" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1348091213]
