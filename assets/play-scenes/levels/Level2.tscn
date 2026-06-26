@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/runnable-classes/ProgressManager.gd" id="1_waoke"]
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="2_gm762"]
+[ext_resource type="PackedScene" uid="uid://c0becq67bqk2o" path="res://assets/prefabs/overlay_grid_map.tscn" id="2_mdgle"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="3_mdgle"]
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="4_p5qa3"]
 [ext_resource type="ArrayMesh" uid="uid://dar4rbqr1gt4d" path="res://assets/visuals/GrassMesh.tres" id="5_hu8g4"]
@@ -15,6 +16,9 @@
 script = ExtResource("1_waoke")
 
 [node name="Map" type="Node3D" parent="." unique_id=469920435]
+
+[node name="OverlayGridMap" parent="Map" unique_id=1200826539 instance=ExtResource("2_mdgle")]
+metadata/_editor_floor_ = Vector3(0, 2, 0)
 
 [node name="LayoutGridMap" type="GridMap" parent="Map" unique_id=1410401332]
 mesh_library = ExtResource("2_gm762")

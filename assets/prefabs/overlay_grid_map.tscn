@@ -6,6 +6,5 @@
 [node name="OverlayGridMap" type="GridMap" unique_id=1200826539]
 mesh_library = ExtResource("1_twleo")
 cell_size = Vector3(2, 1, 2)
-cell_scale = 2.0
 script = ExtResource("2_n24h0")
 metadata/_editor_floor_ = Vector3(0, 0, 0)

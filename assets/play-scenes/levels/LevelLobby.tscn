@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6rkfol0iddq6"]
 
 [ext_resource type="Script" uid="uid://jkhsnqx8j5ic" path="res://assets/scripts/runnable-classes/ProgressManager.gd" id="1_qxynm"]
+[ext_resource type="PackedScene" uid="uid://c0becq67bqk2o" path="res://assets/prefabs/overlay_grid_map.tscn" id="2_1yw46"]
 [ext_resource type="MeshLibrary" uid="uid://c0br5fq815ece" path="res://assets/visuals/mesh-libraries/MeshLibrary.meshlib" id="2_jjsvr"]
 [ext_resource type="MeshLibrary" uid="uid://44ou84unjxba" path="res://assets/visuals/mesh-libraries/GrassMeshLibrary.meshlib" id="3_1yw46"]
 [ext_resource type="Script" uid="uid://ifyj04p0wr0k" path="res://assets/scripts/utility/GridmapGrassInstancer.gd" id="4_n0538"]
@@ -25,6 +26,12 @@ size = Vector3(13, 7, 16)
 script = ExtResource("1_qxynm")
 
 [node name="Map" type="Node3D" parent="." unique_id=1367336059]
+
+[node name="OverlayGridMap" parent="Map" unique_id=1200826539 instance=ExtResource("2_1yw46")]
+data = {
+"cells": PackedInt32Array(262143, 7, 0, 262143, 8, 0, 262143, 9, 0, 196608, 10, 0, 196609, 9, 0, 196610, 9, 0, 196610, 8, 0, 196610, 7, 0, 196611, 6, 0, 196611, 5, 0, 196611, 4, 0, 196611, 3, 0, 196611, 2, 0, 196611, 1, 0, 196610, 2, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)
 
 [node name="LayoutGridMap" type="GridMap" parent="Map" unique_id=237743994]
 mesh_library = ExtResource("2_jjsvr")
