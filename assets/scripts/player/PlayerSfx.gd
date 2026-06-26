@@ -9,7 +9,7 @@ var spinBandpassFilter: AudioEffectBandPassFilter
 @export var spinMinFreq: float = 1000.0
 @export var spinMaxFreq: float = 4500.0
 
-
+@export var spinAnimationPlayer: AnimationPlayer
 
 
 
@@ -52,13 +52,35 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	#spinSFX()
 	spinSFX()
 
 
 
 
-
 func spinSFX() -> void:
+	if not spinBandpassFilter:
+			return
+
+	
+	var animPos: float = spinAnimationPlayer.current_animation_position
+	var animLength: float = spinAnimationPlayer.get_animation("Spinning").length
+
+	# from 0 to 1
+	var animProgress = animPos/animLength
+
+	# maps value as 0 -> 0-5 -> 1 -> 0-5 -> 0 
+	var normalizedProgress = abs(1 - animProgress * 2)
+
+	# map the animation progress to the cutoff frequency
+	var targetCutoff = lerp(spinMinFreq, spinMaxFreq, normalizedProgress)
+	spinBandpassFilter.cutoff_hz = targetCutoff
+
+
+
+
+
+func spinSFXold() -> void:
 	if not spinBandpassFilter:
 			return
 
@@ -71,6 +93,8 @@ func spinSFX() -> void:
 	# map the rotation to the cutoff frequency
 	var targetCutoff = lerp(spinMinFreq, spinMaxFreq, normalizedRot)
 	spinBandpassFilter.cutoff_hz = targetCutoff
+	
+	
 
 
 
