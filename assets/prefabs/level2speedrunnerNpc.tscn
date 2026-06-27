@@ -6,13 +6,14 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r84c7"]
 
 [sub_resource type="SystemFont" id="SystemFont_a7q4t"]
+subpixel_positioning = 0
 
 [sub_resource type="Animation" id="Animation_x2ejs"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/path = NodePath("MeshInstance3D/Node/Label3D:outline_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/path = NodePath("MeshInstance3D/Node/Label3D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +37,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label3D:scale")
+tracks/2/path = NodePath("MeshInstance3D/Node/Label3D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -53,7 +54,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/path = NodePath("MeshInstance3D/Node/Label3D:outline_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -65,7 +66,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/path = NodePath("MeshInstance3D/Node/Label3D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -77,7 +78,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label3D:scale")
+tracks/2/path = NodePath("MeshInstance3D/Node/Label3D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -94,7 +95,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/path = NodePath("MeshInstance3D/Node/Label3D:outline_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -106,7 +107,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/path = NodePath("MeshInstance3D/Node/Label3D:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -118,7 +119,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Label3D:scale")
+tracks/2/path = NodePath("MeshInstance3D/Node/Label3D:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -146,14 +147,22 @@ relatedStage = "Level2"
 postStageText = "i wish i could spin as fast as you do..."
 clearAllText = "wow you are the real spinmaster!"
 
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="." unique_id=40904723]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 2.1428576, 0)
+remote_path = NodePath("../MeshInstance3D/Node/Label3D")
+update_rotation = false
+update_scale = false
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=183897010]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_r84c7")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=202565156]
+[node name="Node" type="Node" parent="MeshInstance3D" unique_id=345013961]
+
+[node name="Label3D" type="Label3D" parent="MeshInstance3D/Node" unique_id=202565156]
 unique_name_in_owner = true
-transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 0, 1.645, 0)
+transform = Transform3D(0.14849243, 0, 0.14849241, 0, 0.21, 0, -0.14849241, 0, 0.14849243, 0, 3.0000005, 0)
 billboard = 1
 double_sided = false
 no_depth_test = true
@@ -169,9 +178,9 @@ vertical_alignment = 2
 autowrap_mode = 3
 width = 2500.0
 
-[node name="TextAnimationPlayer" type="AnimationPlayer" parent="Label3D" unique_id=553960717]
+[node name="TextAnimationPlayer" type="AnimationPlayer" parent="MeshInstance3D/Node/Label3D" unique_id=553960717]
 unique_name_in_owner = true
-root_node = NodePath("../..")
+root_node = NodePath("../../../..")
 libraries/ = SubResource("AnimationLibrary_a6i03")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=2012360832]

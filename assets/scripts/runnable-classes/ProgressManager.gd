@@ -62,7 +62,7 @@ func update_progress(newGrassAmount) -> void:
 	updateGrassCount.emit(grassLeft, grassTotal)
 	
 	if grassLeft <= 0: 
-		GameState.clear_stage()
+		GameState.clear_stage(name.to_lower())
 		canReturn = true
 
 
