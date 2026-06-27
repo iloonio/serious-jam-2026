@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://dn1ixw66xtdue"]
+
+[ext_resource type="Script" uid="uid://ddits8yjg6oyh" path="res://assets/scripts/interactables/NpcTemplate.gd" id="1_fqdif"]
+[ext_resource type="PackedScene" uid="uid://bk2trdh4ie0o8" path="res://assets/prefabs/npc1.tscn" id="2_7ugkk"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r84c7"]
+
+[sub_resource type="SystemFont" id="SystemFont_a7q4t"]
+
+[sub_resource type="Animation" id="Animation_x2ejs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.21, 0.21, 0.21)]
+}
+
+[sub_resource type="Animation" id="Animation_162by"]
+resource_name = "pop_down"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4901161e-08, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.21, 0.21, 0.21)]
+}
+
+[sub_resource type="Animation" id="Animation_a7q4t"]
+resource_name = "pop_up"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:outline_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.21, 0.21, 0.21), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6i03"]
+_data = {
+&"RESET": SubResource("Animation_x2ejs"),
+&"pop_down": SubResource("Animation_162by"),
+&"pop_up": SubResource("Animation_a7q4t")
+}
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gubh5"]
+radius = 5.0
+
+[node name="NpcTemplate2" type="Node3D" unique_id=926240265]
+transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1.4, 0, -0.7071067, 0, 0.7071068, 0, 0, 0)
+script = ExtResource("1_fqdif")
+preStageText = "I heard the previous Lawncare managed to reach the flower field in less than a minute!"
+relatedStage = "Level2"
+postStageText = "i wish i could spin as fast as you do..."
+clearAllText = "wow you are the real spinmaster!"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=183897010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_r84c7")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=202565156]
+unique_name_in_owner = true
+transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 0, 1.645, 0)
+billboard = 1
+double_sided = false
+no_depth_test = true
+render_priority = 100
+outline_render_priority = 99
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "Hello Bertil!"
+font = SubResource("SystemFont_a7q4t")
+font_size = 150
+outline_size = 50
+vertical_alignment = 2
+autowrap_mode = 3
+width = 2500.0
+
+[node name="TextAnimationPlayer" type="AnimationPlayer" parent="Label3D" unique_id=553960717]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_a6i03")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2012360832]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1426291037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_gubh5")
+
+[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1537695276]
+
+[node name="npc" parent="." unique_id=1967168820 instance=ExtResource("2_7ugkk")]
+
+[node name="Skeleton3D" parent="npc/metarig" parent_id_path=PackedInt32Array(1967168820, 663230619) index="0" unique_id=1190904980]
+bones/2/rotation = Quaternion(-0.058057666, 1.332596e-07, 2.173892e-08, 0.99831325)
+
+[node name="BoneAttachment3D" parent="npc/metarig/Skeleton3D" index="0" unique_id=934348795]
+transform = Transform3D(1, -1.0376953e-14, 8.529981e-14, -5.861708e-14, 0.99936366, 0.035663407, 1.3840954e-16, -0.03566351, 0.9993638, 1.8857979e-10, 0.5192229, -0.0035239174)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="npc"]
