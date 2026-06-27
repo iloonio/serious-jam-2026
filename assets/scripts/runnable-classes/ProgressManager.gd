@@ -13,6 +13,9 @@ signal updateRanking
 
 var canReturn: bool = false
 
+@export var isClearableLevel: bool = true
+
+
 
 ## Returns elapsed time in seconds
 func get_elapsed_time() -> int:
@@ -51,6 +54,9 @@ func format_time_nums(num) -> String:
 
 
 func update_progress(newGrassAmount) -> void:
+	if !isClearableLevel:
+		return
+	
 	grassLeft = newGrassAmount
 	
 	updateGrassCount.emit(grassLeft, grassTotal)

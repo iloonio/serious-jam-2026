@@ -13,16 +13,16 @@ class_name FxManager extends Interactable
 @export var particleEffect : PackedScene # TODO: add some sort of default particle effect.
 
 # chosen AudioStreamPlayer can always be changed later. This is an export entirely for my own convenience
-@export var audioPlayer	: AudioStreamPlayer3D
+@export var audioPlayer: AudioStreamPlayer
 
 # the sound that will be played.
-@export var audioStream	: AudioStream:
-	get:
-		return audioStream
-	set(audio):
-		if(audio != null):
-			audioPlayer.stream = audio
-			audioStream = audio
+#@export var audioStream: AudioStream:
+#	get:
+#		return audioStream
+#	set(audio):
+#		if(audio != null):
+#			audioPlayer.stream = audio
+#			audioStream = audio
 
 @export var animationPlayer: AnimationPlayer
 
@@ -50,7 +50,7 @@ func on_interact():
 	get_parent().get_parent().add_child(particleInstance)
 
 	## 2. play audio resource
-	audioPlayer.play(0)
+	audioPlayer.play()
 	audioPlayer.finished.connect(audioPlayer.stop)
 	
 	## 3. play animation if an AnimationPlayer is added as export

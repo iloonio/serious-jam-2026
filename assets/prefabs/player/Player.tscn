@@ -1565,6 +1565,10 @@ stream = ExtResource("14_2no5y")
 volume_db = -18.0
 bus = &"SFX"
 
+[node name="BounceSFXTimer" type="Timer" parent="PlayerSFX" unique_id=643603061]
+unique_name_in_owner = true
+wait_time = 0.1
+
 [node name="PlayerVFX" type="Node3D" parent="." unique_id=479521112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66619706, 0)
 
@@ -1603,3 +1607,4 @@ transform = Transform3D(-1, 1.509958e-07, 6.600236e-15, 0, -4.371139e-08, 1, 1.5
 [connection signal="velocity" from="." to="PlayerVFX/TrailParticles3D" method="_on_player_velocity"]
 [connection signal="collisionNormals" from="WallBounceShapeCast" to="." method="_on_wall_bounce_shape_cast_collision_normals"]
 [connection signal="collisionNormals" from="WallBounceShapeCast" to="PlayerSFX" method="_on_wall_bounce_shape_cast_collision_normals"]
+[connection signal="timeout" from="PlayerSFX/BounceSFXTimer" to="PlayerSFX" method="_on_bounce_sfx_timer_timeout"]

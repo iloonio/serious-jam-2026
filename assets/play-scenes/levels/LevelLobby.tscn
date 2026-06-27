@@ -24,6 +24,7 @@ size = Vector3(13, 7, 16)
 
 [node name="LevelLobby" type="Node3D" unique_id=705102566 groups=["ProgressManager"]]
 script = ExtResource("1_qxynm")
+isClearableLevel = false
 
 [node name="Map" type="Node3D" parent="." unique_id=1367336059]
 
@@ -70,6 +71,9 @@ bus = &"SFX"
 [node name="Player" parent="Map" unique_id=935310202 instance=ExtResource("7_t8rg5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2, 52.5)
 
+[node name="bertil" parent="Map/Player/PlayerCollider/KeepRotationStatic" parent_id_path=PackedInt32Array(935310202, 1835112467) index="0" unique_id=1072575757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1.9935672, 52.5)
+
 [node name="Interactables" type="Node3D" parent="Map" unique_id=9862229]
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=1063668880]
@@ -83,6 +87,18 @@ transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.984
 
 [node name="CameraPivot" parent="." unique_id=937874084 instance=ExtResource("9_1dxhu")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -5.357702, 7.556552, 13.385548)
+
+[node name="GrassCountLabel" parent="CameraPivot/SpringArm3D/Camera3D/UI" parent_id_path=PackedInt32Array(937874084, 478926171) index="0" unique_id=195331651]
+visible = false
+
+[node name="ScoreLabel" parent="CameraPivot/SpringArm3D/Camera3D/UI" parent_id_path=PackedInt32Array(937874084, 478926171) index="1" unique_id=1837189773]
+visible = false
+
+[node name="TimeLabel" parent="CameraPivot/SpringArm3D/Camera3D/UI" parent_id_path=PackedInt32Array(937874084, 478926171) index="2" unique_id=1756172954]
+visible = false
+
+[node name="decotext" parent="CameraPivot/SpringArm3D/Camera3D/UI" parent_id_path=PackedInt32Array(937874084, 478926171) index="3" unique_id=998258261]
+visible = false
 
 [node name="StagesBGM" type="AudioStreamPlayer" parent="." unique_id=2140033520]
 stream = ExtResource("10_jjsvr")
@@ -115,3 +131,7 @@ shape = SubResource("BoxShape3D_jjsvr")
 [connection signal="body_entered" from="LoadingZones/ToLevel1" to="LoadingZones" method="_on_to_level_1_body_entered"]
 [connection signal="body_entered" from="LoadingZones/ToLevel2" to="LoadingZones" method="_on_to_level_2_body_entered"]
 [connection signal="body_entered" from="LoadingZones/ToLevel3" to="LoadingZones" method="_on_to_level_3_body_entered"]
+
+[editable path="Map/Player"]
+[editable path="CameraPivot"]
+[editable path="CameraPivot/SpringArm3D/Camera3D/UI"]

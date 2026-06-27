@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="1_22u83"]
 [ext_resource type="Script" uid="uid://dl2v1slsuomfv" path="res://assets/scripts/interactables/Volleyball.gd" id="1_qvbef"]
-[ext_resource type="AudioStream" uid="uid://cuf4w1sw7esc4" path="res://assets/audio/sfx/explosion.wav" id="2_k7l1s"]
 [ext_resource type="Texture2D" uid="uid://bc2ykd62xoclp" path="res://assets/visuals/blender/blend-files/Volleyball_Football.png" id="3_3xlw1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x2ejs"]
@@ -109,7 +108,10 @@ angular_damp = 1.0
 script = ExtResource("1_qvbef")
 
 [node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("1_22u83")]
-audioStream = ExtResource("2_k7l1s")
+
+[node name="AudioStreamPlayer" parent="FxComponent" index="0" unique_id=1566456463]
+volume_db = -6.0
+pitch_scale = 2.0
 
 [node name="StaticRot" type="Node" parent="." unique_id=709477234]
 
@@ -133,3 +135,5 @@ mesh = SubResource("ArrayMesh_q6bor")
 metadata/extras = {
 "ant_landscape": {}
 }
+
+[editable path="FxComponent"]
