@@ -118,6 +118,12 @@ func _input(event: InputEvent) -> void:
 
 
 func perfect_dash_score():
+	
+	if get_parent().get_parent() is ProgressManager:
+		if get_parent().get_parent().isClearableLevel == false:
+			return
+	
+	
 	var scoreLabel: PackedScene = load("res://assets/prefabs/ScoreLabel.tscn")
 	var scoreLabelInstance: Label3D = scoreLabel.instantiate()
 	

@@ -39,7 +39,7 @@ func cut_grass_on_cell(cell, index, worldPos) -> void:
 	
 	updatedGrassDic.emit(grassDic.size())
 	
-	addScore.emit(5)
+	addScore.emit(2)
 
 
 func convert_gridmap_to_multimesh() -> void:

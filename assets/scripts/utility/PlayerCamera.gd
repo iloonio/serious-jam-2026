@@ -144,7 +144,9 @@ func clear_camera():
 
 
 
-func screen_shake(perfCharge: bool = false):
+func screen_shake(perfCharge: bool = false, _empty: bool = true):
+	print("SHAKE ", perfCharge)
+	
 	%SpringArm3D.position.x = 0 
 	%SpringArm3D.position.z = 0
 	

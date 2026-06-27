@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://davu1lyc5a7pb"]
 
+[ext_resource type="Script" uid="uid://clu6i83ycnyqf" path="res://assets/scripts/interactables/Mouse.gd" id="1_pt3yf"]
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="1_vpwhu"]
 [ext_resource type="PackedScene" uid="uid://dajru16aoeg36" path="res://assets/prefabs/interactables/components/BreakableComponent.tscn" id="3_7hpey"]
 [ext_resource type="Texture2D" uid="uid://cygil18uj5uf4" path="res://assets/visuals/blender/blend-files/Barrel_Barrel.png" id="4_vpwhu"]
@@ -91,6 +92,8 @@ _data = {
 collision_layer = 9
 mass = 2.5
 gravity_scale = 2.0
+script = ExtResource("1_pt3yf")
+slayScore = 10
 
 [node name="FxComponent" parent="." unique_id=2102214622 node_paths=PackedStringArray("animationPlayer") instance=ExtResource("1_vpwhu")]
 animationPlayer = NodePath("../AnimationPlayer")
@@ -116,5 +119,7 @@ debug_color = Color(0, 0.5950001, 0.7, 1)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2095692409]
 root_node = NodePath("../FxComponent/AudioStreamPlayer")
 libraries/ = SubResource("AnimationLibrary_7hpey")
+
+[connection signal="onBreak" from="BreakableComponent" to="." method="_on_breakable_component_on_break"]
 
 [editable path="FxComponent"]

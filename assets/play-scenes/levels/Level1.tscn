@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="18_pn7ak"]
 [ext_resource type="PackedScene" uid="uid://dwpk2uhpp0twq" path="res://assets/prefabs/interactables/Mouse.tscn" id="19_kx0kb"]
 
-[sub_resource type="Curve3D" id="Curve3D_reqfh"]
+[sub_resource type="Curve3D" id="Curve3D_7wi0j"]
 closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1, 0, -3, 0, 0, 0, 0, 0, 0, 6, 0, 4, 0, 0, 0, 0, 0, 0, 4, 0, -3, 0, 0, 0, 0, 0, 0, 6, 0, -12),
@@ -29,7 +29,7 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve3D" id="Curve3D_8ayaq"]
+[sub_resource type="Curve3D" id="Curve3D_reqfh"]
 closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 15, 0, 5, 0, 0, 0, 0, 0, 0, 15, 0, -6),
@@ -37,7 +37,7 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve3D" id="Curve3D_u25p6"]
+[sub_resource type="Curve3D" id="Curve3D_8ayaq"]
 closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6, 0, -3, 0, 0, 0, 0, 0, 0, -2, 0, 8, 0, 0, 0, 0, 0, 0, 7, 0, 8, 0, 0, 0, 0, 0, 0, 7, 0, -9, 0, 0, 0, 0, 0, 0, -4.56, 0, -8.85),
@@ -45,7 +45,7 @@ _data = {
 }
 point_count = 5
 
-[sub_resource type="Curve3D" id="Curve3D_d2y8j"]
+[sub_resource type="Curve3D" id="Curve3D_u25p6"]
 closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -6, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 10, 0, 5, 0, 0, 0, 0, 0, 0, 10, 0, -6),
@@ -53,7 +53,7 @@ _data = {
 }
 point_count = 4
 
-[sub_resource type="Curve3D" id="Curve3D_47unb"]
+[sub_resource type="Curve3D" id="Curve3D_d2y8j"]
 closed = true
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2, 0, -1, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0, 0, 0, 0, 6, 0, 3, 0, 0, 0, 0, 0, 0, 6, 0, -1),
@@ -161,35 +161,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 2, 19)
 
 [node name="MovingObject6" parent="Map/Interactables" unique_id=1041034083 instance=ExtResource("18_pn7ak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 11)
-curve = SubResource("Curve3D_reqfh")
+curve = SubResource("Curve3D_7wi0j")
 movingObject = ExtResource("19_kx0kb")
 progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject" parent="Map/Interactables" unique_id=1342931301 instance=ExtResource("18_pn7ak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 2, 34)
-curve = SubResource("Curve3D_8ayaq")
+curve = SubResource("Curve3D_reqfh")
 movingObject = ExtResource("19_kx0kb")
 progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject3" parent="Map/Interactables" unique_id=229921765 instance=ExtResource("18_pn7ak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 2, 34)
-curve = SubResource("Curve3D_u25p6")
+curve = SubResource("Curve3D_8ayaq")
 movingObject = ExtResource("19_kx0kb")
 progressIncrement = 0.115
 pingPong = false
 
 [node name="MovingObject2" parent="Map/Interactables" unique_id=1839282041 instance=ExtResource("18_pn7ak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 2, 38)
-curve = SubResource("Curve3D_d2y8j")
+curve = SubResource("Curve3D_u25p6")
 movingObject = ExtResource("19_kx0kb")
 progressIncrement = 0.21
 pingPong = false
 
 [node name="MovingObject5" parent="Map/Interactables" unique_id=1316935328 instance=ExtResource("18_pn7ak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 2, 20)
-curve = SubResource("Curve3D_47unb")
+curve = SubResource("Curve3D_d2y8j")
 movingObject = ExtResource("19_kx0kb")
 progressIncrement = 0.21
 pingPong = false

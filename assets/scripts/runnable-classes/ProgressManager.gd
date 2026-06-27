@@ -73,8 +73,6 @@ func _on_grass_grid_map_add_score(score: int) -> void:
 
 
 
-
-
 func warm_up_particles():
 	var particle = load("res://assets/prefabs/particle-fx/ParticleWarmup.tscn")
 	var particleInstance = particle.instantiate()

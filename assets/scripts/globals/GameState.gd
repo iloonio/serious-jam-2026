@@ -104,17 +104,49 @@ func clear_stage(clearedStage: String = "level1"):
 func calculate_rank(_clearedStage: String = "level1", score : int = 0) -> String:
 	## clearedStage could be used to check specific score requirements
 	
+	
+	
 	var rank: String = "E"
 	
-	if score >= 3000:
-		rank = "S"
-	elif score >= 2500:
-		rank = "A"
-	elif score >= 2000:
-		rank = "B"
-	elif score >= 1500:
-		rank = "C"
-	elif score >= 1000:
-		rank = "D"
+	match _clearedStage:
+		"level1":
+			if score >= 15000:
+				rank = "S"
+			elif score >= 13000:
+				rank = "A"
+			elif score >= 12000:
+				rank = "B"
+			elif score >= 11000:
+				rank = "C"
+			elif score >= 8000:
+				rank = "D"
+			
+			
+		"level2":
+			
+			if score >= 15000:
+				rank = "S"
+			elif score >= 13000:
+				rank = "A"
+			elif score >= 12000:
+				rank = "B"
+			elif score >= 11000:
+				rank = "C"
+			elif score >= 10000:
+				rank = "D"
+		
+		"level3":
+			if score >= 23000:
+				rank = "S"
+			elif score >= 20000:
+				rank = "A"
+			elif score >= 18000:
+				rank = "B"
+			elif score >= 16000:
+				rank = "C"
+			elif score >= 14000:
+				rank = "D"
+	
+	
 	
 	return rank
