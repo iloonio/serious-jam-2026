@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://boj477qgutxfv" path="res://assets/scripts/interactables/FxManager.gd" id="1_4kkkw"]
 [ext_resource type="PackedScene" uid="uid://cnmbrubldx08x" path="res://assets/prefabs/particle-fx/genericParticleFX.tscn" id="2_5wxqr"]
-[ext_resource type="AudioStream" uid="uid://bc24l2aymlid4" path="res://assets/audio/sfx/GrassCutSFX.wav" id="2_nmj0i"]
+[ext_resource type="AudioStream" uid="uid://0v3bsanjmfgd" path="res://assets/audio/sfx/BounceSFX.wav" id="3_5wxqr"]
 
 [node name="FxComponent" type="Node" unique_id=2102214622 node_paths=PackedStringArray("audioPlayer") groups=["interactableComponents"]]
 editor_description = "NOTE: 
@@ -10,8 +10,11 @@ editor_description = "NOTE:
 - I would love it if that were not the case, but sadly it is so. "
 script = ExtResource("1_4kkkw")
 particleEffect = ExtResource("2_5wxqr")
-audioPlayer = NodePath("AudioStreamPlayer3D")
+audioPlayer = NodePath("AudioStreamPlayer")
 cooldown = 0.4
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1249415805]
-stream = ExtResource("2_nmj0i")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1566456463]
+stream = ExtResource("3_5wxqr")
+volume_db = 3.0
+pitch_scale = 3.0
+bus = &"SFX"

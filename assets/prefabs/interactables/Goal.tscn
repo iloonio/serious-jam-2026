@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://02vitjor4yhh" path="res://assets/scripts/interactables/Goal.gd" id="1_cqjj7"]
 [ext_resource type="Shader" uid="uid://c3hlorhw7loct" path="res://assets/scripts/shaders/GoalShader.gdshader" id="1_m0rpa"]
 [ext_resource type="Texture2D" uid="uid://dylh8ltlgvv3e" path="res://assets/visuals/blender/blend-files/Goal_Net.png" id="1_yo8rc"]
+[ext_resource type="AudioStream" uid="uid://cdjdq6wpwsui2" path="res://assets/audio/sfx/YIPPIE.wav" id="4_ccwgl"]
+[ext_resource type="PackedScene" uid="uid://lgvi5uqioquw" path="res://assets/prefabs/particle-fx/ExplosionFX.tscn" id="4_sp1y1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8swg8"]
 size = Vector3(2.3, 3.4, 0.3)
@@ -272,4 +274,34 @@ width = 2500.0
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_jgdqa")
 
+[node name="YIPPIEsfx" type="AudioStreamPlayer" parent="." unique_id=1886445075]
+unique_name_in_owner = true
+stream = ExtResource("4_ccwgl")
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="ExplosionFx" parent="." unique_id=1907303957 instance=ExtResource("4_sp1y1")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+emitting = false
+one_shot = true
+scale_amount_max = 3.0
+
+[node name="InnerCore" parent="ExplosionFx" index="0" unique_id=1773274936]
+emitting = false
+one_shot = true
+
+[node name="OuterCore" parent="ExplosionFx" index="1" unique_id=1521547284]
+emitting = false
+one_shot = true
+
+[node name="Burst" parent="ExplosionFx" index="2" unique_id=916126767]
+emitting = false
+amount = 30
+one_shot = true
+scale_amount_min = 4.0
+scale_amount_max = 9.0
+
 [connection signal="body_entered" from="ScoreArea3D" to="." method="_on_score_area_3d_body_entered"]
+
+[editable path="ExplosionFx"]

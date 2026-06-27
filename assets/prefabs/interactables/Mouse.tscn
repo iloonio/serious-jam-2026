@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://clu6i83ycnyqf" path="res://assets/scripts/interactables/Mouse.gd" id="1_a67oo"]
 [ext_resource type="PackedScene" uid="uid://ccy6imigoixmq" path="res://assets/prefabs/interactables/components/FxComponent.tscn" id="2_a67oo"]
 [ext_resource type="Texture2D" uid="uid://byg3dk01hwnya" path="res://assets/visuals/blender/blend-files/Mouse_DocumMouse.png" id="3_7vsoa"]
+[ext_resource type="AudioStream" uid="uid://cegq1jj5sucnw" path="res://assets/audio/sfx/ChargeSFX-Small-Release.wav" id="4_yks2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7vsoa"]
 render_priority = 1
@@ -278,9 +279,15 @@ freeze_mode = 1
 script = ExtResource("1_a67oo")
 slayScore = 200
 
-[node name="BreakableComponent" parent="." unique_id=101191030 instance=ExtResource("1_7vsoa")]
+[node name="BreakableComponent" parent="." unique_id=101191030 node_paths=PackedStringArray("breakAudioStream") instance=ExtResource("1_7vsoa")]
+breakAudioStream = NodePath("../FxComponent/AudioStreamPlayer")
 
 [node name="FxComponent" parent="." unique_id=2102214622 instance=ExtResource("2_a67oo")]
+
+[node name="AudioStreamPlayer" parent="FxComponent" index="0" unique_id=1566456463]
+stream = ExtResource("4_yks2x")
+volume_db = -17.0
+pitch_scale = 7.0
 
 [node name="metarig" type="Node3D" parent="." unique_id=421648320]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.954, -0.21)
@@ -552,3 +559,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0.182)
 shape = SubResource("BoxShape3D_gubh5")
 
 [connection signal="onBreak" from="BreakableComponent" to="." method="_on_breakable_component_on_break"]
+
+[editable path="FxComponent"]

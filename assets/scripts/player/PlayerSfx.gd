@@ -26,7 +26,7 @@ var chargePitchShift: AudioEffectPitchShift
 var passedMinThreshold: bool = false
 var passedMaxThreshold: bool = false
 
-
+var canPlayBounce: bool = true
 
 
 func _ready() -> void:
@@ -48,6 +48,10 @@ func _ready() -> void:
 	else:
 		push_error("Effect at index  %d is not a BandPassFilter" % chargeEffectIndex)
 
+
+	
+	
+	
 
 
 
@@ -157,6 +161,13 @@ func _on_player_is_spinning(flag: bool, speed: float) -> void:
 
 
 func _on_wall_bounce_shape_cast_collision_normals(colliderNormals: Array[Vector3]) -> void:
-	%BounceSFX.play()
+	if canPlayBounce:
+		%BounceSFX.play()
+		canPlayBounce = false
+		%BounceSFXTimer.start()
 	
 	
+
+
+func _on_bounce_sfx_timer_timeout() -> void:
+	canPlayBounce = true

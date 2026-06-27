@@ -2,6 +2,8 @@ class_name Breakable extends Interactable
 
 @export var breakEffect: PackedScene
 
+@export var breakAudioStream: AudioStreamPlayer 
+
 @export_range(1,100,1) var HP: int
 
 @export_range(0, 1, 0.05) var cooldown: float = 0.2
@@ -30,7 +32,17 @@ func on_interact():
 			# propagate the call to all children in case of layered particles
 			particleInstance.propagate_call("set", ["one_shot", true])
 			particleInstance.propagate_call("set", ["emitting", true])
+			
+			if breakAudioStream != null:
+				breakAudioStream.autoplay = true
+				particleInstance.add_child(breakAudioStream.duplicate())
+			
 			get_parent().get_parent().add_child(particleInstance)
+		
+
+			
+		
+		
 		parent.queue_free()
 		return
 
