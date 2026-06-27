@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://b4h8qr6dnknmm" path="res://assets/audio/bgm/ScythingThemeFinal.ogg" id="10_65y4k"]
 [ext_resource type="PackedScene" uid="uid://dn8yml04ahwwc" path="res://assets/prefabs/Boulder.tscn" id="10_hu8g4"]
 [ext_resource type="PackedScene" uid="uid://bt23ue5jyvr73" path="res://assets/prefabs/Tree.tscn" id="10_lfhvx"]
+[ext_resource type="PackedScene" uid="uid://dn1ixw66xtdue" path="res://assets/prefabs/level2speedrunnerNpc.tscn" id="11_nrgvx"]
 [ext_resource type="PackedScene" uid="uid://0dfj2h5lkl3r" path="res://assets/prefabs/interactables/Shroom.tscn" id="14_3ug7s"]
 [ext_resource type="PackedScene" uid="uid://dbdxcd3x0l4t4" path="res://assets/prefabs/NpcTemplate.tscn" id="15_65y4k"]
 [ext_resource type="PackedScene" uid="uid://bk2trdh4ie0o8" path="res://assets/prefabs/npc1.tscn" id="16_nrgvx"]
@@ -70,6 +71,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.5, 2, 309.5)
 
 [node name="Npcs" type="Node3D" parent="Map" unique_id=1831940753]
 
+[node name="NpcTemplate" parent="Map/Npcs" unique_id=211048706 instance=ExtResource("15_65y4k")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -39.6, 1.9508429, 289.05612)
+preStageText = "I love the flower field up ahead! You should check it out"
+relatedStage = "Level2"
+postStageText = "the field was nice, right?"
+clearAllText = "thanks for cleaning up this place! Now i can smell the flowers without getting grass in my face"
+
+[node name="MeshInstance3D" parent="Map/Npcs/NpcTemplate" index="0" unique_id=273583065]
+visible = false
+
+[node name="npc" parent="Map/Npcs/NpcTemplate" unique_id=1967168820 instance=ExtResource("16_nrgvx")]
+
+[node name="Skeleton3D" parent="Map/Npcs/NpcTemplate/npc/metarig" parent_id_path=PackedInt32Array(1967168820, 663230619) index="0" unique_id=1190904980]
+bones/2/rotation = Quaternion(-0.10302064, 1.3214365e-07, 2.772656e-08, 0.9946793)
+
+[node name="BoneAttachment3D" parent="Map/Npcs/NpcTemplate/npc/metarig/Skeleton3D" index="0" unique_id=934348795]
+transform = Transform3D(1, -2.0941326e-14, 1.137565e-13, -5.681381e-14, 0.99208516, 0.12556544, -2.7963991e-14, -0.12556556, 0.9920853, 1.8857887e-10, 0.5185766, -0.011192328)
+
+[node name="NpcTemplate3" parent="Map/Npcs" unique_id=2074328647 instance=ExtResource("15_65y4k")]
+transform = Transform3D(-0.86602545, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, -0.86602545, -6.5999985, 1.9508429, -49.94388)
+preStageText = "Uwaaa... so pretty"
+relatedStage = "Level2"
+postStageText = "uwaaa.. so pretty"
+clearAllText = "wow its so nice"
+
+[node name="MeshInstance3D" parent="Map/Npcs/NpcTemplate3" index="0" unique_id=273583065]
+visible = false
+
+[node name="npc" parent="Map/Npcs/NpcTemplate3" unique_id=610773548 instance=ExtResource("16_nrgvx")]
+
+[node name="Skeleton3D" parent="Map/Npcs/NpcTemplate3/npc/metarig" parent_id_path=PackedInt32Array(610773548, 663230619) index="0" unique_id=1190904980]
+bones/2/rotation = Quaternion(-0.08817682, 1.325424e-07, 2.5752987e-08, 0.99610484)
+
+[node name="BoneAttachment3D" parent="Map/Npcs/NpcTemplate3/npc/metarig/Skeleton3D" index="0" unique_id=934348795]
+transform = Transform3D(1, -1.0376953e-14, 8.529981e-14, -6.570768e-14, 0.9953883, 0.09592555, 2.8774163e-14, -0.09592565, 0.9953884, 1.8857979e-10, 0.5188668, -0.008664375)
+
+[node name="NpcTemplate2" parent="Map/Npcs" unique_id=926240265 instance=ExtResource("11_nrgvx")]
+transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1.4, 0, -0.7071067, 0, 0.7071068, -68.6, 1.9508429, 297.05612)
+
 [node name="part1" type="Node3D" parent="Map" unique_id=1943658844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 304)
 
@@ -89,9 +129,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 2, -8)
 
 [node name="BreakableObject5" parent="Map/part1/Interactables" unique_id=958721113 instance=ExtResource("10_3ug7s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.516945, 2, -11.073853)
-
-[node name="BreakableObject6" parent="Map/part1/Interactables" unique_id=2075868267 instance=ExtResource("10_3ug7s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.516945, 2, -14.073853)
 
 [node name="BreakableObject8" parent="Map/part1/Interactables" unique_id=1792982309 instance=ExtResource("10_3ug7s")]
 transform = Transform3D(0.98480785, 0, -0.17364821, 0, 1, 0, 0.17364821, 0, 0.98480785, -27.382826, 2, -21.335876)
@@ -695,14 +732,6 @@ transform = Transform3D(2, 0, 0, 0, 1.9000001, 0, 0, 0, 1, 32, 2, -75)
 [node name="tree13" parent="Map/part3/Decoratives" unique_id=103299421 instance=ExtResource("10_lfhvx")]
 transform = Transform3D(2, 0, 0, 0, 1.9000001, 0, 0, 0, 1, -41, 2, -85)
 
-[node name="NpcTemplate" parent="Map" unique_id=211048706 instance=ExtResource("15_65y4k")]
-transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -39.6, 5, 296)
-
-[node name="npc" parent="Map/NpcTemplate" unique_id=1967168820 instance=ExtResource("16_nrgvx")]
-
-[node name="MeshInstance3D" parent="Map/NpcTemplate" index="1" unique_id=273583065]
-visible = false
-
 [node name="VisualEffects" type="Node3D" parent="." unique_id=281372761]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VisualEffects" unique_id=158786361]
@@ -724,4 +753,7 @@ bus = &"BGM"
 
 [connection signal="addScore" from="Map/GrassGridMap" to="." method="_on_grass_grid_map_add_score"]
 
-[editable path="Map/NpcTemplate"]
+[editable path="Map/Npcs/NpcTemplate"]
+[editable path="Map/Npcs/NpcTemplate/npc"]
+[editable path="Map/Npcs/NpcTemplate3"]
+[editable path="Map/Npcs/NpcTemplate3/npc"]
