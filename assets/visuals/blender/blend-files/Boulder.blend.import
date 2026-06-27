@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://5oqwg53vw3mu"
-path="res://.godot/imported/Boulder.blend-3e90ec5a968d22960a9b89377ccc6875.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/visuals/blender/blend-files/Boulder.blend"
-dest_files=["res://.godot/imported/Boulder.blend-3e90ec5a968d22960a9b89377ccc6875.scn"]
 
 [params]
 

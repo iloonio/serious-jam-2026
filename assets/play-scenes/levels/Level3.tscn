@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://davu1lyc5a7pb" path="res://assets/prefabs/interactables/Barrel.tscn" id="11_u7jmq"]
 [ext_resource type="PackedScene" uid="uid://ltt17o3wwfcl" path="res://assets/prefabs/interactables/Volleyball.tscn" id="12_my8ls"]
 [ext_resource type="PackedScene" uid="uid://d2df6tde4koqt" path="res://assets/prefabs/MovingObject.tscn" id="16_86isl"]
+[ext_resource type="PackedScene" uid="uid://dn1ixw66xtdue" path="res://assets/prefabs/level2speedrunnerNpc.tscn" id="16_bkbck"]
 [ext_resource type="PackedScene" uid="uid://dwpk2uhpp0twq" path="res://assets/prefabs/interactables/Mouse.tscn" id="17_bkbck"]
 [ext_resource type="PackedScene" uid="uid://cxn3h5ermxj32" path="res://assets/prefabs/interactables/Goal.tscn" id="18_ial51"]
 
@@ -285,6 +286,27 @@ curve = SubResource("Curve3D_2r23x")
 movingObject = ExtResource("17_bkbck")
 progressIncrement = 0.115
 pingPong = false
+
+[node name="NpcTemplate2" parent="Map/Interactables" unique_id=926240265 instance=ExtResource("16_bkbck")]
+transform = Transform3D(0.5000002, 0, 0.8660253, 0, 1.4000001, 0, -0.8660253, 0, 0.5000002, 9.400002, 1.9508429, 2.0561218)
+preStageText = "Woah, these guys be ballin!"
+relatedStage = "Level3"
+postStageText = "Woah, these guys be ballin!"
+clearAllText = "Woah, these guys be ballin!"
+
+[node name="NpcTemplate3" parent="Map/Interactables" unique_id=755921947 instance=ExtResource("16_bkbck")]
+transform = Transform3D(0.8660253, 0, -0.5000002, 0, 1.4000001, 0, 0.5000002, 0, 0.8660253, 21.400002, 1.9508429, 48.05612)
+preStageText = "I believe I heard squeaky cheers up ahead, could you please go investigate it?"
+relatedStage = "Level3"
+postStageText = "I believe I heard squeaky cheers up ahead, could you please go investigate it?"
+clearAllText = "I believe I heard squeaky cheers up ahead, could you please go investigate it?"
+
+[node name="NpcTemplate4" parent="Map/Interactables" unique_id=300156041 instance=ExtResource("16_bkbck")]
+transform = Transform3D(0.50000024, 0, 0.86602545, 0, 1.4000002, 0, -0.86602545, 0, 0.50000024, -13.599998, 1.9508429, -0.9438782)
+preStageText = "Field, field, and more field..."
+relatedStage = "Level3"
+postStageText = "Field, field, and more field..."
+clearAllText = "Field, field, and more field..."
 
 [node name="VisualEffects" type="Node3D" parent="." unique_id=487475828]
 
